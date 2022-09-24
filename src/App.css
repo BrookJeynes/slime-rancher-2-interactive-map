@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+}
