@@ -18,6 +18,8 @@ import L from 'leaflet';
 import { gordos } from "./data/gordos";
 import { mapNodes } from "./data/mapNodes";
 import { pins } from "./data/pins"
+import { treasurePods } from "./data/treasurePods";
+import { researchDrones } from "./data/researchDrones";
 
 // Here due to dynamic require statement not working in other files
 export const Pin = (props) => {
@@ -163,16 +165,58 @@ const App = () => {
             </LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay name="7-Zee Rewards">
-            <Marker position={[0,0]}>
-            </Marker>
+            <LayerGroup>
+              { Object.keys(treasurePods).map(key => {
+                const treasurePod = treasurePods[key];
+
+                const icon = new L.icon({
+                  iconUrl: require('./assets/icons/iconTreasurePod.png'),
+                  iconAnchor: [10, 20],
+                  popupAnchor: [5, -15],
+                  shadowUrl: null,
+                  shadowSize: null,
+                  shadowAnchor: null,
+                  iconSize: [32, 32],
+                })
+
+                return (
+                  <Marker position={treasurePod.position} icon={icon}>
+                    <Popup>
+                      {treasurePod.name} - {treasurePod.contents}
+                    </Popup>
+                  </Marker>
+                )
+              })}
+            </LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay name="Locked Doors">
 <Marker position={[0,0]}>
             </Marker>
           </LayersControl.Overlay>
-          <LayersControl.Overlay name="Drones">
-<Marker position={[0,0]}>
-            </Marker>
+          <LayersControl.Overlay name="Research Drones">
+            <LayerGroup>
+              { Object.keys(researchDrones).map(key => {
+                const researchDrone = researchDrones[key];
+
+                const icon = new L.icon({
+                  iconUrl: require('./assets/icons/researchDroneFaceIcon.png'),
+                  iconAnchor: [10, 20],
+                  popupAnchor: [5, -15],
+                  shadowUrl: null,
+                  shadowSize: null,
+                  shadowAnchor: null,
+                  iconSize: [32, 32],
+                })
+
+                return (
+                  <Marker position={researchDrone.position} icon={icon}>
+                    <Popup>
+                      {researchDrone.name}
+                    </Popup>
+                  </Marker>
+                )
+              })}
+            </LayerGroup>
           </LayersControl.Overlay>
         </LayersControl>
 

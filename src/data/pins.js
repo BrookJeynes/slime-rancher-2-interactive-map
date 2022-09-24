@@ -37,6 +37,11 @@ export const pins = {
     type: "Utility",
     icon: "./assets/icons/iconTreasurePod.png"
   },
+  "Research Drone": {
+    name: "Research Drone",
+    type: "Utility",
+    icon: "./assets/icons/researchDroneFaceIcon.png"
+  }
 }
 
 plorts.forEach(plort => {
