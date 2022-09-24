@@ -5,10 +5,10 @@
   An interactive map where you can place custom icons and see the locations for Gordo Slimes, Bee Drones, Map Nodes, 7Zee Treasure Pods, and Locked Doors
 </p>
 
-![Map Example]("./assets/readme/map-example.png")
+![Map Example](./assets/readme/map-example.png)
 
 ## Note
-⚠️  All assets used within this project are owned solely by Monomi Park. This project is just for fun and to help the community, no money is being made off this project ⚠️ 
+⚠️ All assets used within this project are owned solely by Monomi Park. This project is just for fun and to help the community, no money is being made off this project ⚠️ 
 
 ## Usage
 1. Navigate into the project directory:
