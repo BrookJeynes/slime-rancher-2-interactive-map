@@ -15,11 +15,11 @@
     ```bash
     cd slime-rancher-2-interactive-map
     ```
-2. Install the module:
+2. Install the required packages:
     ```bash
     npm install
     ```
-3. Run the command-line tool:
+3. Run the web app:
     ```
     npm start
     ```
@@ -34,6 +34,11 @@
 - Place custom icons
 
 ## Planned features:
+- All locations for:
+  - Bee Drones
+  - Map Nodes
+  - 7Zee Treasure Pods
+  - Locked Doors 
 
 ## Contribution
 Feel free to create a pull request and add some new features or clean up the code, any help is appreciated.
