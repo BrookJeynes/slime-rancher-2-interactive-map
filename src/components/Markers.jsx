@@ -4,7 +4,7 @@ import {
 
 const Markers = (props) => {
   const { selectedIcon, setUserMarkers, userMarkers } = props;
-  const debug = false;
+  const debug = true;
 
   const map = useMapEvents({
     click(e) {

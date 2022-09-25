@@ -3,5 +3,6 @@ import { mapNodes } from "./mapNodes";
 import { pins } from "./pins"
 import { treasurePods } from "./treasurePods";
 import { researchDrones } from "./researchDrones";
+import { lockedDoors } from "./lockedDoors";
 
-export { gordos, mapNodes, pins, treasurePods, researchDrones }
+export { gordos, mapNodes, pins, treasurePods, lockedDoors, researchDrones }

@@ -14,7 +14,7 @@ import {
 import L from 'leaflet';
 
 // Data
-import { gordos, mapNodes, pins, treasurePods, researchDrones } from "./data/index";
+import { gordos, mapNodes, pins, treasurePods, researchDrones, lockedDoors } from "./data/index";
 
 import Markers from "./components/Markers";
 import Copyright from "./components/Copyright";
@@ -94,7 +94,6 @@ const App = () => {
     shadowSize: null,
     shadowAnchor: null,
     iconSize: [32, 32],
-
   }
 
   useEffect(() => {
@@ -214,8 +213,24 @@ const App = () => {
               </LayerGroup>
             </LayersControl.Overlay>
             <LayersControl.Overlay name="Locked Doors">
-              <Marker position={[0,0]}>
-              </Marker>
+              <LayerGroup>
+                { Object.keys(lockedDoors).map(key => {
+                  const lockedDoor = lockedDoors[key];
+
+                  const icon = new L.icon({
+                    ...iconTemplate,
+                    iconUrl: require(`${lockedDoor.image}`),
+                  })
+
+                  return (
+                    <Marker position={lockedDoor.position} icon={icon}>
+                      <Popup>
+                        {lockedDoor.name} - x{lockedDoor.amount} plort(s)
+                      </Popup>
+                    </Marker>
+                  )
+                })}
+              </LayerGroup> 
             </LayersControl.Overlay>
             <LayersControl.Overlay name="Research Drones">
               <LayerGroup>
