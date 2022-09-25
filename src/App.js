@@ -3,9 +3,6 @@ import './App.css';
 
 import Map from "./assets/map.png"
 
-import { BsPinAngleFill } from "react-icons/bs";
-import { AiOutlineSave } from "react-icons/ai";
-
 import {
   MapContainer,
   ImageOverlay,
@@ -13,16 +10,16 @@ import {
   Marker,
   Popup,
   LayerGroup,
-  useMapEvents,
 } from 'react-leaflet'
 import L from 'leaflet';
 
 // Data
-import { gordos } from "./data/gordos";
-import { mapNodes } from "./data/mapNodes";
-import { pins } from "./data/pins"
-import { treasurePods } from "./data/treasurePods";
-import { researchDrones } from "./data/researchDrones";
+import { gordos, mapNodes, pins, treasurePods, researchDrones } from "./data/index";
+
+import Markers from "./components/Markers";
+import Copyright from "./components/Copyright";
+import SaveButton from "./components/SaveButton";
+import PinButton from "./components/PinButton";
 
 // Here due to dynamic require statement not working in other files
 export const Pin = (props) => {
@@ -83,42 +80,21 @@ const PinSelector = (props) => {
   )
 }
 
-const Copyright = () => {
-  return (
-    <div className="p-2">
-      <span className="font-bold text-md">
-        ⚠️ All assets used within this project are owned solely by Monomi Park. 
-        This project is just for fun and to help the community, no money is being made off this project ⚠️
-      </span>
-    </div>
-  )
-}
-
 const App = () => {
   const center = [50, 150];
   const [selectedIcon, setSelectedIcon] = useState()
   const [userMarkers, setUserMarkers] = useState([]);
   const [showPins, setShowPins] = useState(true);
-  // Used to print coorindates of click
-  const debug = false;
 
-  const Markers = () => {
-    const map = useMapEvents({
-      click(e) {
-        if (debug) {
-          console.log(e.latlng.lat, e.latlng.lng)
-        }
+  const iconTemplate = {
+    iconUrl: "",
+    iconAnchor: [10, 20],
+    popupAnchor: [5, -15],
+    shadowUrl: null,
+    shadowSize: null,
+    shadowAnchor: null,
+    iconSize: [32, 32],
 
-        if (selectedIcon) {
-          setUserMarkers([...userMarkers, {
-            icon: selectedIcon,
-            position: [e.latlng.lat, e.latlng.lng]
-          }])
-        } 
-      },            
-    })
-
-    return null 
   }
 
   useEffect(() => {
@@ -131,9 +107,7 @@ const App = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex justify-center items-center">
-        <Copyright />
-      </div>
+      <Copyright />
 
       <div className="flex flex-row">
         <PinSelector
@@ -151,36 +125,20 @@ const App = () => {
           maxBounds={[[0, 0], [200, 200]]}
           style={{ height: "100vh", width: "100%" }}
         >
-          <Markers />
+          <Markers
+            selectedIcon={selectedIcon}
+            setUserMarkers={setUserMarkers}
+            userMarkers={userMarkers}
+            />
 
-          {/* Show Pins */}
-          <div className="leaflet-top leaflet-left mt-20 ml-[10px] border-2 
-                border-solid border-[#c7c7c7] w-[34px] h-[34] rounded">
-            <div 
-              className="flex justify-center items-center 
-                p-2 bg-white rounded-sm pointer-events-auto hover:bg-gray-100" 
-              onClick={() => {
-                setShowPins(!showPins);
-              }}
-            >
-              <BsPinAngleFill /> 
-            </div>
-          </div>
+          <PinButton 
+            showPins={showPins}
+            setShowPins={setShowPins}
+            />
 
-          {/* Save Pins */}
-          <div className="leaflet-top leaflet-left mt-32 ml-[10px] border-2 
-                border-solid border-[#c7c7c7] w-[34px] h-[34] rounded">
-            <div 
-              className="flex justify-center items-center 
-                p-1.5 bg-white rounded-sm pointer-events-auto hover:bg-gray-100" 
-              onClick={() => {
-                localStorage.setItem("pins", JSON.stringify(userMarkers));
-              }}
-            >
-              <AiOutlineSave size={18} /> 
-            </div>
-          </div>
-
+          <SaveButton
+            userMarkers={userMarkers}
+            />          
 
           {/* Selected icon */}
           <div className="leaflet-bottom leaflet-left mb-3 ml-3">
@@ -197,13 +155,8 @@ const App = () => {
                   const gordo = gordos[key];
 
                   const icon = new L.icon({
+                    ...iconTemplate,
                     iconUrl: require(`${gordo.image}`),
-                    iconAnchor: [10, 20],
-                    popupAnchor: [5, -15],
-                    shadowUrl: null,
-                    shadowSize: null,
-                    shadowAnchor: null,
-                    iconSize: [32, 32],
                   })
 
                   return (
@@ -222,13 +175,8 @@ const App = () => {
                   const mapNode = mapNodes[key];
 
                   const icon = new L.icon({
+                    ...iconTemplate,
                     iconUrl: require('./assets/icons/iconMapNode.png'),
-                    iconAnchor: [10, 20],
-                    popupAnchor: [5, -15],
-                    shadowUrl: null,
-                    shadowSize: null,
-                    shadowAnchor: null,
-                    iconSize: [32, 32],
                   })
 
                   return (
@@ -247,13 +195,8 @@ const App = () => {
                   const treasurePod = treasurePods[key];
 
                   const icon = new L.icon({
+                    ...iconTemplate,
                     iconUrl: require('./assets/icons/iconTreasurePod.png'),
-                    iconAnchor: [10, 20],
-                    popupAnchor: [5, -15],
-                    shadowUrl: null,
-                    shadowSize: null,
-                    shadowAnchor: null,
-                    iconSize: [32, 32],
                   })
 
                   return (
@@ -276,13 +219,8 @@ const App = () => {
                   const researchDrone = researchDrones[key];
 
                   const icon = new L.icon({
+                    ...iconTemplate,
                     iconUrl: require('./assets/icons/researchDroneFaceIcon.png'),
-                    iconAnchor: [10, 20],
-                    popupAnchor: [5, -15],
-                    shadowUrl: null,
-                    shadowSize: null,
-                    shadowAnchor: null,
-                    iconSize: [32, 32],
                   })
 
                   return (
@@ -299,13 +237,8 @@ const App = () => {
 
           { userMarkers.map(marker => {
             const icon = new L.icon({
+              ...iconTemplate,
               iconUrl: require(`${marker.icon}`),
-              iconAnchor: [10, 20],
-              popupAnchor: [5, -15],
-              shadowUrl: null,
-              shadowSize: null,
-              shadowAnchor: null,
-              iconSize: [32, 32],
             })
 
             return (
@@ -314,7 +247,7 @@ const App = () => {
                   <button 
                     onClick={() => {
                       setSelectedIcon();
-                      setUserMarkers(userMarkers.filter(el => { return !(el.position == marker.position) } ))
+                      setUserMarkers(userMarkers.filter(currentMarker => { return !(currentMarker.position == marker.position) } ))
                     }
                   }
                   >Remove</button>
