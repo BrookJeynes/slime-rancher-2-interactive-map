@@ -91,10 +91,16 @@ const App = () => {
   const center = [50, 150];
   const [selectedIcon, setSelectedIcon] = useState()
   const [userMarkers, setUserMarkers] = useState([]);
+  // Used to print coorindates of click
+  const debug = false;
 
   const Markers = () => {
     const map = useMapEvents({
       click(e) {
+        if (debug) {
+          console.log(e.latlng.lat, e.latlng.lng)
+       }
+
         if (selectedIcon) {
           setUserMarkers([...userMarkers, {
             icon: selectedIcon,

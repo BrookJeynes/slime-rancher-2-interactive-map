@@ -36,7 +36,6 @@
 ## Planned features:
 - All locations for:
   - Bee Drones
-  - Map Nodes
   - 7Zee Treasure Pods
   - Locked Doors 
 
