@@ -99,7 +99,7 @@ const App = () => {
   const [userMarkers, setUserMarkers] = useState([]);
   const [showPins, setShowPins] = useState(true);
   // Used to print coorindates of click
-  const debug = true;
+  const debug = false;
 
   const Markers = () => {
     const map = useMapEvents({

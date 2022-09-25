@@ -32,14 +32,13 @@
   - Bee Drones
   - Map Nodes
   - 7Zee Treasure Pods
-  - Locked Doors
 - Place custom icons
 
 ## Planned features:
 - All locations for:
   - Bee Drones
-  - 7Zee Treasure Pods
   - Locked Doors 
+  - Resource Locations 
 
 ## Contribution
 Feel free to create a pull request and add some new features or clean up the code, any help is appreciated.
