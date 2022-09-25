@@ -3,6 +3,8 @@ import './App.css';
 
 import Map from "./assets/map.png"
 
+import { BsPinAngleFill } from "react-icons/bs";
+
 import {
   MapContainer,
   ImageOverlay,
@@ -42,8 +44,8 @@ const PlortsSelect = (props) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col items-start mx-1" onClick={() => setOpen(!open)}>
-      <span>{type}</span>
+    <div className="flex flex-col items-start my-1" onClick={() => setOpen(!open)}>
+      <span>Icons:</span>
       <div className="flex flex-col">
         { Object.keys(pins).map(key => pins[key].type == type && <Pin pin={pins[key]} setSelectedIcon={setSelectedIcon} />) }
       </div>
@@ -52,25 +54,29 @@ const PlortsSelect = (props) => {
 }
 
 const PinSelector = (props) => {
-  const { selectedIcon, setSelectedIcon } = props;
+  const { showPins, setSelectedIcon } = props;
+  const [selectedType, setSelectedType] = useState("Food");
 
   const types = [
     "Food",
     "Plort",
-    "Utility"
+    "Utility",
+    "Resources",
   ]
 
   return (
-    <div className="flex flex-col items-start p-5 bg-sky-100">
+    <div className={`flex flex-col items-start p-3 bg-white drop-shadow-lg ${showPins && "hidden"}`}>
       <div className="flex flex-col justify-between w-full">
         <span className="font-bold text-lg">Pins</span>
-        <div className="flex items-center mt-2">
-          <span className="mr-5">Selected:</span> 
-          { selectedIcon && <img src={require(`${selectedIcon}`)} style={{width: 40}} /> } 
-        </div>
       </div>
-      <div className="mt-5 flex">
-        { types.map(type => <PlortsSelect type={type} setSelectedIcon={setSelectedIcon} />) }
+      <div className="flex flex-col my-3">
+        Category:
+        <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
+          { types.map(type => <option value={type}>{type}</option>)}
+        </select>
+      </div>
+      <div className="flex">
+        { types.map(type => selectedType == type && <PlortsSelect type={type} setSelectedIcon={setSelectedIcon} />) }
       </div>
     </div>
   )
@@ -91,15 +97,16 @@ const App = () => {
   const center = [50, 150];
   const [selectedIcon, setSelectedIcon] = useState()
   const [userMarkers, setUserMarkers] = useState([]);
+  const [showPins, setShowPins] = useState(true);
   // Used to print coorindates of click
-  const debug = false;
+  const debug = true;
 
   const Markers = () => {
     const map = useMapEvents({
       click(e) {
         if (debug) {
           console.log(e.latlng.lat, e.latlng.lng)
-       }
+        }
 
         if (selectedIcon) {
           setUserMarkers([...userMarkers, {
@@ -111,7 +118,7 @@ const App = () => {
     })
 
     return null 
-  } 
+  }
 
   return (
     <div className="flex flex-col">
@@ -120,7 +127,8 @@ const App = () => {
       </div>
 
       <div className="flex flex-row">
-        <PinSelector 
+        <PinSelector
+          showPins={showPins}
           selectedIcon={selectedIcon}
           setSelectedIcon={setSelectedIcon}
           />
@@ -135,6 +143,27 @@ const App = () => {
           style={{ height: "100vh", width: "100%" }}
         >
           <Markers />
+
+          <div className="leaflet-top leaflet-left mt-20 ml-[10px] border-2 
+                border-solid border-[#c7c7c7] w-[34px] h-[34] rounded">
+            <div 
+              className="flex justify-center items-center 
+                p-2 bg-white rounded-sm pointer-events-auto hover:bg-gray-100" 
+              onClick={() => {
+                setShowPins(!showPins);
+              }}
+            >
+              <BsPinAngleFill /> 
+            </div>
+          </div>
+
+          <div className="leaflet-bottom leaflet-left mb-3 ml-3">
+            <div className="flex items-center h-12">
+              <span className="text-lg font-medium mr-3">Selected:</span> 
+              { selectedIcon && <img src={require(`${selectedIcon}`)} style={{width: 40}} /> } 
+            </div>
+          </div>
+
           <LayersControl position="topright" collapsed={false}>
             <LayersControl.Overlay name="Slime Gordo's">
               <LayerGroup>
