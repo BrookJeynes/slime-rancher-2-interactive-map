@@ -2,7 +2,9 @@
     <h1 align = "center">Slime Rancher 2 Interactive Map - Written in React</h1>
 </div>
 <p align="center">
-  An interactive map where you can place custom icons and see the locations for Gordo Slimes, Bee Drones, Map Nodes, 7Zee Treasure Pods, and Locked Doors
+  An interactive map where you can place custom icons and see the locations for Gordo Slimes, Bee Drones, Map Nodes, 7Zee Treasure Pods, and Locked Doors.
+
+  A live version of the website can be found here: https://brookjeynes.github.io/slime-rancher-2-interactive-map/
 </p>
 
 ![Map Example](./assets/readme/map-example.png)

@@ -197,5 +197,4 @@ export const treasurePods = {
     contents: "Medium Red Ashwood",
     position: [74.95, 41.1]
   },
-
 }
