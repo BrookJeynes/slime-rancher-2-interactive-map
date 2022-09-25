@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import Map from "./assets/map.png"
 
 import { BsPinAngleFill } from "react-icons/bs";
+import { AiOutlineSave } from "react-icons/ai";
 
 import {
   MapContainer,
@@ -120,6 +121,14 @@ const App = () => {
     return null 
   }
 
+  useEffect(() => {
+    const userPins = JSON.parse(localStorage.getItem('pins'));
+    
+    if (userPins) {
+      setUserMarkers(userPins)
+    }
+  }, [])
+
   return (
     <div className="flex flex-col">
       <div className="flex justify-center items-center">
@@ -144,6 +153,7 @@ const App = () => {
         >
           <Markers />
 
+          {/* Show Pins */}
           <div className="leaflet-top leaflet-left mt-20 ml-[10px] border-2 
                 border-solid border-[#c7c7c7] w-[34px] h-[34] rounded">
             <div 
@@ -157,6 +167,22 @@ const App = () => {
             </div>
           </div>
 
+          {/* Save Pins */}
+          <div className="leaflet-top leaflet-left mt-32 ml-[10px] border-2 
+                border-solid border-[#c7c7c7] w-[34px] h-[34] rounded">
+            <div 
+              className="flex justify-center items-center 
+                p-1.5 bg-white rounded-sm pointer-events-auto hover:bg-gray-100" 
+              onClick={() => {
+                localStorage.setItem("pins", JSON.stringify(userMarkers));
+              }}
+            >
+              <AiOutlineSave size={18} /> 
+            </div>
+          </div>
+
+
+          {/* Selected icon */}
           <div className="leaflet-bottom leaflet-left mb-3 ml-3">
             <div className="flex items-center h-12">
               <span className="text-lg font-medium mr-3">Selected:</span> 
