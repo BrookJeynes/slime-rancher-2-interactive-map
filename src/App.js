@@ -76,6 +76,17 @@ const PinSelector = (props) => {
   )
 }
 
+const Copyright = () => {
+  return (
+    <div className="p-2">
+      <span className="font-bold text-md">
+        ⚠️ All assets used within this project are owned solely by Monomi Park. 
+        This project is just for fun and to help the community, no money is being made off this project ⚠️
+      </span>
+    </div>
+  )
+}
+
 const App = () => {
   const center = [50, 150];
   const [selectedIcon, setSelectedIcon] = useState()
@@ -97,156 +108,161 @@ const App = () => {
   } 
 
   return (
-    <div className="flex flex-row">
-      <PinSelector 
-        selectedIcon={selectedIcon}
-        setSelectedIcon={setSelectedIcon}
-      />
-      
-      <MapContainer 
-        center={center} 
-        zoom={3} 
-        scrollWheelZoom={false}
-        minZoom={-18}
-        maxZoom={18}
-        maxBounds={[[0, 0], [200, 200]]}
-        style={{ height: "100vh", width: "100%" }}
-      >
-        <Markers />
-        <LayersControl position="topright" collapsed={false}>
-          <LayersControl.Overlay name="Slime Gordo's">
-            <LayerGroup>
-              { Object.keys(gordos).map(key => {
-                const gordo = gordos[key];
+    <div className="flex flex-col">
+      <div className="flex justify-center items-center">
+        <Copyright />
+      </div>
 
-                const icon = new L.icon({
-                  iconUrl: require(`${gordo.image}`),
-                  iconAnchor: [10, 20],
-                  popupAnchor: [5, -15],
-                  shadowUrl: null,
-                  shadowSize: null,
-                  shadowAnchor: null,
-                  iconSize: [32, 32],
-                })
+      <div className="flex flex-row">
+        <PinSelector 
+          selectedIcon={selectedIcon}
+          setSelectedIcon={setSelectedIcon}
+          />
 
-                return (
-                  <Marker position={gordo.position} icon={icon}>
-                    <Popup>
-                      {gordo.name} - {gordo.food}
-                    </Popup>
-                  </Marker>
-                )
-              })}
-            </LayerGroup>
-          </LayersControl.Overlay>
-          <LayersControl.Overlay name="Map Nodes">
-            <LayerGroup>
-              { Object.keys(mapNodes).map(key => {
-                const mapNode = mapNodes[key];
+        <MapContainer 
+          center={center} 
+          zoom={3} 
+          scrollWheelZoom={false}
+          minZoom={-18}
+          maxZoom={18}
+          maxBounds={[[0, 0], [200, 200]]}
+          style={{ height: "100vh", width: "100%" }}
+        >
+          <Markers />
+          <LayersControl position="topright" collapsed={false}>
+            <LayersControl.Overlay name="Slime Gordo's">
+              <LayerGroup>
+                { Object.keys(gordos).map(key => {
+                  const gordo = gordos[key];
 
-                const icon = new L.icon({
-                  iconUrl: require('./assets/icons/iconMapNode.png'),
-                  iconAnchor: [10, 20],
-                  popupAnchor: [5, -15],
-                  shadowUrl: null,
-                  shadowSize: null,
-                  shadowAnchor: null,
-                  iconSize: [32, 32],
-                })
+                  const icon = new L.icon({
+                    iconUrl: require(`${gordo.image}`),
+                    iconAnchor: [10, 20],
+                    popupAnchor: [5, -15],
+                    shadowUrl: null,
+                    shadowSize: null,
+                    shadowAnchor: null,
+                    iconSize: [32, 32],
+                  })
 
-                return (
-                  <Marker position={mapNode.position} icon={icon}>
-                    <Popup>
-                      {mapNode.name}
-                    </Popup>
-                  </Marker>
-                )
-              })}
-            </LayerGroup>
-          </LayersControl.Overlay>
-          <LayersControl.Overlay name="7-Zee Rewards">
-            <LayerGroup>
-              { Object.keys(treasurePods).map(key => {
-                const treasurePod = treasurePods[key];
+                  return (
+                    <Marker position={gordo.position} icon={icon}>
+                      <Popup>
+                        {gordo.name} - {gordo.food}
+                      </Popup>
+                    </Marker>
+                  )
+                })}
+              </LayerGroup>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Map Nodes">
+              <LayerGroup>
+                { Object.keys(mapNodes).map(key => {
+                  const mapNode = mapNodes[key];
 
-                const icon = new L.icon({
-                  iconUrl: require('./assets/icons/iconTreasurePod.png'),
-                  iconAnchor: [10, 20],
-                  popupAnchor: [5, -15],
-                  shadowUrl: null,
-                  shadowSize: null,
-                  shadowAnchor: null,
-                  iconSize: [32, 32],
-                })
+                  const icon = new L.icon({
+                    iconUrl: require('./assets/icons/iconMapNode.png'),
+                    iconAnchor: [10, 20],
+                    popupAnchor: [5, -15],
+                    shadowUrl: null,
+                    shadowSize: null,
+                    shadowAnchor: null,
+                    iconSize: [32, 32],
+                  })
 
-                return (
-                  <Marker position={treasurePod.position} icon={icon}>
-                    <Popup>
-                      {treasurePod.name} - {treasurePod.contents}
-                    </Popup>
-                  </Marker>
-                )
-              })}
-            </LayerGroup>
-          </LayersControl.Overlay>
-          <LayersControl.Overlay name="Locked Doors">
-<Marker position={[0,0]}>
-            </Marker>
-          </LayersControl.Overlay>
-          <LayersControl.Overlay name="Research Drones">
-            <LayerGroup>
-              { Object.keys(researchDrones).map(key => {
-                const researchDrone = researchDrones[key];
+                  return (
+                    <Marker position={mapNode.position} icon={icon}>
+                      <Popup>
+                        {mapNode.name}
+                      </Popup>
+                    </Marker>
+                  )
+                })}
+              </LayerGroup>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="7-Zee Rewards">
+              <LayerGroup>
+                { Object.keys(treasurePods).map(key => {
+                  const treasurePod = treasurePods[key];
 
-                const icon = new L.icon({
-                  iconUrl: require('./assets/icons/researchDroneFaceIcon.png'),
-                  iconAnchor: [10, 20],
-                  popupAnchor: [5, -15],
-                  shadowUrl: null,
-                  shadowSize: null,
-                  shadowAnchor: null,
-                  iconSize: [32, 32],
-                })
+                  const icon = new L.icon({
+                    iconUrl: require('./assets/icons/iconTreasurePod.png'),
+                    iconAnchor: [10, 20],
+                    popupAnchor: [5, -15],
+                    shadowUrl: null,
+                    shadowSize: null,
+                    shadowAnchor: null,
+                    iconSize: [32, 32],
+                  })
 
-                return (
-                  <Marker position={researchDrone.position} icon={icon}>
-                    <Popup>
-                      {researchDrone.name}
-                    </Popup>
-                  </Marker>
-                )
-              })}
-            </LayerGroup>
-          </LayersControl.Overlay>
-        </LayersControl>
+                  return (
+                    <Marker position={treasurePod.position} icon={icon}>
+                      <Popup>
+                        {treasurePod.name} - {treasurePod.contents}
+                      </Popup>
+                    </Marker>
+                  )
+                })}
+              </LayerGroup>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Locked Doors">
+              <Marker position={[0,0]}>
+              </Marker>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Research Drones">
+              <LayerGroup>
+                { Object.keys(researchDrones).map(key => {
+                  const researchDrone = researchDrones[key];
 
-        { userMarkers.map(marker => {
-          const icon = new L.icon({
-            iconUrl: require(`${marker.icon}`),
-            iconAnchor: [10, 20],
-            popupAnchor: [5, -15],
-            shadowUrl: null,
-            shadowSize: null,
-            shadowAnchor: null,
-            iconSize: [32, 32],
-          })
+                  const icon = new L.icon({
+                    iconUrl: require('./assets/icons/researchDroneFaceIcon.png'),
+                    iconAnchor: [10, 20],
+                    popupAnchor: [5, -15],
+                    shadowUrl: null,
+                    shadowSize: null,
+                    shadowAnchor: null,
+                    iconSize: [32, 32],
+                  })
 
-          return (
-            <Marker position={marker.position} icon={icon}>
-              <Popup>
-                <button 
-                  onClick={() => {
-                    setSelectedIcon();
-                    setUserMarkers(userMarkers.filter(el => { return !(el.position == marker.position) } ))
+                  return (
+                    <Marker position={researchDrone.position} icon={icon}>
+                      <Popup>
+                        {researchDrone.name}
+                      </Popup>
+                    </Marker>
+                  )
+                })}
+              </LayerGroup>
+            </LayersControl.Overlay>
+          </LayersControl>
+
+          { userMarkers.map(marker => {
+            const icon = new L.icon({
+              iconUrl: require(`${marker.icon}`),
+              iconAnchor: [10, 20],
+              popupAnchor: [5, -15],
+              shadowUrl: null,
+              shadowSize: null,
+              shadowAnchor: null,
+              iconSize: [32, 32],
+            })
+
+            return (
+              <Marker position={marker.position} icon={icon}>
+                <Popup>
+                  <button 
+                    onClick={() => {
+                      setSelectedIcon();
+                      setUserMarkers(userMarkers.filter(el => { return !(el.position == marker.position) } ))
+                    }
                   }
-                }
-                >Remove</button>
-              </Popup>
-            </Marker>
-          )
-        })}
-        
-        <ImageOverlay
+                  >Remove</button>
+                </Popup>
+              </Marker>
+            )
+          })}
+
+          <ImageOverlay
             url={Map}
             bounds={[[0,0], [200, 200]]}
             opacity={0.8}
@@ -254,7 +270,8 @@ const App = () => {
             scale={1}
           >
           </ImageOverlay>
-      </MapContainer> 
+        </MapContainer> 
+      </div>
     </div>
   );
 }
