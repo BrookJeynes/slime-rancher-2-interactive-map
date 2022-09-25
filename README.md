@@ -33,6 +33,7 @@
   - Map Nodes
   - 7Zee Treasure Pods
 - Place custom icons
+- Save custom icons to browser
 
 ## Planned features:
 - All locations for:
