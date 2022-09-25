@@ -131,6 +131,10 @@ const App = () => {
             userMarkers={userMarkers}
             />
 
+          <div className="leaflet-bottom leaflet-right mr-16">
+            <span className="text-md">Made with love by Chooky {"<3"}</span>
+          </div>
+
           <PinButton 
             showPins={showPins}
             setShowPins={setShowPins}

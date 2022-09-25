@@ -39,7 +39,8 @@
 - All locations for:
   - Bee Drones
   - Locked Doors 
-  - Resource Locations 
+  - Resource locations
+  - Slime Type Locations
 
 ## Contribution
 Feel free to create a pull request and add some new features or clean up the code, any help is appreciated.
