@@ -1,17 +1,33 @@
 const plorts = [
-  'Pink',
-  'Tabby',
-  'Rock',
-  'Ringtail',
-  'Phosphor',
-  'Hunter',
-  'Honey',
-  'Flutter',
-  'Crystal',
-  'Cotton',
-  'Boom',
-  'Batty',
-  'Angler',
+  "Pink", 
+  "Tabby", 
+  "Rock", 
+  "Ringtail", 
+  "Phosphor", 
+  "Hunter", 
+  "Honey", 
+  "Flutter", 
+  "Crystal", 
+  "Cotton", 
+  "Boom", 
+  "Batty", 
+  "Angler"
+]
+const resources = [
+  "BuzzWax", 
+  "DeepBrine", 
+  "Hexacomb", 
+  "Indigonium", 
+  "JellyStone", 
+  "LavaDust", 
+  "PepperJam", 
+  "PrimordyOil", 
+  "RadiantOre", 
+  "SilkySand", 
+  "SlimeFossil", 
+  "SpiralSteam", 
+  "StrangeDiamond", 
+  "WildHoney"
 ];
 
 export const pins = {
@@ -60,7 +76,15 @@ export const pins = {
 plorts.forEach((plort) => {
   pins[`${plort} Plort`] = {
     name: `${plort} Plort`,
-    type: 'Plort',
-    icon: `Plort/iconPlort${plort}.png`,
-  };
-});
+    type: "Plorts",
+    icon: `Plort/iconPlort${plort}.png`
+  }
+})
+
+resources.forEach(resource => {
+  pins[`${resource}`] = {
+    name: `${resource}`,
+    type: "Resources",
+    icon: `.Resources/iconCraft${resource}.png`
+  }
+})
