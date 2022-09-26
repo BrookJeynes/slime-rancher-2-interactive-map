@@ -30,7 +30,8 @@ import 'leaflet/dist/leaflet.css';
 
 export default function Container() {
   const [selectedIcon, setSelectedIcon] = useState('')
-  const [userMarkers, setUserMarkers] = useState(JSON.parse(localStorage.getItem('pins')));
+  const [userMarkers, setUserMarkers] = useState(
+    JSON.parse(localStorage.getItem('pins')) || []);
   const [showPins, setShowPins] = useState(true);
 
   const userMarkerList = userMarkers.map((marker) => {
