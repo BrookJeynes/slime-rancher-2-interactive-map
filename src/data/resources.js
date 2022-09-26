@@ -1,17 +1,32 @@
 const PrimordyOil = {
-  name: "PrimordyOil",
+  name: "Primordy Oil",
   image: "Resources/iconCraftPrimordyOil.png",
-}
+};
+
+const RadiantOre = {
+  name: "Radiant Ore",
+  image: "Resources/iconCraftRadiantOre.png"
+};
 
 const LavaDust = {
-  name: "LavaDust",
+  name: "Lava Dust",
   image: "Resources/iconCraftLavaDust.png"
-}
+};
 
 const SilkySand = {
-  name: "SilkySand",
+  name: "Silky Sand",
   image: "Resources/iconCraftSilkySand.png"
-}
+};
+
+const JellyStone = {
+  name: "Jelly Stone",
+  image: "Resources/iconCraftJellyStone.png"
+};
+
+const DeepBrine = {
+  name: "Deep Brine",
+  image: "Resources/iconCraftDeepBrine.png"
+}; 
 
 export const resources = {
   "resource_location_1": {
@@ -151,5 +166,134 @@ export const resources = {
   "resource_location_34": {
     ...SilkySand,
     position: [79.25, 73.82]
+  },
+
+  "resource_location_35": {
+    ...JellyStone,
+    position: [78.63, 162.09]
+  },
+  "resource_location_36": {
+    ...JellyStone,
+    position: [75.3, 164.55]
+  },
+  "resource_location_36": {
+    ...JellyStone,
+    position: [72.76, 125.59]
+  },
+  "resource_location_37": {
+    ...JellyStone,
+    position: [73.86, 118.82]
+  },
+  "resource_location_38": {
+    ...JellyStone,
+    position: [75.99, 122.69]
+  },
+  "resource_location_39": {
+    ...JellyStone,
+    position: [76.37, 118.32]
+  },
+  "resource_location_40": {
+    ...JellyStone,
+    position: [72.57, 111.7]
+  },
+  "resource_location_41": {
+    ...JellyStone,
+    position: [73.18, 110.12]
+  },
+  "resource_location_42": {
+    ...JellyStone,
+    position: [74.93, 112.06]
+  },
+  "resource_location_43": {
+    ...JellyStone,
+    position: [75.72, 114.19]
+  },
+  "resource_location_44": {
+    ...JellyStone,
+    position: [75.53, 110.39]
+  },
+  "resource_location_45": {
+    ...JellyStone,
+    position: [75.29, 164.42]
+  },
+
+  // Deep Brine
+  "resource_location_46": {
+    ...DeepBrine,
+    position: [77.54, 159.78]
+  },
+  "resource_location_47": {
+    ...DeepBrine,
+    position: [78.46, 141.89]
+  },
+  "resource_location_48": {
+    ...DeepBrine,
+    position: [73.65, 132.05]
+  },
+  "resource_location_49": {
+    ...DeepBrine,
+    position: [76.41, 127.13]
+  },
+  "resource_location_50": {
+    ...DeepBrine,
+    position: [75.78, 129.72]
+  },
+  "resource_location_51": {
+    ...DeepBrine,
+    position: [76.62, 121.02]
+  },
+  "resource_location_52": {
+    ...DeepBrine,
+    position: [75.46, 119.04]
+  },
+  "resource_location_53": {
+    ...DeepBrine,
+    position: [72.52, 114.91]
+  },
+  "resource_location_54": {
+    ...DeepBrine,
+    position: [70.77, 103.53]
+  },
+  "resource_location_55": {
+    ...DeepBrine,
+    position: [76.67, 109.95]
+  },
+  "resource_location_56": {
+    ...DeepBrine,
+    position: [76.26, 112.1]
+  },
+
+  // Radiant Ore
+  "resource_location_57": {
+    ...RadiantOre,
+    position: [78.35, 57.34]
+  },
+  "resource_location_58": {
+    ...RadiantOre,
+    position: [78.42, 61.17]
+  },
+  "resource_location_59": {
+    ...RadiantOre,
+    position: [77.75, 61.08]
+  },
+  "resource_location_60": {
+    ...RadiantOre,
+    position: [81.41, 55.19]
+  },
+  "resource_location_61": {
+    ...RadiantOre,
+    position: [54.74, 123.22]
+  },
+  "resource_location_62": {
+    ...RadiantOre,
+    position: [51.83, 106.91]
+  },
+  "resource_location_63": {
+    ...RadiantOre,
+    position: [51.89, 102.65]
+  },
+  "resource_location_64": {
+    ...RadiantOre,
+    position: [39.7, 123.35]
   },
 }
