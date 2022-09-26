@@ -85,6 +85,6 @@ resources.forEach(resource => {
   pins[`${resource}`] = {
     name: `${resource}`,
     type: "Resources",
-    icon: `.Resources/iconCraft${resource}.png`
+    icon: `Resources/iconCraft${resource}.png`
   }
 })

@@ -63,7 +63,7 @@ export const lockedDoors = {
     name: "Tabby Door (Underground)",
     amount: 1,
     position: [74.04, 128.45],
-    image: "/Plort/iconPlortTabby.png",
+    image: "Plort/iconPlortTabby.png",
   },
   "locked_12": {
     name: "Boom Door",
@@ -75,7 +75,7 @@ export const lockedDoors = {
     name: "Batty Door",
     amount: 1,
     position: [77.23, 84.5],
-    image: "/Plort/iconPlortBatty.png",
+    image: "Plort/iconPlortBatty.png",
   },
   "locked_15": {
     name: "Pink Door",

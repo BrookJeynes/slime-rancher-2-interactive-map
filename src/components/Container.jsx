@@ -8,12 +8,22 @@ import {
   LayerGroup,
 } from 'react-leaflet'
 import L from 'leaflet';
+
 import PinSelector from './PinSelector';
 import Markers from './Markers';
 import SaveButton from './SaveButton';
 import PinButton from './PinButton';
 import Map from '../assets/map.png';
-import { gordos, mapNodes, treasurePods, researchDrones, lockedDoors } from '../data/index';
+
+import { 
+  gordos, 
+  mapNodes,
+  treasurePods, 
+  researchDrones, 
+  lockedDoors,
+  resources,
+} from "../data/index";
+
 import 'leaflet/dist/leaflet.css';
 
 const iconTemplate = {
@@ -82,7 +92,7 @@ const lockedDoorList = Object.keys(lockedDoors).map(key => {
   const listKey = lockedDoor.position.join('');
   const icon = new L.icon({
     ...iconTemplate,
-    iconUrl: require(`../assets/icons//${lockedDoor.image}`),
+    iconUrl: require(`../assets/icons/${lockedDoor.image}`),
   });
 
   return (
@@ -106,6 +116,23 @@ const droneList = Object.keys(researchDrones).map(key => {
     <Marker key={listKey} position={researchDrone.position} icon={icon}>
       <Popup>
         {researchDrone.name}
+      </Popup>
+    </Marker>
+  );
+});
+
+const resourcesList = Object.keys(resources).map(key => {
+  const resource = resources[key];
+  const listKey = resource.position.join('');
+  const icon = new L.icon({
+    ...iconTemplate,
+    iconUrl: require(`../assets/icons/${resource.image}`),
+  });
+
+  return (
+    <Marker key={listKey} position={resource.position} icon={icon}>
+      <Popup>
+        {resource.name}
       </Popup>
     </Marker>
   );
@@ -202,6 +229,11 @@ export default function Container() {
           <LayersControl.Overlay checked name="Research Drones">
             <LayerGroup>
               {droneList}
+            </LayerGroup>
+          </LayersControl.Overlay>
+          <LayersControl.Overlay checked name="Resources">
+            <LayerGroup>
+              {resourcesList}
             </LayerGroup>
           </LayersControl.Overlay>
         </LayersControl>

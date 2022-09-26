@@ -1,16 +1,16 @@
 const PrimordyOil = {
   name: "PrimordyOil",
-  image: "./assets/icons/Resources/iconCraftPrimordyOil.png",
+  image: "Resources/iconCraftPrimordyOil.png",
 }
 
 const LavaDust = {
   name: "LavaDust",
-  image: "./assets/icons/Resources/iconCraftLavaDust.png"
+  image: "Resources/iconCraftLavaDust.png"
 }
 
 const SilkySand = {
   name: "SilkySand",
-  image: "./assets/icons/Resources/iconCraftSilkySand.png"
+  image: "Resources/iconCraftSilkySand.png"
 }
 
 export const resources = {

@@ -44,9 +44,9 @@ export default function PinSelector(props) {
 
   const types = [
     'Food',
-    'Plort',
+    'Plorts',
     'Utility',
-    'Resource',
+    'Resources',
   ];
 
   const typeList = types.map((type) => <option key={type} value={type}>{type}</option>);
