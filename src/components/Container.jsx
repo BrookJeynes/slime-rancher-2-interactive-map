@@ -15,132 +15,22 @@ import SaveButton from './SaveButton';
 import PinButton from './PinButton';
 import Map from '../assets/map.png';
 
-import { 
-  gordos, 
-  mapNodes,
-  treasurePods, 
-  researchDrones, 
-  lockedDoors,
-  resources,
-} from "../data/index";
+import {
+  gordoList,
+  zeeRewardList,
+  droneList,
+  resourcesList,
+  lockedDoorList,
+  mapNodeList,
+} from "./Pins/index";
+
+import { iconTemplate } from "../entities/Icon";
 
 import 'leaflet/dist/leaflet.css';
 
-const iconTemplate = {
-  iconUrl: '',
-  iconAnchor: [10, 20],
-  popupAnchor: [5, -15],
-  shadowUrl: null,
-  shadowSize: null,
-  shadowAnchor: null,
-  iconSize: [32, 32],
-};
-
-const gordoList = Object.keys(gordos).map(key => {
-  const gordo = gordos[key];
-  const listKey = gordo.name.toLowerCase().replace(' ', '');
-  const icon = new L.icon({
-    ...iconTemplate,
-    iconUrl: require(`../assets/icons/Gordo/${gordo.image}`),
-  });
-
-  return (
-    <Marker key={listKey} position={gordo.position} icon={icon}>
-      <Popup>
-        {gordo.name} - {gordo.food}
-      </Popup>
-    </Marker>
-  );
-});
-
-const mapNodeList = Object.keys(mapNodes).map(key => {
-  const mapNode = mapNodes[key];
-  const listKey = mapNode.position.join('');
-  const icon = new L.icon({
-    ...iconTemplate,
-    iconUrl: require('../assets/icons/iconMapNode.png'),
-  });
-
-  return (
-    <Marker key={listKey} position={mapNode.position} icon={icon}>
-      <Popup>
-        {mapNode.name}
-      </Popup>
-    </Marker>
-  );
-});
-
-const zeeRewardList = Object.keys(treasurePods).map(key => {
-  const treasurePod = treasurePods[key];
-  const listKey = treasurePod.position.join('');
-  const icon = new L.icon({
-    ...iconTemplate,
-    iconUrl: require('../assets/icons/iconTreasurePod.png'),
-  });
-
-  return (
-    <Marker key={listKey} position={treasurePod.position} icon={icon}>
-      <Popup>
-        {treasurePod.name} - {treasurePod.contents}
-      </Popup>
-    </Marker>
-  );
-});
-
-const lockedDoorList = Object.keys(lockedDoors).map(key => {
-  const lockedDoor = lockedDoors[key];
-  const listKey = lockedDoor.position.join('');
-  const icon = new L.icon({
-    ...iconTemplate,
-    iconUrl: require(`../assets/icons/${lockedDoor.image}`),
-  });
-
-  return (
-    <Marker key={listKey} position={lockedDoor.position} icon={icon}>
-      <Popup>
-        {lockedDoor.name} - x{lockedDoor.amount} plort{lockedDoor.amount === 1 ? '' : 's'}
-      </Popup>
-    </Marker>
-  );
-});
-
-const droneList = Object.keys(researchDrones).map(key => {
-  const researchDrone = researchDrones[key];
-  const listKey = researchDrone.position.join('');
-  const icon = new L.icon({
-    ...iconTemplate,
-    iconUrl: require('../assets/icons/researchDroneFaceIcon.png'),
-  });
-
-  return (
-    <Marker key={listKey} position={researchDrone.position} icon={icon}>
-      <Popup>
-        {researchDrone.name}
-      </Popup>
-    </Marker>
-  );
-});
-
-const resourcesList = Object.keys(resources).map(key => {
-  const resource = resources[key];
-  const listKey = resource.position.join('');
-  const icon = new L.icon({
-    ...iconTemplate,
-    iconUrl: require(`../assets/icons/${resource.image}`),
-  });
-
-  return (
-    <Marker key={listKey} position={resource.position} icon={icon}>
-      <Popup>
-        {resource.name}
-      </Popup>
-    </Marker>
-  );
-});
-
 export default function Container() {
   const [selectedIcon, setSelectedIcon] = useState('')
-  const [userMarkers, setUserMarkers] = useState([]);
+  const [userMarkers, setUserMarkers] = useState(JSON.parse(localStorage.getItem('pins')));
   const [showPins, setShowPins] = useState(true);
 
   const userMarkerList = userMarkers.map((marker) => {
@@ -163,14 +53,6 @@ export default function Container() {
       </Marker>
     );
   });
-
-  useEffect(() => {
-    const userPins = JSON.parse(localStorage.getItem('pins'));
-
-    if (userPins) {
-      setUserMarkers(userPins);
-    }
-  }, []);
 
   return (
     <div className="flex flex-row">
