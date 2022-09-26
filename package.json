@@ -1,5 +1,6 @@
 {
   "name": "sr2-interactive-map",
+  "homepage": "https://brookjeynes.github.io/slime-rancher-2-interactive-map",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
