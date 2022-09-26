@@ -14,7 +14,15 @@ import {
 import L from 'leaflet';
 
 // Data
-import { gordos, mapNodes, pins, treasurePods, researchDrones, lockedDoors } from "./data/index";
+import { 
+  gordos, 
+  mapNodes,
+  pins, 
+  treasurePods, 
+  researchDrones, 
+  lockedDoors,
+  resources,
+} from "./data/index";
 
 import Markers from "./components/Markers";
 import Copyright from "./components/Copyright";
@@ -45,7 +53,7 @@ const PlortsSelect = (props) => {
     <div className="flex flex-col items-start my-1" onClick={() => setOpen(!open)}>
       <span>Icons:</span>
       <div className="flex flex-col">
-        { Object.keys(pins).map(key => pins[key].type == type && <Pin pin={pins[key]} setSelectedIcon={setSelectedIcon} />) }
+        { Object.keys(pins).map((key, index) => pins[key].type == type && <Pin key={index} pin={pins[key]} setSelectedIcon={setSelectedIcon} />) }
       </div>
     </div>
   );
@@ -57,9 +65,9 @@ const PinSelector = (props) => {
 
   const types = [
     "Food",
-    "Plort",
-    "Utility",
-    "Resources",
+    "Plorts", 
+    "Utility", 
+    "Resources", 
   ]
 
   return (
@@ -70,11 +78,11 @@ const PinSelector = (props) => {
       <div className="flex flex-col my-3">
         Category:
         <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
-          { types.map(type => <option value={type}>{type}</option>)}
+          { types.map((type, key) => <option key={key} value={type}>{type}</option>)}
         </select>
       </div>
       <div className="flex">
-        { types.map(type => selectedType == type && <PlortsSelect type={type} setSelectedIcon={setSelectedIcon} />) }
+        { types.map((type, key) => selectedType == type && <PlortsSelect key={key} type={type} setSelectedIcon={setSelectedIcon} />) }
       </div>
     </div>
   )
@@ -246,6 +254,26 @@ const App = () => {
                     <Marker position={researchDrone.position} icon={icon}>
                       <Popup>
                         {researchDrone.name}
+                      </Popup>
+                    </Marker>
+                  )
+                })}
+              </LayerGroup>
+            </LayersControl.Overlay>
+            <LayersControl.Overlay name="Resource Locations">
+              <LayerGroup>
+                { Object.keys(resources).map(key => {
+                  const resource = resources[key];
+
+                  const icon = new L.icon({
+                    ...iconTemplate,
+                    iconUrl: require(`${resource.image}`), 
+                  })
+
+                  return (
+                    <Marker position={resource.position} icon={icon}>
+                      <Popup>
+                        {resource.name}
                       </Popup>
                     </Marker>
                   )

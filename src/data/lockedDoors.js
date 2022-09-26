@@ -77,4 +77,10 @@ export const lockedDoors = {
     position: [77.23, 84.5],
     image: "./assets/icons/Plort/iconPlortBatty.png",
   },
+  "locked_15": {
+    name: "Pink Door",
+    amount: 1,
+    position: [53.54, 112.36],
+    image: "./assets/icons/Plort/iconPlortPink.png",
+  },
 }

@@ -1,4 +1,6 @@
 const plorts = ["Pink", "Tabby", "Rock", "Ringtail", "Phosphor", "Hunter", "Honey", "Flutter", "Crystal", "Cotton", "Boom", "Batty", "Angler"]
+const resources = ["BuzzWax", "DeepBrine", "Hexacomb", "Indigonium", "JellyStone", "LavaDust", 
+  "PepperJam", "PrimordyOil", "RadiantOre", "SilkySand", "SlimeFossil", "SpiralSteam", "StrangeDiamond", "WildHoney"];
 
 export const pins = {
   "Veggie": {
@@ -47,7 +49,15 @@ export const pins = {
 plorts.forEach(plort => {
   pins[`${plort} Plort`] = {
     name: `${plort} Plort`,
-    type: "Plort",
+    type: "Plorts",
     icon: `./assets/icons/Plort/iconPlort${plort}.png`
+  }
+})
+
+resources.forEach(resource => {
+  pins[`${resource}`] = {
+    name: `${resource}`,
+    type: "Resources",
+    icon: `./assets/icons/Resources/iconCraft${resource}.png`
   }
 })
