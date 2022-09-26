@@ -24,10 +24,10 @@ export const lockedDoors = {
     image: "./assets/icons/Plort/iconPlortAngler.png",
   },
   "locked_5": {
-    name: "Unknown Door",
-    amount: "?",
+    name: "Flutter Door",
+    amount: 1,
     position: [57.17, 125.04],
-    image: "./assets/icons/lockedIcon.png",
+    image: "./assets/icons/Plort/iconPlortFlutter.png",
   },
   "locked_6": {
     name: "Phosphor Door",
@@ -42,10 +42,10 @@ export const lockedDoors = {
     image: "./assets/icons/Plort/iconPlortPhosphor.png",
   },
   "locked_8": {
-    name: "Boom Door",
+    name: "Hunter Door",
     amount: 3,
     position: [50.27, 103.62],
-    image: "./assets/icons/Plort/iconPlortBoom.png",
+    image: "./assets/icons/Plort/iconPlortHunter.png",
   },
   "locked_9": {
     name: "Rock Door",
@@ -58,5 +58,23 @@ export const lockedDoors = {
     amount: 1,
     position: [47.7, 103.9],
     image: "./assets/icons/Plort/iconPlortHunter.png",
+  },
+  "locked_11": {
+    name: "Tabby Door",
+    amount: 1,
+    position: [74.04, 128.45],
+    image: "./assets/icons/Plort/iconPlortTabby.png",
+  },
+  "locked_12": {
+    name: "Boom Door",
+    amount: 3,
+    position: [79.85, 72.04],
+    image: "./assets/icons/Plort/iconPlortBoom.png",
+  },
+  "locked_13": {
+    name: "Batty Door",
+    amount: 1,
+    position: [77.23, 84.5],
+    image: "./assets/icons/Plort/iconPlortBatty.png",
   },
 }
