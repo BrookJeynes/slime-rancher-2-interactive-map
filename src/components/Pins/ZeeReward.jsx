@@ -30,7 +30,7 @@ const ZeeReward = (props) => {
       <Popup>
         <div className="flex flex-col">
           <div className="flex justify-between items-center">
-            <div className="mt-1 flex items-center">
+            <div className="my-1 flex items-center">
               <input type="checkbox" checked={checked} onChange={() => handleChecked(checked, setChecked, key)}  />
               <span className="ml-1 font-medium">{treasurePod.name}</span>
             </div>
@@ -39,9 +39,7 @@ const ZeeReward = (props) => {
           <hr />
           <span className="mt-1"><span className="font-medium">Contents:</span> {treasurePod.contents}</span>
           <span><span className="font-medium">Description:</span> {treasurePod.description}</span>
-          <span className="mb-1"><span className="font-medium">Location:</span> <a href={treasurePod.embedd}>Video showcase</a> by TrophyTom</span>
-          <hr />
-          
+          <span className="mb-1"><span className="font-medium">Location:</span> <a href={treasurePod.embedd} target="_blank" rel="noreferrer noopener">Video showcase</a> by TrophyTom</span>
         </div>
       </Popup>
     </Marker>

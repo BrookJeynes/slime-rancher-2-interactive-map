@@ -17,7 +17,7 @@ export const treasurePods = {
   "treasure_3": {
     name: "Treasure Pod 3",
     contents: "Gold Petal Flowers",
-    description: "Jetpack into the cave, go through to the end, pod is on a ledge to the left.",
+    description: "Jetpack into the cave, go through to the end, treasure pod is on a ledge to the left.",
     embedd: "https://youtu.be/2pKPJgag8QA?t=67",
     required: "Jetpack",
     position: [78.35, 119.6]
@@ -55,7 +55,7 @@ export const treasurePods = {
   "treasure_8": {
     name: "Treasure Pod 8",
     contents: "Rock Fragments",
-    description: "Jetpack over to the external islands. The pod is behind the rock pillar.",
+    description: "Jetpack over to the external islands. The treasure pod is behind the rock pillar.",
     embedd: "https://youtu.be/2pKPJgag8QA?t=288",
     required: "Jetpack",
     position: [69.7, 128.5]
@@ -108,122 +108,185 @@ export const treasurePods = {
   "treasure_15": {
     name: "Treasure Pod 1",
     contents: "Storage Cell",
+    description: "Shoot a Barry plort at the statue to open the door.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=7",
     position: [77, 84.5]
   },
   "treasure_16": {
     name: "Treasure Pod 2",
     contents: "Azure Glow Shrooms",
+    description: "Shoot 3 Boom plorts at the statues to open the door.",
+    required: "Jetpack",
+
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=40",
     position: [78.6, 75.5]
   },
   "treasure_17": {
     name: "Treasure Pod 3",
     contents: "Jetpack Drive",
+    description: "Burst the Gordo first.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=122",
     position: [79.35, 69.8]
   },
   "treasure_18": {
     name: "Treasure Pod 4",
     contents: "Cinder Spike Blossoms",
-    position: [81.3, 70]
+    description: "On a small ledge off thd cliff-side.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=161",
+    position: [81.35, 70.4]
   },
   "treasure_19": {
     name: "Treasure Pod 5",
     contents: "Sunfire Daisies",
+    description: "N/A",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=182",
     position: [81.25, 58.5]
   },
   "treasure_20": {
     name: "Treasure Pod 6",
     contents: "Heart Cell",
+    description: "On a ledge off the side of the island, hidden inside a small hole in the wall.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=220",
     position: [79.75, 54.4]
   },
   "treasure_21": {
     name: "Treasure Pod 7",
     contents: "Blue Warp Depot",
+    description: "Follow the path down the side of the island, the treasure pod will be in a small chamber.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=247",
     position: [82.3, 52.3]
   },
   "treasure_22": {
     name: "Treasure Pod 8",
     contents: "Amber Cypress",
+    description: "N/A",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=297",
     position: [78.72, 56.78]
   },
   "treasure_23": {
     name: "Treasure Pod 9",
     contents: "Happy Statue",
+    description: "Reached by jumping onto a small ledge off the island and flying towards the small cave.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=317",
     position: [80.1, 56.4]
   },
   "treasure_24": {
     name: "Treasure Pod 10",
     contents: "Amber Cypress Cluster",
+    description: "N/A",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=345",
     position: [78, 56.96]
   },
   "treasure_25": {
     name: "Treasure Pod 11",
     contents: "Dash Pad",
-    position: [77.42, 63.63]
+    description: "Inside one of the stone pillars.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=386",
+    position: [77.45, 63.63]
   },
   "treasure_26": {
     name: "Treasure Pod 12",
     contents: "Meat Slime Bait",
-    position: [77.03, 70.4]
+    description: "Inside one of the stone pillars.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=409",
+    position: [77.08, 70.8]
   },
   "treasure_27": {
     name: "Treasure Pod 13",
     contents: "Medium Pink Coral Columns",
-    position: [76.05, 61.7]
+    description: "N/A",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=443",
+    position: [76.1, 62]
   },
   "treasure_28": {
     name: "Treasure Pod 14",
     contents: "Gnarled Ashwood",
-    position: [75.36, 57.8]
+    description: "Hidden in a hole in the island wall. Jump onto the small platform beside the island to get there.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=470",
+    position: [75.4, 58]
   },
   "treasure_29": {
     name: "Treasure Pod 15",
     contents: "VAC Tank",
-    position: [76.34, 56.4]
+    description: "Go through the waterfall and follow the cave to it's exit near the top. Outside is a small pond with the treasure pod inside.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=493",
+    position: [76.36, 56.85]
   },
   "treasure_30": {
     name: "Treasure Pod 16",
     contents: "Stalagmite",
+    description: "In a large cave accessed by a hole in the wall. Follow the path and the treasure pod will be on a small platform off the side of a stone pillar.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=543",
     position: [75.4, 49.8]
   },
   "treasure_31": {
     name: "Treasure Pod 17",
     contents: "Grey Warp Depot",
+    description: "In the top lava pool platform.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=578",
     position: [77.95, 47.7]
   },
   "treasure_32": {
     name: "Treasure Pod 18",
     contents: "Fruit Slime Bait",
-    position: [78.41, 39.7]
+    description: "In a small cave accessed by a hole in the wall covered with vines.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=624",
+    position: [78.41, 40.6]
   },
   "treasure_33": {
     name: "Treasure Pod 19",
     contents: "Medium Palm",
+    description: "Sitting on a ledge off the side of a stone pillar.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=654",
     position: [77.51, 36]
   },
   "treasure_34": {
     name: "Treasure Pod 20",
     contents: "Ember Valley Portal",
+    description: "Burst the Gordo first.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=685",
     position: [77.74, 26.6]
   },
   "treasure_35": {
     name: "Treasure Pod 21",
     contents: "Ember Valley Portal",
+    description: "Burst the Gordo first.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=685",
     position: [77.8, 26.4]
   },
   "treasure_36": {
     name: "Treasure Pod 22",
     contents: "Tall Magma Clump",
-    position: [75.76, 38]
+    description: "Sitting on a ledge off the side of a stone pillar.",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=733",
+    position: [76.05, 38]
   },
   "treasure_37": {
     name: "Treasure Pod 23",
     contents: "Magma Pool",
-    position: [74.24, 44.6]
+    description: "On a small ledge found at the bottom near lava river next to the lavafall.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=757",
+    position: [74.95, 42]
   },
   "treasure_38": {
     name: "Treasure Pod 24",
     contents: "Medium Red Ashwood",
-    position: [74.95, 41.1]
+    description: "N/A",
+    embedded: "https://youtu.be/7mpFRKyEcxs?t=781",
+    position: [74.22, 44.2]
   },
 
   // Starlight Strand
