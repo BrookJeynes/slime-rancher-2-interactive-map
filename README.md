@@ -30,7 +30,7 @@ All assets used within this project are owned solely by Monomi Park. This projec
 ## Current features
 - See locations for:
   - Gordo slimes
-  - Bee drones
+  - Bee drones (and the associated logs)
   - Map nodes
   - 7-Zee treasure pods
   - Locked doors

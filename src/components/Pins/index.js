@@ -9,7 +9,7 @@ import {
 
 import Gordo from "./Gordo";
 import MapNode from "./MapNode";
-import Drone from "./Done";
+import Drone from "./Drone";
 import LockedDoor from "./LockedDoor";
 import Resource from "./Resource";
 import ZeeReward from "./ZeeReward";
