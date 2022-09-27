@@ -33,14 +33,15 @@ All assets used within this project are owned solely by Monomi Park. This projec
   - Bee drones
   - Map nodes
   - 7-Zee treasure pods
+  - Locked doors
 - Place custom icons.
 - Save custom icons to your browser cache.
 
 ## Planned features
 - Locations for:
-  - Locked doors (in progress)
   - Resource locations
   - Slime type locations
+  - Add drone logs notebook
 
 ## Contribution
 Feel free to create a pull request and add some new features or clean up the code. Any help is appreciated. 😊
