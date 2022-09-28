@@ -6,7 +6,7 @@ import {
 } from 'react-leaflet'
 import L from 'leaflet';
 
-import { iconTemplate } from "../../entities/Icon"; 
+import { iconTemplate, iconOpacity } from "../../entities/Icon"; 
 import { handleChecked } from "../../utilities/handleChecked";
 
 const Gordo = (props) => {
@@ -22,7 +22,7 @@ const Gordo = (props) => {
   const icon = new L.icon({
     ...iconTemplate,
     iconUrl: require(`../../assets/icons/Gordo/${gordo.image}`),
-    className: `${checked && "opacity-75"}`,
+    className: `${checked && iconOpacity}`,
   });
 
   return (

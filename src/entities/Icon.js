@@ -1,3 +1,5 @@
+export const iconOpacity = "opacity-50";
+
 export const iconTemplate = {
   iconUrl: '',
   iconAnchor: [10, 20],
