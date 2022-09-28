@@ -11,7 +11,43 @@ const plorts = [
   "Cotton", 
   "Boom", 
   "Batty", 
-  "Angler"
+  "Angler",
+  "Dervish",
+  "Fire",
+  "Gold",
+  "Mosaic",
+  "Puddle",
+  "Quantum",
+  "Rad",
+  "Saber",
+  "Tangle",
+]
+const slimes = [
+  "Pink", 
+  "Tabby", 
+  "Rock", 
+  "Ringtail", 
+  "Phosphor", 
+  "Hunter", 
+  "Honey", 
+  "Flutter", 
+  "Crystal", 
+  "Cotton", 
+  "Boom", 
+  "Batty", 
+  "Angler",
+  "Dervish",
+  "Fire",
+  "Gold",
+  "Mosaic",
+  "Puddle",
+  "Quantum",
+  "Rad",
+  "Saber",
+  "Tangle",
+  "Lucky",
+  "Tarr",
+  "Glitch"
 ]
 const resources = [
   "BuzzWax", 
@@ -78,6 +114,14 @@ plorts.forEach((plort) => {
     name: `${plort} Plort`,
     type: "Plorts",
     icon: `Plort/iconPlort${plort}.png`
+  }
+})
+
+slimes.forEach((slime) => {
+  pins[`${slime}`] = {
+    name: `${slime}`,
+    type: "Slimes",
+    icon: `Slimes/iconSlime${slime}.png`
   }
 })
 

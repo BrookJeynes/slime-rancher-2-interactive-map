@@ -308,17 +308,17 @@ export const treasurePods = {
   "treasure_42": {
     name: "Treasure Pod 4",
     contents: "Coastal Rock Pillar",
-    position: [65.01, 108.8]
+    position: [65.13, 107.6]
   },
   "treasure_43": {
     name: "Treasure Pod 5",
     contents: "Tank Liner",
-    position: [61.2, 123.09]
+    position: [60.35, 119.6]
   },
   "treasure_44": {
     name: "Treasure Pod 6",
     contents: "Veggie Slime Bait",
-    position: [60.73, 119.79]
+    position: [61.3, 120.5]
   },
   "treasure_45": {
     name: "Treasure Pod 7",

@@ -47,6 +47,7 @@ export default function PinSelector(props) {
     'Plorts',
     'Utility',
     'Resources',
+    'Slimes',
   ];
 
   const typeList = types.map((type) => <option key={type} value={type}>{type}</option>);
@@ -69,7 +70,7 @@ export default function PinSelector(props) {
       <div className="flex flex-col justify-between p-3 w-full 50">
         <span className="text-xl">User pins</span>
       </div>
-      <div className="flex flex-col my-3 p-3 w-full">
+      <div className="flex flex-col my-1 p-3 w-full">
         Category
         <select value={selectedType} onChange={handleChange}>
           {typeList}
