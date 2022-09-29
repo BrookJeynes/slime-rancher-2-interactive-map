@@ -108,7 +108,7 @@ export const treasurePods = {
   "treasure_15": {
     name: "Treasure Pod 1",
     contents: "Storage Cell",
-    description: "Shoot a Barry plort at the statue to open the door.",
+    description: "Shoot a Batty plort at the statue to open the door.",
     embedded: "https://youtu.be/7mpFRKyEcxs?t=7",
     position: [77, 84.5]
   },
