@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+
 import {
   MapContainer,
   ImageOverlay,
@@ -18,21 +19,21 @@ import Map from '../assets/map.png';
 import {
   gordoList,
   zeeRewardList,
-  droneList,
+  DroneList,
   resourcesList,
   lockedDoorList,
   mapNodeList,
-} from "./Pins/index";
+} from './Pins/index';
 
-import { iconTemplate } from "../entities/Icon";
+import { iconTemplate } from '../entities/Icon';
 
 import 'leaflet/dist/leaflet.css';
 
 export default function Container() {
   const [selectedIcon, setSelectedIcon] = useState('')
-  const [userMarkers, setUserMarkers] = useState(
-    JSON.parse(localStorage.getItem('pins')) || []);
+  const [userMarkers, setUserMarkers] = useState(JSON.parse(localStorage.getItem('pins')) || []);
   const [showPins, setShowPins] = useState(true);
+  const [showNote, setShowNote] = useState(false);
 
   const userMarkerList = userMarkers.map((marker) => {
     const listKey = marker.position.join('');
@@ -43,7 +44,7 @@ export default function Container() {
 
     const handleClick = () => {
       setSelectedIcon('');
-      setUserMarkers(userMarkers.filter((currentMarker) => { return !(currentMarker.position === marker.position) } ))
+      setUserMarkers(userMarkers.filter((currentMarker) => !(currentMarker.position === marker.position)));
     }
 
     return (
@@ -57,6 +58,9 @@ export default function Container() {
 
   return (
     <div className="flex flex-row">
+      <div className="note-container bg-slate-400/50" style={{ display: showNote ? 'flex' : 'none' }}>
+        {showNote}
+      </div>
       <PinSelector
         showPins={showPins}
         selectedIcon={selectedIcon}
@@ -111,7 +115,7 @@ export default function Container() {
           </LayersControl.Overlay>
           <LayersControl.Overlay checked name="Research Drones">
             <LayerGroup>
-              {droneList}
+              <DroneList setShowNote={setShowNote} />
             </LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay checked name="Resources">

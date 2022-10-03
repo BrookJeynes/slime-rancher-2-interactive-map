@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
   Marker,
@@ -6,8 +6,8 @@ import {
 } from 'react-leaflet'
 import L from 'leaflet';
 
-import { iconTemplate, iconOpacity } from "../../entities/Icon"; 
-import { handleChecked } from "../../utilities/handleChecked";
+import { iconTemplate, iconOpacity } from '../../entities/Icon';
+import { handleChecked } from '../../utilities/handleChecked';
 
 const ZeeReward = (props) => {
   const key = props.key_;
@@ -16,7 +16,7 @@ const ZeeReward = (props) => {
 
   const treasurePod = treasurePods[key];
   const listKey = treasurePod.position.join('');
- 
+
   const [checked, setChecked] = useState(userChecked ? userChecked.some((userKey) => userKey === key) : false);
 
   const icon = new L.icon({

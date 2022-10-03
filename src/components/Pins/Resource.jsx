@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   Marker,
@@ -6,7 +6,7 @@ import {
 } from 'react-leaflet'
 import L from 'leaflet';
 
-import { iconTemplate } from "../../entities/Icon"; 
+import { iconTemplate } from '../../entities/Icon';
 
 const Resource = (props) => {
   const key = props.key_;

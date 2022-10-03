@@ -23,9 +23,31 @@
 }
 
 .note {
-  @apply drop-shadow-lg border-8 bg-stone-900 
-    flex flex-col justify-between mr-10 mb-10 p-7 
-      min-w-1/3 w-min min-h-1/2 h-min pointer-events-auto rounded-[50px];
+  @apply drop-shadow-lg border-8 bg-stone-900
+    flex flex-col justify-between p-7
+      min-w-1/3 min-h-1/2 h-min pointer-events-auto rounded-[50px];
 
-  background-image: url("./assets/scanlines.png");
+  background-image: url('./assets/scanlines.png');
 }
+
+.note-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-close {
+  cursor: pointer;
+}
+
+.log-close:hover {
+  color: #000;
+  background-color: #FFF;
+  border-radius: '4px';
+};
