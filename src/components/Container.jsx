@@ -17,12 +17,13 @@ import PinButton from './PinButton';
 import Map from '../assets/map.png';
 
 import {
-  gordoList,
-  zeeRewardList,
   DroneList,
-  resourcesList,
+  gordoList,
   lockedDoorList,
   mapNodeList,
+  Regions,
+  resourcesList,
+  zeeRewardList,
 } from './Pins/index';
 
 import { iconTemplate } from '../entities/Icon';
@@ -121,6 +122,11 @@ export default function Container() {
           <LayersControl.Overlay checked name="Resources">
             <LayerGroup>
               {resourcesList}
+            </LayerGroup>
+          </LayersControl.Overlay>
+          <LayersControl.Overlay checked name="Regions">
+            <LayerGroup>
+              <Regions />
             </LayerGroup>
           </LayersControl.Overlay>
         </LayersControl>

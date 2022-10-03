@@ -1,16 +1,18 @@
 import {
   gordos,
-  mapNodes,
-  treasurePods,
-  researchDrones,
   lockedDoors,
+  mapNodes,
+  regions,
+  researchDrones,
   resources,
+  treasurePods,
 } from '../../data/index';
 
-import Gordo from './Gordo';
-import MapNode from './MapNode';
 import Drone from './Drone';
+import Gordo from './Gordo';
 import LockedDoor from './LockedDoor';
+import MapNode from './MapNode';
+import Region from './Region';
 import Resource from './Resource';
 import ZeeReward from './ZeeReward';
 
@@ -62,4 +64,26 @@ const mapNodeList = Object.keys(mapNodes).map(key => {
   );
 });
 
-export { gordoList, zeeRewardList, lockedDoorList, DroneList, resourcesList, mapNodeList };
+const Regions = () => {
+  return (
+    Object.keys(regions).map(key => {
+      return (
+        <Region
+          key={key}
+          key_={key}
+          data={regions}
+        />
+      );
+    })
+  );
+};
+
+export {
+  DroneList,
+  gordoList,
+  lockedDoorList,
+  mapNodeList,
+  Regions,
+  resourcesList,
+  zeeRewardList,
+};

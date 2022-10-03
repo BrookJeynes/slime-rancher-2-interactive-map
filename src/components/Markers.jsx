@@ -17,11 +17,11 @@ const Markers = (props) => {
           icon: selectedIcon,
           position: [e.latlng.lat, e.latlng.lng]
         }])
-      } 
-    },            
+      }
+    },
   })
 
-  return null 
+  return null
 }
 
 export default Markers;
