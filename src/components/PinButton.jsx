@@ -1,4 +1,4 @@
-import { BsPinFill, BsPinAngleFill } from "react-icons/bs";
+import { BsPinFill, BsPinAngleFill } from 'react-icons/bs';
 
 const PinButton = (props) => {
   const { showPins, setShowPins } = props;

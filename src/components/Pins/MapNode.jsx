@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
   Marker,
@@ -6,8 +6,8 @@ import {
 } from 'react-leaflet'
 import L from 'leaflet';
 
-import { iconTemplate, iconOpacity } from "../../entities/Icon"; 
-import { handleChecked } from "../../utilities/handleChecked";
+import { iconTemplate, iconOpacity } from '../../entities/Icon';
+import { handleChecked } from '../../utilities/handleChecked';
 
 const MapNode = (props) => {
   const key = props.key_;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const dialogClasses = `w-2/5 justify-center items-center border-8 border-white p-2 rounded-lg text-center copyright`;
+const dialogClasses = `max-w-fit justify-center items-center border-8 border-white p-2 rounded-lg text-center copyright`;
 
 const Copyright = () => {
   const [visible, setVisibility] = useState(true);
