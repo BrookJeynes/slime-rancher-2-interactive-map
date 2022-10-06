@@ -1,25 +1,27 @@
-import {
-  useMapEvents,
-} from 'react-leaflet'
+import { useMapEvents } from 'react-leaflet';
 
 const Markers = (props) => {
   const { selectedIcon, setUserMarkers, userMarkers } = props;
-  const debug = false;
+  // Turn debug on by default when running locally.
+  const debug = process.env.NODE_ENV !== 'production';
 
-  const map = useMapEvents({
+  useMapEvents({
     click(e) {
       if (debug) {
-        console.log(e.latlng.lat, e.latlng.lng)
+        console.log(e.latlng.lat, e.latlng.lng);
       }
 
       if (selectedIcon) {
         setUserMarkers([...userMarkers, {
           icon: selectedIcon,
-          position: [e.latlng.lat, e.latlng.lng]
-        }])
+          position: [
+            e.latlng.lat,
+            e.latlng.lng,
+          ],
+        }]);
       }
     },
-  })
+  });
 
   return null
 }
