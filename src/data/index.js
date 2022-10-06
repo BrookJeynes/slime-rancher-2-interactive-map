@@ -4,7 +4,7 @@ import { mapNodes } from './mapNodes';
 import { pins } from './pins'
 import { regions } from './regions';
 import { researchDrones } from './researchDrones';
-import { resources } from './resources';
+import resources from './resources';
 import { treasurePods } from './treasurePods';
 
 export {
