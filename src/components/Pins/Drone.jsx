@@ -33,9 +33,11 @@ const Drone = (props) => {
     const handleClick = () => {
       setShowNote(false);
       setShowArchived(false);
-    }
+    };
 
     const handleToggle = () => setShowArchived(!showArchived);
+
+    const textArray = !showArchived ? researchDrone.log : researchDrone.archive;
 
     return (
       <div className={`${!showArchived ? "border-[#0ba0fb] text-white" : "border-[#58faa4] text-[#58faa4]"} max-w-fit note`}>
@@ -45,9 +47,7 @@ const Drone = (props) => {
             <AiOutlineClose onClick={handleClick} size={25} className="log-close" />
           </div>
           <div>
-            <pre className="text-lg">
-              { !showArchived ? researchDrone.log : researchDrone.archive }
-            </pre>
+            {textArray.map((text) => <p className="text-lg monospace-font">{text}</p>)}
           </div>
         </div>
         <div className="flex justify-end">
