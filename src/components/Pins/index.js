@@ -6,7 +6,6 @@ import {
   researchDrones,
   resources,
   teleportLines,
-  teleportPads,
   treasurePods,
 } from "../../data/index";
 
@@ -17,7 +16,6 @@ import MapNode from "./MapNode";
 import Region from "./Region";
 import Resource from "./Resource";
 import TeleportLine from "./TeleportLine";
-import TeleportPad from "./TeleportPad";
 import ZeeReward from "./ZeeReward";
 
 const userChecked = JSON.parse(localStorage.getItem("checked"));
@@ -82,10 +80,6 @@ const teleportLineList = Object.keys(teleportLines).map((key) => {
   return <TeleportLine key={key} key_={key} data={teleportLines} />;
 });
 
-const teleportPadList = Object.keys(teleportPads).map((key) => {
-  return <TeleportPad key={key} key_={key} data={teleportPads} />;
-});
-
 export {
   DroneList,
   gordoList,
@@ -94,6 +88,5 @@ export {
   Regions,
   resourcesList,
   teleportLineList,
-  teleportPadList,
   zeeRewardList,
 };

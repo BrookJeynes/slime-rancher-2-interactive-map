@@ -24,7 +24,6 @@ import {
   Regions,
   resourcesList,
   teleportLineList,
-  teleportPadList,
   zeeRewardList,
 } from "./Pins/index";
 
@@ -143,9 +142,6 @@ export default function Container() {
           </LayersControl.Overlay>
           <LayersControl.Overlay checked name="Teleport Lines">
             <LayerGroup>{teleportLineList}</LayerGroup>
-          </LayersControl.Overlay>
-          <LayersControl.Overlay checked name="Teleport Pads">
-            <LayerGroup>{teleportPadList}</LayerGroup>
           </LayersControl.Overlay>
         </LayersControl>
 
