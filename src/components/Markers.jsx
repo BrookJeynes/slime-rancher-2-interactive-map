@@ -3,7 +3,7 @@ import { useMapEvents } from 'react-leaflet';
 const Markers = (props) => {
   const { selectedIcon, setUserMarkers, userMarkers } = props;
   // Turn debug on by default when running locally.
-  const debug = process.env.NODE_ENV !== 'production';
+  const debug = process.env.NODE_ENV === 'production';
 
   useMapEvents({
     click(e) {

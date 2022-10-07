@@ -107,6 +107,11 @@ export const pins = {
     type: 'Utility',
     icon: 'researchDroneFaceIcon.png',
   },
+  "Nectar": {
+    name: "Nectar",
+    type: "Food",
+    icon: "iconCategoryNectar.png"
+  }
 };
 
 plorts.forEach((plort) => {
