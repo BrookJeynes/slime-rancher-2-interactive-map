@@ -6,6 +6,10 @@
   background-image: url('./assets/map_bg.png');
 }
 
+.text-outline {
+  -webkit-text-stroke: 1.5px white;
+}
+
 .map-container {
   height: '100vh';
   width: '100%';

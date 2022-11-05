@@ -15,6 +15,7 @@ import Markers from "./Markers";
 import SaveButton from "./SaveButton";
 import PinButton from "./PinButton";
 import Map from "../assets/map.png";
+import IslandInfo from "./IslandInfo";
 
 import {
   DroneList,
@@ -146,6 +147,8 @@ export default function Container() {
         </LayersControl>
 
         {userMarkerList}
+
+        <IslandInfo />
 
         <ImageOverlay
           url={Map}
