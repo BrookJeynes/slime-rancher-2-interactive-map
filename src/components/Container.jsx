@@ -15,6 +15,7 @@ import Markers from "./Markers";
 import SaveButton from "./SaveButton";
 import PinButton from "./PinButton";
 import Map from "../assets/map.png";
+import IslandInfo from "./IslandInfo";
 
 import {
   DroneList,
@@ -22,7 +23,6 @@ import {
   lockedDoorList,
   mapNodeList,
   Regions,
-  resourcesList,
   teleportLineList,
   zeeRewardList,
 } from "./Pins/index";
@@ -89,6 +89,8 @@ export default function Container() {
         ]}
         style={{ height: "100vh", width: "100%", zIndex: 1 }}
       >
+        <IslandInfo />
+
         <Markers
           selectedIcon={selectedIcon}
           setUserMarkers={setUserMarkers}
@@ -131,9 +133,6 @@ export default function Container() {
             <LayerGroup>
               <DroneList setShowNote={setShowNote} />
             </LayerGroup>
-          </LayersControl.Overlay>
-          <LayersControl.Overlay checked name="Resources">
-            <LayerGroup>{resourcesList}</LayerGroup>
           </LayersControl.Overlay>
           <LayersControl.Overlay checked name="Regions">
             <LayerGroup>
