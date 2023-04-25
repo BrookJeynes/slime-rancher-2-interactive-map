@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/slime-rancher-2-interactive-map/static/css/main.3414286b.css",
-    "main.js": "/slime-rancher-2-interactive-map/static/js/main.f39d169e.js",
+    "main.css": "/slime-rancher-2-interactive-map/static/css/main.788ad427.css",
+    "main.js": "/slime-rancher-2-interactive-map/static/js/main.564d00b6.js",
     "static/js/787.2d1d4b08.chunk.js": "/slime-rancher-2-interactive-map/static/js/787.2d1d4b08.chunk.js",
     "static/media/map.png": "/slime-rancher-2-interactive-map/static/media/map.66b85629948f11832c0f.png",
     "static/media/xMark.png": "/slime-rancher-2-interactive-map/static/media/xMark.cb112871226c80ce7a38.png",
@@ -33,6 +33,7 @@
     "static/media/iconSlimeSaber.png": "/slime-rancher-2-interactive-map/static/media/iconSlimeSaber.7e6b531ec4cdb41f9d69.png",
     "static/media/iconSlimeCotton.png": "/slime-rancher-2-interactive-map/static/media/iconSlimeCotton.e7ad5ad7c363984d7391.png",
     "static/media/iconGordoQuantum.png": "/slime-rancher-2-interactive-map/static/media/iconGordoQuantum.4b623a0508a7e8088315.png",
+    "static/media/iconCraftPerfectSnowflake.png": "/slime-rancher-2-interactive-map/static/media/iconCraftPerfectSnowflake.b1a308a2599fbaeaef03.png",
     "static/media/iconGordoAngler.png": "/slime-rancher-2-interactive-map/static/media/iconGordoAngler.47911e97ed7bdf77cea4.png",
     "static/media/iconSlimeGlitch.png": "/slime-rancher-2-interactive-map/static/media/iconSlimeGlitch.efde05e00b8075b1f129.png",
     "static/media/iconSlimeBoom.png": "/slime-rancher-2-interactive-map/static/media/iconSlimeBoom.ec50189b87c73f0743c1.png",
@@ -77,6 +78,7 @@
     "static/media/iconCraftStrangeDiamond.png": "/slime-rancher-2-interactive-map/static/media/iconCraftStrangeDiamond.2661879ba8279dbfa54a.png",
     "static/media/iconGordoGold.png": "/slime-rancher-2-interactive-map/static/media/iconGordoGold.ce88a817e38324e9bd7e.png",
     "static/media/iconPlortFire.png": "/slime-rancher-2-interactive-map/static/media/iconPlortFire.1815edf195ce88150f7d.png",
+    "static/media/iconCraftSunSap.png": "/slime-rancher-2-interactive-map/static/media/iconCraftSunSap.3fae34e6ed6e605c6065.png",
     "static/media/iconGordoRock.png": "/slime-rancher-2-interactive-map/static/media/iconGordoRock.1afd6276e04843251e50.png",
     "static/media/iconCraftBuzzWax.png": "/slime-rancher-2-interactive-map/static/media/iconCraftBuzzWax.b94fc515d53778424bbc.png",
     "static/media/iconMapNode.png": "/slime-rancher-2-interactive-map/static/media/iconMapNode.91c55f0faccb8a7918d5.png",
@@ -92,17 +94,18 @@
     "static/media/iconPlortPink.png": "/slime-rancher-2-interactive-map/static/media/iconPlortPink.13346d2c652b852ecd2c.png",
     "static/media/iconGordoRingtail.png": "/slime-rancher-2-interactive-map/static/media/iconGordoRingtail.d552e3907868613767d4.png",
     "static/media/iconCraftPepperJam.png": "/slime-rancher-2-interactive-map/static/media/iconCraftPepperJam.dc508e5b48f83f3cb8ed.png",
+    "static/media/iconCraftSnowball.png": "/slime-rancher-2-interactive-map/static/media/iconCraftSnowball.84d06592fc6dc149c109.png",
     "static/media/iconGordoPink.png": "/slime-rancher-2-interactive-map/static/media/iconGordoPink.ff6b67453298d80f452a.png",
     "static/media/researchDroneFaceIconTransparent.png": "/slime-rancher-2-interactive-map/static/media/researchDroneFaceIconTransparent.c595a6258c3aeb611602.png",
     "static/media/researchDroneFaceIcon.png": "/slime-rancher-2-interactive-map/static/media/researchDroneFaceIcon.73db61b548f700846bd6.png",
     "static/media/scanlines.png": "/slime-rancher-2-interactive-map/static/media/scanlines.6d94e4688bbd63bec31d.png",
     "index.html": "/slime-rancher-2-interactive-map/index.html",
-    "main.3414286b.css.map": "/slime-rancher-2-interactive-map/static/css/main.3414286b.css.map",
-    "main.f39d169e.js.map": "/slime-rancher-2-interactive-map/static/js/main.f39d169e.js.map",
+    "main.788ad427.css.map": "/slime-rancher-2-interactive-map/static/css/main.788ad427.css.map",
+    "main.564d00b6.js.map": "/slime-rancher-2-interactive-map/static/js/main.564d00b6.js.map",
     "787.2d1d4b08.chunk.js.map": "/slime-rancher-2-interactive-map/static/js/787.2d1d4b08.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3414286b.css",
-    "static/js/main.f39d169e.js"
+    "static/css/main.788ad427.css",
+    "static/js/main.564d00b6.js"
   ]
 }
