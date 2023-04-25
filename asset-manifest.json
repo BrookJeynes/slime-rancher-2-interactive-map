@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/slime-rancher-2-interactive-map/static/css/main.788ad427.css",
-    "main.js": "/slime-rancher-2-interactive-map/static/js/main.564d00b6.js",
+    "main.js": "/slime-rancher-2-interactive-map/static/js/main.433cfe0e.js",
     "static/js/787.2d1d4b08.chunk.js": "/slime-rancher-2-interactive-map/static/js/787.2d1d4b08.chunk.js",
     "static/media/map.png": "/slime-rancher-2-interactive-map/static/media/map.66b85629948f11832c0f.png",
     "static/media/xMark.png": "/slime-rancher-2-interactive-map/static/media/xMark.cb112871226c80ce7a38.png",
@@ -101,11 +101,11 @@
     "static/media/scanlines.png": "/slime-rancher-2-interactive-map/static/media/scanlines.6d94e4688bbd63bec31d.png",
     "index.html": "/slime-rancher-2-interactive-map/index.html",
     "main.788ad427.css.map": "/slime-rancher-2-interactive-map/static/css/main.788ad427.css.map",
-    "main.564d00b6.js.map": "/slime-rancher-2-interactive-map/static/js/main.564d00b6.js.map",
+    "main.433cfe0e.js.map": "/slime-rancher-2-interactive-map/static/js/main.433cfe0e.js.map",
     "787.2d1d4b08.chunk.js.map": "/slime-rancher-2-interactive-map/static/js/787.2d1d4b08.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.788ad427.css",
-    "static/js/main.564d00b6.js"
+    "static/js/main.433cfe0e.js"
   ]
 }
