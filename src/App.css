@@ -47,6 +47,16 @@
   align-items: center;
 }
 
+.island-info-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .log-close {
   cursor: pointer;
 }
