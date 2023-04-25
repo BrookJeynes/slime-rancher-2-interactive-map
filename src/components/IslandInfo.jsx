@@ -11,13 +11,13 @@ const IslandInfo = () => {
                 require("../assets/icons/Resources/iconCraftRadiantOre.png"),
                 require("../assets/icons/Resources/iconCraftPrimordyOil.png"),
                 require("../assets/icons/Resources/iconCraftLavaDust.png"),
+                require("../assets/icons/Resources/iconCraftBuzzWax.png"),
                 require("../assets/icons/Resources/iconCraftStrangeDiamond.png"),
             ],
             slimes: [
                 require("../assets/icons/Slimes/iconSlimePink.png"),
                 require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeTabby.png"),
-                require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeAngler.png"),
                 require("../assets/icons/Slimes/iconSlimeRock.png"),
                 require("../assets/icons/Slimes/iconSlimeBatty.png"),
@@ -26,6 +26,7 @@ const IslandInfo = () => {
                 require("../assets/icons/Slimes/iconSlimePuddle.png"),
                 require("../assets/icons/Slimes/iconSlimeCrystal.png"),
                 require("../assets/icons/Slimes/iconSlimeFire.png"),
+                require("../assets/icons/Slimes/iconSlimeCotton.png"),
             ],
         },
         "Rainbow Fields": {
@@ -39,7 +40,6 @@ const IslandInfo = () => {
                 require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeCotton.png"),
                 require("../assets/icons/Slimes/iconSlimeTabby.png"),
-                require("../assets/icons/Slimes/iconSlimePhosphor.png"),
             ],
         },
         "Starlight Strand": {
@@ -54,7 +54,6 @@ const IslandInfo = () => {
                 require("../assets/icons/Slimes/iconSlimePink.png"),
                 require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeCotton.png"),
-                require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeAngler.png"),
                 require("../assets/icons/Slimes/iconSlimeRock.png"),
                 require("../assets/icons/Slimes/iconSlimeFlutter.png"),
