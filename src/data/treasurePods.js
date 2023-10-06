@@ -466,4 +466,35 @@ export const treasurePods = {
     contents: "Azure Grass",
     position: [54.92, 98.74]
   },
+  "treasure_70": {
+    name: "Treasure Pod 25",
+    contents: "Mossy Hen Statue",
+    description: "Above the rock arch, and around the back of the outer rock.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/DeT1csKLrck?t=143",
+    position: [58.9, 130.73]
+  },
+  "treasure_71": {
+    name: "Treasure Pod 26",
+    contents: "Golden Flutter Statue",
+    description: "Among the tree roots in a puddle",
+    embedded: "https://youtu.be/DeT1csKLrck?t=183",
+    position: [49.12, 125.3]
+  },
+  "treasure_72": {
+    name: "Treasure Pod 27",
+    contents: "Golden Cotton Statue",
+    description: "Inside the curved ruins, on a recessed shelf facing the sea",
+    required: "Jetpack",
+    embedded: "https://youtu.be/DeT1csKLrck?t=214",
+    position: [47.32, 102.3]
+  },
+  "treasure_73": {
+    name: "Treasure Pod 28",
+    contents: "Sureshot Module",
+    description: "Inside the ruins behind a door unlocked with a Flutter Plort.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/DeT1csKLrck?t=249",
+    position: [39.6, 109.2]
+  },
 }
