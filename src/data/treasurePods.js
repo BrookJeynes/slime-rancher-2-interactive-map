@@ -4,21 +4,21 @@ export const treasurePods = {
     name: "Treasure Pod 1",
     contents: "Tank Liner",
     description: "Burst the Gordo first, then shoot a tabby plort inside the statue.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=7",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=7",
     position: [74.95, 126.3]
   },
   "treasure_2": {
     name: "Treasure Pod 2",
     contents: "Hydro Turret",
     description: "N/A",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=39",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=39",
     position: [77.37, 123]
   },
   "treasure_3": {
     name: "Treasure Pod 3",
     contents: "Gold Petal Flowers",
     description: "Jetpack into the cave, go through to the end, treasure pod is on a ledge to the left.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=67",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=67",
     required: "Jetpack",
     position: [78.35, 119.6]
   },
@@ -26,14 +26,14 @@ export const treasurePods = {
     name: "Treasure Pod 4",
     contents: "Heart Cell",
     description: "Hidden inside a hole in the wall.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=100",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=100",
     position: [76.1, 121.7]
   },
   "treasure_5": {
     name: "Treasure Pod 5",
     contents: "Small Boulder",
     description: "",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=130",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=130",
     required: "Jetpack",
     position: [76.35, 118]
   },
@@ -41,14 +41,14 @@ export const treasurePods = {
     name: "Treasure Pod 6",
     contents: "Large Pink Bonsai",
     description: "N/A",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=169",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=169",
     position: [73.8, 117.1]
   },
   "treasure_7": {
     name: "Treasure Pod 7",
     contents: "#1 Slime Stage",
     description: "Use the trees near the cliff to parkour/jetpack your way up.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=196",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=196",
     required: "Jetpack",
     position: [73.45, 116.9]
   },
@@ -56,7 +56,7 @@ export const treasurePods = {
     name: "Treasure Pod 8",
     contents: "Rock Fragments",
     description: "Jetpack over to the external islands. The treasure pod is behind the rock pillar.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=288",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=288",
     required: "Jetpack",
     position: [69.7, 128.5]
   },
@@ -64,35 +64,35 @@ export const treasurePods = {
     name: "Treasure Pod 9",
     contents: "Pink Warp Depot",
     description: "Found underground by accessing a crack in the wall near the ocean level.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=245",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=245",
     position: [70.8, 128.5]
   },
   "treasure_10": {
     name: "Treasure Pod 10",
     contents: "Power Chip",
     description: "Found underground by accessing a crack in the wall near the ocean level.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=315",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=315",
     position: [72.35, 111.5],
   },
   "treasure_11": {
     name: "Treasure Pod 11",
     contents: "Med Station",
     description: "Behind the teleporter, hidden inside a hole in the wall.",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=342",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=342",
     position: [70.91, 103.8]
   },
   "treasure_12": {
     name: "Treasure Pod 12",
     contents: "Emerald Cypress",
     description: "hidden inside a cave",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=367",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=367",
     position: [73.9, 105.8]
   },
   "treasure_13": {
     name: "Treasure Pod 13",
     contents: "Overjoyed Statue",
     description: "N/A",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=392",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=392",
     required: "Jetpack",
     position: [74.85, 111.9]
   },
@@ -100,7 +100,7 @@ export const treasurePods = {
     name: "Treasure Pod 14",
     contents: "Emerald Cypress Cluster",
     description: "N/A",
-    embedd: "https://youtu.be/2pKPJgag8QA?t=421",
+    embedded: "https://youtu.be/2pKPJgag8QA?t=421",
     position: [76.1, 99]
   },
   
