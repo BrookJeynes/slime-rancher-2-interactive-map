@@ -83,4 +83,10 @@ export const lockedDoors = {
     position: [53.54, 112.36],
     image: "Plort/iconPlortPink.png",
   },
+  "locked_43": {
+    name: "Angler Door Receptacle",
+    amount: 1,
+    position: [74.1, 71.0],
+    image: "Plort/iconPlortAngler.png",
+  },
 }
