@@ -341,6 +341,7 @@ export const treasurePods = {
     name: "Treasure Pod 28",
     contents: "Golden Chicken Statue",
     description: "On grass above the ruins near the Powderfall Bluffs teleporter.",
+    required: "Jetpack",
     embedded: "https://youtu.be/DeT1csKLrck?t=436",
     position: [73.72, 51.2]
   },
