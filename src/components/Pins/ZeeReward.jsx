@@ -39,7 +39,10 @@ const ZeeReward = (props) => {
           <hr />
           <span className="mt-1"><span className="font-medium">Contents:</span> {treasurePod.contents}</span>
           <span><span className="font-medium">Description:</span> {treasurePod.description}</span>
-          <span className="mb-1"><span className="font-medium">Location:</span> <a href={treasurePod.embedd} target="_blank" rel="noreferrer noopener">Video showcase</a> by TrophyTom</span>
+          <span className="mb-1">
+            <span className="font-medium">Location:</span>
+            { treasurePod.embedded && <><a href={treasurePod.embedded} target="_blank" rel="noreferrer noopener">Video showcase</a> by TrophyTom</> }
+          </span>
         </div>
       </Popup>
     </Marker>
