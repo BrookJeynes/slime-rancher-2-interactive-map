@@ -77,4 +77,10 @@ export const gordos = {
     position: [73.176, 43.551],
     image: "iconGordoCrystal.png"
   },
+  "Saber Gordo": {
+    name: "Saber Gordo",
+    food: "Meat",
+    position: [83.11, 38.5],
+    image: "iconGordoTabby.png"
+  },
 }

@@ -83,6 +83,24 @@ export const lockedDoors = {
     position: [44.095, 86.908],
     image: "Plort/iconPlortPink.png",
   },
+  "locked_16": {
+    name: "Boom Door Receptacle",
+    amount: 1,
+    position: [73.5, 37.84],
+    image: "Plort/iconPlortBoom.png",
+  },
+  "locked_17": {
+    name: "Tabby Door Receptacle",
+    amount: 1,
+    position: [73.6, 37.7],
+    image: "Plort/iconPlortTabby.png",
+  },
+  "locked_18": {
+    name: "Batty Door Receptacle",
+    amount: 1,
+    position: [73.7, 37.84],
+    image: "Plort/iconPlortBatty.png",
+  },
   "locked_43": {
     name: "Angler Door Receptacle",
     amount: 1,
