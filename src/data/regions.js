@@ -11,4 +11,8 @@ export const regions = {
     name: "Starlight Strand",
     position: [46.696, 86.535],
   },
+  powderfallBluffs: {
+    name: "Powderfall Bluffs",
+    position: [82.3, 32.5],
+  },
 };

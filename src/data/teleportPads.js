@@ -32,4 +32,13 @@ export const teleportPads = {
     name: "Starlight Strand South East to Rainbow Fields South East",
     position: [36.964, 98.462],
   },
+
+  "Ember Valley South to Powderfall Bluffs North East": {
+    name: "Ember Valley South to Powderfall Bluffs North East",
+    position: [64.1, 37.8],
+  },
+  "Ember Valley North to Powderfall Bluffs South": {
+    name: "Ember Valley North to Powderfall Bluffs South",
+    position: [74.1, 32],
+  },
 };

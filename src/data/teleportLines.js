@@ -31,4 +31,20 @@ export const teleportLines = {
     ],
     midpoint: [51.043, 103.644],
   },
+  Line5: {
+    name: "EV to PB 1",
+    positions: [
+      [64.1, 37.8],
+      [83.1, 38.5],
+    ],
+    midpoint: [77.9, 25],
+  },
+  Line6: {
+    name: "EV to PB 2",
+    positions: [
+      [74.1, 32],
+      [80.59, 32.8],
+    ],
+    midpoint: [77.85, 30],
+  },
 };
