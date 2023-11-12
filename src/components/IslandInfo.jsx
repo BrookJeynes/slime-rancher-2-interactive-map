@@ -10,7 +10,6 @@ const IslandInfo = () => {
                 require("../assets/icons/Resources/iconCraftLavaDust.png"),
                 require("../assets/icons/Resources/iconCraftRadiantOre.png"),
                 require("../assets/icons/Resources/iconCraftPrimordyOil.png"),
-                require("../assets/icons/Resources/iconCraftLavaDust.png"),
                 require("../assets/icons/Resources/iconCraftBuzzWax.png"),
                 require("../assets/icons/Resources/iconCraftStrangeDiamond.png"),
             ],
@@ -74,6 +73,7 @@ const IslandInfo = () => {
                 require("../assets/icons/Slimes/iconSlimeCotton.png"),
                 require("../assets/icons/Slimes/iconSlimePink.png"),
                 require("../assets/icons/Slimes/iconSlimePhosphor.png"),
+                require("../assets/icons/Slimes/iconSlimeBoom.png"),
             ],
         },
     }
@@ -88,13 +88,13 @@ const IslandInfo = () => {
                     <div className="flex justify-between items-center w-full pointer-events-auto">
                         <button onClick={() => {
                             setIndex((index - 1) % 4)
-                        }}>
+                        }} className={"h-[85%]"}>
                             <BsArrowLeft size={24} />
                         </button>
-                        <h1 className="text-outline bg-gradient-to-r from-[#ED3DA7] to-[#BD1379] text-transparent bg-clip-text font-extrabold text-4xl">{Object.keys(islands)[Math.abs(index) % Object.keys(islands).length]}</h1>
+                        <h1 className="text-center text-outline bg-gradient-to-r from-[#ED3DA7] to-[#BD1379] text-transparent bg-clip-text font-extrabold text-4xl">{Object.keys(islands)[Math.abs(index) % Object.keys(islands).length]}</h1>
                         <button onClick={() => {
                             setIndex((index + 1) % 4)
-                        }}>
+                        }} className={"h-[85%]"}>
                             <BsArrowRight size={24} />
                         </button>
                     </div>
