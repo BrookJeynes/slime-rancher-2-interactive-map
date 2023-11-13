@@ -87,7 +87,7 @@ const IslandInfo = (props) => {
     return (
         <div className="island-info-container">
             {show ?
-                <div className="flex flex-col justify-between items-center py-4 px-4 pb-0 bg-[#3CBCD5] border-solid border-2 border-[#3296AA] h-96 w-96 mr-5 mb-5 rounded-md">
+                <div className="island-info-overlay flex flex-col justify-between items-center py-4 px-4 pb-0 bg-[#3CBCD5] border-solid border-2 border-[#3296AA] h-96 w-96 mr-5 mb-5 rounded-md">
                     <div className="flex justify-between items-center w-full pointer-events-auto">
                         <button onClick={() => {
                             setIndex((index - 1) % 4)
