@@ -31,4 +31,12 @@ export const mapNodes = {
     name: "South Node",
     position: [31.297, 93.745]
   },
+  "Powderfall Bluffs West": {
+    name: "West Node",
+    position: [83.41, 26.22]
+  },
+  "Powderfall Bluffs East": {
+    name: "East Node",
+    position: [82.5, 42.17]
+  },
 }

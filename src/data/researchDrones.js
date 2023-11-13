@@ -494,4 +494,77 @@ export const researchDrones = {
     ],
     position: [31.672, 89.29],
   },
+  "research_20": {
+    name: "Research Drone 20",
+    log: [
+      `What an amazing discovery! This glacier wasn't
+      even here when I first came to the island.
+      I'm not sure how that's possible so I'm sending
+      out additional drones to collect more data.`,
+      `In the mean time, I am going to see if this
+      'snow' is as fun as the stories I read as
+      a kid...`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [81.14, 34.89],
+  },
+  "research_21": {
+    name: "Research Drone 21",
+    log: [
+      `These auroral effects here, the ghostly trees,
+      and the surfaces that materialize at night,
+      are similar to the phenomena inside the Labyrinth.
+      And that shouldn't be possible given the current
+      state of the breach. I am begining to suspect
+      that the ice shell that remains surrounding
+      this glacier is amplifying the prisma waves,
+      like creating an echo chamber where the
+      effects in the environment are more
+      concentrated.`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [81.8, 25.45],
+  },
+  "research_22": {
+    name: "Research Drone 22",
+    log: [
+      `I can hardly believe it... saber slimes?
+      Everyone knows they've been extinct since some
+      time after the Jellasic Period. Could this
+      glacier somehow have contained them and this
+      world like a time capsule? Perhaps it was frozen
+      at the bottom of the Slime Sea and the seismic
+      activity from Ember Valley shook it loose.`,
+      `I need to keep exploring.`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [82.45, 39.9],
+  },
+  "research_23": {
+    name: "Research Drone 23",
+    log: [
+      `While waiting for the drones to finish
+      collecting their data I built a snowman. I
+      had seen them before in books, and since I
+      had an extra carrot, I figured it was worth
+      a shot`,
+      `I am no sculptor, and I immediately took
+      pity on my snowman. I was glad he couldn't
+      talk.`,
+      `But then as the hours passed, he looked
+      even worse. It was midday and the sun's rays
+      were warming my cheeks. And then I realized
+      why this place wasn't here before.`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [82.49, 43.72],
+  },
 };

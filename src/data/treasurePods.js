@@ -498,4 +498,172 @@ export const treasurePods = {
     embedded: "https://youtu.be/DeT1csKLrck?t=249",
     position: [31.672, 84.464]
   },
+
+  // Powderfall Bluffs
+  "treasure_74": {
+    name: "Treasure Pod 1",
+    contents: "Glacial Crystal",
+    description: "South of the entrance portal, through the crack and behind the ice spikes out in the ocean.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=9",
+    position: [79.97, 32.8]
+  },
+  "treasure_75": {
+    name: "Treasure Pod 2",
+    contents: "Chilly Slime Stack",
+    description: "Along the red-orange grass outside the entrance cave, down the diagonal ramps in the cliffside between the square ice structures.",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=35",
+    position: [81.93, 30.8]
+  },
+  "treasure_76": {
+    name: "Treasure Pod 3",
+    contents: "Ice Cubed",
+    description: "Atop the large square ice cube structure outside the entrance cave.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=64",
+    position: [82.178, 31.02]
+  },
+  "treasure_77": {
+    name: "Treasure Pod 4",
+    contents: "Snowz Bench",
+    description: "On a ledge in a hole connecting the cave ceiling to the outside. Can be reached from above or below (dropping down the hole or climbing up).",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=95",
+    position: [82.5, 33.72]
+  },
+  "treasure_78": {
+    name: "Treasure Pod 5",
+    contents: "Snowy Warp Depot",
+    description: "Along the rainbow bridge (at night) that curves around behind the island underneath the ledge",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=134",
+    position: [82.16, 24]
+  },
+  "treasure_79": {
+    name: "Treasure Pod 6",
+    contents: "Power Chip",
+    description: "Atop the highest pink coral columns on a ledge behind them.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=188",
+    position: [81.91, 24.7]
+  },
+  "treasure_80": {
+    name: "Treasure Pod 7",
+    contents: "Ice Lamp",
+    description: "On a ledge underneath another ledge on the midwest side of the coral reef island",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=227",
+    position: [81.59, 21.9]
+  },
+  "treasure_81": {
+    name: "Treasure Pod 8",
+    contents: "Snowy Bush",
+    description: "On a rock at sea level, easily spotted from cliffsides around the inlet. Can also be reached by jumping or flying across on the other ice rocks near sea level.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=261",
+    position: [82.92, 25.75]
+  },
+  "treasure_82": {
+    name: "Treasure Pod 9",
+    contents: "Ice Treeo",
+    description: "Behind the tall pillar with trees on it, in the sea northwest. Can walk up the rainbow bridge to it (at night).",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=280",
+    position: [84.1, 20]
+  },
+  "treasure_83": {
+    name: "Treasure Pod 10",
+    contents: "Snow Globe",
+    description: "On the large ice tower in the sea west of the island. Can walk up the rainbow bridge to it (at night).",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=315",
+    position: [82.54, 13.5]
+  },
+  "treasure_84": {
+    name: "Treasure Pod 11",
+    contents: "Majestic Snowflake",
+    description: "On a ledge on the cliff.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=361",
+    position: [83.85, 30.5]
+  },
+  "treasure_85": {
+    name: "Treasure Pod 12",
+    contents: "Hydro Shower",
+    description: "Inside a cave behind the waterfall, that flows down near the lower tropical area.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=387",
+    position: [83.25, 35.2]
+  },
+  "treasure_86": {
+    name: "Treasure Pod 13",
+    contents: "Storage Cell",
+    description: "Down the waterfall that runs off the edge of the island. Follow the rainbow bridge (at night) down the cliffside.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=421",
+    position: [83.5, 38.7]
+  },
+  "treasure_87": {
+    name: "Treasure Pod 14",
+    contents: "Powderfall Bluffs Portal",
+    description: "Follow the rainbow bridge (at night) inside the glowing flowers cave.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=463",
+    position: [82.35, 37.2]
+  },
+  "treasure_88": {
+    name: "Treasure Pod 15",
+    contents: "Snowball Machine",
+    description: "Underground, from the glowing flowers cave, go into the tunnel with the feral slimes.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=485",
+    position: [83.07, 36.3]
+  },
+  "treasure_89": {
+    name: "Treasure Pod 16",
+    contents: "Frosted Shell",
+    description: "Sitting inside a low underground area, it sees the ocean through a crack at sea level. The area connects by a long tunnel to the glowing flowers cave.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=510",
+    position: [82.27, 26.5]
+  },
+  "treasure_90": {
+    name: "Treasure Pod 17",
+    contents: "Crystal Spires",
+    description: "Underground sitting up against a wall. Take the path to the right of the entrance portal, and follow it to the end.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=562",
+    position: [81.8, 37.0]
+  },
+  "treasure_91": {
+    name: "Treasure Pod 18",
+    contents: "Snowy Teleporter",
+    description: "Inside a cave room. Up the side of the mountain and through a v-shaped crack in the wall.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=586",
+    position: [82.61, 35.9]
+  },
+  "treasure_92": {
+    name: "Treasure Pod 19",
+    contents: "Aurora Pine",
+    description: "Follow a rainbow bridge along the east cliffside of the island. On a nook in the cliff.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=630",
+    position: [82.78, 42.8]
+  },
+  "treasure_93": {
+    name: "Treasure Pod 20",
+    contents: "Sureshot Module",
+    description: "At the top of the mountain. By a large cluster of ice cubes.",
+    required: "Jetpack",
+    embedded: "https://youtu.be/Upa3JLuNrWI?t=710",
+    position: [82.43, 37.6]
+  },
+  "treasure_94": {
+    name: "Treasure Pod 21",
+    contents: "Frozen Flame",
+    description: "Sitting on a cooled magma pool in the center of the pond.",
+    required: "Jetpack",
+    position: [83.07, 31.4]
+  },
 }
