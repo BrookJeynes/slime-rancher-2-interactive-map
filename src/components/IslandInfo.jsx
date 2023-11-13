@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { BsArrowLeft, BsArrowRight, BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import "leaflet/dist/leaflet.css";
 
-const IslandInfo = () => {
+const IslandInfo = (props) => {
+    const { setMapDblClickZoom } = props;
     const islands = {
         "Ember Valley": {
             resources: [
@@ -90,13 +91,19 @@ const IslandInfo = () => {
                     <div className="flex justify-between items-center w-full pointer-events-auto">
                         <button onClick={() => {
                             setIndex((index - 1) % 4)
-                        }} className={"h-[85%]"}>
+                        }} className={"h-[85%]"}
+                        onMouseEnter={() => {setMapDblClickZoom(false)}}
+                        onMouseLeave={() => {setMapDblClickZoom(true)}}
+                        >
                             <BsArrowLeft size={24} />
                         </button>
                         <h1 className="text-center text-outline bg-gradient-to-r from-[#ED3DA7] to-[#BD1379] text-transparent bg-clip-text font-extrabold text-4xl">{Object.keys(islands)[Math.abs(index) % Object.keys(islands).length]}</h1>
                         <button onClick={() => {
                             setIndex((index + 1) % 4)
-                        }} className={"h-[85%]"}>
+                        }} className={"h-[85%]"}
+                        onMouseEnter={() => {setMapDblClickZoom(false)}}
+                        onMouseLeave={() => {setMapDblClickZoom(true)}}
+                        >
                             <BsArrowRight size={24} />
                         </button>
                     </div>

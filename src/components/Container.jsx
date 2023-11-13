@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import {
   MapContainer,
@@ -38,6 +38,7 @@ export default function Container() {
   );
   const [showPins, setShowPins] = useState(true);
   const [showNote, setShowNote] = useState(false);
+  const mapRef = useRef(null);
 
   const userMarkerList = userMarkers.map((marker) => {
     const listKey = marker.position.join("");
@@ -64,6 +65,11 @@ export default function Container() {
     );
   });
 
+  const setMapDblClickZoom = (enable) => {
+      if(enable) mapRef.current.doubleClickZoom.enable();
+      else mapRef.current.doubleClickZoom.disable();
+  };
+
   return (
     <div className="flex flex-row">
       <div
@@ -88,8 +94,9 @@ export default function Container() {
           [200, 200],
         ]}
         style={{ height: "100vh", width: "100%", zIndex: 1 }}
+        ref={mapRef}
       >
-        <IslandInfo />
+        <IslandInfo setMapDblClickZoom={setMapDblClickZoom}/>
 
         <Markers
           selectedIcon={selectedIcon}
