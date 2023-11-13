@@ -1,263 +1,263 @@
 const data = [
   {
     type: 'PrimordyOil',
-    position: [82.29, 52.21],
+    position: [75.848, 40.388],
   },
   {
     type: 'PrimordyOil',
-    position: [81.47, 53.17],
+    position: [74.706, 41.131],
   },
   {
     type: 'PrimordyOil',
-    position: [80.23, 55.28],
+    position: [73.03, 42.763],
   },
   {
     type: 'PrimordyOil',
-    position: [80.98, 59.94],
+    position: [74.037, 46.367],
   },
   {
     type: 'PrimordyOil',
-    position: [80.87, 65.63],
+    position: [73.888, 50.767],
   },
   {
     type: 'PrimordyOil',
-    position: [79.24, 63.1],
+    position: [71.729, 48.811],
   },
   {
     type: 'PrimordyOil',
-    position: [78.75, 63.32],
+    position: [71.096, 48.981],
   },
   {
     type: 'PrimordyOil',
-    position: [77.65, 76.5],
+    position: [69.7, 59.174],
   },
   {
     type: 'PrimordyOil',
-    position: [76.39, 58],
+    position: [68.139, 44.866],
   },
   {
     type: 'PrimordyOil',
-    position: [75.17, 47.1],
+    position: [66.662, 36.436],
   },
   {
     type: 'PrimordyOil',
-    position: [78.46, 40.42],
+    position: [70.724, 31.27],
   },
   {
     type: 'PrimordyOil',
-    position: [77.52, 35.63],
+    position: [69.537, 27.565],
   },
   {
     type: 'PrimordyOil',
-    position: [76.76, 34.45],
+    position: [68.593, 26.653],
   },
   {
     type: 'LavaDust',
-    position: [76.44, 34.45],
+    position: [68.2, 26.653],
   },
   {
     type: 'LavaDust',
-    position: [77.9, 32.56],
+    position: [70.014, 25.191],
   },
   {
     type: 'LavaDust',
-    position: [77.64, 38.62],
+    position: [69.687, 29.878],
   },
   {
     type: 'LavaDust',
-    position: [76.92, 38.51],
+    position: [68.79, 29.793],
   },
   {
     type: 'LavaDust',
-    position: [76.15, 37.86],
+    position: [67.846, 29.29],
   },
   {
     type: 'LavaDust',
-    position: [75.37, 39.22],
+    position: [66.902, 30.342],
   },
   {
     type: 'LavaDust',
-    position: [75.12, 41.15],
+    position: [66.602, 31.835],
   },
   {
     type: 'LavaDust',
-    position: [78.69, 46.51],
+    position: [71.019, 35.98],
   },
   {
     type: 'LavaDust',
-    position: [78.51, 50.03],
+    position: [70.788, 38.702],
   },
   {
     type: 'LavaDust',
-    position: [77.86, 46.45],
+    position: [69.964, 35.934],
   },
   {
     type: 'LavaDust',
-    position: [76.35, 47.74],
+    position: [68.09, 36.931],
   },
   {
     type: 'LavaDust',
-    position: [76.45, 45.94],
+    position: [68.212, 35.539],
   },
   {
     type: 'SilkySand',
-    position: [74.3, 71.74],
+    position: [65.628, 55.493],
   },
   {
     type: 'SilkySand',
-    position: [75.57, 57.24],
+    position: [67.143, 44.278],
   },
   {
     type: 'SilkySand',
-    position: [75.32, 59.72],
+    position: [66.842, 46.196],
   },
   {
     type: 'SilkySand',
-    position: [75.4, 62.51],
+    position: [66.938, 48.354],
   },
   {
     type: 'SilkySand',
-    position: [75.92, 67.34],
+    position: [67.566, 52.09],
   },
   {
     type: 'SilkySand',
-    position: [76.38, 72.59],
+    position: [68.126, 56.15],
   },
   {
     type: 'SilkySand',
-    position: [78.75, 72.24],
+    position: [71.096, 55.879],
   },
   {
     type: 'SilkySand',
-    position: [78.88, 69.74],
+    position: [71.263, 53.946],
   },
   {
     type: 'SilkySand',
-    position: [79.25, 73.82],
+    position: [71.742, 57.101],
   },
   {
     type: 'JellyStone',
-    position: [78.63, 162.09],
+    position: [70.942, 125.369],
   },
   {
     type: 'JellyStone',
-    position: [75.3, 164.55],
+    position: [66.818, 127.271],
   },
   {
     type: 'JellyStone',
-    position: [72.76, 125.59],
+    position: [63.835, 97.14],
   },
   {
     type: 'JellyStone',
-    position: [73.86, 118.82],
+    position: [65.111, 91.904],
   },
   {
     type: 'JellyStone',
-    position: [75.99, 122.69],
+    position: [67.651, 94.897],
   },
   {
     type: 'JellyStone',
-    position: [76.37, 118.32],
+    position: [68.114, 91.517],
   },
   {
     type: 'JellyStone',
-    position: [72.57, 111.7],
+    position: [63.616, 86.397],
   },
   {
     type: 'JellyStone',
-    position: [73.18, 110.12],
+    position: [64.32, 85.175],
   },
   {
     type: 'JellyStone',
-    position: [74.93, 112.06],
+    position: [66.375, 86.676],
   },
   {
     type: 'JellyStone',
-    position: [75.72, 114.19],
+    position: [67.324, 88.323],
   },
   {
     type: 'JellyStone',
-    position: [75.53, 110.39],
+    position: [67.094, 85.384],
   },
   {
     type: 'JellyStone',
-    position: [75.29, 164.42],
+    position: [66.806, 127.171],
   },
   {
     type: 'DeepBrine',
-    position: [77.54, 159.78],
+    position: [69.562, 123.582],
   },
   {
     type: 'DeepBrine',
-    position: [78.46, 141.89],
+    position: [70.724, 109.746],
   },
   {
     type: 'DeepBrine',
-    position: [73.65, 132.05],
+    position: [64.866, 102.136],
   },
   {
     type: 'DeepBrine',
-    position: [76.41, 127.13],
+    position: [68.163, 98.331],
   },
   {
     type: 'DeepBrine',
-    position: [75.78, 129.72],
+    position: [67.396, 100.334],
   },
   {
     type: 'DeepBrine',
-    position: [76.62, 121.02],
+    position: [68.421, 93.605],
   },
   {
     type: 'DeepBrine',
-    position: [75.46, 119.04],
+    position: [67.01, 92.074],
   },
   {
     type: 'DeepBrine',
-    position: [72.52, 114.91],
+    position: [63.559, 88.88],
   },
   {
     type: 'DeepBrine',
-    position: [70.77, 103.53],
+    position: [61.578, 80.079],
   },
   {
     type: 'DeepBrine',
-    position: [76.67, 109.95],
+    position: [68.482, 85.044],
   },
   {
     type: 'DeepBrine',
-    position: [76.26, 112.1],
+    position: [67.98, 86.707],
   },
   {
     type: 'RadiantOre',
-    position: [78.35, 57.34],
+    position: [70.584, 44.356],
   },
   {
     type: 'RadiantOre',
-    position: [78.42, 61.17],
+    position: [70.673, 47.318],
   },
   {
     type: 'RadiantOre',
-    position: [77.75, 61.08],
+    position: [69.825, 47.248],
   },
   {
     type: 'RadiantOre',
-    position: [81.41, 55.19],
+    position: [74.624, 42.693],
   },
   {
     type: 'RadiantOre',
-    position: [54.74, 123.22],
+    position: [45.222, 95.307],
   },
   {
     type: 'RadiantOre',
-    position: [51.83, 106.91],
+    position: [42.508, 82.693],
   },
   {
     type: 'RadiantOre',
-    position: [51.89, 102.65],
+    position: [42.563, 79.398],
   },
   {
     type: 'RadiantOre',
-    position: [39.7, 123.35],
+    position: [31.758, 95.407],
   },
 ];
 

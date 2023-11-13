@@ -1,34 +1,42 @@
 export const mapNodes = {
   "Rainbow Fields Southern": {
     name: "Southern Node",
-    position: [72.3, 115],
+    position: [63.307, 88.95],
   },
   "Rainbow Fields Western": {
     name: "Western Node",
-    position: [73.98, 108]
+    position: [65.252, 83.536]
   },
   "Ember Valley Center": {
     name: "Center Node",
-    position: [79.17, 63.3]
+    position: [71.638, 48.965]
   },
   "Ember Valley North": {
     name: "North Node",
-    position: [81.03, 53.97]
+    position: [74.105, 41.749]
   },
   "Ember Valley West": {
     name: "West Node",
-    position: [77, 37.76]
+    position: [68.889, 29.213]
   },
   "Starlight Strand North": {
     name: "North Node",
-    position: [66.3, 99]
+    position: [56.727, 76.575]
   },
   "Starlight Strand Center": {
     name: "Center Node",
-    position: [57.2, 113.3]
+    position: [47.568, 87.635]
   },
   "Starlight Strand South": {
     name: "South Node",
-    position: [39.16, 121.2]
+    position: [31.297, 93.745]
+  },
+  "Powderfall Bluffs West": {
+    name: "West Node",
+    position: [83.41, 26.22]
+  },
+  "Powderfall Bluffs East": {
+    name: "East Node",
+    position: [82.5, 42.17]
   },
 }
