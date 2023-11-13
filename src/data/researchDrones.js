@@ -25,7 +25,7 @@ export const researchDrones = {
       run off to look for plants and mushrooms.
       Maybe I would have been closer to them...`,
     ],
-    position: [76.5, 143.7],
+    position: [68.273, 111.146],
   },
   "research_2": {
     name: "Research Drone 12",
@@ -44,7 +44,7 @@ export const researchDrones = {
       thoughts I had to share back then?`,
     ],
     archive: [`Ugh, I forgot my fork. Looks like it's hand noodles again...`],
-    position: [77.45, 144.8],
+    position: [69.449, 111.997],
   },
   "research_3": {
     name: "Research Drone 13",
@@ -74,7 +74,7 @@ export const researchDrones = {
       that. Being fearless and just diving into
       new adventures. I guess this is my chance.`,
     ],
-   position: [78.74, 161.2],
+   position: [71.083, 124.68],
   },
   "research_4": {
     name: "Research Drone 11",
@@ -104,7 +104,7 @@ export const researchDrones = {
       `I'm sorry mom and dad. I'm sorry grandma.
       But I really want this.`,
     ],
-    position: [73.5, 172.3],
+    position: [64.691, 133.265],
   },
   "research_5": {
     name: "Research Drone 10",
@@ -127,7 +127,7 @@ export const researchDrones = {
       `... ...`,
       `I bet dad would have laughed at that one.`,
     ],
-    position: [70.6, 150.5],
+    position: [61.389, 116.405],
   },
   "research_6": {
     name: "Research Drone 2",
@@ -150,7 +150,7 @@ export const researchDrones = {
       recent memory?`,
       `It's all too good to be true!`,
     ],
-    position: [74.87, 117.99],
+    position: [66.304, 91.262],
   },
   "research_7": {
     name: "Research Drone 3",
@@ -177,7 +177,7 @@ export const researchDrones = {
       glad this world still has its mysteries to
       share.`,
     ],
-    position: [72.81, 111.31],
+    position: [63.892, 86.096],
   },
   "research_8": {
     name: "Research Drone 4",
@@ -209,7 +209,7 @@ export const researchDrones = {
       important part of the ecosystem. I hope
       that's ok with you.`,
     ],
-    position: [74.32, 74.68],
+    position: [65.652, 57.766],
   },
   "research_9": {
     name: "Research Drone 5",
@@ -221,7 +221,7 @@ export const researchDrones = {
       splash like the old days...`,
     ],
     archive: [`YAAAAAHOOOOOOOOOOO!`],
-    position: [77.87, 63.59],
+    position: [69.976, 49.189],
   },
   "research_10": {
     name: "Research Drone 7",
@@ -249,7 +249,7 @@ export const researchDrones = {
       `I suppose those feelings are the same ones
       that brought me here in the first place.`,
     ],
-    position: [75.56, 49.96],
+    position: [67.131, 38.648],
   },
   "research_11": {
     name: "Research Drone 8",
@@ -279,7 +279,7 @@ export const researchDrones = {
       here... that I'm not ready to be on my
       own.`,
     ],
-    position: [76.28, 37.84],
+    position: [68.004, 29.275],
   },
   "research_12": {
     name: "Research Drone 9",
@@ -309,7 +309,7 @@ export const researchDrones = {
       like a truly amazing scientific and historical
       discovery. I need to make some calls!`,
     ],
-    position: [77.91, 25.66],
+    position: [70.027, 19.855],
   },
   "research_13": {
     name: "Research Drone 6",
@@ -338,7 +338,7 @@ export const researchDrones = {
       `I hope they're ok. And I hope that some
       day they'll say they're proud of me.`,
     ],
-    position: [82.53, 53.83],
+    position: [76.187, 41.641],
   },
   "research_14": {
     name: "Research Drone 14",
@@ -361,7 +361,7 @@ export const researchDrones = {
       and on the other, deep, verdant greens.
       It's extraordinary!`,
     ],
-    position: [57.86, 104.24],
+    position: [48.205, 80.628],
   },
   "research_15": {
     name: "Research Drone 16",
@@ -389,7 +389,7 @@ export const researchDrones = {
       and listen. And I have a whole lifetime on
       this island to do just that.`,
     ],
-    position: [57.49, 119.22],
+    position: [47.847, 92.213],
   },
   "research_16": {
     name: "Research Drone 17",
@@ -418,7 +418,7 @@ export const researchDrones = {
       `I wonder who else this tree will meet? I
       wonder if it will tell them about me?`,
     ],
-    position: [54.26, 114.34],
+    position: [44.77, 88.439],
   },
   "research_17": {
     name: "Research Drone 15",
@@ -440,7 +440,7 @@ export const researchDrones = {
       `I'm going to call it Mega Mushroom Pizza
       and I'm going to eat it every day.`,
     ],
-    position: [48.57, 104.9],
+    position: [39.535, 81.138],
   },
   "research_18": {
     name: "Research Drone 18",
@@ -465,7 +465,7 @@ export const researchDrones = {
       statue that-`,
       `YOU HAVE GOT TO BE KIDDING ME!`,
     ],
-    position: [50.79, 131.26],
+    position: [41.552, 101.525],
   },
   "research_19": {
     name: "Research Drone 19",
@@ -492,6 +492,79 @@ export const researchDrones = {
       my discoveries. I feel very good. And
       excited!`,
     ],
-    position: [39.6, 115.44],
+    position: [31.672, 89.29],
+  },
+  "research_20": {
+    name: "Research Drone 20",
+    log: [
+      `What an amazing discovery! This glacier wasn't
+      even here when I first came to the island.
+      I'm not sure how that's possible so I'm sending
+      out additional drones to collect more data.`,
+      `In the mean time, I am going to see if this
+      'snow' is as fun as the stories I read as
+      a kid...`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [81.14, 34.89],
+  },
+  "research_21": {
+    name: "Research Drone 21",
+    log: [
+      `These auroral effects here, the ghostly trees,
+      and the surfaces that materialize at night,
+      are similar to the phenomena inside the Labyrinth.
+      And that shouldn't be possible given the current
+      state of the breach. I am begining to suspect
+      that the ice shell that remains surrounding
+      this glacier is amplifying the prisma waves,
+      like creating an echo chamber where the
+      effects in the environment are more
+      concentrated.`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [81.8, 25.45],
+  },
+  "research_22": {
+    name: "Research Drone 22",
+    log: [
+      `I can hardly believe it... saber slimes?
+      Everyone knows they've been extinct since some
+      time after the Jellasic Period. Could this
+      glacier somehow have contained them and this
+      world like a time capsule? Perhaps it was frozen
+      at the bottom of the Slime Sea and the seismic
+      activity from Ember Valley shook it loose.`,
+      `I need to keep exploring.`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [82.45, 39.9],
+  },
+  "research_23": {
+    name: "Research Drone 23",
+    log: [
+      `While waiting for the drones to finish
+      collecting their data I built a snowman. I
+      had seen them before in books, and since I
+      had an extra carrot, I figured it was worth
+      a shot`,
+      `I am no sculptor, and I immediately took
+      pity on my snowman. I was glad he couldn't
+      talk.`,
+      `But then as the hours passed, he looked
+      even worse. It was midday and the sun's rays
+      were warming my cheeks. And then I realized
+      why this place wasn't here before.`,
+    ],
+    archive: [
+      ``,
+    ],
+    position: [82.49, 43.72],
   },
 };
