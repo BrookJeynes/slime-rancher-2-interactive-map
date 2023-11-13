@@ -74,6 +74,8 @@ const IslandInfo = () => {
                 require("../assets/icons/Slimes/iconSlimePink.png"),
                 require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeBoom.png"),
+                require("../assets/icons/Slimes/iconSlimePuddle.png"),
+                require("../assets/icons/Slimes/iconSlimeYolky.png"),
             ],
         },
     }
