@@ -9,9 +9,9 @@ const IslandInfo = (props) => {
             resources: [
                 require("../assets/icons/Resources/iconCraftSilkySand.png"),
                 require("../assets/icons/Resources/iconCraftLavaDust.png"),
-                require("../assets/icons/Resources/iconCraftRadiantOre.png"),
                 require("../assets/icons/Resources/iconCraftPrimordyOil.png"),
                 require("../assets/icons/Resources/iconCraftBuzzWax.png"),
+                require("../assets/icons/Resources/iconCraftRadiantOre.png"),
                 require("../assets/icons/Resources/iconCraftStrangeDiamond.png"),
             ],
             slimes: [
@@ -23,10 +23,11 @@ const IslandInfo = (props) => {
                 require("../assets/icons/Slimes/iconSlimeBatty.png"),
                 require("../assets/icons/Slimes/iconSlimeRingtail.png"),
                 require("../assets/icons/Slimes/iconSlimeBoom.png"),
-                require("../assets/icons/Slimes/iconSlimePuddle.png"),
                 require("../assets/icons/Slimes/iconSlimeCrystal.png"),
-                require("../assets/icons/Slimes/iconSlimeFire.png"),
                 require("../assets/icons/Slimes/iconSlimeCotton.png"),
+                require("../assets/icons/Slimes/iconSlimeFire.png"),
+                require("../assets/icons/Slimes/iconSlimePuddle.png"),
+                require("../assets/icons/Slimes/iconSlimeYolky.png"),
             ],
         },
         "Rainbow Fields": {
@@ -40,14 +41,15 @@ const IslandInfo = (props) => {
                 require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeCotton.png"),
                 require("../assets/icons/Slimes/iconSlimeTabby.png"),
+                require("../assets/icons/Slimes/iconSlimeYolky.png"),
             ],
         },
         "Starlight Strand": {
             resources: [
-                require("../assets/icons/Resources/iconCraftRadiantOre.png"),
                 require("../assets/icons/Resources/iconCraftSilkySand.png"),
                 require("../assets/icons/Resources/iconCraftWildHoney.png"),
                 require("../assets/icons/Resources/iconCraftBuzzWax.png"),
+                require("../assets/icons/Resources/iconCraftRadiantOre.png"),
                 require("../assets/icons/Resources/iconCraftStrangeDiamond.png"),
             ],
             slimes: [
@@ -60,6 +62,8 @@ const IslandInfo = (props) => {
                 require("../assets/icons/Slimes/iconSlimeRingtail.png"),
                 require("../assets/icons/Slimes/iconSlimeHoney.png"),
                 require("../assets/icons/Slimes/iconSlimeHunter.png"),
+                require("../assets/icons/Slimes/iconSlimePuddle.png"),
+                require("../assets/icons/Slimes/iconSlimeYolky.png"),
             ],
         },
         "Powderfall Bluffs": {
@@ -68,13 +72,17 @@ const IslandInfo = (props) => {
                 require("../assets/icons/Resources/iconCraftPerfectSnowflake.png"),
                 require("../assets/icons/Resources/iconCraftSunSap.png"),
                 require("../assets/icons/Resources/iconCraftSnowball.png"),
+                require("../assets/icons/Resources/iconCraftStrangeDiamond.png"),
             ],
             slimes: [
+                require("../assets/icons/Slimes/iconSlimePink.png"),
                 require("../assets/icons/Slimes/iconSlimeSaber.png"),
                 require("../assets/icons/Slimes/iconSlimeCotton.png"),
-                require("../assets/icons/Slimes/iconSlimePink.png"),
                 require("../assets/icons/Slimes/iconSlimePhosphor.png"),
                 require("../assets/icons/Slimes/iconSlimeBoom.png"),
+                require("../assets/icons/Slimes/iconSlimeRingtail.png"),
+                require("../assets/icons/Slimes/iconSlimeCrystal.png"),
+                require("../assets/icons/Slimes/iconSlimeRock.png"),
                 require("../assets/icons/Slimes/iconSlimePuddle.png"),
                 require("../assets/icons/Slimes/iconSlimeYolky.png"),
             ],
@@ -121,7 +129,7 @@ const IslandInfo = (props) => {
                             resourceSlimeSwitcher ?
                                 islands[Object.keys(islands)[Math.abs(index)]]
                                     .resources.map(resource =>
-                                        <img src={resource} alt={resource} className="w-[3rem] mx-1" />
+                                        <img src={resource} alt={resource} className="w-[3rem] mx-2" />
                                     )
                                 :
                                 islands[Object.keys(islands)[Math.abs(index)]]
