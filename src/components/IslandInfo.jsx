@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { BsArrowLeft, BsArrowRight, BsChevronDown, BsChevronUp } from 'react-icons/bs';
 import "leaflet/dist/leaflet.css";
 
@@ -92,34 +92,48 @@ const IslandInfo = (props) => {
     const [show, setShow] = useState(false);
     const [resourceSlimeSwitcher, setResourceSlimeSwitcher] = useState(true);
 
+    const timerID = useRef(undefined);
+    function debouncedMapZoomToggle() {
+        if(!timerID.current) {
+            setMapDblClickZoom(false);
+        }
+        clearTimeout(timerID.current);
+        timerID.current = setTimeout(() => {
+            setMapDblClickZoom(true);
+            timerID.current = undefined;
+        }, 300);
+    }
+
     return (
         <div className="island-info-container">
             {show ?
                 <div className="island-info-overlay flex flex-col justify-between items-center py-4 px-4 pb-0 bg-[#3CBCD5] border-solid border-2 border-[#3296AA] h-96 w-96 mr-5 mb-5 rounded-md">
                     <div className="flex justify-between items-center w-full pointer-events-auto">
-                        <button onClick={() => {
-                            setIndex((index - 1) % 4)
-                        }} className={"h-[85%]"}
-                        onMouseEnter={() => {setMapDblClickZoom(false)}}
-                        onMouseLeave={() => {setMapDblClickZoom(true)}}
+                        <button
+                            onClick={() => {debouncedMapZoomToggle(); setIndex((index - 1) % 4)}}
+                            className={"h-[85%]"}
                         >
                             <BsArrowLeft size={24} />
                         </button>
                         <h1 className="text-center text-outline bg-gradient-to-r from-[#ED3DA7] to-[#BD1379] text-transparent bg-clip-text font-extrabold text-4xl">{Object.keys(islands)[Math.abs(index) % Object.keys(islands).length]}</h1>
-                        <button onClick={() => {
-                            setIndex((index + 1) % 4)
-                        }} className={"h-[85%]"}
-                        onMouseEnter={() => {setMapDblClickZoom(false)}}
-                        onMouseLeave={() => {setMapDblClickZoom(true)}}
+                        <button
+                            onClick={() => {debouncedMapZoomToggle(); setIndex((index + 1) % 4)}}
+                            className={"h-[85%]"}
                         >
                             <BsArrowRight size={24} />
                         </button>
                     </div>
                     <div className="flex justify-around items-center p-2 w-full h-1/6 my-1">
-                        <button onClick={() => setResourceSlimeSwitcher(true)} className={`flex justify-center items-center px-2 w-1/3 h-[85%] rounded-[2rem] ${resourceSlimeSwitcher ? "bg-[#EDED3B]" : "bg-[#82FCBF]"}`}>
+                        <button
+                            onClick={() => {debouncedMapZoomToggle(); setResourceSlimeSwitcher(true)}}
+                            className={`flex justify-center items-center px-2 w-1/3 h-[85%] rounded-[2rem] ${resourceSlimeSwitcher ? "bg-[#EDED3B]" : "bg-[#82FCBF]"}`}
+                        >
                             <span className="text-lg">Resources</span>
                         </button>
-                        <button onClick={() => setResourceSlimeSwitcher(false)} className={`flex justify-center items-center px-2 w-1/3 h-[85%] rounded-[2rem] ${!resourceSlimeSwitcher ? "bg-[#EDED3B]" : "bg-[#82FCBF]"}`}>
+                        <button
+                            onClick={() => {debouncedMapZoomToggle(); setResourceSlimeSwitcher(false)}}
+                            className={`flex justify-center items-center px-2 w-1/3 h-[85%] rounded-[2rem] ${!resourceSlimeSwitcher ? "bg-[#EDED3B]" : "bg-[#82FCBF]"}`}
+                        >
                             <span className="text-lg">Slimes</span>
                         </button>
                     </div>
