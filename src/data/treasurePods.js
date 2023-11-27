@@ -664,6 +664,7 @@ export const treasurePods = {
     contents: "Frozen Flame",
     description: "Sitting on a cooled magma pool in the center of the pond.",
     required: "Jetpack",
+    embedded: "https://youtu.be/Cpa1w4NuVv8?t=388",
     position: [83.07, 31.4]
   },
 }
