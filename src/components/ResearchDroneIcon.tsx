@@ -21,6 +21,7 @@ export function ResearchDroneIcon({
     setCurrentLog: React.Dispatch<React.SetStateAction<JSX.Element>>
 }) {
     const key = `${research_drone.name.toLowerCase().replace(" ", "")}${research_drone.pos.x}${research_drone.pos.y}`;
+    // @ts-ignore
     const { found, setFound } = useContext(FoundContext);
 
     const [checked, setChecked] = useState(

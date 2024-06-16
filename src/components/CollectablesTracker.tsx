@@ -9,6 +9,7 @@ import { research_drones } from "../data/research_drones";
 import { FoundContext } from "../FoundContext";
 
 export default function CollectablesTracker() {
+    // @ts-ignore
     const { found } = useContext(FoundContext);
 
     return (

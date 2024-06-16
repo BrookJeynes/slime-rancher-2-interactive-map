@@ -20,7 +20,7 @@ function App() {
     const [current_log, setCurrentLog] = useState(<></>);
     const [selected_pin, setSelectedPin] = useState<Pin | undefined>(undefined);
     const [user_pins, setUserPins] = useState<LocalStoragePin[]>(
-        JSON.parse(localStorage.getItem("user_pins")) ?? []
+        JSON.parse(localStorage.getItem("user_pins") ?? "[]") ?? []
     );
 
     // TODO: Move to its own file.

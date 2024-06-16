@@ -11,6 +11,7 @@ import { FoundContext } from "../FoundContext";
 
 export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
     const key = `${map_node.name.toLowerCase().replace(" ", "")}${map_node.pos.x}${map_node.pos.y}`;
+    // @ts-ignore
     const { found, setFound } = useContext(FoundContext);
 
     const [checked, setChecked] = useState(

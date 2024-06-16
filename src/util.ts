@@ -4,7 +4,7 @@ export function handleChecked(
     checked: boolean,
     setChecked: React.Dispatch<React.SetStateAction<boolean>>,
 ) {
-    const items: string[] = JSON.parse(localStorage.getItem(local_storage_key)) ?? [];
+    const items: string[] = JSON.parse(localStorage.getItem(local_storage_key) ?? "[]") ?? [];
 
     if (!checked) {
         if (items.length > 0) {

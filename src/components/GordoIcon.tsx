@@ -11,6 +11,7 @@ import { FoundContext } from "../FoundContext";
 
 export function GordoIcon({ gordo }: { gordo: Gordo }) {
     const key = `${gordo.name.toLowerCase().replace(" ", "")}${gordo.pos.x}${gordo.pos.y}`;
+    // @ts-ignore
     const { found, setFound } = useContext(FoundContext);
 
     const [checked, setChecked] = useState(

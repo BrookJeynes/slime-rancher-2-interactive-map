@@ -11,6 +11,7 @@ import { FoundContext } from "../FoundContext";
 
 export function TreasurePodIcon({ treasure_pod }: { treasure_pod: TreasurePod }) {
     const key = `${treasure_pod.name.toLowerCase().replace(" ", "")}${treasure_pod.pos.x}${treasure_pod.pos.y}`;
+    // @ts-ignore
     const { found, setFound } = useContext(FoundContext);
 
     const [checked, setChecked] = useState(
