@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.leaflet-container {
+  background-image: url('/map_bg.png');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.log {
+  @apply drop-shadow-lg border-8 bg-stone-900
+    flex flex-col justify-between p-7
+      min-w-1/3 min-h-1/2 h-min pointer-events-auto rounded-[50px];
+
+  background-image: url('/scanlines.png');
+  width: 80%;
+}
+
+.log-close {
+  cursor: pointer;
+}
+
+.log-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

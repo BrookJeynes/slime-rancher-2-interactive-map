@@ -1,0 +1,86 @@
+import { Island } from "../types";
+
+export const islands: { [key: string]: Island } = {
+    "Ember Valley": {
+        resources: [
+            "iconCraftSilkySand.png",
+            "iconCraftLavaDust.png",
+            "iconCraftPrimordyOil.png",
+            "iconCraftBuzzWax.png",
+            "iconCraftRadiantOre.png",
+            "iconCraftStrangeDiamond.png",
+        ],
+        slimes: [
+            "iconSlimePink.png",
+            "iconSlimePhosphor.png",
+            "iconSlimeTabby.png",
+            "iconSlimeAngler.png",
+            "iconSlimeRock.png",
+            "iconSlimeBatty.png",
+            "iconSlimeRingtail.png",
+            "iconSlimeBoom.png",
+            "iconSlimeCrystal.png",
+            "iconSlimeCotton.png",
+            "iconSlimeFire.png",
+            "iconSlimePuddle.png",
+            "iconSlimeYolky.png",
+        ],
+    },
+    "Rainbow Fields": {
+        resources: [
+            "iconCraftJellyStone.png",
+            "iconCraftDeepBrine.png",
+            "iconCraftStrangeDiamond.png",
+        ],
+        slimes: [
+            "iconSlimePink.png",
+            "iconSlimePhosphor.png",
+            "iconSlimeCotton.png",
+            "iconSlimeTabby.png",
+            "iconSlimeYolky.png",
+        ],
+    },
+    "Starlight Strand": {
+        resources: [
+            "iconCraftSilkySand.png",
+            "iconCraftWildHoney.png",
+            "iconCraftBuzzWax.png",
+            "iconCraftRadiantOre.png",
+            "iconCraftStrangeDiamond.png",
+        ],
+        slimes: [
+            "iconSlimePink.png",
+            "iconSlimePhosphor.png",
+            "iconSlimeCotton.png",
+            "iconSlimeAngler.png",
+            "iconSlimeRock.png",
+            "iconSlimeFlutter.png",
+            "iconSlimeRingtail.png",
+            "iconSlimeHoney.png",
+            "iconSlimeHunter.png",
+            "iconSlimePuddle.png",
+            "iconSlimeYolky.png",
+        ],
+    },
+    "Powderfall Bluffs": {
+        resources: [
+            "iconCraftSlimeFossil.png",
+            "iconCraftPerfectSnowflake.png",
+            "iconCraftSunSap.png",
+            "iconCraftSnowball.png",
+            "iconCraftStrangeDiamond.png",
+        ],
+        slimes: [
+            "iconSlimePink.png",
+            "iconSlimeSaber.png",
+            "iconSlimeCotton.png",
+            "iconSlimePhosphor.png",
+            "iconSlimeBoom.png",
+            "iconSlimeRingtail.png",
+            "iconSlimeCrystal.png",
+            "iconSlimeRock.png",
+            "iconSlimePuddle.png",
+            "iconSlimeYolky.png",
+        ],
+    },
+}
