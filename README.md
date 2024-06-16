@@ -3,7 +3,8 @@
 </div>
 
 An interactive map for Slime Ranches 2.
-The map can be found here: [https://brookjeynes.github.io/slime-rancher-2-interactive-map/](https://brookjeynes.github.io/slime-rancher-2-interactive-map/)
+
+The map can be found here: [https://slime-rancher-2-interactive-map.vercel.app/](https://slime-rancher-2-interactive-map.vercel.app/)
 
 ![Map Example](./map-example.png)
 
