@@ -41,14 +41,35 @@ export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
     return (
         <Marker key={key} position={[locked_door.pos.x, locked_door.pos.y]} icon={icon}>
             <Popup>
-                {locked_door.name} - x{locked_door.amount} plort{locked_door.amount === 1 ? "" : "s"}
-                <div className="mt-1">
-                    <label className="mr-1">Found:</label>
-                    <input
-                        type="checkbox"
-                        checked={checked}
-                        onChange={() => handleChecked(locked_door_ls_key, key, checked, setChecked)}
-                    />
+                <div className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center gap-5">
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={() => handleChecked(locked_door_ls_key, key, checked, setChecked)}
+                                className="w-4 h-4"
+                            />
+                            <h1 className="ml-2 text-xl font-medium">{locked_door.name}</h1>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div>
+                        <span className="text-md font-bold">Plort Requirement: </span>
+                        <span>{locked_door.plort}</span>
+                    </div>
+
+                    <div>
+                        <span className="text-md font-bold">Description: </span>
+                        <span>{locked_door.description}</span>
+                    </div>
+
+                    <div>
+                        <span className="text-md font-bold">Unlocks: </span>
+                        <span>{locked_door.unlocks}</span>
+                    </div>
                 </div>
             </Popup>
         </Marker>

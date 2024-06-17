@@ -20,6 +20,7 @@ export function SidebarPins({
         "Utility",
         "Resources",
         "Slimes",
+        "Gordos",
     ];
 
     return (
@@ -91,7 +92,7 @@ export function MapUserPins({
     user_pins: LocalStoragePin[],
     setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>,
 }) {
-    const debug = process.env.NODE_ENV !== 'production';
+    const debug = process.env.NODE_ENV !== "production";
 
     useMapEvents({
         click(e) {

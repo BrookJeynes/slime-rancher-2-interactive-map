@@ -54,6 +54,29 @@ const slimes = [
     "Yolky",
 ]
 
+const gordos = [
+    "Pink",
+    "Tabby",
+    "Rock",
+    "Ringtail",
+    "Phosphor",
+    "Hunter",
+    "Honey",
+    "Flutter",
+    "Crystal",
+    "Cotton",
+    "Boom",
+    "Batty",
+    "Angler",
+    "Dervish",
+    "Gold",
+    "Mosaic",
+    "Quantum",
+    "Rad",
+    "Saber",
+    "Tangle",
+]
+
 const resources = [
     "BuzzWax",
     "DeepBrine",
@@ -132,6 +155,14 @@ slimes.forEach((slime) => {
         name: `${slime}`,
         type: "Slimes",
         icon: `slimes/iconSlime${slime}.png`,
+    }
+})
+
+gordos.forEach((gordo) => {
+    pins[`${gordo}`] = {
+        name: `${gordo}`,
+        type: "Gordos",
+        icon: `gordos/iconGordo${gordo}.png`,
     }
 })
 

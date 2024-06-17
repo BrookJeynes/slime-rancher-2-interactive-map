@@ -1,6 +1,6 @@
 export interface Vec2 {
-    x: number,
-    y: number,
+    x: number;
+    y: number;
 }
 
 export interface Gordo {
@@ -8,34 +8,38 @@ export interface Gordo {
     food: string;
     pos: Vec2;
     image: string
+    drops: string[];
+    description: string;
+    unlocks: string[];
 }
 
 export interface LockedDoor {
     name: string;
-    amount: number;
+    plort: string;
     pos: Vec2;
     image: string
+    description: string;
+    unlocks: string;
 }
 
 export interface MapNode {
     name: string;
     pos: Vec2;
+    description: string;
 }
 
 export interface TreasurePod {
-    name: string;
-    contents: string;
+    contents: string[];
+    description: string;
     pos: Vec2;
-    description: string | undefined;
-    required_items: string[];
-    link: string | undefined,
 }
 
 export interface ResearchDrone {
     name: string;
     log: string[];
     archive: string[];
-    pos: Vec2,
+    pos: Vec2;
+    description: string;
 }
 
 export interface TeleportLine {
@@ -53,7 +57,7 @@ export interface Pin {
 
 export interface LocalStoragePin {
     icon: string;
-    pos: Vec2,
+    pos: Vec2;
 }
 
 export interface Island {

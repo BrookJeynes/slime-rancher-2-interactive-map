@@ -51,18 +51,52 @@ export function ResearchDroneIcon({
     return (
         <Marker key={key} position={[research_drone.pos.x, research_drone.pos.y]} icon={icon}>
             <Popup>
-                {research_drone.name}
-                <div className="flex justify-between items-center mt-2">
-                    <div className="mr-2">
-                        <label className="mr-1">Found:</label>
-                        <input
-                            type="checkbox"
-                            checked={checked}
-                            onChange={() => handleChecked(research_drone_ls_key, key, checked, setChecked)}
-                        />
+                <div className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center gap-5">
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={() => handleChecked(research_drone_ls_key, key, checked, setChecked)}
+                                className="w-4 h-4"
+                            />
+                            <h1 className="ml-2 text-xl font-medium">{research_drone.name}</h1>
+                        </div>
                     </div>
+
+                    <hr />
+
+                    {/*
+                        <div>
+                            <h1 className="text-md font-bold">Log: </h1>
+                            {research_drone.log.map((p, i) => {
+                                if (i == 0) {
+                                    return <span>{p}</span>;
+                                } else {
+                                    return <p>{p}</p>;
+                                }
+                            })}
+                        </div>
+
+                        <div>
+                            <h1 className="text-md font-bold">Archive: </h1>
+                            {research_drone.archive.map((p, i) => {
+                                if (i == 0) {
+                                    return <span>{p}</span>;
+                                } else {
+                                    return <p>{p}</p>;
+                                }
+                            })}
+                        </div> 
+                    */}
+
+                    <div>
+                        <span className="text-md font-bold">Description: </span>
+                        <span>{research_drone.description}</span>
+                    </div>
+
                     <button
-                        className="rounded bg-gray-100 border w-[5rem]"
+                        className="border w-[5rem] mt-2 self-end"
                         onClick={() => {
                             setShowLog(true)
                             setCurrentLog(<Log research_drone={research_drone} setShowLog={setShowLog} />)
@@ -98,13 +132,13 @@ export function Log({
                         className="log-close"
                     />
                 </div>
-                <div>
+                <div className="flex flex-col gap-2">
                     {textArray.map((text: string) => <p className="text-lg monospace-font">{text}</p>)}
                 </div>
             </div>
             <div className="flex justify-end">
                 <button
-                    className="text-base rounded bg-white py-1 px-2 text-black"
+                    className="text-base bg-white py-1 px-2 text-black"
                     onClick={() => setShowArchived(!showArchived)}
                 >
                     {!showArchived ? "Access Archive" : "Access Log"}

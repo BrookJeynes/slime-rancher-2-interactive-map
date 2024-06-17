@@ -41,14 +41,25 @@ export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
     return (
         <Marker key={key} position={[map_node.pos.x, map_node.pos.y]} icon={icon}>
             <Popup>
-                {map_node.name}
-                <div className="mt-1">
-                    <label className="mr-1">Found:</label>
-                    <input
-                        type="checkbox"
-                        checked={checked}
-                        onChange={() => handleChecked(map_node_ls_key, key, checked, setChecked)}
-                    />
+                <div className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center gap-5">
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={() => handleChecked(map_node_ls_key, key, checked, setChecked)}
+                                className="w-4 h-4"
+                            />
+                            <h1 className="ml-2 text-xl font-medium">{map_node.name}</h1>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div>
+                        <span className="text-md font-bold">Description: </span>
+                        <span>{map_node.description}</span>
+                    </div>
                 </div>
             </Popup>
         </Marker>

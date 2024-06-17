@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { ImageOverlay, LayerGroup, LayersControl, MapContainer, Marker, Popup } from "react-leaflet"
-import Map from "/mapv2_square.png";
+import Map from "/map.png";
 import L from "leaflet";
 
 import { GordoIcons } from "./components/GordoIcon";

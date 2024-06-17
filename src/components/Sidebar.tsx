@@ -1,10 +1,13 @@
 import { useState } from "react";
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
+
 import CollectablesTracker from "./CollectablesTracker";
 import { SidebarPins } from "./UserPins";
 import IslandInfo from "./IslandInfo";
 import { Pin } from "../types";
+import { discord_link, github_link } from "../globals";
 
 export default function Sidebar({
     selected_pin,
@@ -18,20 +21,35 @@ export default function Sidebar({
     return (
         <div className="absoluter">
             <div
-                className={`transition-all duration-500 fixed top-0 left-0 h-full bg-gray-800 text-white ${show_sidebar ? 'translate-x-0' : '-translate-x-full'} w-96 z-50`}
+                className={`transition-all duration-500 fixed top-0 left-0 h-full bg-gradient-to-br from-blue-950 to-indigo-950 text-white border-r-solid border-r-[1px] ${show_sidebar ? 'translate-x-0' : '-translate-x-full'} w-96 z-50`}
             >
-                <div className="p-4">
-                    <h1 className="text-2xl font-bold pb-4 text-center">Slime Rancher 2 Interactive Map</h1>
+                <div className="flex flex-col gap-5 px-4">
+                    <div className="flex flex-col gap-2">
+                        <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher 2 Interactive Map</h1>
+                        <div className="flex justify-center gap-4">
+                            <AiFillDiscord
+                                size={25}
+                                onClick={() => window.open(discord_link)}
+                                className="hover:cursor-pointer"
+                            />
+                            <AiFillGithub
+                                size={25}
+                                onClick={() => window.open(github_link)}
+                                className="hover:cursor-pointer"
+                            />
 
-                    <hr className="mb-4" />
+                        </div>
+                    </div>
+
+                    <hr />
 
                     <CollectablesTracker />
 
-                    <hr className="my-4" />
+                    <hr />
 
                     <SidebarPins selected_pin={selected_pin} setSelectedPin={setSelectedPin} />
 
-                    <hr className="my-4" />
+                    <hr />
 
                     <IslandInfo />
                 </div>
@@ -39,7 +57,7 @@ export default function Sidebar({
 
             <button
                 onClick={() => setShowSidebar(!show_sidebar)}
-                className={`transition-all duration-500 fixed top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-r-md ${show_sidebar ? 'left-96' : 'left-0'} z-50`}
+                className={`transition-all duration-500 fixed top-1/2 -translate-y-1/2 bg-gradient-to-l from-blue-950 to-indigo-950 text-white p-2 border-solid border-[1px] border-l-0 rounded-r-md ${show_sidebar ? 'left-96' : 'left-0'} z-50`}
             >
                 {show_sidebar ? (
                     <FaChevronLeft

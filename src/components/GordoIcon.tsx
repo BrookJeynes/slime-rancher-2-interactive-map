@@ -41,14 +41,48 @@ export function GordoIcon({ gordo }: { gordo: Gordo }) {
     return (
         <Marker key={key} position={[gordo.pos.x, gordo.pos.y]} icon={icon}>
             <Popup>
-                {gordo.name} - {gordo.food}
-                <div className="mt-1">
-                    <label className="mr-1">Found:</label>
-                    <input
-                        type="checkbox"
-                        checked={checked}
-                        onChange={() => handleChecked(gordo_ls_key, key, checked, setChecked)}
-                    />
+                <div className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center gap-5">
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={() => handleChecked(gordo_ls_key, key, checked, setChecked)}
+                                className="w-4 h-4"
+                            />
+                            <h1 className="ml-2 text-xl font-medium">{gordo.name}</h1>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div>
+                        <span className="text-md font-bold">Food Requirement: </span>
+                        <span>{gordo.food}</span>
+                    </div>
+
+                    <div>
+                        <span className="text-md font-bold">Description: </span>
+                        <span>{gordo.description}</span>
+                    </div>
+
+                    <div>
+                        <h2 className="text-md font-bold">Drops:</h2>
+                        <ul>
+                            {gordo.drops.map(drop => {
+                                return <li className="list-disc ml-5">{drop}</li>
+                            })}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 className="text-md font-bold">Unlocks:</h2>
+                        <ul>
+                            {gordo.unlocks.map(unlock => {
+                                return <li className="list-disc ml-5">{unlock}</li>
+                            })}
+                        </ul>
+                    </div>
                 </div>
             </Popup>
         </Marker>

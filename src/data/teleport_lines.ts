@@ -4,49 +4,49 @@ export const teleport_lines: { [key: string]: TeleportLine } = {
     "line_1": {
         name: "RF to EV 1",
         positions: [
-            { x: 67.785, y: 78.895 },
-            { x: 69.013, y: 64.124 },
+            { x: 65.20, y: 96.85 },
+            { x: 68.49, y: 74.73 },
         ],
-        midpoint: { x: 68.766, y: 71.765 },
+        midpoint: { x: 67, y: 90 },
     },
     "line_2": {
         name: "RF to EV 2",
         positions: [
-            { x: 70.419, y: 94.673 },
-            { x: 76.145, y: 40.303 },
+            { x: 68.39, y: 112.91 },
+            { x: 77.36, y: 45.12 },
         ],
-        midpoint: { x: 74.748, y: 70.388 },
+        midpoint: { x: 75, y: 90.388 },
     },
     "line_3": {
         name: "RF to SS 1",
         positions: [
-            { x: 62.06, y: 80.288 },
-            { x: 53.398, y: 76.807 },
+            { x: 58.63, y: 97.94 },
+            { x: 45.48, y: 91.97 },
         ],
-        midpoint: { x: 58.507, y: 77.349 },
+        midpoint: { x: 54, y: 92 },
     },
     "line_4": {
         name: "RF to SS 2",
         positions: [
-            { x: 61.612, y: 98.54 },
-            { x: 36.964, y: 98.462 },
+            { x: 58.19, y: 117.03 },
+            { x: 20.65, y: 119.82 },
         ],
-        midpoint: { x: 51.043, y: 103.644 },
+        midpoint: { x: 40, y: 115 },
     },
     "line_5": {
         name: "EV to PB 1",
         positions: [
-            { x: 64.8, y: 37.6 },
-            { x: 83.1, y: 38.5 },
+            { x: 60.85, y: 41.19 },
+            { x: 83.13, y: 43.27 },
         ],
         midpoint: { x: 77.9, y: 25 },
     },
     "line_6": {
         name: "EV to PB 2",
         positions: [
-            { x: 74.1, y: 32 },
-            { x: 80.59, y: 32.8 },
+            { x: 75.44, y: 34.42 },
+            { x: 80.49, y: 37.28 },
         ],
-        midpoint: { x: 77.85, y: 30 },
+        midpoint: { x: 78.5, y: 34 },
     },
 };
