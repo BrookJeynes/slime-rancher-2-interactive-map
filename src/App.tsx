@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-import { ImageOverlay, LayerGroup, LayersControl, MapContainer, Marker, Popup } from "react-leaflet"
-import Map from "/map.png";
+import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 import L from "leaflet";
 
 import { GordoIcons } from "./components/GordoIcon";
@@ -67,14 +66,17 @@ function App() {
             <Sidebar selected_pin={selected_pin} setSelectedPin={setSelectedPin} />
 
             <MapContainer
-                center={[66, 110.7]}
-                zoom={4}
+                // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
+                center={[30, -80]}
+                zoom={3.5}
                 zoomControl={false}
                 scrollWheelZoom={true}
-                maxZoom={7}
+                maxZoom={6}
+                minZoom={3}
+                // TODO: This ties in with the `center`.
                 maxBounds={[
-                    [0, 0],
-                    [200, 200],
+                    [200, -200],
+                    [-70, 40]
                 ]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
@@ -110,13 +112,7 @@ function App() {
                     </LayersControl.Overlay>
                 </LayersControl>
 
-                <ImageOverlay
-                    url={Map}
-                    bounds={[
-                        [0, 0],
-                        [200, 200],
-                    ]}
-                />
+                <TileLayer url="map/{z}/{x}/{y}.png" noWrap={true} />
             </MapContainer>
         </div >
     )

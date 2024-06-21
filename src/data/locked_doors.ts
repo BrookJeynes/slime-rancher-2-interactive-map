@@ -5,7 +5,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_1": {
         name: "Tabby Door Receptacle",
         plort: "x1 Tabby Plort",
-        pos: { x: 63.84, y: 117.48 },
+        pos: { x: 36.2, y: -25.18 },
         image: "iconPlortTabby.png",
         description: "Underground inside a cave behind the Phosphor Gordo.",
         unlocks: "A path to a Treasure Pod.",
@@ -15,7 +15,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_2": {
         name: "Hunter Door Receptacle",
         plort: "x1 Hunter Plort",
-        pos: { x: 47.09, y: 91.95 },
+        pos: { x: -5.17, y: -58.86 },
         image: "iconPlortHunter.png",
         description: "On a ledge up a cliff.",
         unlocks: "A shortcut to the Starlight Strand Teleporter.",
@@ -23,7 +23,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_3": {
         name: "Phosphor Door Receptacle",
         plort: "x1 Phoshor Plort",
-        pos: { x: 41.01, y: 108.48 },
+        pos: { x: -17.39, y: -36.78 },
         image: "iconPlortPhosphor.png",
         description: "At the end of a cave tunnel past the Honey Gordo.",
         unlocks: "A path to the other part of the island.",
@@ -31,7 +31,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_4": {
         name: "Honey Door Receptacle",
         plort: "x1 Honey Plort",
-        pos: { x: 40.06, y: 99.75 },
+        pos: { x: -19.1, y: -48.42 },
         image: "iconPlortHoney.png",
         description: "In a small cave next to the water.",
         unlocks: "A cave that leads to a Treasure Pod.",
@@ -39,7 +39,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_5": {
         name: "Phosphor Door Receptacle",
         plort: "x1 Phoshor Plort",
-        pos: { x: 39.40, y: 113.92 },
+        pos: { x: -20.4, y: -29.7 },
         image: "iconPlortPhosphor.png",
         description: "At the end of a cave tunnel past the Honey Gordo.",
         unlocks: "A path to the other part of the island.",
@@ -47,7 +47,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_6": {
         name: "Rock Door Receptacle",
         plort: "x1 Rock Plort",
-        pos: { x: 37.90, y: 105.13 },
+        pos: { x: -23.03, y: -41.39 },
         image: "iconPlortRock.png",
         description: "At the end of a stream.",
         unlocks: "A cave that leads to a Treasure Pod.",
@@ -55,7 +55,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_7": {
         name: "Flutter Door Receptacle",
         plort: "x1 Flutter Plort",
-        pos: { x: 36.90, y: 118.53 },
+        pos: { x: -24.74, y: -23.73 },
         image: "iconPlortFlutter.png",
         description: "On a ledge up the cliff over the water.",
         unlocks: "A cave system that leads to a Treasure Pod.",
@@ -63,7 +63,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_8": {
         name: "Angler Door Receptacle",
         plort: "x1 Angler Plort",
-        pos: { x: 34.75, y: 112.44 },
+        pos: { x: -28.09, y: -31.46 },
         image: "iconPlortAngler.png",
         description: "Inside a small tunnel behind a waterfall.",
         unlocks: "A cave system that leads to a Treasure Pod.",
@@ -71,7 +71,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_9": {
         name: "Pink Door Receptacle",
         plort: "x1 Pink Plort",
-        pos: { x: 31.79, y: 105.11 },
+        pos: { x: -32.65, y: -41.35 },
         image: "iconPlortPink.png",
         description: "On a ledge half-way up a cliff.",
         unlocks: "A cave that leads to a Treasure Pod.",
@@ -79,7 +79,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_10": {
         name: "Tabby Door Receptacle",
         plort: "x1 Tabby Plort",
-        pos: { x: 28.12, y: 96.93 },
+        pos: { x: -37.64, y: -52.09 },
         image: "iconPlortTabby.png",
         description: "At the end of the main path.",
         unlocks: "A small room containing a Treasure Pod.",
@@ -87,7 +87,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_11": {
         name: "Hunter Door Receptacle",
         plort: "x1 Hunter Plort",
-        pos: { x: 23.38, y: 96.65 },
+        pos: { x: -43.48, y: -52.62 },
         image: "iconPlortHunter.png",
         description: "Underground in a cave accessible from the Rock Plort Door Receptacle.",
         unlocks: "A cave that acts as a shortcut to another part of the island and contains a Treasure Pod.",
@@ -95,7 +95,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_12": {
         name: "Rock Door Receptacle",
         plort: "x1 Rock Plort",
-        pos: { x: 19.81, y: 96.04 },
+        pos: { x: -47.48, y: -53.37 },
         image: "iconPlortRock.png",
         description: "On a lower ledge next to the water.",
         unlocks: "A cave the contains a Hunter Plort Door Receptacle.",
@@ -103,7 +103,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_13": {
         name: "Flutter Door Receptacle",
         plort: "x1 Flutter Plort",
-        pos: { x: 12.69, y: 101.54 },
+        pos: { x: -54.36, y: -46.07 },
         image: "iconPlortFlutter.png",
         description: "Up the ledge on the ruins wall.",
         unlocks: "A small cave containing a Treasure Pod.",
@@ -113,7 +113,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_14": {
         name: "Batty Door Receptacle",
         plort: "x1 Batty Plort",
-        pos: { x: 68.77, y: 76.36 },
+        pos: { x: 49.33, y: -79.25 },
         image: "iconPlortBatty.png",
         description: "Down a path from the teleporter on a ledge above the water.",
         unlocks: "A small cave containing a Treasure Pod.",
@@ -121,7 +121,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_15": {
         name: "Angler Door Receptacle",
         plort: "x1 Angler Plort",
-        pos: { x: 63.16, y: 64.52 },
+        pos: { x: 34.25, y: -94.92 },
         image: "iconPlortAngler.png",
         description: "Above a ledge on the lower parts of the ruins.",
         unlocks: "A small ruins room containing a Treasure Pod.",
@@ -129,7 +129,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_16": {
         name: "Boom Door Receptacle",
         plort: "x3 Boom Plort",
-        pos: { x: 72.49, y: 62.99 },
+        pos: { x: 58.89, y: -97.0 },
         image: "iconPlortBoom.png",
         description: "Underground inside a cave accessible from the north side of a cliff.",
         unlocks: "A cave that contains a Treasure Pod.",
@@ -137,7 +137,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_17": {
         name: "Boom Door Receptacle",
         plort: "x1 Boom Plort",
-        pos: { x: 73.54, y: 40.10 },
+        pos: { x: 61.57, y: -127.2 },
         image: "iconPlortBoom.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
@@ -145,7 +145,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_18": {
         name: "Tabby Door Receptacle",
         plort: "x1 Tabby Plort",
-        pos: { x: 73.80, y: 40.16 },
+        pos: { x: 62.21, y: -126.93 },
         image: "iconPlortTabby.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
@@ -153,7 +153,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_19": {
         name: "Batty Door Receptacle",
         plort: "x1 Batty Plort",
-        pos: { x: 73.96, y: 40.93 },
+        pos: { x: 62.59, y: -125.9 },
         image: "iconPlortBatty.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
