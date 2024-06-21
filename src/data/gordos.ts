@@ -4,7 +4,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Pink Gordo": {
         name: "Pink Gordo",
         food: "x30 Fruit, Veggie, or Meat",
-        pos: { x: 65.25, y: 105.48 },
+        pos: { x: 39.82, y: -41 },
         image: "iconGordoPink.png",
         drops: ["x12 Pink Slimes", "x1 Jar"],
         unlocks: ["A geyser, allowing a launch up to the cliff containing the Teleporter Activator"],
@@ -13,7 +13,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Cotton Gordo": {
         name: "Cotton Gordo",
         food: "x30 Veggie",
-        pos: { x: 59.37, y: 109.12 },
+        pos: { x: 24.28, y: -36.14 },
         image: "iconGordoCotton.png",
         drops: ["x12 Cotton Slimes", "x1 Jar"],
         unlocks: ["The path to the Teleporter Activator"],
@@ -22,7 +22,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Phosphor Gordo": {
         name: "Phosphor Gordo",
         food: "x30 Fruit",
-        pos: { x: 62.63, y: 118.17 },
+        pos: { x: 32.91, y: -24.08 },
         image: "iconGordoPhosphor.png",
         drops: ["x12 Phosphor Slimes", "x1 Jar"],
         unlocks: ["The path to the Tabby Plort Door"],
@@ -31,7 +31,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Hunter Gordo": {
         name: "Hunter Gordo",
         food: "x30 Meat",
-        pos: { x: 26.15, y: 98.70 },
+        pos: { x: -40.19, y: -49.85 },
         image: "iconGordoHunter.png",
         drops: ["x12 Hunter Slimes", "x1 Jar"],
         unlocks: ["A cave that contains a Treasure Pod and acts as a shortcut to another part of the island if the Hunter Plort Door and the Rock Plort Door are unlocked"],
@@ -40,7 +40,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Tabby Gordo": {
         name: "Tabby Gordo",
         food: "x30 Meat",
-        pos: { x: 77.35, y: 44.12 },
+        pos: { x: 70.48, y: -121.7 },
         image: "iconGordoTabby.png",
         drops: ["x12 Tabby Slimes", "x1 Jar"],
         unlocks: ["Ember Valley Teleporter"],
@@ -49,7 +49,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Angler Gordo": {
         name: "Angler Gordo",
         food: "x50 Meat",
-        pos: { x: 17.39, y: 124.38 },
+        pos: { x: -49.8, y: -15.97 },
         image: "iconGordoAngler.png",
         drops: ["x12 Angler Slimes", "x1 Jar"],
         unlocks: ["A Geyser"],
@@ -58,7 +58,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Rock Gordo": {
         name: "Rock Gordo",
         food: "x50 Veggie",
-        pos: { x: 71.27, y: 65.47 },
+        pos: { x: 55.83, y: -93.69 },
         image: "iconGordoRock.png",
         drops: ["x12 Rock Slimes", "x1 Jar"],
         unlocks: ["A geyser that leads to an upper cliff containing a Treasure Pod"],
@@ -67,7 +67,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Batty Gordo": {
         name: "Batty Gordo",
         food: "x50 Fruit",
-        pos: { x: 67.14, y: 37.07 },
+        pos: { x: 44.98, y: -130.97 },
         image: "iconGordoBatty.png",
         drops: ["x12 Batty Slimes", "x1 Jar"],
         unlocks: ["A tunnel that acts as a shortcut to another part of the island"],
@@ -76,7 +76,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Flutter Gordo": {
         name: "Flutter Gordo",
         food: "x15 Moondew Nectar",
-        pos: { x: 14.03, y: 108.54 },
+        pos: { x: -53.06, y: -36.87 },
         image: "iconGordoFlutter.png",
         drops: ["x12 Flutter Slimes", "x1 Jar"],
         unlocks: ["A hole into a cave containing a Research Drone and a Treasure Pod"],
@@ -85,7 +85,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Ringtail Gordo": {
         name: "Ringtail Gordo",
         food: "x30 Fruit, Veggie, or Meat",
-        pos: { x: 20.69, y: 119.83 },
+        pos: { x: -46.52, y: -22.01 },
         image: "iconGordoRingtail.png",
         drops: ["x12 Ringtail Slimes", "x1 Jar"],
         unlocks: ["Starlight Strand Teleporter"],
@@ -94,7 +94,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Boom Gordo": {
         name: "Boom Gordo",
         food: "x50 Meat",
-        pos: { x: 69.87, y: 19.17 },
+        pos: { x: 52.24, y: -154.79 },
         image: "iconGordoBoom.png",
         drops: ["x12 Boom Slimes", "x1 Jar"],
         unlocks: ["A ruins room containing a Treasure Pod, a Treasure Pod, and a Research Drone"],
@@ -103,7 +103,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Honey Gordo": {
         name: "Honey Gordo",
         food: "x50 Fruit",
-        pos: { x: 38.89, y: 111.57 },
+        pos: { x: -21.18, y: -32.89 },
         image: "iconGordoHoney.png",
         drops: ["x12 Honey Slimes", "x1 Jar"],
         unlocks: ["A cave that leads to 2x Phosphor Plort Door, and a Treasure Pod"],
@@ -112,7 +112,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Crystal Gordo": {
         name: "Crystal Gordo",
         food: "x30 Veggie",
-        pos: { x: 73.82, y: 48.40 },
+        pos: { x: 62.26, y: -116.16 },
         image: "iconGordoCrystal.png",
         drops: ["x12 Crytal Slimes", "x1 Jar"],
         unlocks: ["A geyser to the upper part of the cliffs"],
@@ -121,7 +121,7 @@ export const gordos: { [key: string]: Gordo } = {
     "Saber Gordo": {
         name: "Saber Gordo",
         food: "x30 Meat",
-        pos: { x: 83.13, y: 43.25 },
+        pos: { x: 82.01, y: -122.93 },
         image: "iconGordoSaber.png",
         drops: ["x12 Saber Slimes", "x1 Jar"],
         unlocks: ["Powderfall Bluffs Teleporter"],

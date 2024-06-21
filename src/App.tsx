@@ -72,10 +72,11 @@ function App() {
                 zoomControl={false}
                 scrollWheelZoom={true}
                 maxZoom={6}
+                minZoom={3}
                 // TODO: This ties in with the `center`.
                 maxBounds={[
                     [200, -200],
-                    [-70, 80]
+                    [-70, 40]
                 ]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
