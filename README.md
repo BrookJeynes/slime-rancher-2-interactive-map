@@ -4,7 +4,7 @@
 
 An interactive map for Slime Rancher 2.
 
-The map can be found here: [https://slime-rancher-2-interactive-map.vercel.app/](https://slime-rancher-2-interactive-map.vercel.app/)
+The map can be found here: [https://sr2interactivemap.com](https://sr2interactivemap.com)
 
 ![Map Example](./map-example.png)
 
@@ -32,11 +32,11 @@ Have feedback or suggestions? I'd love to hear it! Join the [Discord](https://di
     ```
 4. Install the required packages.
     ```bash
-    bun install
+    npm install
     ```
 5. Run the web app.
     ```
-    bun dev
+    npm run dev
     ```
 
 ## Contribution
