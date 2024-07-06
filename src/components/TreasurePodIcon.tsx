@@ -39,7 +39,7 @@ export function TreasurePodIcon({ treasure_pod }: { treasure_pod: TreasurePod })
     });
 
     return (
-        <Marker key={key} position={[treasure_pod.pos.x, treasure_pod.pos.y]} icon={icon}>
+        <Marker key={key} position={[-treasure_pod.pos.y, treasure_pod.pos.x]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">

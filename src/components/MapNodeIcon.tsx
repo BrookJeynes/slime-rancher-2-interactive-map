@@ -39,7 +39,7 @@ export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
     });
 
     return (
-        <Marker key={key} position={[map_node.pos.x, map_node.pos.y]} icon={icon}>
+        <Marker key={key} position={[-map_node.pos.y, map_node.pos.x]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">

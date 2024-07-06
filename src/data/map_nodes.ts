@@ -1,54 +1,62 @@
 import { MapNode } from "../types";
 
 export const map_nodes: { [key: string]: MapNode } = {
-    "Rainbow Fields Southern": {
+
+    // Rainbow Fields
+    "187.818,216.326": {
         name: "Southern Node",
-        pos: { x: 26.78, y: -38.93 },
+        pos: { x: 187.818, y: 216.326 },
         description: "Next to a big rock near the edge of a ledge over the water.",
     },
-    "Rainbow Fields Western": {
+    "103.15115,289.99393": {
         name: "Western Node",
-        pos: { x: 32.26, y: -46.27 },
+        pos: { x: 103.15115, y: 289.99393 },
         description: "Near the edge of the top of a cliff.",
     },
-    "Ember Valley North": {
+
+    // Ember Valley
+    "-560.942,747.05237": {
         name: "North Node",
-        pos: { x: 64.97, y: -119.17 },
+        pos: { x: -560.942, y: 747.05237 },
         description: "On a ledge overlooking a pit and a pond across from a waterfall.",
     },
-    "Ember Valley Center": {
+    "-443.20145,560.2943": {
         name: "Center Node",
-        pos: { x: 55.26, y: -106.67 },
+        pos: { x: -443.20145, y: 560.2943 },
         description: "On a ledge up a cliff in front of a large fossilized shell.",
     },
-    "Ember Valley West": {
+    "-756.6467,461.09158": {
         name: "West Node",
-        pos: { x: 48.56, y: -140.49 },
+        pos: { x: -756.6467, y: 461.09158 },
         description: "On top of a plateau above the lava",
     },
-    "Starlight Strand North": {
+
+    // Starlight Strand
+    "-7.8393097,-16.954712": {
         name: "North Node",
-        pos: { x: 2.46, y: -58.84 },
+        pos: { x: -7.8393097, y: -16.954712 },
         description: "On the edge of a high ledge on an island.",
     },
-    "Starlight Strand Center": {
+    "166.48,-283.94998": {
         name: "Center Node",
-        pos: { x: -24.86, y: -40.34 },
+        pos: { x: 166.48, y: -283.94998 },
         description: "On a ledge next to a rock.",
     },
-    "Starlight Strand South": {
+    "260.81897,-655.49695": {
         name: "South Node",
-        pos: { x: -54.63, y: -30.2 },
+        pos: { x: 260.81897, y: -655.49695 },
         description: "On top of a ruin ledge between two ruin walls.",
     },
-    "Powderfall Bluffs West": {
+
+    // Powderfall Bluffs
+    "-820.88184,1708.5714": {
         name: "West Node",
-        pos: { x: 82.62, y: -140.6 },
+        pos: { x: -820.88184, y: 1708.5714 },
         description: "On a grass ledge near some trees over the water.",
     },
-    "Powderfall Bluffs East": {
+    "-574.91296,1579.028": {
         name: "East Node",
-        pos: { x: 80.73, y: -117.35 },
+        pos: { x: -574.91296, y: 1579.028 },
         description: "On an ice cube next to a patch of deep snow.",
     },
 }

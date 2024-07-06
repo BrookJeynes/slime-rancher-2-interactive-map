@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "public/map/tilemapresource.xml"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

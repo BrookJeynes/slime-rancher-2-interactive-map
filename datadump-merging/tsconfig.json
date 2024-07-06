@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020"],
+    "module": "NodeNext",
+    "skipLibCheck": true,
+    "outDir": "build",
+
+    "allowJs": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "./*.mts",
+    "./*.mjs"
+  ]
+  // "files": [
+  //   "apply-dumps.mts",
+  //   "convert-map-to-tiles.mts",
+  //   "stitch.mts",
+  //   "stitch-map.mjs"
+  // ]
+}

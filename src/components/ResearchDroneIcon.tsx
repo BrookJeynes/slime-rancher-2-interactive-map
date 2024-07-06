@@ -49,7 +49,7 @@ export function ResearchDroneIcon({
     });
 
     return (
-        <Marker key={key} position={[research_drone.pos.x, research_drone.pos.y]} icon={icon}>
+        <Marker key={key} position={[-research_drone.pos.y, research_drone.pos.x]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">

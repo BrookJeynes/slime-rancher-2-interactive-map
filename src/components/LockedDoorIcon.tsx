@@ -39,7 +39,7 @@ export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
     });
 
     return (
-        <Marker key={key} position={[locked_door.pos.x, locked_door.pos.y]} icon={icon}>
+        <Marker key={key} position={[-locked_door.pos.y, locked_door.pos.x]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">

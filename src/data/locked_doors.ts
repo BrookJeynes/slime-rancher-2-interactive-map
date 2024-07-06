@@ -2,159 +2,175 @@ import { LockedDoor } from "../types";
 
 export const locked_doors: { [key: string]: LockedDoor } = {
     // Rainbow Fields
-    "locked_1": {
+    "puz1310514358": {
         name: "Tabby Door Receptacle",
         plort: "x1 Tabby Plort",
-        pos: { x: 36.2, y: -25.18 },
+        pos: { x: 343.374, y: 351.521 },
         image: "iconPlortTabby.png",
         description: "Underground inside a cave behind the Phosphor Gordo.",
         unlocks: "A path to a Treasure Pod.",
     },
 
     // Starlight Strand
-    "locked_2": {
+    "puz0103410747": {
         name: "Hunter Door Receptacle",
         plort: "x1 Hunter Plort",
-        pos: { x: -5.17, y: -58.86 },
+        pos: { x: -9.624748, y: -94.471085 },
         image: "iconPlortHunter.png",
-        description: "On a ledge up a cliff.",
+        description: "On a ledge up a cliff, on the coastal side of the island.",
         unlocks: "A shortcut to the Starlight Strand Teleporter.",
     },
-    "locked_3": {
+    "puz1719194430": {
         name: "Phosphor Door Receptacle",
         plort: "x1 Phoshor Plort",
-        pos: { x: -17.39, y: -36.78 },
+        pos: { x: 192.64163, y: -210.2614 },
         image: "iconPlortPhosphor.png",
         description: "At the end of a cave tunnel past the Honey Gordo.",
         unlocks: "A path to the other part of the island.",
     },
-    "locked_4": {
+    "puz0370449831": {
         name: "Honey Door Receptacle",
         plort: "x1 Honey Plort",
-        pos: { x: -19.1, y: -48.42 },
+        pos: { x: 100.020004, y: -224.37 },
         image: "iconPlortHoney.png",
         description: "In a small cave next to the water.",
         unlocks: "A cave that leads to a Treasure Pod.",
     },
-    "locked_5": {
+    "puz0818178333": {
         name: "Phosphor Door Receptacle",
         plort: "x1 Phoshor Plort",
-        pos: { x: -20.4, y: -29.7 },
+        pos: { x: 274.41827, y: -219.26686 },
         image: "iconPlortPhosphor.png",
         description: "At the end of a cave tunnel past the Honey Gordo.",
         unlocks: "A path to the other part of the island.",
     },
-    "locked_6": {
+    "puz0342122907": {
         name: "Rock Door Receptacle",
         plort: "x1 Rock Plort",
-        pos: { x: -23.03, y: -41.39 },
+        pos: { x: 158.11, y: -255.34999 },
         image: "iconPlortRock.png",
         description: "At the end of a stream.",
         unlocks: "A cave that leads to a Treasure Pod.",
     },
-    "locked_7": {
+    "puz2081818856": {
         name: "Flutter Door Receptacle",
         plort: "x1 Flutter Plort",
-        pos: { x: -24.74, y: -23.73 },
+        pos: { x: 313.87, y: -278.96 },
         image: "iconPlortFlutter.png",
         description: "On a ledge up the cliff over the water.",
         unlocks: "A cave system that leads to a Treasure Pod.",
     },
-    "locked_8": {
+    "puz0075587799": {
         name: "Angler Door Receptacle",
         plort: "x1 Angler Plort",
-        pos: { x: -28.09, y: -31.46 },
+        pos: { x: 249.42, y: -312.16998 },
         image: "iconPlortAngler.png",
         description: "Inside a small tunnel behind a waterfall.",
         unlocks: "A cave system that leads to a Treasure Pod.",
     },
-    "locked_9": {
+    "puz1508860928": {
         name: "Pink Door Receptacle",
         plort: "x1 Pink Plort",
-        pos: { x: -32.65, y: -41.35 },
+        pos: { x: 157.98999, y: -362.03998 },
         image: "iconPlortPink.png",
         description: "On a ledge half-way up a cliff.",
         unlocks: "A cave that leads to a Treasure Pod.",
     },
-    "locked_10": {
-        name: "Tabby Door Receptacle",
-        plort: "x1 Tabby Plort",
-        pos: { x: -37.64, y: -52.09 },
-        image: "iconPlortTabby.png",
+    "puz0039509625": {
+        name: "Hunter Door Receptacle",
+        plort: "x1 Hunter Plort",
+        pos: { x: 42.120003, y: -430.09998 },
+        image: "iconPlortHunter.png",
         description: "At the end of the main path.",
         unlocks: "A small room containing a Treasure Pod.",
     },
-    "locked_11": {
+    "puz0462586966": {
         name: "Hunter Door Receptacle",
         plort: "x1 Hunter Plort",
-        pos: { x: -43.48, y: -52.62 },
+        pos: { x: 53.050003, y: -489.489 },
         image: "iconPlortHunter.png",
         description: "Underground in a cave accessible from the Rock Plort Door Receptacle.",
         unlocks: "A cave that acts as a shortcut to another part of the island and contains a Treasure Pod.",
     },
-    "locked_12": {
+    "puz1943698204": {
         name: "Rock Door Receptacle",
         plort: "x1 Rock Plort",
-        pos: { x: -47.48, y: -53.37 },
+        pos: { x: 48.675003, y: -534.136 },
         image: "iconPlortRock.png",
         description: "On a lower ledge next to the water.",
         unlocks: "A cave the contains a Hunter Plort Door Receptacle.",
     },
-    "locked_13": {
+    "puz0890619903": {
         name: "Flutter Door Receptacle",
         plort: "x1 Flutter Plort",
-        pos: { x: -54.36, y: -46.07 },
+        pos: { x: 97.00256, y: -654.4988 },
         image: "iconPlortFlutter.png",
         description: "Up the ledge on the ruins wall.",
         unlocks: "A small cave containing a Treasure Pod.",
     },
 
     // Ember Valley
-    "locked_14": {
+    "puz1468966435": {
         name: "Batty Door Receptacle",
         plort: "x1 Batty Plort",
-        pos: { x: 49.33, y: -79.25 },
+        pos: { x: -190.55452, y: 472.86365 },
         image: "iconPlortBatty.png",
         description: "Down a path from the teleporter on a ledge above the water.",
         unlocks: "A small cave containing a Treasure Pod.",
     },
-    "locked_15": {
+    "puz0753728854": {
         name: "Angler Door Receptacle",
         plort: "x1 Angler Plort",
-        pos: { x: 34.25, y: -94.92 },
         image: "iconPlortAngler.png",
         description: "Above a ledge on the lower parts of the ruins.",
         unlocks: "A small ruins room containing a Treasure Pod.",
+        pos: { x: -347.194, y: 298.98508 },
     },
-    "locked_16": {
-        name: "Boom Door Receptacle",
-        plort: "x3 Boom Plort",
-        pos: { x: 58.89, y: -97.0 },
+    "puz1378549307": {
+        name: "Boom Door Receptacle (1 of 3)",
+        plort: "x1 Boom Plort",
+        pos: { x: -338.31702, y: 638.935 },
         image: "iconPlortBoom.png",
         description: "Underground inside a cave accessible from the north side of a cliff.",
         unlocks: "A cave that contains a Treasure Pod.",
     },
-    "locked_17": {
-        name: "Boom Door Receptacle",
+    "puz0624341552": {
+        name: "Boom Door Receptacle (2 of 3)",
         plort: "x1 Boom Plort",
-        pos: { x: 61.57, y: -127.2 },
+        pos: { x: -358.42, y: 646.94 },
         image: "iconPlortBoom.png",
+        description: "puz0624341552 Needs description",
+        unlocks: "A cave that contains a Treasure Pod.",
+    },
+    "puz0194168418": {
+        name: "Boom Door Receptacle (3 of 3)",
+        plort: "x1 Boom Plort",
+        pos: { x: -323.54056, y: 650.06866 },
+        image: "iconPlortBoom.png",
+        description: "puz0194168418 Needs description",
+        unlocks: "A cave that contains a Treasure Pod.",
+    },
+    "puz1565498717": {
+        name: "Batty Door Receptacle",
+        plort: "x1 Batty Plort",
+        pos: { x: -642.98395, y: 690.693 },
+        image: "iconPlortBatty.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
     },
-    "locked_18": {
+    "puz0260113737": {
         name: "Tabby Door Receptacle",
         plort: "x1 Tabby Plort",
-        pos: { x: 62.21, y: -126.93 },
+        pos: { x: -649.74896, y: 681.808 },
         image: "iconPlortTabby.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
     },
-    "locked_19": {
-        name: "Batty Door Receptacle",
-        plort: "x1 Batty Plort",
-        pos: { x: 62.59, y: -125.9 },
-        image: "iconPlortBatty.png",
+    "puz0406679521": {
+        name: "Boom Door Receptacle",
+        plort: "x1 Boom Plort",
+        pos: { x: -645.292, y: 672.38 },
+        image: "iconPlortBoom.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
     },
