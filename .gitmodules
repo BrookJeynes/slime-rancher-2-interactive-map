@@ -1,0 +1,3 @@
+[submodule "datadump-merging/gdal2tiles-leaflet"]
+	path = datadump-merging/gdal2tiles-leaflet
+	url = https://github.com/commenthol/gdal2tiles-leaflet

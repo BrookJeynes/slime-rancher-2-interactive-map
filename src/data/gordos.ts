@@ -1,127 +1,127 @@
 import { Gordo } from "../types";
 
 export const gordos: { [key: string]: Gordo } = {
-    "Pink Gordo": {
+    "gordo0722604697": {
         name: "Pink Gordo",
         food: "x30 Fruit, Veggie, or Meat",
-        pos: { x: 39.82, y: -41 },
+        pos: { x: 160.88, y: 397.07 },
         image: "iconGordoPink.png",
         drops: ["x12 Pink Slimes", "x1 Jar"],
         unlocks: ["A geyser, allowing a launch up to the cliff containing the Teleporter Activator"],
         description: "In the open at the end of a path.",
     },
-    "Cotton Gordo": {
+    "gordo1022215119": {
         name: "Cotton Gordo",
         food: "x30 Veggie",
-        pos: { x: 24.28, y: -36.14 },
+        pos: { x: 216.86002, y: 185.5 },
         image: "iconGordoCotton.png",
         drops: ["x12 Cotton Slimes", "x1 Jar"],
         unlocks: ["The path to the Teleporter Activator"],
         description: "Covering a hole at the top of a hill.",
     },
-    "Phosphor Gordo": {
+    "gordo0383133132": {
         name: "Phosphor Gordo",
         food: "x30 Fruit",
-        pos: { x: 32.91, y: -24.08 },
+        pos: { x: 360.32, y: 315.27002 },
         image: "iconGordoPhosphor.png",
         drops: ["x12 Phosphor Slimes", "x1 Jar"],
         unlocks: ["The path to the Tabby Plort Door"],
         description: "Inside a cave covering one of the cave doors.",
     },
-    "Hunter Gordo": {
+    "gordo1836740701": {
         name: "Hunter Gordo",
         food: "x30 Meat",
-        pos: { x: -40.19, y: -49.85 },
+        pos: { x: 80.29, y: -448.27002 },
         image: "iconGordoHunter.png",
         drops: ["x12 Hunter Slimes", "x1 Jar"],
         unlocks: ["A cave that contains a Treasure Pod and acts as a shortcut to another part of the island if the Hunter Plort Door and the Rock Plort Door are unlocked"],
         description: "In an alcove of a cliff covering a cave above the water.",
     },
-    "Tabby Gordo": {
+    "gordo0924604970": {
         name: "Tabby Gordo",
         food: "x30 Meat",
-        pos: { x: 70.48, y: -121.7 },
+        pos: { x: -581.51825, y: 884.2189 },
         image: "iconGordoTabby.png",
         drops: ["x12 Tabby Slimes", "x1 Jar"],
         unlocks: ["Ember Valley Teleporter"],
         description: "On a teleporter on top of a plateau island.",
     },
-    "Angler Gordo": {
+    "gordo1762816372": {
         name: "Angler Gordo",
         food: "x50 Meat",
-        pos: { x: -49.8, y: -15.97 },
+        pos: { x: 393.351, y: -566.0974 },
         image: "iconGordoAngler.png",
         drops: ["x12 Angler Slimes", "x1 Jar"],
         unlocks: ["A Geyser"],
         description: "Underground at the end of a cave just above the water level.",
     },
-    "Rock Gordo": {
+    "gordo0647361766": {
         name: "Rock Gordo",
         food: "x50 Veggie",
-        pos: { x: 55.83, y: -93.69 },
+        pos: { x: -322.57, y: 570.95 },
         image: "iconGordoRock.png",
         drops: ["x12 Rock Slimes", "x1 Jar"],
         unlocks: ["A geyser that leads to an upper cliff containing a Treasure Pod"],
         description: "Underground in a cave on top of a plateaued rock.",
     },
-    "Batty Gordo": {
+    "gordo0204299382": {
         name: "Batty Gordo",
         food: "x50 Fruit",
-        pos: { x: 44.98, y: -130.97 },
+        pos: { x: -675.93115, y: 410.39407 },
         image: "iconGordoBatty.png",
         drops: ["x12 Batty Slimes", "x1 Jar"],
         unlocks: ["A tunnel that acts as a shortcut to another part of the island"],
         description: "Underground at the end of a large cave system to the east.",
     },
-    "Flutter Gordo": {
+    "gordo0589091050": {
         name: "Flutter Gordo",
         food: "x15 Moondew Nectar",
-        pos: { x: -53.06, y: -36.87 },
+        pos: { x: 197.56, y: -625.42004 },
         image: "iconGordoFlutter.png",
         drops: ["x12 Flutter Slimes", "x1 Jar"],
         unlocks: ["A hole into a cave containing a Research Drone and a Treasure Pod"],
         description: "On top of a circular platform up the large ruin walls.",
     },
-    "Ringtail Gordo": {
+    "gordo1114950624": {
         name: "Ringtail Gordo",
         food: "x30 Fruit, Veggie, or Meat",
-        pos: { x: -46.52, y: -22.01 },
+        pos: { x: 336.62, y: -529.41003 },
         image: "iconGordoRingtail.png",
         drops: ["x12 Ringtail Slimes", "x1 Jar"],
         unlocks: ["Starlight Strand Teleporter"],
         description: "In the open on top of a teleporter.",
     },
-    "Boom Gordo": {
+    "gordo0091013817": {
         name: "Boom Gordo",
         food: "x50 Meat",
-        pos: { x: 52.24, y: -154.79 },
+        pos: { x: -892.31995, y: 507.865 },
         image: "iconGordoBoom.png",
         drops: ["x12 Boom Slimes", "x1 Jar"],
         unlocks: ["A ruins room containing a Treasure Pod, a Treasure Pod, and a Research Drone"],
         description: "Against the ruins wall covering a hole.",
     },
-    "Honey Gordo": {
+    "gordo0445737835": {
         name: "Honey Gordo",
         food: "x50 Fruit",
-        pos: { x: -21.18, y: -32.89 },
+        pos: { x: 227.59999, y: -238.79999 },
         image: "iconGordoHoney.png",
         drops: ["x12 Honey Slimes", "x1 Jar"],
         unlocks: ["A cave that leads to 2x Phosphor Plort Door, and a Treasure Pod"],
         description: "On top of a ledge across a rock arch blocking a tunnel.",
     },
-    "Crystal Gordo": {
+    "gordo1394565746": {
         name: "Crystal Gordo",
         food: "x30 Veggie",
-        pos: { x: 62.26, y: -116.16 },
+        pos: { x: -531, y: 688.04 },
         image: "iconGordoCrystal.png",
         drops: ["x12 Crytal Slimes", "x1 Jar"],
         unlocks: ["A geyser to the upper part of the cliffs"],
         description: "On top of a hill near a waterfall.",
     },
-    "Saber Gordo": {
+    "gordo1269206194": {
         name: "Saber Gordo",
         food: "x30 Meat",
-        pos: { x: 82.01, y: -122.93 },
+        pos: { x: -619.122, y: 1655.2639 },
         image: "iconGordoSaber.png",
         drops: ["x12 Saber Slimes", "x1 Jar"],
         unlocks: ["Powderfall Bluffs Teleporter"],

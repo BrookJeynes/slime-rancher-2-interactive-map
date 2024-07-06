@@ -1,7 +1,7 @@
 import { ResearchDrone } from "../types";
 
 export const research_drones: { [key: string]: ResearchDrone } = {
-    "research_1": {
+    "536.429,426.796": {
         name: "Research Drone 1",
         log: [
             `I had the drones rebuild the conservatory
@@ -27,10 +27,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       run off to look for plants and mushrooms.
       Maybe I would have been closer to them...`,
         ],
-        pos: { x: 41.95, y: -8.1 },
+        pos: { x: 536.429, y: 426.796 },
         description: "On top of the cliff over the tunnel entrance.",
     },
-    "research_2": {
+    "552.218,479.71802": {
         name: "Research Drone 12",
         log: [
             `I sometimes used to bring my lunch here and
@@ -47,10 +47,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       thoughts I had to share back then?`,
         ],
         archive: [`Ugh, I forgot my fork. Looks like it's hand noodles again...`],
-        pos: { x: 45.39, y: -7.0 },
+        pos: { x: 552.218, y: 479.71802 },
         description: "On a ledge up a cliff near the tunnel entrance.",
     },
-    "research_3": {
+    "748.02,567.2": {
         name: "Research Drone 13",
         log: [
             `I used to be afraid of the water. It felt like
@@ -78,10 +78,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       that. Being fearless and just diving into
       new adventures. I guess this is my chance.`,
         ],
-        pos: { x: 50.49, y: 10.63 },
+        pos: { x: 748.02, y: 567.2 },
         description: "On top of a stone arch near a plot.",
     },
-    "research_4": {
+    "885.04297,267.3913": {
         name: "Research Drone 11",
         log: [
             `I had been pacing all over the conservatory
@@ -109,10 +109,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `I'm sorry mom and dad. I'm sorry grandma.
       But I really want this.`,
         ],
-        pos: { x: 31.01, y: 22.58 },
+        pos: { x: 885.04297, y: 267.3913 },
         description: "On the edge of an island next to a rock.",
     },
-    "research_5": {
+    "616.28,138.76001": {
         name: "Research Drone 10",
         log: [
             `Oh mushrooms, my first love. I still
@@ -133,10 +133,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `... ...`,
             `I bet dad would have laughed at that one.`,
         ],
-        pos: { x: 20.67, y: -0.98 },
+        pos: { x: 616.28, y: 138.76001 },
         description: "On top of a mushroom growing on the side of the central pillar of a cave.",
     },
-    "research_6": {
+    "226.46632,335.5531": {
         name: "Research Drone 2",
         log: [
             `Well, here we are again. I'm sending the
@@ -157,10 +157,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       recent memory?`,
             `It's all too good to be true!`,
         ],
-        pos: { x: 36.17, y: -35.85 },
+        pos: { x: 226.46632, y: 335.5531 },
         description: "On a small ledge next to a tree.",
     },
-    "research_7": {
+    "140.79514,243.02728": {
         name: "Research Drone 3",
         log: [
             `I was so in over my head when I first
@@ -185,10 +185,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       glad this world still has its mysteries to
       share.`,
         ],
-        pos: { x: 28.69, y: -42.95 },
+        pos: { x: 140.79514, y: 243.02728 },
         description: "Next to a cliff wall near a Refinery Link and a tunnel entrance.",
     },
-    "research_8": {
+    "-307.868,308.602": {
         name: "Research Drone 4",
         log: [
             `The first time I was here I turned this entire
@@ -218,10 +218,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       important part of the ecosystem. I hope
       that's ok with you.`,
         ],
-        pos: { x: 36.89, y: -92.3 },
+        pos: { x: -307.868, y: 308.602 },
         description: "On a rock next to a flower bed on the lower part of the ruins.",
     },
-    "research_9": {
+    "-442.93558,508.6246": {
         name: "Research Drone 5",
         log: [
             `I know I'm on a mission here, but that
@@ -231,10 +231,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       splash like the old days...`,
         ],
         archive: [`YAAAAAHOOOOOOOOOOO!`],
-        pos: { x: 51.91, y: -106.85 },
+        pos: { x: -442.93558, y: 508.6246 },
         description: "In the open at the edge of a ledge.",
     },
-    "research_10": {
+    "-603.556,368.48993": {
         name: "Research Drone 7",
         log: [
             `I feel at home here. When I traveled
@@ -260,10 +260,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `I suppose those feelings are the same ones
       that brought me here in the first place.`,
         ],
-        pos: { x: 41.78, y: -124.03 },
+        pos: { x: -603.556, y: 368.48993 },
         description: "Underground in a cave on a ledge protruding off a central rock pillar.",
     },
-    "research_11": {
+    "-757.77,413.164": {
         name: "Research Drone 8",
         log: [
             `I never managed to conclude if the prisma
@@ -291,10 +291,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       here... that I'm not ready to be on my
       own.`,
         ],
-        pos: { x: 45.72, y: -141.06 },
+        pos: { x: -757.77, y: 413.164 },
         description: "On a ledge up a cliff underneath a large rock overhang.",
     },
-    "research_12": {
+    "-921.439,499.7389": {
         name: "Research Drone 9",
         log: [
             `This gate is still sealed too, so I really must
@@ -322,10 +322,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       like a truly amazing scientific and historical
       discovery. I need to make some calls!`,
         ],
-        pos: { x: 51.54, y: -157.65 },
+        pos: { x: -921.439, y: 499.7389 },
         description: "Inside the room past a Boom Gordo on a ruin stone.",
     },
-    "research_13": {
+    "-559.3314,888.10364": {
         name: "Research Drone 6",
         log: [
             `When I left the ranch, when I left my home, I
@@ -352,10 +352,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `I hope they're ok. And I hope that some
       day they'll say they're proud of me.`,
         ],
-        pos: { x: 70.64, y: -119.22 },
+        pos: { x: -559.3314, y: 888.10364 },
         description: "At the edge of the plateau island to the side of the Ember Valley Teleporter/Tabby Gordo.",
     },
-    "research_14": {
+    "50.9,-261.06": {
         name: "Research Drone 14",
         log: [
             `The prisma waves seem to affect each area
@@ -376,10 +376,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       and on the other, deep, verdant greens.
       It's extraordinary!`,
         ],
-        pos: { x: -22.91, y: -52.77 },
+        pos: { x: 50.9, y: -261.06 },
         description: "On a small ledge at the end of a path next to the top of a waterfall.",
     },
-    "research_15": {
+    "234.748,-273.53998": {
         name: "Research Drone 16",
         log: [
             `Ever since I came back, things have been a
@@ -405,10 +405,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       and listen. And I have a whole lifetime on
       this island to do just that.`,
         ],
-        pos: { x: -24.2, y: -32.87 },
+        pos: { x: 234.748, y: -273.53998 },
         description: "On a ledge past a rock arch near a waterfall.",
     },
-    "research_16": {
+    "177.03001,-352.08997": {
         name: "Research Drone 17",
         log: [
             `I grew attached to this tree when I first
@@ -435,10 +435,11 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `I wonder who else this tree will meet? I
       wonder if it will tell them about me?`,
         ],
-        pos: { x: -30.71, y: -39.77 },
+        pos: { x: 177.03001, y: -352.08997 },
         description: "On a small ledge under a tree.",
     },
-    "research_17": {
+//     "234.748,-273.53998": {
+    "63.050995,-476.59003": {
         name: "Research Drone 15",
         log: [
             `The giant mushrooms on this island are
@@ -458,10 +459,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `I'm going to call it Mega Mushroom Pizza
       and I'm going to eat it every day.`,
         ],
-        pos: { x: -24.2, y: -32.87 },
+        pos: { x: 63.050995, y: -476.59003 },
         description: "On a mushroom in the open",
     },
-    "research_18": {
+    "375.292,-432.353": {
         name: "Research Drone 18",
         log: [
             `I used to start my mornings with a jog
@@ -484,10 +485,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       statue that-`,
             `YOU HAVE GOT TO BE KIDDING ME!`,
         ],
-        pos: { x: -38.78, y: -17.75 },
+        pos: { x: 375.292, y: -432.353 },
         description: "On a small ledge on top of a cliff next to a rock.",
     },
-    "research_19": {
+    "194.3369,-649.64734": {
         name: "Research Drone 19",
         log: [
             `The breach is so much smaller now. It fills
@@ -512,10 +513,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       my discoveries. I feel very good. And
       excited!`,
         ],
-        pos: { x: -54.06, y: -36.84 },
+        pos: { x: 194.3369, y: -649.64734 },
         description: "In the middle of the cave next to a rock and some equipment underneath the Flutter Gordo.",
     },
-    "research_20": {
+    "-675.45605,1402.3201": {
         name: "Research Drone 20",
         log: [
             `What an amazing discovery! This glacier wasn't
@@ -529,10 +530,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         archive: [
             ``,
         ],
-        pos: { x: 78.15, y: -127.66 },
+        pos: { x: -675.45605, y: 1402.3201 },
         description: "Underground on a small ledge next to a large cave opening.",
     },
-    "research_21": {
+    "-822.544,1484.135": {
         name: "Research Drone 21",
         log: [
             `These auroral effects here, the ghostly trees,
@@ -549,10 +550,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         archive: [
             ``,
         ],
-        pos: { x: 79.6, y: -140.53 },
+        pos: { x: -822.544, y: 1484.135 },
         description: "At the end of a side path near the edge of a cliff.",
     },
-    "research_22": {
+    "-582.502,1567.627": {
         name: "Research Drone 22",
         log: [
             `I can hardly believe it... saber slimes?
@@ -567,10 +568,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         archive: [
             ``,
         ],
-        pos: { x: 80.77, y: -119.14 },
+        pos: { x: -582.502, y: 1567.627 },
         description: "Underground in a small alcove from the glowing flower cave.",
     },
-    "research_23": {
+    "-533.52325,1568.5931": {
         name: "Research Drone 23",
         log: [
             `While waiting for the drones to finish
@@ -589,7 +590,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         archive: [
             ``,
         ],
-        pos: { x: 80.87, y: -115.27 },
+        pos: { x: -533.52325, y: 1568.5931 },
         description: "On top of a snow pile at the very edge of a ledge over the water.",
     },
 };

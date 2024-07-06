@@ -29,8 +29,8 @@ export function TeleportLineIcon({ teleport_line }: { teleport_line: TeleportLin
             pathOptions={path_options}
             positions={bezierSpline(line).geometry.coordinates.map(pos => {
                 return {
-                    lat: pos[0],
-                    lng: pos[1],
+                    lat: pos[1],
+                    lng: pos[0],
                 }
             })}
         ></Polyline>

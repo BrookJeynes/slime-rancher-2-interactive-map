@@ -13,6 +13,23 @@ import Sidebar from "./components/Sidebar";
 import { icon_template } from "./globals";
 import { LocalStoragePin, Pin } from "./types";
 import { MapUserPins } from "./components/UserPins";
+import * as mapinfo from "./data/mapinfo";
+
+// largest zoom has a units-per-pixel = 128.
+// Then, account for how map png size is 25600x25600 pixels but in-game map size is 6400x6400 units.
+const scaleFactor = (1 / mapinfo.unitsPerPixel) * (mapinfo.mapWidthPx / mapinfo.gameMapWidthUnits);
+
+// The map png is centered around 0,0 on the in-game map.
+// However, because gdal2tiles readjusts it to be the next largest power of 2, we must account for the origin not truly being centered.
+// Also, 128 is the center of tile (256 px / 2) at zoom 0 of course.
+const centerOffset = (mapinfo.tileSize / 2) * (mapinfo.gameMapWidthUnits / 2**Math.ceil(Math.log2(mapinfo.gameMapWidthUnits)));  // ex. 2**ceil(log2(25600)) = 2**15 = 32768
+
+const ScaledSimpleCRS = L.extend({}, L.CRS.Simple, {
+    // like (a*x + b, c*y + d)
+    // Compute a and c coefficients so that tile 0/0/0 is from [0, 0] to [mapHeight, mapWidth]
+    // Compute b and d coefficients to shift the origin (0,0)
+    transformation: new L.Transformation(scaleFactor, centerOffset, scaleFactor, centerOffset)
+});
 
 function App() {
     const [show_log, setShowLog] = useState(false);
@@ -66,17 +83,16 @@ function App() {
             <Sidebar selected_pin={selected_pin} setSelectedPin={setSelectedPin} />
 
             <MapContainer
-                // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
-                center={[30, -80]}
+                crs={ScaledSimpleCRS}
+                center={[0, 0]}
                 zoom={3.5}
                 zoomControl={false}
                 scrollWheelZoom={true}
-                maxZoom={6}
+                maxZoom={7}
                 minZoom={3}
-                // TODO: This ties in with the `center`.
                 maxBounds={[
-                    [200, -200],
-                    [-70, 40]
+                    [mapinfo.gameMapBounds.y[0], mapinfo.gameMapBounds.x[0]],
+                    [mapinfo.gameMapBounds.y[1], mapinfo.gameMapBounds.x[1]]
                 ]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
@@ -112,7 +128,7 @@ function App() {
                     </LayersControl.Overlay>
                 </LayersControl>
 
-                <TileLayer url="map/{z}/{x}/{y}.png" noWrap={true} />
+                <TileLayer url="map/{z}/{x}/{y}.png" noWrap={true} tileSize={256} />
             </MapContainer>
         </div >
     )

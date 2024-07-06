@@ -39,7 +39,7 @@ export function GordoIcon({ gordo }: { gordo: Gordo }) {
     });
 
     return (
-        <Marker key={key} position={[gordo.pos.x, gordo.pos.y]} icon={icon}>
+        <Marker key={key} position={[-gordo.pos.y, gordo.pos.x]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">
