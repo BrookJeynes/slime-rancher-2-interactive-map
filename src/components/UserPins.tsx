@@ -3,7 +3,7 @@ import { useState } from "react";
 import { pins } from "../data/pins";
 import { LocalStoragePin, Pin } from "../types";
 
-import { useMapEvents } from 'react-leaflet';
+import { useMapEvents } from "react-leaflet";
 
 export function SidebarPins({
     selected_pin,

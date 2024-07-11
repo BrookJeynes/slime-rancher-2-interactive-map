@@ -11,7 +11,6 @@ import { FoundContext } from "../FoundContext";
 
 export function TreasurePodIcon({ treasure_pod }: { treasure_pod: TreasurePod }) {
     const key = `treasurepod${treasure_pod.pos.x}${treasure_pod.pos.y}`;
-    // @ts-ignore
     const { found, setFound } = useContext(FoundContext);
 
     const [checked, setChecked] = useState(
@@ -30,6 +29,7 @@ export function TreasurePodIcon({ treasure_pod }: { treasure_pod: TreasurePod })
                 treasure_pods: [...found.treasure_pods.filter((item: string) => item !== key)]
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({

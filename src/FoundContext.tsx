@@ -9,13 +9,16 @@ export interface Found {
     research_drones: string[];
 }
 
-export const FoundContext: React.Context<Found> = createContext({
-    gordos: [],
-    locked_doors: [],
-    map_nodes: [],
-    treasure_pods: [],
-    research_drones: [],
-} as Found);
+export const FoundContext: React.Context<{ found: Found, setFound: React.Dispatch<React.SetStateAction<Found>> }> = createContext({
+    found: {
+        gordos: [],
+        locked_doors: [],
+        map_nodes: [],
+        treasure_pods: [],
+        research_drones: [],
+    } as Found,
+    setFound: {} as React.Dispatch<React.SetStateAction<Found>>,
+});
 
 export function FoundProvider({ children }: { children: React.ReactNode }) {
     const [found, setFound] = useState<Found>({
@@ -27,7 +30,6 @@ export function FoundProvider({ children }: { children: React.ReactNode }) {
     });
 
     return (
-        // @ts-ignore
         <FoundContext.Provider value={{ found, setFound }}>
             {children}
         </FoundContext.Provider>

@@ -11,7 +11,6 @@ import { FoundContext } from "../FoundContext";
 
 export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
     const key = `${locked_door.name.toLowerCase().replace(" ", "")}${locked_door.pos.x}${locked_door.pos.y}`;
-    // @ts-ignore
     const { found, setFound } = useContext(FoundContext);
 
     const [checked, setChecked] = useState(
@@ -30,6 +29,7 @@ export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
                 locked_doors: [...found.locked_doors.filter((item: string) => item !== key)]
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({

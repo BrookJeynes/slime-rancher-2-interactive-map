@@ -8,7 +8,7 @@ import { icon_template, icon_opacity, research_drone_ls_key } from "../globals";
 import { research_drones } from "../data/research_drones";
 import { handleChecked } from "../util";
 
-import { AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
 import { FoundContext } from "../FoundContext";
 
 export function ResearchDroneIcon({
@@ -21,7 +21,6 @@ export function ResearchDroneIcon({
     setCurrentLog: React.Dispatch<React.SetStateAction<JSX.Element>>
 }) {
     const key = `${research_drone.name.toLowerCase().replace(" ", "")}${research_drone.pos.x}${research_drone.pos.y}`;
-    // @ts-ignore
     const { found, setFound } = useContext(FoundContext);
 
     const [checked, setChecked] = useState(
@@ -40,6 +39,7 @@ export function ResearchDroneIcon({
                 research_drones: [...found.research_drones.filter((item: string) => item !== key)]
             });
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({

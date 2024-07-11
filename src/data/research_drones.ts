@@ -46,7 +46,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       these days. I wonder what profound
       thoughts I had to share back then?`,
         ],
-        archive: [`Ugh, I forgot my fork. Looks like it's hand noodles again...`],
+        archive: ["Ugh, I forgot my fork. Looks like it's hand noodles again..."],
         pos: { x: 45.39, y: -7.0 },
         description: "On a ledge up a cliff near the tunnel entrance.",
     },
@@ -96,7 +96,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       of the cracks in the wall slipped inside it and
       vanished. It passed through these ancient
       stones as if they were smoke.`,
-            `That's when it all came to me.`,
+            "That's when it all came to me.",
         ],
         archive: [
             `History is a funny thing. When you're
@@ -129,9 +129,9 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         archive: [
             `Oh good, I was looking for a place to store
       all my giant mushrooms anyway.`,
-            `...`,
-            `... ...`,
-            `I bet dad would have laughed at that one.`,
+            "...",
+            "... ...",
+            "I bet dad would have laughed at that one.",
         ],
         pos: { x: 20.67, y: -0.98 },
         description: "On top of a mushroom growing on the side of the central pillar of a cave.",
@@ -155,7 +155,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       island and I'm already finding one of the
       most unique botanical discoveries in
       recent memory?`,
-            `It's all too good to be true!`,
+            "It's all too good to be true!",
         ],
         pos: { x: 36.17, y: -35.85 },
         description: "On a small ledge next to a tree.",
@@ -171,7 +171,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       all wrong, but I was happy.`,
             `There's little time now, so I'll need these
       refinery links if I'm going to be efficient.`,
-            `This time I'm going to do it right.`,
+            "This time I'm going to do it right.",
         ],
         archive: [
             `I just found my first slime fossil on the
@@ -230,7 +230,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `I think I can afford a few minutes for a
       splash like the old days...`,
         ],
-        archive: [`YAAAAAHOOOOOOOOOOO!`],
+        archive: ["YAAAAAHOOOOOOOOOOO!"],
         pos: { x: 51.91, y: -106.85 },
         description: "In the open at the edge of a ledge.",
     },
@@ -277,7 +277,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       creeps up a few degrees over the years and
       you hardly notice and then one day you
       realize you're cooking.`,
-            `Ugh, I wish I had a dog to pet right now.`,
+            "Ugh, I wish I had a dog to pet right now.",
         ],
         archive: [
             `I think I need to just sit here for a minute
@@ -308,7 +308,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       the sight of opportunity. The company had
       sent their money people, not engineers. I don't
       think they had even considered stabilization.`,
-            `It wasn't long before it all collapsed.`,
+            "It wasn't long before it all collapsed.",
         ],
         archive: [
             `And here we are, back at Ember Valley?
@@ -444,7 +444,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `The giant mushrooms on this island are
       responsible for maybe the greatest
       botanical discovery of my life.`,
-            `Sorry, but it's a secret.`,
+            "Sorry, but it's a secret.",
         ],
         archive: [
             `I am a GENIUS. I've made so many great
@@ -482,7 +482,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       earned them because I've been working so,
       so hard and wait a sec what is up with this
       statue that-`,
-            `YOU HAVE GOT TO BE KIDDING ME!`,
+            "YOU HAVE GOT TO BE KIDDING ME!",
         ],
         pos: { x: -38.78, y: -17.75 },
         description: "On a small ledge on top of a cliff next to a rock.",
@@ -527,7 +527,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       a kid...`,
         ],
         archive: [
-            ``,
+            "",
         ],
         pos: { x: 78.15, y: -127.66 },
         description: "Underground on a small ledge next to a large cave opening.",
@@ -547,7 +547,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       concentrated.`,
         ],
         archive: [
-            ``,
+            "",
         ],
         pos: { x: 79.6, y: -140.53 },
         description: "At the end of a side path near the edge of a cliff.",
@@ -562,10 +562,10 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       world like a time capsule? Perhaps it was frozen
       at the bottom of the Slime Sea and the seismic
       activity from Ember Valley shook it loose.`,
-            `I need to keep exploring.`,
+            "I need to keep exploring.",
         ],
         archive: [
-            ``,
+            "",
         ],
         pos: { x: 80.77, y: -119.14 },
         description: "Underground in a small alcove from the glowing flower cave.",
@@ -587,7 +587,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
       why this place wasn't here before.`,
         ],
         archive: [
-            ``,
+            "",
         ],
         pos: { x: 80.87, y: -115.27 },
         description: "On top of a snow pile at the very edge of a ledge over the water.",

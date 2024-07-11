@@ -96,44 +96,44 @@ const resources = [
 
 export const pins: { [key: string]: Pin } = {
     Veggie: {
-        name: 'Veggie',
-        type: 'Food',
-        icon: 'pins/iconVeggieCarrot.png',
+        name: "Veggie",
+        type: "Food",
+        icon: "pins/iconVeggieCarrot.png",
     },
     Fruit: {
-        name: 'Fruit',
-        type: 'Food',
-        icon: 'pins/iconFruitCuberry.png',
+        name: "Fruit",
+        type: "Food",
+        icon: "pins/iconFruitCuberry.png",
     },
     Animal: {
-        name: 'Animal',
-        type: 'Food',
-        icon: 'pins/iconBirdHen.png',
+        name: "Animal",
+        type: "Food",
+        icon: "pins/iconBirdHen.png",
     },
     Cross: {
-        name: 'Cross',
-        type: 'Utility',
-        icon: 'pins/xMark.png',
+        name: "Cross",
+        type: "Utility",
+        icon: "pins/xMark.png",
     },
-    'Question Mark': {
-        name: 'Question Mark',
-        type: 'Utility',
-        icon: 'lockedIcon.png',
+    "Question Mark": {
+        name: "Question Mark",
+        type: "Utility",
+        icon: "lockedIcon.png",
     },
-    'Map Node': {
-        name: 'Map Node',
-        type: 'Utility',
-        icon: 'iconMapNode.png',
+    "Map Node": {
+        name: "Map Node",
+        type: "Utility",
+        icon: "iconMapNode.png",
     },
-    'Treasure Pod': {
-        name: 'Treasure Pod',
-        type: 'Utility',
-        icon: 'iconTreasurePod.png',
+    "Treasure Pod": {
+        name: "Treasure Pod",
+        type: "Utility",
+        icon: "iconTreasurePod.png",
     },
-    'Research Drone': {
-        name: 'Research Drone',
-        type: 'Utility',
-        icon: 'researchDroneFaceIcon.png',
+    "Research Drone": {
+        name: "Research Drone",
+        type: "Utility",
+        icon: "researchDroneFaceIcon.png",
     },
     "Nectar": {
         name: "Nectar",

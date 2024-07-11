@@ -21,7 +21,7 @@ export default function Sidebar({
     return (
         <div className="absoluter">
             <div
-                className={`transition-all duration-500 fixed top-0 left-0 h-full bg-gradient-to-br from-blue-950 to-indigo-950 text-white border-r-solid border-r-[1px] ${show_sidebar ? 'translate-x-0' : '-translate-x-full'} w-96 z-50`}
+                className={`transition-all duration-500 fixed top-0 left-0 h-full bg-gradient-to-br from-blue-950 to-indigo-950 text-white border-r-solid border-r-[1px] ${show_sidebar ? "translate-x-0" : "-translate-x-full"} w-96 z-50`}
             >
                 <div className="flex flex-col gap-5 px-4">
                     <div className="flex flex-col gap-2">
@@ -57,7 +57,7 @@ export default function Sidebar({
 
             <button
                 onClick={() => setShowSidebar(!show_sidebar)}
-                className={`transition-all duration-500 fixed top-1/2 -translate-y-1/2 bg-gradient-to-l from-blue-950 to-indigo-950 text-white p-2 border-solid border-[1px] border-l-0 rounded-r-md ${show_sidebar ? 'left-96' : 'left-0'} z-50`}
+                className={`transition-all duration-500 fixed top-1/2 -translate-y-1/2 bg-gradient-to-l from-blue-950 to-indigo-950 text-white p-2 border-solid border-[1px] border-l-0 rounded-r-md ${show_sidebar ? "left-96" : "left-0"} z-50`}
             >
                 {show_sidebar ? (
                     <FaChevronLeft

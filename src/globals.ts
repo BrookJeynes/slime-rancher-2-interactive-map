@@ -1,15 +1,15 @@
-import L from 'leaflet';
+import L from "leaflet";
 
 export const icon_opacity = "opacity-50";
 
 export const icon_template: L.IconOptions = {
-  iconUrl: '',
-  iconAnchor: [10, 20],
-  popupAnchor: [5, -15],
-  shadowUrl: undefined,
-  shadowSize: undefined,
-  shadowAnchor: undefined,
-  iconSize: [32, 32],
+    iconUrl: "",
+    iconAnchor: [10, 20],
+    popupAnchor: [5, -15],
+    shadowUrl: undefined,
+    shadowSize: undefined,
+    shadowAnchor: undefined,
+    iconSize: [32, 32],
 };
 
 export const gordo_ls_key = "found_gordos";
