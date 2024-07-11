@@ -14,7 +14,7 @@ export default function IslandInfo() {
 
     return (
         <div>
-            <div className="flex justify-between mb-5 items-center">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-0 justify-between mb-5 md:items-center">
                 <h2 className="text-lg font-bold">Island Info</h2>
                 <select
                     value={selected_island}
