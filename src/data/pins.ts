@@ -151,7 +151,7 @@ plorts.forEach((plort) => {
 })
 
 slimes.forEach((slime) => {
-    pins[`${slime}`] = {
+    pins[`${slime} Slime`] = {
         name: `${slime}`,
         type: "Slimes",
         icon: `slimes/iconSlime${slime}.png`,
@@ -159,7 +159,7 @@ slimes.forEach((slime) => {
 })
 
 gordos.forEach((gordo) => {
-    pins[`${gordo}`] = {
+    pins[`${gordo} Gordo`] = {
         name: `${gordo}`,
         type: "Gordos",
         icon: `gordos/iconGordo${gordo}.png`,
@@ -167,7 +167,7 @@ gordos.forEach((gordo) => {
 })
 
 resources.forEach(resource => {
-    pins[`${resource}`] = {
+    pins[`${resource} Resource`] = {
         name: `${resource}`,
         type: "Resources",
         icon: `resources/iconCraft${resource}.png`,
