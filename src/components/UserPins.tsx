@@ -46,13 +46,13 @@ export function SidebarPins({
 
             <div className="flex flex-wrap gap-2">
                 {
-                    Object.keys(pins).map((key) => {
-                        if (pins[key].type === selected_type) {
-                            return <PinIcon key={key} pin={pins[key]} setSelectedPin={setSelectedPin} />
-                        }
-
-                        return null;
-                    })
+                    pins[selected_type].map((key: Pin) =>
+                        <PinIcon 
+                            key={key.name} 
+                            pin={key} 
+                            setSelectedPin={setSelectedPin} 
+                        />
+                    )
                 }
             </div>
         </div>
@@ -74,6 +74,7 @@ function PinIcon({
             onClick={() => setSelectedPin(pin)}
         >
             <img
+                title={pin.type}
                 src={`icons/${pin.icon}`}
                 alt={`${pin.icon} pin icon`}
                 style={{ width: 40 }}

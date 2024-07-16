@@ -1,3 +1,6 @@
+import { Vec2 } from "./types";
+import L from "leaflet";
+
 export function handleChecked(
     local_storage_key: string,
     key: string,
@@ -22,4 +25,8 @@ export function handleChecked(
     }
 
     setChecked(!checked);
+}
+
+export function vecToLatLng(coord: Vec2): L.LatLngExpression {
+    return [coord.x, coord.y];
 }

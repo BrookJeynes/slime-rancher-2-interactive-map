@@ -13,6 +13,7 @@ import Sidebar from "./components/Sidebar";
 import { icon_template } from "./globals";
 import { LocalStoragePin, Pin } from "./types";
 import { MapUserPins } from "./components/UserPins";
+import { plot_planners } from "./components/PlotPlanner";
 
 function App() {
     const [show_log, setShowLog] = useState(false);
@@ -54,6 +55,7 @@ function App() {
         );
     });
 
+
     return (
         <div>
             <div
@@ -80,6 +82,8 @@ function App() {
                 ]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
+                {plot_planners}
+
                 {selected_pin &&
                     <MapUserPins
                         selected_pin={selected_pin!}
