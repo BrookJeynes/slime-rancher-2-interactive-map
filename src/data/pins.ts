@@ -85,13 +85,17 @@ const resources = [
     "JellyStone",
     "LavaDust",
     "PepperJam",
+    "PerfectSnowflake",
     "PrimordyOil",
     "RadiantOre",
+    "RoyalJelly",
     "SilkySand",
     "SlimeFossil",
+    "Snowball",
     "SpiralSteam",
     "StrangeDiamond",
     "WildHoney",
+    "SunSap",
 ];
 
 export const pins: { [key: string]: Pin } = {
