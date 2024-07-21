@@ -48,7 +48,7 @@ function App() {
                 icon={icon}
             >
                 <Popup>
-                    <button onClick={handleClick}>Remove</button>
+                    <button className="border w-[5rem] mt-2 self-end" onClick={handleClick}>Remove</button>
                 </Popup>
             </Marker>
         );
