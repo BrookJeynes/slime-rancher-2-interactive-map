@@ -2,8 +2,17 @@ import { Vec2 } from '../src/types.js';
 type GetPosForIdFn = (id: string, oldXraw: string, oldYraw: string) => Vec2;
 
 import fs from "fs";
+import { argv } from 'process';
 import { parse } from "csv-parse/sync";
 import esMain from "es-main";
+import path from 'path';
+
+const dataFolder = argv?.[2] || '../src/data';
+
+if(typeof dataFolder !== 'string')
+    throw new Error('File path argument must be a string!');
+if(!fs.lstatSync(dataFolder).isDirectory())
+    throw new Error(`File path ${dataFolder} must point to a folder that exists!`)
 
 const csvParserOptions = {
     columns: true,
@@ -50,19 +59,10 @@ export function applyAllPositions() {
     });
 
     applyPositions({
-        filePath: '../src/data/gordos.ts',
+        filePath: path.join(dataFolder, 'gordos.ts'),
         idLineRegex: idLineRegex,
         posLineRegex: posLineRegex,
         endLineRegex: endLineRegex,
-        // getPosForId: (gordoId: string, oldX: string, oldY: string): Vec2 => {
-        //     if(gordoPositions.hasOwnProperty(gordoId)) {
-        //         let res = gordoPositions[gordoId];
-        //         // remove it from the mapping to track that we have covered it.
-        //         delete gordoPositions[gordoId];
-        //         return res;
-        //     }
-        //     throw new Error(`Unable to find gordo position for id "${gordoId}" or it was already applied earlier`);
-        // },
         getPosForId: getGetPosForId(gordoPositions, 'gordo'),
         getRemainingPositions: (): [string, Vec2][] => Object.entries(gordoPositions),
         posEntryToNewDataElement: ([id, pos]: [string, Vec2]): string[] => {
@@ -92,7 +92,7 @@ export function applyAllPositions() {
     });
 
     applyPositions({
-        filePath: '../src/data/treasure_pods.ts',
+        filePath: path.join(dataFolder, 'treasure_pods.ts'),
         idLineRegex: idLineRegex,
         posLineRegex: posLineRegex,
         endLineRegex: endLineRegex,
@@ -121,7 +121,7 @@ export function applyAllPositions() {
     });
 
     applyPositions({
-        filePath: '../src/data/locked_doors.ts',
+        filePath: path.join(dataFolder, 'locked_doors.ts'),
         idLineRegex: idLineRegex,
         posLineRegex: posLineRegex,
         endLineRegex: endLineRegex,
@@ -157,7 +157,7 @@ export function applyAllPositions() {
     });
 
     applyPositions({
-        filePath: '../src/data/map_nodes.ts',
+        filePath: path.join(dataFolder, 'map_nodes.ts'),
         idLineRegex: idLineRegex,
         posLineRegex: posLineRegex,
         endLineRegex: endLineRegex,
@@ -190,7 +190,7 @@ export function applyAllPositions() {
     });
 
     applyPositions({
-        filePath: '../src/data/research_drones.ts',
+        filePath: path.join(dataFolder, 'research_drones.ts'),
         idLineRegex: idLineRegex,
         posLineRegex: posLineRegex,
         endLineRegex: endLineRegex,
