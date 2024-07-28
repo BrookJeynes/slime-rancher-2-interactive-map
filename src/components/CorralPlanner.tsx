@@ -54,7 +54,7 @@ export default function CorralPlanner({
                     className="bg-transparent outline outline-1 p-1"
                 >
                     <option>Empty</option>
-                    {pins.Slimes.map(slime => <option>{slime.name}</option>)}
+                    {pins.Slimes.filter(slime => slime.plannable === true).map(slime => <option>{slime.name}</option>)}
                 </select>
             </div>
 

@@ -25,33 +25,33 @@ const plorts = [
     "Tangle",
 ]
 
-const slimes: { name: string, type: string }[] = [
-    { name: "Pink", type: "Docile" },
-    { name: "Tabby", type: "Docile" },
-    { name: "Rock", type: "Harmful" },
-    { name: "Ringtail", type: "Docile" },
-    { name: "Phosphor", type: "Docile" },
-    { name: "Hunter", type: "Docile" },
-    { name: "Honey", type: "Docile" },
-    { name: "Flutter", type: "Docile" },
-    { name: "Crystal", type: "Harmful" },
-    { name: "Cotton", type: "Docile" },
-    { name: "Boom", type: "Harmful" },
-    { name: "Batty", type: "Docile" },
-    { name: "Angler", type: "Docile" },
-    { name: "Dervish", type: "Docile" },
-    { name: "Fire", type: "Harmful" },
-    { name: "Gold", type: "Special" },
-    { name: "Mosaic", type: "Harmful" },
-    { name: "Puddle", type: "Docile" },
-    { name: "Quantum", type: "Docile" },
-    { name: "Rad", type: "Harmful" },
-    { name: "Saber", type: "Docile" },
-    { name: "Tangle", type: "Docile" },
-    { name: "Lucky", type: "Special" },
-    { name: "Tarr", type: "Hostile" },
-    { name: "Glitch", type: "Special" },
-    { name: "Yolky", type: "Docile" },
+const slimes: { name: string, type: string, plannable: boolean }[] = [
+    { name: "Angler", type: "Docile", plannable: true },
+    { name: "Batty", type: "Docile" , plannable: true},
+    { name: "Boom", type: "Harmful" , plannable: true},
+    { name: "Cotton", type: "Docile" , plannable: true},
+    { name: "Crystal", type: "Harmful" , plannable: true},
+    { name: "Dervish", type: "Docile" , plannable: true},
+    { name: "Fire", type: "Harmful" , plannable: false},
+    { name: "Flutter", type: "Docile" , plannable: true},
+    { name: "Glitch", type: "Special" , plannable: false},
+    { name: "Gold", type: "Special" , plannable: false},
+    { name: "Honey", type: "Docile" , plannable: true},
+    { name: "Hunter", type: "Docile" , plannable: true},
+    { name: "Lucky", type: "Special" , plannable: false},
+    { name: "Mosaic", type: "Harmful" , plannable: false},
+    { name: "Phosphor", type: "Docile" , plannable: true},
+    { name: "Pink", type: "Docile" , plannable: true},
+    { name: "Puddle", type: "Docile" , plannable: false},
+    { name: "Quantum", type: "Docile" , plannable: false},
+    { name: "Rad", type: "Harmful" , plannable: false},
+    { name: "Ringtail", type: "Docile" , plannable: true},
+    { name: "Rock", type: "Harmful", plannable: true},
+    { name: "Saber", type: "Docile" , plannable: true},
+    { name: "Tabby", type: "Docile" , plannable: true},
+    { name: "Tangle", type: "Docile" , plannable: true},
+    { name: "Tarr", type: "Hostile", plannable: true },
+    { name: "Yolky", type: "Docile", plannable: true },
 ]
 
 const gordos = [
@@ -151,10 +151,11 @@ export const pins: Pins = {
             icon: `plorts/iconPlort${plort}.png`,
         };
     }),
-    Slimes: slimes.map(({ name, type }) => {
+    Slimes: slimes.map(({ name, type, plannable }) => {
         return {
             name,
             type,
+            plannable,
             icon: `slimes/iconSlime${name}.png`,
         };
     }),

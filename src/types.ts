@@ -52,7 +52,7 @@ export interface Pins {
     Food: Pin[],
     Utility: Pin[],
     Plorts: Pin[],
-    Slimes: Pin[],
+    Slimes: PlannerPin[],
     Gordos: Pin[],
     Resources: Pin[],
 }
@@ -61,6 +61,10 @@ export interface Pin {
     name: string;
     type: string;
     icon: string;
+}
+
+export interface PlannerPin extends Pin {
+    plannable: boolean
 }
 
 export interface LocalStoragePin {
