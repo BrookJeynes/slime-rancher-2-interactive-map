@@ -73,10 +73,8 @@ export interface Island {
     slimes: string[];
 }
 
-export interface PlannerPositions {
-    left: Vec2,
-    right: Vec2,
-    center: Vec2,
+export interface PlannerPosition {
+    position: Vec2,
 }
 
 export interface PlannerIcon {

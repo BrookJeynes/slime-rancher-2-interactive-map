@@ -4,13 +4,13 @@ import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
 import { vecToLatLng } from "../util";
-import { PlannerIcon, PlannerIcons, PlannerPositions } from "../types";
+import { PlannerIcon, PlannerIcons, PlannerPosition } from "../types";
 import { icon_template } from "../globals";
 import { planner_positions } from "../data/plot_planner_positions";
 import CorralPlanner from "./CorralPlanner";
 import GardenPlanner from "./GardenPlanner";
 
-export function PlotPlanner({ positions }: { positions: PlannerPositions }) {
+export function PlotPlanner({ positions }: { positions: PlannerPosition }) {
     enum Tab {
         corral = "Corral",
         coop = "Coop",
@@ -31,6 +31,8 @@ export function PlotPlanner({ positions }: { positions: PlannerPositions }) {
     const [icons, setIcons] = useState<PlannerIcons>({ left: null, right: null });
     const [tab, setTab] = useState<Tab>(Tab.corral);
 
+    const doubleIconYOffset = 0.35;
+
     let body = <></>;
     switch (tab) {
         case Tab.corral: {
@@ -48,22 +50,22 @@ export function PlotPlanner({ positions }: { positions: PlannerPositions }) {
             {(icons.left && icons.right) ? (
                 <div>
                     <Marker
-                        position={vecToLatLng(positions.left)}
+                        position={vecToLatLng({x:positions.position.x, y:positions.position.y-doubleIconYOffset})}
                         icon={icons.left.icon}
                     />
                     <Marker
-                        position={vecToLatLng(positions.right)}
+                        position={vecToLatLng({x:positions.position.x, y:positions.position.y+doubleIconYOffset})}
                         icon={icons.right.icon}
                     />
                 </div>
             ) : icons.left ?
                 <Marker
-                    position={vecToLatLng(positions.center)}
+                    position={vecToLatLng(positions.position)}
                     icon={icons.left.icon}
                 />
                 : icons.right ?
                     <Marker
-                        position={vecToLatLng(positions.center)}
+                        position={vecToLatLng(positions.position)}
                         icon={icons.right.icon}
                     />
                     :
@@ -71,9 +73,9 @@ export function PlotPlanner({ positions }: { positions: PlannerPositions }) {
             }
 
             <Marker
-                position={vecToLatLng(positions.center)}
+                position={vecToLatLng(positions.position)}
                 icon={invisible_icon.icon}
-                opacity={0}
+                //opacity={0}
                 zIndexOffset={10}
             >
                 <Popup>
