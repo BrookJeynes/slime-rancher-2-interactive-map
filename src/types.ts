@@ -48,11 +48,24 @@ export interface TeleportLine {
     midpoint: Vec2;
 }
 
+export interface Resource{
+    name: string, 
+    type: string
+}
+
+export interface PlotOptions extends Pin {
+    optionsA?: Pin[]
+    optionsAName?: string
+    optionsB?: Pin[]
+    optionsBName?: string
+    upgrades: string[]
+}
+
 export interface Pins {
     Food: Pin[],
     Utility: Pin[],
     Plorts: Pin[],
-    Slimes: PlannerPin[],
+    Slimes: Pin[],
     Gordos: Pin[],
     Resources: Pin[],
 }
@@ -61,10 +74,6 @@ export interface Pin {
     name: string;
     type: string;
     icon: string;
-}
-
-export interface PlannerPin extends Pin {
-    plannable: boolean
 }
 
 export interface LocalStoragePin {

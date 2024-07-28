@@ -13,7 +13,7 @@ import Sidebar from "./components/Sidebar";
 import { icon_template } from "./globals";
 import { LocalStoragePin, Pin } from "./types";
 import { MapUserPins } from "./components/UserPins";
-import { PlotPlanners } from "./components/PlotPlanner";
+import { PlotPlanners } from "./components/planner/PlotPlanner";
 
 function App() {
     const [show_log, setShowLog] = useState(false);
