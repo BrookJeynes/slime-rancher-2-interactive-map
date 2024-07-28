@@ -75,7 +75,7 @@ export function PlotPlanner({ positions }: { positions: PlannerPosition }) {
             <Marker
                 position={vecToLatLng(positions.position)}
                 icon={invisible_icon.icon}
-                //opacity={0}
+                opacity={0}
                 zIndexOffset={10}
             >
                 <Popup>
@@ -104,7 +104,7 @@ export function PlotPlanner({ positions }: { positions: PlannerPosition }) {
     );
 }
 
-export const plot_planners = Object.keys(planner_positions).flatMap((site) => {
+export const PlotPlanners = Object.keys(planner_positions).flatMap((site) => {
     return Object.keys(planner_positions[site]).map((plot) => {
         return <PlotPlanner positions={planner_positions[site][plot]} />;
     })
