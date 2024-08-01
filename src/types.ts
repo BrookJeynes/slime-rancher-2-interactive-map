@@ -48,6 +48,19 @@ export interface TeleportLine {
     midpoint: Vec2;
 }
 
+export interface Resource{
+    name: string, 
+    type: string
+}
+
+export interface PlotOptions extends Pin {
+    optionsA?: Pin[]
+    optionsAName?: string
+    optionsB?: Pin[]
+    optionsBName?: string
+    upgrades: string[]
+}
+
 export interface Pins {
     Food: Pin[],
     Utility: Pin[],
@@ -68,15 +81,25 @@ export interface LocalStoragePin {
     pos: Vec2;
 }
 
+export interface LocalStoragePlotPlan {
+    selectedPlotType?: number,
+    selectedOptionA?: number,
+    selectedOptionB?: number,
+    selectedUpgrades: number[]
+}
+
+export interface LocalStorageSitePlan {
+    site: string,
+    plotPlans: LocalStoragePlotPlan[]
+}
+
 export interface Island {
     resources: string[];
     slimes: string[];
 }
 
-export interface PlannerPositions {
-    left: Vec2,
-    right: Vec2,
-    center: Vec2,
+export interface PlannerPosition {
+    position: Vec2,
 }
 
 export interface PlannerIcon {
