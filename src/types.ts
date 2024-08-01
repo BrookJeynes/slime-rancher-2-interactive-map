@@ -81,6 +81,18 @@ export interface LocalStoragePin {
     pos: Vec2;
 }
 
+export interface LocalStoragePlotPlan {
+    selectedPlotType?: number,
+    selectedOptionA?: number,
+    selectedOptionB?: number,
+    selectedUpgrades: number[]
+}
+
+export interface LocalStorageSitePlan {
+    site: string,
+    plotPlans: LocalStoragePlotPlan[]
+}
+
 export interface Island {
     resources: string[];
     slimes: string[];
