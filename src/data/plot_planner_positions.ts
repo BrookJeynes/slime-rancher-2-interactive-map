@@ -5,7 +5,7 @@ export const planner_positions: { [key: string]: { [key: string]: PlannerPositio
     conservatory: {
         1: {
             position: { x: 37.45, y: -11.54 } as Vec2,
-        }, 
+        },
         2: {
             position: { x: 37.45, y: -10.01 } as Vec2,
         },
@@ -42,7 +42,7 @@ export const planner_positions: { [key: string]: { [key: string]: PlannerPositio
             position: { x: 47.21, y: -1.83 } as Vec2,
         },
         5: {
-            position: { x: 44.70, y: -3.93 } as Vec2,
+            position: { x: 44.7, y: -3.93 } as Vec2,
         },
     },
     tidepools: {
@@ -59,12 +59,12 @@ export const planner_positions: { [key: string]: { [key: string]: PlannerPositio
             position: { x: 47.35, y: 10.46 } as Vec2,
         },
         5: {
-            position: { x: 45.69, y: 10.00 } as Vec2,
+            position: { x: 45.69, y: 10.0 } as Vec2,
         },
     },
     archway: {
         1: {
-            position: { x: 35.90, y: 10.12 } as Vec2,
+            position: { x: 35.9, y: 10.12 } as Vec2,
         },
         2: {
             position: { x: 35.21, y: 12.08 } as Vec2,
@@ -84,7 +84,7 @@ export const planner_positions: { [key: string]: { [key: string]: PlannerPositio
             position: { x: 21.18, y: -2.42 } as Vec2,
         },
         2: {
-            position: { x: 21.82, y: -0.90 } as Vec2,
+            position: { x: 21.82, y: -0.9 } as Vec2,
         },
         3: {
             position: { x: 19.18, y: -1.42 } as Vec2,
@@ -101,7 +101,7 @@ export const planner_positions: { [key: string]: { [key: string]: PlannerPositio
             position: { x: 12.45, y: -4.38 } as Vec2,
         },
         2: {
-            position: { x: 7.42, y: -4.80 } as Vec2,
+            position: { x: 7.42, y: -4.8 } as Vec2,
         },
         3: {
             position: { x: 5.85, y: -4.64 } as Vec2,

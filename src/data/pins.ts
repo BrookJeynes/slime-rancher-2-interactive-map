@@ -23,25 +23,25 @@ const plorts = [
     "Rad",
     "Saber",
     "Tangle",
-]
+];
 
-const fireSlime: Resource ={
-    name: "Fire", 
-    type: "Harmful"
-}
+const fireSlime: Resource = {
+    name: "Fire",
+    type: "Harmful",
+};
 
-const puddleSlime: Resource ={
-    name: "Puddle", 
-    type: "Docile"
-}
+const puddleSlime: Resource = {
+    name: "Puddle",
+    type: "Docile",
+};
 
-export const yolkySlime: Resource ={
-    name: "Yolky", 
-    type: "Docile"
-}
+export const yolkySlime: Resource = {
+    name: "Yolky",
+    type: "Docile",
+};
 
 const plannableSlimes: Resource[] = [
-    { name: "Angler", type: "Docile"},
+    { name: "Angler", type: "Docile" },
     { name: "Batty", type: "Docile" },
     { name: "Boom", type: "Harmful" },
     { name: "Cotton", type: "Docile" },
@@ -52,26 +52,26 @@ const plannableSlimes: Resource[] = [
     { name: "Hunter", type: "Docile" },
     { name: "Phosphor", type: "Docile" },
     { name: "Pink", type: "Docile" },
-    { name: "Ringtail", type: "Docile"},
-    { name: "Rock", type: "Harmful"},
+    { name: "Ringtail", type: "Docile" },
+    { name: "Rock", type: "Harmful" },
     { name: "Saber", type: "Docile" },
     { name: "Tabby", type: "Docile" },
     { name: "Tangle", type: "Docile" },
     { name: "Tarr", type: "Hostile" },
-    yolkySlime
-]
+    yolkySlime,
+];
 
 const slimes: Resource[] = [
     ...plannableSlimes,
     fireSlime,
     { name: "Glitch", type: "Special" },
-    { name: "Gold", type: "Special"},
+    { name: "Gold", type: "Special" },
     { name: "Lucky", type: "Special" },
     { name: "Mosaic", type: "Harmful" },
     puddleSlime,
     { name: "Quantum", type: "Docile" },
-    { name: "Rad", type: "Harmful"}
-]
+    { name: "Rad", type: "Harmful" },
+];
 
 const gordos = [
     "Pink",
@@ -94,7 +94,7 @@ const gordos = [
     "Rad",
     "Saber",
     "Tangle",
-]
+];
 
 const resources: Resource[] = [
     { name: "BuzzWax", type: "Apiary" },
@@ -128,14 +128,14 @@ const fruits: Resource[] = [
     { name: "Mint Mango", type: "Fruit" },
     { name: "Pogofruit", type: "Fruit" },
     { name: "Pomegranite", type: "Fruit" },
-    { name: "Prickle Pear", type: "Fruit" }
+    { name: "Prickle Pear", type: "Fruit" },
 ];
 
 const veggies: Resource[] = [
     { name: "Carrot", type: "Veggie" },
     { name: "Heart Beat", type: "Veggie" },
     { name: "Odd Onion", type: "Veggie" },
-    { name: "Water Lettuce", type: "Veggie" }
+    { name: "Water Lettuce", type: "Veggie" },
 ];
 
 export const pins: Pins = {
@@ -207,52 +207,123 @@ export const pins: Pins = {
             name: `${gordo}`,
             type: "Gordo",
             icon: `gordos/iconGordo${gordo}.png`,
-        }
+        };
     }),
     Resources: resources.map(({ name, type }) => {
         return {
             name,
             type,
             icon: `resources/iconCraft${name}.png`,
-        }
+        };
     }),
 };
 
 export const plotTypes: PlotOptions[] = [
-    { name: "Corral", type: "Slimes",optionsAName: "Slime A", optionsA: plannableSlimes.map(({ name, type }) => {
-        return {
-            name,
-            type,
-            icon: `icons/slimes/iconSlime${name}.png`,
-        };
-    }), optionsBName: "Slime B", optionsB: plannableSlimes.map(({ name, type }) => {
-        return {
-            name,
-            type,
-            icon: `icons/slimes/iconSlime${name}.png`,
-        };
-    }), upgrades: ["High Walls (250)", "Music Box (350", "Auto-Feeder (500)", "Air Net (425)", "Plort Collector (500)", "Solar Shied (425)"], icon:"icons/plots/corral.png" },
-    { name: "Coop", optionsAName: "Meat", type: "Meats", optionsA: [...meats.map(({ name, type }) => {
-        return {
-            name,
-            type,
-            icon: `icons/foods/meats/${(name.charAt(0).toLowerCase()+ name.slice(1)).replace(/\s/g, "")}.png`,
-        };
-    }), {name: "Mixed Meats", type: "Meat", icon: "icons/foods/meats/mixedMeats.png"}], optionsBName: "Yolky Slime", optionsB: [{...yolkySlime, icon: `icons/slimes/iconSlime${yolkySlime.name}.png`}] , upgrades: ["High Walls (200)", "Spring Grass (425)", "Vitamizer (500)", "Elder Collector (1300)"], icon:"icons/plots/coop.png" },
-    { name: "Garden", type: "Fruit/Veggie",optionsAName: "Fruit/Veggie", optionsA: [...fruits.map(({ name, type }) => {
-        return {
-            name,
-            type,
-            icon: `icons/foods/fruits/${(name.charAt(0).toLowerCase()+ name.slice(1)).replace(/\s/g, "")}.png`,
-        };
-    }),  ...veggies.map(({ name, type }) => {
-        return {
-            name,
-            type,
-            icon: `icons/foods/veggies/${(name.charAt(0).toLowerCase()+ name.slice(1)).replace(/\s/g, "")}.png`,
-        };
-    })], upgrades: ["Nutrient Soil (350)", "Sprinkler (500)", "Scareslime (425)"] , icon:"icons/plots/garden.png"},
-    { name: "Incinerator", type: "Special",optionsAName:"Fire Slime", optionsA:[{...fireSlime, icon: `icons/slimes/iconSlime${fireSlime.name}.png`}], upgrades: ["Ash Trough (500)"] , icon:"icons/plots/incinerator.png"},
-    { name: "Pond", type: "Special",optionsAName:"Puddle Slime", optionsA: [{...puddleSlime, icon: `icons/slimes/iconSlime${puddleSlime.name}.png`}], upgrades: [], icon:"icons/plots/pond.png" },
-    { name: "Silo", type: "Special",upgrades: ["Additional Storage (500)", "Additional Storage (575)", "Additional Storage (650)"],icon:"icons/plots/silo.png" },
+    {
+        name: "Corral",
+        type: "Slimes",
+        optionsAName: "Slime A",
+        optionsA: plannableSlimes.map(({ name, type }) => {
+            return {
+                name,
+                type,
+                icon: `icons/slimes/iconSlime${name}.png`,
+            };
+        }),
+        optionsBName: "Slime B",
+        optionsB: plannableSlimes.map(({ name, type }) => {
+            return {
+                name,
+                type,
+                icon: `icons/slimes/iconSlime${name}.png`,
+            };
+        }),
+        upgrades: [
+            "High Walls (250)",
+            "Music Box (350",
+            "Auto-Feeder (500)",
+            "Air Net (425)",
+            "Plort Collector (500)",
+            "Solar Shied (425)",
+        ],
+        icon: "icons/plots/corral.png",
+    },
+    {
+        name: "Coop",
+        optionsAName: "Meat",
+        type: "Meats",
+        optionsA: [
+            ...meats.map(({ name, type }) => {
+                return {
+                    name,
+                    type,
+                    icon: `icons/foods/meats/${(name.charAt(0).toLowerCase() + name.slice(1)).replace(
+                        /\s/g,
+                        ""
+                    )}.png`,
+                };
+            }),
+            { name: "Mixed Meats", type: "Meat", icon: "icons/foods/meats/mixedMeats.png" },
+        ],
+        optionsBName: "Yolky Slime",
+        optionsB: [{ ...yolkySlime, icon: `icons/slimes/iconSlime${yolkySlime.name}.png` }],
+        upgrades: [
+            "High Walls (200)",
+            "Spring Grass (425)",
+            "Vitamizer (500)",
+            "Elder Collector (1300)",
+        ],
+        icon: "icons/plots/coop.png",
+    },
+    {
+        name: "Garden",
+        type: "Fruit/Veggie",
+        optionsAName: "Fruit/Veggie",
+        optionsA: [
+            ...fruits.map(({ name, type }) => {
+                return {
+                    name,
+                    type,
+                    icon: `icons/foods/fruits/${(name.charAt(0).toLowerCase() + name.slice(1)).replace(
+                        /\s/g,
+                        ""
+                    )}.png`,
+                };
+            }),
+            ...veggies.map(({ name, type }) => {
+                return {
+                    name,
+                    type,
+                    icon: `icons/foods/veggies/${(name.charAt(0).toLowerCase() + name.slice(1)).replace(
+                        /\s/g,
+                        ""
+                    )}.png`,
+                };
+            }),
+        ],
+        upgrades: ["Nutrient Soil (350)", "Sprinkler (500)", "Scareslime (425)"],
+        icon: "icons/plots/garden.png",
+    },
+    {
+        name: "Incinerator",
+        type: "Special",
+        optionsAName: "Fire Slime",
+        optionsA: [{ ...fireSlime, icon: `icons/slimes/iconSlime${fireSlime.name}.png` }],
+        upgrades: ["Ash Trough (500)"],
+        icon: "icons/plots/incinerator.png",
+    },
+    {
+        name: "Pond",
+        type: "Special",
+        optionsAName: "Puddle Slime",
+        optionsA: [{ ...puddleSlime, icon: `icons/slimes/iconSlime${puddleSlime.name}.png` }],
+        upgrades: [],
+        icon: "icons/plots/pond.png",
+    },
+    {
+        name: "Silo",
+        type: "Special",
+        upgrades: ["Additional Storage (500)", "Additional Storage (575)", "Additional Storage (650)"],
+        icon: "icons/plots/silo.png",
+    },
 ];
