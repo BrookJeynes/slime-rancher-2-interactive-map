@@ -22,7 +22,6 @@ export default function Planner({
 
     function onChange(eventValue: number, side: Side, options: Pin[]) {
         const val = options[eventValue];
-        console.log(eventValue)
 
         if (side === Side.left) {
             setIcons({
@@ -44,31 +43,25 @@ export default function Planner({
             setPlotPlan({...plotPlan, selectedOptionA: eventValue});
         } else {
             setIcons({
-                ...icons,
+                left: (val !==undefined)? ((icons.left !== null && icons.left.icon.options.iconUrl.includes("plots"))? null : icons.left) :
+                    ({
+                        name: plotType.name,
+                        icon: L.icon({
+                            ...icon_template,
+                            iconUrl: plotType.icon
+                        })})
+                ,
                 right: (val !==undefined) ? {
                     name: val.name,
                     icon: L.icon({
                         ...icon_template,
                         iconUrl: val.icon
                     }),
-                } : (icons.left === null) ? ({
-                    name: plotType.name,
-                    icon: L.icon({
-                        ...icon_template,
-                        iconUrl: plotType.icon
-                    })}) : null,
+                }  : null,
             })
             setPlotPlan({...plotPlan, selectedOptionB: eventValue});
         }
-        console.log(2)
-
-        console.log(icons)
     }
-
-
-    console.log(4)
-
-    console.log(icons)
 
     return (
         <div className="flex justify-between">
@@ -102,6 +95,8 @@ export default function Planner({
                             <select
                                 onChange={(e) => onChange(e.target.value, Side.right, plotType.optionsB)}
                                 className="bg-transparent outline outline-1 p-1"
+                                value={plotPlan.selectedOptionB ? plotPlan.selectedOptionB : "Empty"}
+
                             >
                                 <option>Empty</option>
                                 {plotType.optionsB.map((resource, index) => <option key={index} value={index}>{resource.name}</option>)}

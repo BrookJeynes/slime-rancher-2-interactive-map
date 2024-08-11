@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
+import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet"
 import L from "leaflet";
 
 import { GordoIcons } from "./components/GordoIcon";
@@ -82,7 +82,6 @@ function App() {
                 ]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
-                {PlotPlanners}
 
                 {selected_pin &&
                     <MapUserPins
@@ -116,6 +115,7 @@ function App() {
                     </LayersControl.Overlay>
                     <LayersControl.Overlay checked name="Plot Planner">
                         <LayerGroup>{PlotPlanners}</LayerGroup>
+                        <Tooltip>Click on a plot to start planning</Tooltip>
                     </LayersControl.Overlay>
                 </LayersControl>
 

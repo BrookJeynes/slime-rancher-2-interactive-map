@@ -1,50 +1,42 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
 import { vecToLatLng } from "../../util";
-import { PlannerIcon, PlannerIcons, PlannerPosition, PlotOptions, LocalStoragePlotPlan } from "../../types";
+import { PlannerIcon, PlannerIcons, PlannerPosition, PlotOptions, LocalStoragePlotPlan, LocalStorageSitePlan } from "../../types";
 import { icon_template } from "../../globals";
 import { planner_positions } from "../../data/plot_planner_positions";
 import Planner from "./Planner";
 import { plotTypes } from "../../data/pins";
-import { handlePlotPlanned, getStoredPlotPlan } from "../../util";
+import { handlePlotPlanned, getStoredPlotPlans } from "../../util";
 
 
-export function PlotPlanner({ positions, site, plot }: { positions: PlannerPosition, site:string, plot:number}) {
 
-    const invisible_icon: PlannerIcon = {
-        name: "invisible",
-        icon: L.icon({
-            ...icon_template,
-            iconUrl: "icons/lockedIcon.png",
-        })
-    };
+export function PlotPlanner({ positions, site, plot, retrievedPlotPlan }: { positions: PlannerPosition, site:string, plot:number, retrievedPlotPlan: LocalStoragePlotPlan}) {
 
-    const [plotType, setplotType] = useState<PlotOptions>();
-    const [icons, setIcons] = useState<PlannerIcons>({ left: null, right: null });
-    const [plotPlan, setPlotPlan] = useState<LocalStoragePlotPlan>(getStoredPlotPlan(site, plot));
-    const doubleIconYOffset = 0.35;
-
-    useEffect(()=>{
-        let plotType;
+    function getSelectedPlotTypeFromRetrievedPlotPlan(): PlotOptions | undefined{
         if(plotPlan !== null && plotPlan.selectedPlotType !== undefined){
-            setplotType(plotTypes[plotPlan.selectedPlotType])
+            return plotTypes[plotPlan.selectedPlotType]
+        }
+        return undefined;
+    }
+
+    function getIconsFromRetrievedPlan(): PlannerIcons{
+        let plotType;
+    
+        if(plotPlan !== null && plotPlan.selectedPlotType !== undefined){
             plotType = plotTypes[plotPlan.selectedPlotType]
         }
-        console.log(0)
-
-        console.log(icons)
-
-        setIcons({
+    
+        return({
             left: (plotType !== undefined && plotType.optionsA !== undefined && plotPlan.selectedOptionA !== undefined && plotType.optionsA[plotPlan.selectedOptionA] !==undefined)? {
                 name: plotType.optionsA[plotPlan.selectedOptionA].name,
                 icon: L.icon({
                     ...icon_template,
                     iconUrl: plotType.optionsA[plotPlan.selectedOptionA].icon
                 }),
-            } : (icons.right === null && plotType !== undefined) ? ({
+            } : (plotType !== undefined && ((plotType.optionsB === undefined) || (plotType.optionsB !== undefined && plotPlan.selectedOptionB === undefined))) ? ({
                 name: plotType.name,
                 icon: L.icon({
                     ...icon_template,
@@ -58,15 +50,26 @@ export function PlotPlanner({ positions, site, plot }: { positions: PlannerPosit
                 }),
             }  : null,
         })   
-        console.log(1)
+    }
 
-        console.log(icons)
-    }, [])
+    const invisible_icon: PlannerIcon = {
+        name: "invisible",
+        icon: L.icon({
+            ...icon_template,
+            iconUrl: "icons/lockedIcon.png",
+        })
+    };
+
+    const [plotPlan, setPlotPlan] = useState<LocalStoragePlotPlan>(retrievedPlotPlan);
+    const [plotType, setplotType] = useState<PlotOptions>(getSelectedPlotTypeFromRetrievedPlotPlan);
+    const [icons, setIcons] = useState<PlannerIcons>(getIconsFromRetrievedPlan);
+
+    const doubleIconYOffset = 0.35;
 
     function handlePlotPlanChange(newPlotPlan: LocalStoragePlotPlan) {
-        console.log("handling plot change: "+ site + " " + plot + " " + JSON.stringify(newPlotPlan))
         setPlotPlan(newPlotPlan);
         handlePlotPlanned(site, plot, newPlotPlan)
+        retrievedPlotPlan = newPlotPlan
     }
 
     const plotTypeName = (plotType?.name)? plotType.name : "Choose"
@@ -112,14 +115,14 @@ export function PlotPlanner({ positions, site, plot }: { positions: PlannerPosit
                                 className="bg-transparent outline outline-1 p-1"
                                 value={(plotPlan !== null && plotPlan.selectedPlotType !== undefined) ? plotPlan.selectedPlotType : "Empty"}
                                 onChange={(e) => {
-                                    setIcons({ left: {
+                                    setIcons({ left: e.target.value !== "Empty"? {
                                         name: plotTypes[e.target.value].name,
                                         icon: L.icon({
                                             ...icon_template,
                                             iconUrl: plotTypes[e.target.value].icon
-                                        })}, right: null });
+                                        })} : null, right: null });
                                     setplotType(plotTypes[e.target.value]);
-                                    handlePlotPlanChange({...plotPlan, selectedPlotType: Number(e.target.value)});
+                                    handlePlotPlanChange({ selectedPlotType: e.target.value !== "Empty"? Number(e.target.value) : "Empty", selectedUpgrades: []});
                                 }}
                             >
                                 <option>Empty</option>
@@ -136,9 +139,20 @@ export function PlotPlanner({ positions, site, plot }: { positions: PlannerPosit
         </div >
     );
 }
+const storedPlan: LocalStorageSitePlan[] = getStoredPlotPlans();
+
+function getPlotPlanFromSitePlan(sitePlan: LocalStorageSitePlan, plot:number): LocalStoragePlotPlan {
+    if(sitePlan === undefined || sitePlan.plotPlans[plot] === undefined){
+        return {selectedUpgrades: []}
+    }
+
+    return sitePlan.plotPlans[plot];
+}
 
 export const PlotPlanners = Object.keys(planner_positions).flatMap((site) => {
+    const retrievedSitePlan: LocalStorageSitePlan = storedPlan.filter(plan => plan.site === site)[0];
+
     return Object.keys(planner_positions[site]).map((plot) => {
-        return <PlotPlanner positions={planner_positions[site][plot] } site={site} plot={Number(plot)}/>;
+        return <PlotPlanner positions={planner_positions[site][plot] } site={site} plot={Number(plot)} retrievedPlotPlan={getPlotPlanFromSitePlan(retrievedSitePlan, Number(plot))}/>;
     })
 });

@@ -64,6 +64,11 @@ export function getStoredPlotPlan(
     return sitePlan.plotPlans[plot];
 }
 
+export function getStoredPlotPlans(): LocalStorageSitePlan[]{
+    return JSON.parse(localStorage.getItem("planned_plots") ?? "[]") ?? [];
+}
+
 export function vecToLatLng(coord: Vec2): L.LatLngExpression {
     return [coord.x, coord.y];
 }
+

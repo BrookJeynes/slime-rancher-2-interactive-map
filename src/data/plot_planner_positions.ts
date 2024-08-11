@@ -5,7 +5,7 @@ export const planner_positions: { [key: string]: { [key: string]: PlannerPositio
     conservatory: {
         1: {
             position: { x: 37.45, y: -11.54 } as Vec2,
-        },
+        }, 
         2: {
             position: { x: 37.45, y: -10.01 } as Vec2,
         },
