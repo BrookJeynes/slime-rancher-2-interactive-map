@@ -49,21 +49,6 @@ export function handlePlotPlanned(
     );
 }
 
-export function getStoredPlotPlan(
-    site: string, 
-    plot: number,
-): LocalStoragePlotPlan{
-    const items: LocalStorageSitePlan[] = JSON.parse(localStorage.getItem("planned_plots") ?? "[]") ?? [];
-
-    const sitePlan = items.filter(item => item.site === site)[0];
-
-    if(sitePlan === undefined || sitePlan.plotPlans[plot] === undefined){
-        return {selectedUpgrades: []}
-    }
-
-    return sitePlan.plotPlans[plot];
-}
-
 export function getStoredPlotPlans(): LocalStorageSitePlan[]{
     return JSON.parse(localStorage.getItem("planned_plots") ?? "[]") ?? [];
 }

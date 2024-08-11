@@ -4,52 +4,83 @@ import { Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 
 import { vecToLatLng } from "../../util";
-import { PlannerIcon, PlannerIcons, PlannerPosition, PlotOptions, LocalStoragePlotPlan, LocalStorageSitePlan } from "../../types";
+import {
+    PlannerIcon,
+    PlannerIcons,
+    PlannerPosition,
+    PlotOptions,
+    LocalStoragePlotPlan,
+    LocalStorageSitePlan,
+} from "../../types";
 import { icon_template } from "../../globals";
 import { planner_positions } from "../../data/plot_planner_positions";
 import Planner from "./Planner";
 import { plotTypes } from "../../data/pins";
 import { handlePlotPlanned, getStoredPlotPlans } from "../../util";
 
-
-
-export function PlotPlanner({ positions, site, plot, retrievedPlotPlan }: { positions: PlannerPosition, site:string, plot:number, retrievedPlotPlan: LocalStoragePlotPlan}) {
-
-    function getSelectedPlotTypeFromRetrievedPlotPlan(): PlotOptions | undefined{
-        if(plotPlan !== null && plotPlan.selectedPlotType !== undefined){
-            return plotTypes[plotPlan.selectedPlotType]
+export function PlotPlanner({
+    positions,
+    site,
+    plot,
+    retrievedPlotPlan,
+}: {
+  positions: PlannerPosition;
+  site: string;
+  plot: number;
+  retrievedPlotPlan: LocalStoragePlotPlan;
+}) {
+    function getSelectedPlotTypeFromRetrievedPlotPlan(): PlotOptions | undefined {
+        if (plotPlan !== null && plotPlan.selectedPlotType !== undefined) {
+            return plotTypes[plotPlan.selectedPlotType];
         }
         return undefined;
     }
 
-    function getIconsFromRetrievedPlan(): PlannerIcons{
+    function getIconsFromRetrievedPlan(): PlannerIcons {
         let plotType;
-    
-        if(plotPlan !== null && plotPlan.selectedPlotType !== undefined){
-            plotType = plotTypes[plotPlan.selectedPlotType]
+
+        if (plotPlan !== null && plotPlan.selectedPlotType !== undefined) {
+            plotType = plotTypes[plotPlan.selectedPlotType];
         }
-    
-        return({
-            left: (plotType !== undefined && plotType.optionsA !== undefined && plotPlan.selectedOptionA !== undefined && plotType.optionsA[plotPlan.selectedOptionA] !==undefined)? {
+
+        return {
+            left:
+        plotType !== undefined &&
+        plotType.optionsA !== undefined &&
+        plotPlan.selectedOptionA !== undefined &&
+        plotType.optionsA[plotPlan.selectedOptionA] !== undefined
+            ? {
                 name: plotType.optionsA[plotPlan.selectedOptionA].name,
                 icon: L.icon({
                     ...icon_template,
-                    iconUrl: plotType.optionsA[plotPlan.selectedOptionA].icon
+                    iconUrl: plotType.optionsA[plotPlan.selectedOptionA].icon,
                 }),
-            } : (plotType !== undefined && ((plotType.optionsB === undefined) || (plotType.optionsB !== undefined && plotPlan.selectedOptionB === undefined))) ? ({
-                name: plotType.name,
-                icon: L.icon({
-                    ...icon_template,
-                    iconUrl: plotType.icon
-                })}) : null,
-            right: (plotType !== undefined &&  plotType.optionsB !== undefined && plotPlan.selectedOptionB !== undefined && plotType.optionsB[plotPlan.selectedOptionB] !==undefined)? {
+            }
+            : plotType !== undefined &&
+            (plotType.optionsB === undefined ||
+              (plotType.optionsB !== undefined && plotPlan.selectedOptionB === undefined))
+                ? {
+                    name: plotType.name,
+                    icon: L.icon({
+                        ...icon_template,
+                        iconUrl: plotType.icon,
+                    }),
+                }
+                : null,
+            right:
+        plotType !== undefined &&
+        plotType.optionsB !== undefined &&
+        plotPlan.selectedOptionB !== undefined &&
+        plotType.optionsB[plotPlan.selectedOptionB] !== undefined
+            ? {
                 name: plotType.optionsB[plotPlan.selectedOptionB].name,
                 icon: L.icon({
                     ...icon_template,
-                    iconUrl: plotType.optionsB[plotPlan.selectedOptionB].icon
+                    iconUrl: plotType.optionsB[plotPlan.selectedOptionB].icon,
                 }),
-            }  : null,
-        })   
+            }
+            : null,
+        };
     }
 
     const invisible_icon: PlannerIcon = {
@@ -57,7 +88,7 @@ export function PlotPlanner({ positions, site, plot, retrievedPlotPlan }: { posi
         icon: L.icon({
             ...icon_template,
             iconUrl: "icons/lockedIcon.png",
-        })
+        }),
     };
 
     const [plotPlan, setPlotPlan] = useState<LocalStoragePlotPlan>(retrievedPlotPlan);
@@ -68,38 +99,38 @@ export function PlotPlanner({ positions, site, plot, retrievedPlotPlan }: { posi
 
     function handlePlotPlanChange(newPlotPlan: LocalStoragePlotPlan) {
         setPlotPlan(newPlotPlan);
-        handlePlotPlanned(site, plot, newPlotPlan)
-        retrievedPlotPlan = newPlotPlan
+        handlePlotPlanned(site, plot, newPlotPlan);
+        retrievedPlotPlan = newPlotPlan;
     }
 
-    const plotTypeName = (plotType?.name)? plotType.name : "Choose"
+    const plotTypeName = plotType?.name ? plotType.name : "Choose";
 
     return (
         <div>
-            {(icons.left && icons.right) ? (
+            {icons.left && icons.right ? (
                 <div>
                     <Marker
-                        position={vecToLatLng({x:positions.position.x, y:positions.position.y-doubleIconYOffset})}
+                        position={vecToLatLng({
+                            x: positions.position.x,
+                            y: positions.position.y - doubleIconYOffset,
+                        })}
                         icon={icons.left.icon}
                     />
                     <Marker
-                        position={vecToLatLng({x:positions.position.x, y:positions.position.y+doubleIconYOffset})}
+                        position={vecToLatLng({
+                            x: positions.position.x,
+                            y: positions.position.y + doubleIconYOffset,
+                        })}
                         icon={icons.right.icon}
                     />
                 </div>
-            ) : icons.left ?
-                <Marker
-                    position={vecToLatLng(positions.position)}
-                    icon={icons.left.icon}
-                />
-                : icons.right ?
-                    <Marker
-                        position={vecToLatLng(positions.position)}
-                        icon={icons.right.icon}
-                    />
-                    :
-                    <></>
-            }
+            ) : icons.left ? (
+                <Marker position={vecToLatLng(positions.position)} icon={icons.left.icon} />
+            ) : icons.right ? (
+                <Marker position={vecToLatLng(positions.position)} icon={icons.right.icon} />
+            ) : (
+                <></>
+            )}
 
             <Marker
                 position={vecToLatLng(positions.position)}
@@ -113,46 +144,82 @@ export function PlotPlanner({ positions, site, plot, retrievedPlotPlan }: { posi
                             <h1 className="ml-2 text-xl font-medium">{plotTypeName}</h1>
                             <select
                                 className="bg-transparent outline outline-1 p-1"
-                                value={(plotPlan !== null && plotPlan.selectedPlotType !== undefined) ? plotPlan.selectedPlotType : "Empty"}
+                                value={
+                                    plotPlan !== null && plotPlan.selectedPlotType !== undefined
+                                        ? plotPlan.selectedPlotType
+                                        : "Empty"
+                                }
                                 onChange={(e) => {
-                                    setIcons({ left: e.target.value !== "Empty"? {
-                                        name: plotTypes[e.target.value].name,
-                                        icon: L.icon({
-                                            ...icon_template,
-                                            iconUrl: plotTypes[e.target.value].icon
-                                        })} : null, right: null });
+                                    setIcons({
+                                        left:
+                      e.target.value !== "Empty"
+                          ? {
+                              name: plotTypes[e.target.value].name,
+                              icon: L.icon({
+                                  ...icon_template,
+                                  iconUrl: plotTypes[e.target.value].icon,
+                              }),
+                          }
+                          : null,
+                                        right: null,
+                                    });
                                     setplotType(plotTypes[e.target.value]);
-                                    handlePlotPlanChange({ selectedPlotType: e.target.value !== "Empty"? Number(e.target.value) : "Empty", selectedUpgrades: []});
+                                    handlePlotPlanChange({
+                                        selectedPlotType: e.target.value !== "Empty" ? Number(e.target.value) : "Empty",
+                                        selectedUpgrades: [],
+                                    });
                                 }}
                             >
                                 <option>Empty</option>
-                                {plotTypes.map((plotType, index) => <option key={index} value={index}>{plotType.name}</option>)}
+                                {plotTypes.map((plotType, index) => (
+                                    <option key={index} value={index}>
+                                        {plotType.name}
+                                    </option>
+                                ))}
                             </select>
                         </div>
 
                         <hr />
 
-                        <Planner plotType={plotType} icons={icons} setIcons={setIcons} plotPlan={plotPlan} setPlotPlan={handlePlotPlanChange}/>
+                        <Planner
+                            plotType={plotType}
+                            icons={icons}
+                            setIcons={setIcons}
+                            plotPlan={plotPlan}
+                            setPlotPlan={handlePlotPlanChange}
+                        />
                     </div>
                 </Popup>
             </Marker>
-        </div >
+        </div>
     );
 }
 const storedPlan: LocalStorageSitePlan[] = getStoredPlotPlans();
 
-function getPlotPlanFromSitePlan(sitePlan: LocalStorageSitePlan, plot:number): LocalStoragePlotPlan {
-    if(sitePlan === undefined || sitePlan.plotPlans[plot] === undefined){
-        return {selectedUpgrades: []}
+function getPlotPlanFromSitePlan(
+    sitePlan: LocalStorageSitePlan,
+    plot: number
+): LocalStoragePlotPlan {
+    if (sitePlan === undefined || sitePlan.plotPlans[plot] === undefined) {
+        return { selectedUpgrades: [] };
     }
 
     return sitePlan.plotPlans[plot];
 }
 
 export const PlotPlanners = Object.keys(planner_positions).flatMap((site) => {
-    const retrievedSitePlan: LocalStorageSitePlan = storedPlan.filter(plan => plan.site === site)[0];
+    const retrievedSitePlan: LocalStorageSitePlan = storedPlan.filter(
+        (plan) => plan.site === site
+    )[0];
 
     return Object.keys(planner_positions[site]).map((plot) => {
-        return <PlotPlanner positions={planner_positions[site][plot] } site={site} plot={Number(plot)} retrievedPlotPlan={getPlotPlanFromSitePlan(retrievedSitePlan, Number(plot))}/>;
-    })
+        return (
+            <PlotPlanner
+                positions={planner_positions[site][plot]}
+                site={site}
+                plot={Number(plot)}
+                retrievedPlotPlan={getPlotPlanFromSitePlan(retrievedSitePlan, Number(plot))}
+            />
+        );
+    });
 });

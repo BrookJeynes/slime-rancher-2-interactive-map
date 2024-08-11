@@ -48,10 +48,10 @@ export function SidebarPins({
                     alt={`${selected_pin.icon} pin icon`}
                     className="w-7 mr-2"
                 /> :                
-                    <div class="tooltip"><FaQuestionCircle
+                    <div className="tooltip"><FaQuestionCircle
                         size={25}
                     />
-                    <span class="tooltiptext">Click on the icon below that you want to pin</span>
+                    <span className="tooltiptext">Click on the icon below that you want to pin</span>
                     </div>}
             </div>
         
