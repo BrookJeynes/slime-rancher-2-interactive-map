@@ -78,78 +78,87 @@ export default function Planner({
     }
 
     return (
-        <div className="flex justify-between">
-            {plotType?.optionsA ? (
-                plotType.optionsA.length === 1 ? (
-                    <div className="flex flex-col gap-1">
-                        <input
-                            type="checkbox"
-                            checked={plotPlan.selectedOptionA === 0}
-                            onChange={(e) =>
-                                e.target.checked
-                                    ? onChange(0, Side.left, plotType.optionsA)
-                                    : onChange(-1, Side.left, plotType.optionsA)
-                            }
-                            name={plotType.optionsA[0].name}
-                        />
-                        <label className="ml-2">{plotType.optionsAName}</label>
-                    </div>
-                ) : (
-                    <div className="flex flex-col gap-1">
-                        <h2 className="ml-2 text-lg">{plotType.optionsAName}</h2>
-                        <select
-                            onChange={(e) => onChange(e.target.value, Side.left, plotType.optionsA)}
-                            className="bg-transparent outline outline-1 p-1"
-                            value={plotPlan.selectedOptionA ? plotPlan.selectedOptionA : "Empty"}
-                        >
-                            <option>Empty</option>
-                            {plotType.optionsA.map((resource, index) => (
-                                <option key={index} value={index}>
-                                    {resource.name}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                )
-            ) : (
-                <></>
-            )}
+        <div className="flex justify-between gap-5">
+            {(plotType?.optionsA || plotType?.optionsB) ? (
+                <div className="flex flex-col gap-2">
+                    {plotType?.optionsA ? (
+                        plotType.optionsA.length === 1 ? (
+                            <div className="flex flex-col gap-1">
+                                <h2 className="ml-2 text-lg">Slime?</h2>
+                                <div className="flex flex-row gap-1">
+                                    <input
+                                        type="checkbox"
+                                        checked={plotPlan.selectedOptionA === 0}
+                                        onChange={(e) =>
+                                            e.target.checked
+                                                ? onChange(0, Side.left, plotType.optionsA)
+                                                : onChange(-1, Side.left, plotType.optionsA)
+                                        }
+                                        name={plotType.optionsA[0].name}
+                                    />
+                                    <label className="ml-2">{plotType.optionsAName}</label>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col gap-1">
+                                <h2 className="ml-2 text-lg">{plotType.optionsAName}</h2>
+                                <select
+                                    onChange={(e) => onChange(e.target.value, Side.left, plotType.optionsA)}
+                                    className="bg-transparent outline outline-1 p-1"
+                                    value={plotPlan.selectedOptionA ? plotPlan.selectedOptionA : "Empty"}
+                                >
+                                    <option>Empty</option>
+                                    {plotType.optionsA.map((resource, index) => (
+                                        <option key={index} value={index}>
+                                            {resource.name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        )
+                    ) : (
+                        <></>
+                    )}
 
-            {plotType?.optionsB ? (
-                plotType.optionsB.length === 1 ? (
-                    <div className="flex flex-col gap-1">
-                        <input
-                            type="checkbox"
-                            checked={plotPlan.selectedOptionB === 0}
-                            onChange={(e) =>
-                                e.target.checked
-                                    ? onChange(0, Side.right, plotType.optionsB)
-                                    : onChange(-1, Side.right, plotType.optionsB)
-                            }
-                            name={plotType.optionsB[0].name}
-                        />
-                        <label className="ml-2">{plotType.optionsBName}</label>
-                    </div>
-                ) : (
-                    <div className="flex flex-col gap-1">
-                        <h2 className="ml-2 text-lg">{plotType.optionsBName}</h2>
-                        <select
-                            onChange={(e) => onChange(e.target.value, Side.right, plotType.optionsB)}
-                            className="bg-transparent outline outline-1 p-1"
-                            value={plotPlan.selectedOptionB ? plotPlan.selectedOptionB : "Empty"}
-                        >
-                            <option>Empty</option>
-                            {plotType.optionsB.map((resource, index) => (
-                                <option key={index} value={index}>
-                                    {resource.name}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                )
-            ) : (
-                <></>
-            )}
+                    {plotType?.optionsB ? (
+                        plotType.optionsB.length === 1 ? (
+                            <div className="flex flex-col gap-1">
+                                <h2 className="ml-2 text-lg">Slime?</h2>
+                                <div className="flex flex-row gap-1">
+                                    <input
+                                        type="checkbox"
+                                        checked={plotPlan.selectedOptionB === 0}
+                                        onChange={(e) =>
+                                            e.target.checked
+                                                ? onChange(0, Side.right, plotType.optionsB)
+                                                : onChange(-1, Side.right, plotType.optionsB)
+                                        }
+                                        name={plotType.optionsB[0].name}
+                                    />
+                                    <label className="ml-2">{plotType.optionsBName}</label>
+                                </div> 
+                            </div>
+                        ) : (
+                            <div className="flex flex-col gap-1">
+                                <h2 className="ml-2 text-lg">{plotType.optionsBName}</h2>
+                                <select
+                                    onChange={(e) => onChange(e.target.value, Side.right, plotType.optionsB)}
+                                    className="bg-transparent outline outline-1 p-1"
+                                    value={plotPlan.selectedOptionB ? plotPlan.selectedOptionB : "Empty"}
+                                >
+                                    <option>Empty</option>
+                                    {plotType.optionsB.map((resource, index) => (
+                                        <option key={index} value={index}>
+                                            {resource.name}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+                        )
+                    ) : (
+                        <></>
+                    )}
+                </div> ) : (<></> )}
 
             {plotType?.upgrades.length > 0 ? (
                 <div className="flex flex-col gap-1">
