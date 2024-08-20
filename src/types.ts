@@ -61,6 +61,7 @@ export interface PlotOptions extends Pin {
     upgrades: string[]
 }
 
+export type PinTitle = "Food" | "Utility" | "Plorts" | "Slimes" | "Gordos" | "Resources";
 export interface Pins {
     Food: Pin[],
     Utility: Pin[],
@@ -82,7 +83,7 @@ export interface LocalStoragePin {
 }
 
 export interface LocalStoragePlotPlan {
-    selectedPlotType?: number,
+    selectedPlotType?: number 
     selectedOptionA?: number,
     selectedOptionB?: number,
     selectedUpgrades: number[]

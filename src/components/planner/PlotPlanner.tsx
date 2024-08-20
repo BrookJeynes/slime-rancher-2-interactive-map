@@ -92,7 +92,7 @@ export function PlotPlanner({
     };
 
     const [plotPlan, setPlotPlan] = useState<LocalStoragePlotPlan>(retrievedPlotPlan);
-    const [plotType, setplotType] = useState<PlotOptions>(getSelectedPlotTypeFromRetrievedPlotPlan);
+    const [plotType, setplotType] = useState<PlotOptions | undefined>(getSelectedPlotTypeFromRetrievedPlotPlan);
     const [icons, setIcons] = useState<PlannerIcons>(getIconsFromRetrievedPlan);
 
     const doubleIconYOffset = 0.35;
@@ -147,30 +147,31 @@ export function PlotPlanner({
                                 value={
                                     plotPlan !== null && plotPlan.selectedPlotType !== undefined
                                         ? plotPlan.selectedPlotType
-                                        : "Empty"
+                                        : -1
                                 }
                                 onChange={(e) => {
+                                    const plot_index = parseInt(e.target.value, 10);
                                     setIcons({
                                         left:
-                                            e.target.value !== "Empty"
+                                            plot_index !== -1
                                                 ? {
-                                                    name: plotTypes[e.target.value].name,
+                                                    name: (plotTypes[plot_index] as PlotOptions).name,
                                                     icon: L.icon({
                                                         ...icon_template,
-                                                        iconUrl: plotTypes[e.target.value].icon,
+                                                        iconUrl: plotTypes[plot_index].icon,
                                                     }),
                                                 }
                                                 : null,
                                         right: null,
                                     });
-                                    setplotType(plotTypes[e.target.value]);
+                                    setplotType(plotTypes[plot_index]);
                                     handlePlotPlanChange({
-                                        selectedPlotType: e.target.value !== "Empty" ? Number(e.target.value) : "Empty",
+                                        selectedPlotType: plot_index !== -1 ? plot_index : undefined,
                                         selectedUpgrades: [],
                                     });
                                 }}
                             >
-                                <option>Empty</option>
+                                <option value={-1}>Empty</option>
                                 {plotTypes.map((plotType, index) => (
                                     <option key={index} value={index}>
                                         {plotType.name}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { pins } from "../data/pins";
-import { LocalStoragePin, Pin } from "../types";
+import { LocalStoragePin, Pin, PinTitle } from "../types";
 import { FaQuestionCircle } from "react-icons/fa";
 
 import { useMapEvents } from "react-leaflet";
@@ -13,9 +13,9 @@ export function SidebarPins({
     selected_pin: Pin | undefined,
     setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>
 }) {
-    const [selected_type, setSelectedType] = useState("Food");
+    const [selected_type, setSelectedType] = useState<PinTitle>("Food");
 
-    const types = [
+    const types: PinTitle[] = [
         "Food",
         "Plorts",
         "Utility",
@@ -32,7 +32,7 @@ export function SidebarPins({
                 </div>
                 <select
                     value={selected_type}
-                    onChange={event => setSelectedType(event.target.value)}
+                    onChange={event => setSelectedType(event.target.value as PinTitle)}
                     className="bg-transparent outline outline-1 p-1"
                 >
                     {types.map((type: string) => <option key={type} value={type}>{type}</option>)}
@@ -60,7 +60,7 @@ export function SidebarPins({
 
             <div className="flex flex-wrap gap-2">
                 {
-                    pins[selected_type].map((key: Pin) =>
+                    pins[selected_type as PinTitle].map((key: Pin) =>
                         <PinIcon
                             key={key.name}
                             pin={key}

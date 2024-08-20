@@ -15,7 +15,7 @@ export default function Planner({
     plotPlan,
     setPlotPlan,
 }: {
-    plotType: PlotOptions;
+    plotType?: PlotOptions;
     icons: PlannerIcons;
     setIcons: React.Dispatch<React.SetStateAction<PlannerIcons>>;
     plotPlan: LocalStoragePlotPlan;
@@ -38,10 +38,10 @@ export default function Planner({
                         }
                         : icons.right === null
                             ? {
-                                name: plotType.name,
+                                name: plotType?.name ?? "",
                                 icon: L.icon({
                                     ...icon_template,
-                                    iconUrl: plotType.icon,
+                                    iconUrl: plotType?.icon ?? "",
                                 }),
                             }
                             : null,
@@ -56,10 +56,10 @@ export default function Planner({
                             ? null
                             : icons.left
                         : {
-                            name: plotType.name,
+                            name: plotType?.name ?? "",
                             icon: L.icon({
                                 ...icon_template,
-                                iconUrl: plotType.icon,
+                                iconUrl: plotType?.icon ?? "",
                             }),
                         },
                 right:
@@ -91,8 +91,8 @@ export default function Planner({
                                         checked={plotPlan.selectedOptionA === 0}
                                         onChange={(e) =>
                                             e.target.checked
-                                                ? onChange(0, Side.left, plotType.optionsA)
-                                                : onChange(-1, Side.left, plotType.optionsA)
+                                                ? onChange(0, Side.left, plotType?.optionsA ?? [])
+                                                : onChange(-1, Side.left, plotType?.optionsA ?? [])
                                         }
                                         name={plotType.optionsA[0].name}
                                     />
@@ -103,7 +103,7 @@ export default function Planner({
                             <div className="flex flex-col gap-1">
                                 <h2 className="ml-2 text-lg">{plotType.optionsAName}</h2>
                                 <select
-                                    onChange={(e) => onChange(e.target.value, Side.left, plotType.optionsA)}
+                                    onChange={(e) => onChange(parseInt(e.target.value, 10), Side.left, plotType?.optionsA ?? [])}
                                     className="bg-transparent outline outline-1 p-1"
                                     value={plotPlan.selectedOptionA ? plotPlan.selectedOptionA : "Empty"}
                                 >
@@ -130,8 +130,8 @@ export default function Planner({
                                         checked={plotPlan.selectedOptionB === 0}
                                         onChange={(e) =>
                                             e.target.checked
-                                                ? onChange(0, Side.right, plotType.optionsB)
-                                                : onChange(-1, Side.right, plotType.optionsB)
+                                                ? onChange(0, Side.right, plotType?.optionsB ?? [])
+                                                : onChange(-1, Side.right, plotType?.optionsB ?? [])
                                         }
                                         name={plotType.optionsB[0].name}
                                     />
@@ -142,7 +142,7 @@ export default function Planner({
                             <div className="flex flex-col gap-1">
                                 <h2 className="ml-2 text-lg">{plotType.optionsBName}</h2>
                                 <select
-                                    onChange={(e) => onChange(e.target.value, Side.right, plotType.optionsB)}
+                                    onChange={(e) => onChange(parseInt(e.target.value, 10), Side.right, plotType?.optionsB ?? [])}
                                     className="bg-transparent outline outline-1 p-1"
                                     value={plotPlan.selectedOptionB ? plotPlan.selectedOptionB : "Empty"}
                                 >
@@ -160,7 +160,7 @@ export default function Planner({
                     )}
                 </div>) : (<></>)}
 
-            {plotType?.upgrades.length > 0 ? (
+            {plotType && plotType?.upgrades.length > 0 ? (
                 <div className="flex flex-col gap-1">
                     <h2 className="ml-2 text-lg">Upgrades</h2>
                     {plotType.upgrades.map((additionalOption, index) => (
