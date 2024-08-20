@@ -4,8 +4,8 @@ import { LocalStoragePlotPlan, Pin, PlannerIcons, PlotOptions } from "../../type
 import { icon_template } from "../../globals";
 
 enum Side {
-  left,
-  right,
+    left,
+    right,
 }
 
 export default function Planner({
@@ -15,11 +15,11 @@ export default function Planner({
     plotPlan,
     setPlotPlan,
 }: {
-  plotType: PlotOptions;
-  icons: PlannerIcons;
-  setIcons: React.Dispatch<React.SetStateAction<PlannerIcons>>;
-  plotPlan: LocalStoragePlotPlan;
-  setPlotPlan: (a: LocalStoragePlotPlan) => void;
+    plotType: PlotOptions;
+    icons: PlannerIcons;
+    setIcons: React.Dispatch<React.SetStateAction<PlannerIcons>>;
+    plotPlan: LocalStoragePlotPlan;
+    setPlotPlan: (a: LocalStoragePlotPlan) => void;
 }) {
     function onChange(eventValue: number, side: Side, options: Pin[]) {
         const val = options[eventValue];
@@ -28,50 +28,50 @@ export default function Planner({
             setIcons({
                 ...icons,
                 left:
-          val !== undefined
-              ? {
-                  name: val.name,
-                  icon: L.icon({
-                      ...icon_template,
-                      iconUrl: val.icon,
-                  }),
-              }
-              : icons.right === null
-                  ? {
-                      name: plotType.name,
-                      icon: L.icon({
-                          ...icon_template,
-                          iconUrl: plotType.icon,
-                      }),
-                  }
-                  : null,
+                    val !== undefined
+                        ? {
+                            name: val.name,
+                            icon: L.icon({
+                                ...icon_template,
+                                iconUrl: val.icon,
+                            }),
+                        }
+                        : icons.right === null
+                            ? {
+                                name: plotType.name,
+                                icon: L.icon({
+                                    ...icon_template,
+                                    iconUrl: plotType.icon,
+                                }),
+                            }
+                            : null,
             });
 
             setPlotPlan({ ...plotPlan, selectedOptionA: eventValue });
         } else {
             setIcons({
                 left:
-          val !== undefined
-              ? icons.left !== null && icons.left.icon.options.iconUrl.includes("plots")
-                  ? null
-                  : icons.left
-              : {
-                  name: plotType.name,
-                  icon: L.icon({
-                      ...icon_template,
-                      iconUrl: plotType.icon,
-                  }),
-              },
+                    val !== undefined
+                        ? icons.left !== null && icons.left.icon.options.iconUrl.includes("plots")
+                            ? null
+                            : icons.left
+                        : {
+                            name: plotType.name,
+                            icon: L.icon({
+                                ...icon_template,
+                                iconUrl: plotType.icon,
+                            }),
+                        },
                 right:
-          val !== undefined
-              ? {
-                  name: val.name,
-                  icon: L.icon({
-                      ...icon_template,
-                      iconUrl: val.icon,
-                  }),
-              }
-              : null,
+                    val !== undefined
+                        ? {
+                            name: val.name,
+                            icon: L.icon({
+                                ...icon_template,
+                                iconUrl: val.icon,
+                            }),
+                        }
+                        : null,
             });
             setPlotPlan({ ...plotPlan, selectedOptionB: eventValue });
         }
@@ -136,7 +136,7 @@ export default function Planner({
                                         name={plotType.optionsB[0].name}
                                     />
                                     <label className="ml-2">{plotType.optionsBName}</label>
-                                </div> 
+                                </div>
                             </div>
                         ) : (
                             <div className="flex flex-col gap-1">
@@ -158,7 +158,7 @@ export default function Planner({
                     ) : (
                         <></>
                     )}
-                </div> ) : (<></> )}
+                </div>) : (<></>)}
 
             {plotType?.upgrades.length > 0 ? (
                 <div className="flex flex-col gap-1">

@@ -24,10 +24,10 @@ export function PlotPlanner({
     plot,
     retrievedPlotPlan,
 }: {
-  positions: PlannerPosition;
-  site: string;
-  plot: number;
-  retrievedPlotPlan: LocalStoragePlotPlan;
+    positions: PlannerPosition;
+    site: string;
+    plot: number;
+    retrievedPlotPlan: LocalStoragePlotPlan;
 }) {
     function getSelectedPlotTypeFromRetrievedPlotPlan(): PlotOptions | undefined {
         if (plotPlan !== null && plotPlan.selectedPlotType !== undefined) {
@@ -45,41 +45,41 @@ export function PlotPlanner({
 
         return {
             left:
-        plotType !== undefined &&
-        plotType.optionsA !== undefined &&
-        plotPlan.selectedOptionA !== undefined &&
-        plotType.optionsA[plotPlan.selectedOptionA] !== undefined
-            ? {
-                name: plotType.optionsA[plotPlan.selectedOptionA].name,
-                icon: L.icon({
-                    ...icon_template,
-                    iconUrl: plotType.optionsA[plotPlan.selectedOptionA].icon,
-                }),
-            }
-            : plotType !== undefined &&
-            (plotType.optionsB === undefined ||
-              (plotType.optionsB !== undefined && plotPlan.selectedOptionB === undefined))
-                ? {
-                    name: plotType.name,
-                    icon: L.icon({
-                        ...icon_template,
-                        iconUrl: plotType.icon,
-                    }),
-                }
-                : null,
+                plotType !== undefined &&
+                    plotType.optionsA !== undefined &&
+                    plotPlan.selectedOptionA !== undefined &&
+                    plotType.optionsA[plotPlan.selectedOptionA] !== undefined
+                    ? {
+                        name: plotType.optionsA[plotPlan.selectedOptionA].name,
+                        icon: L.icon({
+                            ...icon_template,
+                            iconUrl: plotType.optionsA[plotPlan.selectedOptionA].icon,
+                        }),
+                    }
+                    : plotType !== undefined &&
+                        (plotType.optionsB === undefined ||
+                            (plotType.optionsB !== undefined && plotPlan.selectedOptionB === undefined))
+                        ? {
+                            name: plotType.name,
+                            icon: L.icon({
+                                ...icon_template,
+                                iconUrl: plotType.icon,
+                            }),
+                        }
+                        : null,
             right:
-        plotType !== undefined &&
-        plotType.optionsB !== undefined &&
-        plotPlan.selectedOptionB !== undefined &&
-        plotType.optionsB[plotPlan.selectedOptionB] !== undefined
-            ? {
-                name: plotType.optionsB[plotPlan.selectedOptionB].name,
-                icon: L.icon({
-                    ...icon_template,
-                    iconUrl: plotType.optionsB[plotPlan.selectedOptionB].icon,
-                }),
-            }
-            : null,
+                plotType !== undefined &&
+                    plotType.optionsB !== undefined &&
+                    plotPlan.selectedOptionB !== undefined &&
+                    plotType.optionsB[plotPlan.selectedOptionB] !== undefined
+                    ? {
+                        name: plotType.optionsB[plotPlan.selectedOptionB].name,
+                        icon: L.icon({
+                            ...icon_template,
+                            iconUrl: plotType.optionsB[plotPlan.selectedOptionB].icon,
+                        }),
+                    }
+                    : null,
         };
     }
 
@@ -152,15 +152,15 @@ export function PlotPlanner({
                                 onChange={(e) => {
                                     setIcons({
                                         left:
-                      e.target.value !== "Empty"
-                          ? {
-                              name: plotTypes[e.target.value].name,
-                              icon: L.icon({
-                                  ...icon_template,
-                                  iconUrl: plotTypes[e.target.value].icon,
-                              }),
-                          }
-                          : null,
+                                            e.target.value !== "Empty"
+                                                ? {
+                                                    name: plotTypes[e.target.value].name,
+                                                    icon: L.icon({
+                                                        ...icon_template,
+                                                        iconUrl: plotTypes[e.target.value].icon,
+                                                    }),
+                                                }
+                                                : null,
                                         right: null,
                                     });
                                     setplotType(plotTypes[e.target.value]);

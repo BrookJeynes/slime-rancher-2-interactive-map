@@ -41,28 +41,30 @@ export function SidebarPins({
 
             <div className="flex flex-wrap gap-2 md:gap-0 space-x-3 mb-5 md:items-center">
                 <h2>Selected icon to pin:</h2>
-                
 
-                {selected_pin? <img
-                    src={`icons/${selected_pin.icon}`}
-                    alt={`${selected_pin.icon} pin icon`}
-                    className="w-7 mr-2"
-                /> :                
-                    <div className="tooltip"><FaQuestionCircle
-                        size={25}
-                    />
-                    <span className="tooltiptext">Click on the icon below that you want to pin</span>
-                    </div>}
+
+                {
+                    selected_pin ?
+                        <img
+                            src={`icons/${selected_pin.icon}`}
+                            alt={`${selected_pin.icon} pin icon`}
+                            className="w-7 mr-2"
+                        /> :
+                        <div className="tooltip">
+                            <FaQuestionCircle size={25} />
+                            <span className="tooltiptext">Click on the icon below that you want to pin</span>
+                        </div>
+                }
             </div>
-        
-                
+
+
             <div className="flex flex-wrap gap-2">
                 {
                     pins[selected_type].map((key: Pin) =>
-                        <PinIcon 
-                            key={key.name} 
-                            pin={key} 
-                            setSelectedPin={setSelectedPin} 
+                        <PinIcon
+                            key={key.name}
+                            pin={key}
+                            setSelectedPin={setSelectedPin}
                         />
                     )
                 }
