@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { pins } from "../data/pins";
 import { LocalStoragePin, Pin } from "../types";
+import { FaQuestionCircle } from "react-icons/fa";
 
 import { useMapEvents } from "react-leaflet";
 
@@ -27,12 +28,6 @@ export function SidebarPins({
         <div>
             <div className="flex flex-col md:flex-row gap-2 md:gap-0 justify-between mb-5 md:items-center">
                 <div className="flex items-center">
-                    {selected_pin && <img
-                        src={`icons/${selected_pin.icon}`}
-                        alt={`${selected_pin.icon} pin icon`}
-                        className="w-7 mr-2"
-                    />}
-
                     <h2 className="text-lg font-bold">User Pins</h2>
                 </div>
                 <select
@@ -44,15 +39,34 @@ export function SidebarPins({
                 </select>
             </div>
 
+            <div className="flex flex-wrap gap-2 md:gap-0 space-x-3 mb-5 md:items-center">
+                <h2>Selected icon to pin:</h2>
+
+
+                {
+                    selected_pin ?
+                        <img
+                            src={`icons/${selected_pin.icon}`}
+                            alt={`${selected_pin.icon} pin icon`}
+                            className="w-7 mr-2"
+                        /> :
+                        <div className="tooltip">
+                            <FaQuestionCircle size={25} />
+                            <span className="tooltiptext">Click on the icon below that you want to pin</span>
+                        </div>
+                }
+            </div>
+
+
             <div className="flex flex-wrap gap-2">
                 {
-                    Object.keys(pins).map((key) => {
-                        if (pins[key].type === selected_type) {
-                            return <PinIcon key={key} pin={pins[key]} setSelectedPin={setSelectedPin} />
-                        }
-
-                        return null;
-                    })
+                    pins[selected_type].map((key: Pin) =>
+                        <PinIcon
+                            key={key.name}
+                            pin={key}
+                            setSelectedPin={setSelectedPin}
+                        />
+                    )
                 }
             </div>
         </div>
@@ -74,6 +88,7 @@ function PinIcon({
             onClick={() => setSelectedPin(pin)}
         >
             <img
+                title={pin.type}
                 src={`icons/${pin.icon}`}
                 alt={`${pin.icon} pin icon`}
                 style={{ width: 40 }}

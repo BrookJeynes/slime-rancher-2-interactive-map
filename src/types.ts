@@ -48,7 +48,28 @@ export interface TeleportLine {
     midpoint: Vec2;
 }
 
-// TODO: Could `type` be an enum?
+export interface Resource{
+    name: string, 
+    type: string
+}
+
+export interface PlotOptions extends Pin {
+    optionsA?: Pin[]
+    optionsAName?: string
+    optionsB?: Pin[]
+    optionsBName?: string
+    upgrades: string[]
+}
+
+export interface Pins {
+    Food: Pin[],
+    Utility: Pin[],
+    Plorts: Pin[],
+    Slimes: Pin[],
+    Gordos: Pin[],
+    Resources: Pin[],
+}
+
 export interface Pin {
     name: string;
     type: string;
@@ -60,7 +81,33 @@ export interface LocalStoragePin {
     pos: Vec2;
 }
 
+export interface LocalStoragePlotPlan {
+    selectedPlotType?: number,
+    selectedOptionA?: number,
+    selectedOptionB?: number,
+    selectedUpgrades: number[]
+}
+
+export interface LocalStorageSitePlan {
+    site: string,
+    plotPlans: LocalStoragePlotPlan[]
+}
+
 export interface Island {
     resources: string[];
     slimes: string[];
+}
+
+export interface PlannerPosition {
+    position: Vec2,
+}
+
+export interface PlannerIcon {
+    name: string;
+    icon: L.Icon<L.IconOptions>;
+}
+
+export interface PlannerIcons {
+    left: PlannerIcon | null,
+    right: PlannerIcon | null,
 }

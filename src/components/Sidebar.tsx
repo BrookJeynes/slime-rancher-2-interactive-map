@@ -52,6 +52,17 @@ export default function Sidebar({
                     <hr />
 
                     <IslandInfo />
+
+                    <hr />
+
+                    <div>
+                        <div className="flex flex-col md:flex-row gap-2 md:gap-0 justify-between mb-1 md:items-center">
+                            <h2 className="text-lg font-bold">Plot Planner</h2>
+                        </div>
+                        <div className="flex flex-wrap md:items-center">
+                            <h2>You can click on any plot on the map to start planning!</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
 
