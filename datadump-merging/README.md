@@ -20,13 +20,17 @@ Before running the following scripts, first setup the Node environment:
 
 2. Install dependencies:
     ```bash
-    npm install
-    # or perform a clean install: `npm ci`
+    npm ci
     ```
 
 ### Python with GDAL (only required for map tiling script)
 
-The map tiling script needs Python installed with the GDAL module.
+The map tiling script utilizes [gdal2tiles-leaflet](), and needs Python installed with the GDAL module.
+
+1. Download the git submodule gdal2tiles-leaflet:
+    ```bash
+    git submodule update --init --recursive
+    ```
 
 1. Install Python 3.
 
@@ -64,7 +68,6 @@ an update to the map is needed.
 
 > The map island images can be extracted from the game using a tool like
 > https://github.com/AssetRipper/AssetRipper.
-
 
 1. Place the new island images into `map_assets/`.
    
@@ -111,7 +114,8 @@ After updating the map image (see [Updating the map's assets](#updating-the-maps
 
 ## Updating or adding new markers (treasure pods, research drones, gordos, etc.)
 
-> When using the plugin: Visit all islands at least once to get a full dump.
+> When using the plugin: Visit all islands at least once
+> (in the same game session) to get a full dump.
 > Otherwise, the dump will only contain data from the islands visited.
 
 1. Place the new dump csv files from the plugin into `dumps/`.
@@ -127,6 +131,6 @@ After updating the map image (see [Updating the map's assets](#updating-the-maps
     ```
 
 3. Depending on what changed, may need to edit the manually-specified position
-    offsets defined in the interactive map's `data/manual_island_offsets.ts` file.
+    offsets defined in the interactive map's `data/island_position_offsets.ts` file.
     
     It exists because some islands' dumped positions are currently offset from where they should be, with no precise explanation or fix yet found.
