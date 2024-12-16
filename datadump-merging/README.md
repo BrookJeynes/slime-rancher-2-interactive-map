@@ -90,7 +90,7 @@ an update to the map is needed.
 
 5. After updating the `map.png` you should [regenerate the map tiles](#regenerating-the-map-tiles).
 
-6. Depending on what changed, may need to edit the manually-specified position
+6. Depending on what changed, you may need to edit the manually-specified position
     offsets defined in the interactive map's `data/manual_island_offsets.ts` file.
     
     It exists because some islands' dumped positions are currently offset from where they should be, with no precise explanation or fix yet found.
@@ -100,10 +100,6 @@ The SR2 Interactive Map uses a tile-based map for performance.
 After updating the map image (see [Updating the map's assets](#updating-the-maps-assets)), the map tiles need to be regenerated. 
 
 > Note: the map tiles are intentionally ignored in `.gitignore`.
->
-> **For contribution and development**, the map tiles should be
-> regenerated before starting the dev server for the first time,
-> or after updating the map assets.
 
 1. Ensure you have Python installed with the GDAL module.
     (see [Prerequisite environment setup](#prerequisite-environment-setup))
@@ -111,6 +107,11 @@ After updating the map image (see [Updating the map's assets](#updating-the-maps
     ```bash
     npm run tile
     ```
+
+## For contribution and development
+The map tiles should be regenerated before starting the dev server for the first time,
+or after updating the map assets.
+(TODO explain why)
 
 ## Updating or adding new markers (treasure pods, research drones, gordos, etc.)
 
@@ -130,7 +131,7 @@ After updating the map image (see [Updating the map's assets](#updating-the-maps
     npm run apply
     ```
 
-3. Depending on what changed, may need to edit the manually-specified position
+3. Depending on what changed, you may need to edit the manually-specified position
     offsets defined in the interactive map's `data/island_position_offsets.ts` file.
     
     It exists because some islands' dumped positions are currently offset from where they should be, with no precise explanation or fix yet found.
