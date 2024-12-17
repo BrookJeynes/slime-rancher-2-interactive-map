@@ -458,7 +458,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
             `I'm going to call it Mega Mushroom Pizza
       and I'm going to eat it every day.`,
         ],
-        pos: { x: -24.2, y: -32.87 },
+        pos: { x: -44.2, y: -48.2 },
         description: "On a mushroom in the open",
     },
     "research_18": {
