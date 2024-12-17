@@ -77,10 +77,10 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         unlocks: "A cave that leads to a Treasure Pod.",
     },
     "locked_10": {
-        name: "Tabby Door Receptacle",
-        plort: "x1 Tabby Plort",
+        name: "Hunter Door Receptacle",
+        plort: "x1 Hunter Plort",
         pos: { x: -37.64, y: -52.09 },
-        image: "iconPlortTabby.png",
+        image: "iconPlortHunter.png",
         description: "At the end of the main path.",
         unlocks: "A small room containing a Treasure Pod.",
     },
