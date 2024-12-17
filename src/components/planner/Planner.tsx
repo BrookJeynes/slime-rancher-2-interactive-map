@@ -104,7 +104,7 @@ export default function Planner({
                                 <h2 className="ml-2 text-lg">{plotType.optionsAName}</h2>
                                 <select
                                     onChange={(e) => onChange(parseInt(e.target.value, 10), Side.left, plotType?.optionsA ?? [])}
-                                    className="bg-transparent outline outline-1 p-1"
+                                    className="bg-blue-900 outline outline-1 p-1"
                                     value={plotPlan.selectedOptionA ? plotPlan.selectedOptionA : "Empty"}
                                 >
                                     <option>Empty</option>
@@ -143,7 +143,7 @@ export default function Planner({
                                 <h2 className="ml-2 text-lg">{plotType.optionsBName}</h2>
                                 <select
                                     onChange={(e) => onChange(parseInt(e.target.value, 10), Side.right, plotType?.optionsB ?? [])}
-                                    className="bg-transparent outline outline-1 p-1"
+                                    className="bg-blue-900 outline outline-1 p-1"
                                     value={plotPlan.selectedOptionB ? plotPlan.selectedOptionB : "Empty"}
                                 >
                                     <option>Empty</option>

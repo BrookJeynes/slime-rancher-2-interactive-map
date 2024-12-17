@@ -143,7 +143,7 @@ export function PlotPlanner({
                         <div className="flex justify-between items-center gap-5">
                             <h1 className="ml-2 text-xl font-medium">{plotTypeName}</h1>
                             <select
-                                className="bg-transparent outline outline-1 p-1"
+                                className="bg-blue-900 outline outline-1 p-1"
                                 value={
                                     plotPlan !== null && plotPlan.selectedPlotType !== undefined
                                         ? plotPlan.selectedPlotType

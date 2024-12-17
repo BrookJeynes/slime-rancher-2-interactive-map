@@ -19,7 +19,7 @@ export default function IslandInfo() {
                 <select
                     value={selected_island}
                     onChange={event => setSelectedIsland(event.target.value)}
-                    className="bg-transparent outline outline-1 p-1"
+                    className="bg-blue-900 outline outline-1 p-1"
                 >
                     {island_names.map((type: string) => <option key={type} value={type}>{type}</option>)}
                 </select>

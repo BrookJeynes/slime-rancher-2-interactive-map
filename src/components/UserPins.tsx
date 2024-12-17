@@ -33,7 +33,7 @@ export function SidebarPins({
                 <select
                     value={selected_type}
                     onChange={event => setSelectedType(event.target.value as PinTitle)}
-                    className="bg-transparent outline outline-1 p-1"
+                    className="bg-blue-900 outline outline-1 p-1"
                 >
                     {types.map((type: string) => <option key={type} value={type}>{type}</option>)}
                 </select>
