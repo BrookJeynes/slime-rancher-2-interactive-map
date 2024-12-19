@@ -39,7 +39,7 @@ export const gordos: { [key: string]: Gordo } = {
     },
     "Tabby Gordo": {
         name: "Tabby Gordo",
-        food: "x30 Meat",
+        food: "x50 Meat",
         pos: { x: 70.48, y: -121.7 },
         image: "iconGordoTabby.png",
         drops: ["x12 Tabby Slimes", "x1 Jar"],
