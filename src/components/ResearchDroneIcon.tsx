@@ -15,28 +15,31 @@ export function ResearchDroneIcon({
     research_drone,
     setShowLog,
     setCurrentLog,
+    keyName,
 }: {
     research_drone: ResearchDrone,
     setShowLog: React.Dispatch<React.SetStateAction<boolean>>
     setCurrentLog: React.Dispatch<React.SetStateAction<JSX.Element>>
+    keyName: string,
 }) {
-    const key = `${research_drone.name.toLowerCase().replace(" ", "")}${research_drone.pos.x}${research_drone.pos.y}`;
     const { found, setFound } = useContext(FoundContext);
+    
+    const depracatedKey = `${research_drone.name.toLowerCase().replace(" ", "")}${research_drone.pos.x}${research_drone.pos.y}`;
 
     const [checked, setChecked] = useState(
-        found.research_drones ? found.research_drones.some((k: string) => k === key) : false
+        found.research_drones ? found.research_drones.some((k: string) => k === keyName) : false
     );
 
     useEffect(() => {
         if (checked) {
             setFound({
                 ...found,
-                research_drones: [...found.research_drones, key],
+                research_drones: [...found.research_drones, keyName],
             });
         } else {
             setFound({
                 ...found,
-                research_drones: [...found.research_drones.filter((item: string) => item !== key)]
+                research_drones: [...found.research_drones.filter((item: string) => item !== keyName && item !== depracatedKey)]
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,7 +52,7 @@ export function ResearchDroneIcon({
     });
 
     return (
-        <Marker key={key} position={[research_drone.pos.x, research_drone.pos.y]} icon={icon}>
+        <Marker key={keyName} position={[research_drone.pos.x, research_drone.pos.y]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">
@@ -57,7 +60,7 @@ export function ResearchDroneIcon({
                             <input
                                 type="checkbox"
                                 checked={checked}
-                                onChange={() => handleChecked(research_drone_ls_key, key, checked, setChecked)}
+                                onChange={() => handleChecked(research_drone_ls_key, keyName, checked, setChecked, depracatedKey)}
                                 className="w-4 h-4"
                             />
                             <h1 className="ml-2 text-xl font-medium">{research_drone.name}</h1>
@@ -152,11 +155,14 @@ export function ResearchDroneIcons(
     setShowLog: React.Dispatch<React.SetStateAction<boolean>>,
     setCurrentLog: React.Dispatch<React.SetStateAction<JSX.Element>>,
 ) {
-    return Object.values(research_drones).map((research_drone: ResearchDrone) => {
-        return <ResearchDroneIcon
-            research_drone={research_drone}
-            setShowLog={setShowLog}
-            setCurrentLog={setCurrentLog}
+    return Object.keys(research_drones).map((keyName) => {
+        const research_drone = research_drones[keyName];
+        return <ResearchDroneIcon 
+        key={keyName}
+        research_drone={research_drone}
+        setShowLog={setShowLog}
+        setCurrentLog={setCurrentLog}
+        keyName={keyName}
         />;
     })
 }
