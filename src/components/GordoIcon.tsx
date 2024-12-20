@@ -9,24 +9,25 @@ import { gordos } from "../data/gordos";
 import { handleChecked } from "../util";
 import { FoundContext } from "../FoundContext";
 
-export function GordoIcon({ gordo }: { gordo: Gordo }) {
-    const key = `${gordo.name.toLowerCase().replace(" ", "")}${gordo.pos.x}${gordo.pos.y}`;
+export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string }) {
     const { found, setFound } = useContext(FoundContext);
-
+    
+    const depracatedKey = `${gordo.name.toLowerCase().replace(" ", "")}${gordo.pos.x}${gordo.pos.y}`;
+    
     const [checked, setChecked] = useState(
-        found.gordos ? found.gordos.some((k: string) => k === key) : false
+        found.gordos ? found.gordos.some((k: string) => k === keyName) : false
     );
 
     useEffect(() => {
         if (checked) {
             setFound({
                 ...found,
-                gordos: [...found.gordos, key],
+                gordos: [...found.gordos, keyName],
             });
         } else {
             setFound({
                 ...found,
-                gordos: [...found.gordos.filter((item: string) => item !== key)]
+                gordos: [...found.gordos.filter((item: string) => item !== keyName && item !== depracatedKey)]
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,7 +40,7 @@ export function GordoIcon({ gordo }: { gordo: Gordo }) {
     });
 
     return (
-        <Marker key={key} position={[gordo.pos.x, gordo.pos.y]} icon={icon}>
+        <Marker key={keyName} position={[gordo.pos.x, gordo.pos.y]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">
@@ -47,7 +48,7 @@ export function GordoIcon({ gordo }: { gordo: Gordo }) {
                             <input
                                 type="checkbox"
                                 checked={checked}
-                                onChange={() => handleChecked(gordo_ls_key, key, checked, setChecked)}
+                                onChange={() => handleChecked(gordo_ls_key, keyName, checked, setChecked, depracatedKey)}
                                 className="w-4 h-4"
                             />
                             <h1 className="ml-2 text-xl font-medium">{gordo.name}</h1>
@@ -89,6 +90,8 @@ export function GordoIcon({ gordo }: { gordo: Gordo }) {
     );
 }
 
-export const GordoIcons = Object.values(gordos).map((gordo: Gordo) => {
-    return <GordoIcon gordo={gordo} />;
-})
+export const GordoIcons = Object.keys(gordos).map((keyName) => {
+    const gordo = gordos[keyName];
+    return <GordoIcon key={keyName} gordo={gordo} keyName={keyName} />;
+});
+
