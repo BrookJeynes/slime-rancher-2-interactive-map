@@ -540,4 +540,9 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         description: "On a ledge underneath the main part of the island over the water.",
         pos: { x: 83.25, y: -161.54 },
     },
+    "treasure_powderfallbluffs_24": {
+        contents: ["x3 Sun Sap"],
+        description: "On a mountain within a bundle of trees.",
+        pos: { x: 82.52, y: -144.51 },
+    },
 }
