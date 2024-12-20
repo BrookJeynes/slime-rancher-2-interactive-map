@@ -12,8 +12,10 @@ import { FoundContext } from "../FoundContext";
 export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: TreasurePod, keyName: string }) {
     const { found, setFound } = useContext(FoundContext);
 
+    const deprecatedKey = `treasurepod${treasure_pod.pos.x}${treasure_pod.pos.y}`;
+
     const [checked, setChecked] = useState(
-        found.treasure_pods ? found.treasure_pods.some((k: string) => k === keyName) : false
+        found.treasure_pods ? found.treasure_pods.some((k: string) => k === keyName || k === deprecatedKey) : false
     );
 
     useEffect(() => {
@@ -25,7 +27,7 @@ export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: Treas
         } else {
             setFound({
                 ...found,
-                treasure_pods: [...found.treasure_pods.filter((item: string) => item !== keyName)],
+                treasure_pods: [...found.treasure_pods.filter((item: string) => item !== keyName && item !== deprecatedKey)],
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -46,7 +48,7 @@ export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: Treas
                             <input
                                 type="checkbox"
                                 checked={checked}
-                                onChange={() => handleChecked(treasure_pod_ls_key, keyName, checked, setChecked)}
+                                onChange={() => handleChecked(treasure_pod_ls_key, keyName, checked, setChecked, deprecatedKey)}
                                 className="w-4 h-4"
                             />
                             <h1 className="ml-2 text-xl font-medium">Treasure Pod</h1>
