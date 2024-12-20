@@ -1,8 +1,5 @@
 import { TreasurePod } from "../types";
 
-// TODO(20-12-24): namespace each pod to it's location to avoid number 
-// clashing and to ease adding pods, e.g. "treasure_embervalley_18"
-
 export const treasure_pods: { [key: string]: TreasurePod } = {
     // The Conservatory
     "treasure_conservatory_1": {
