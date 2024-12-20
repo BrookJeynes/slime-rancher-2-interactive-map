@@ -124,7 +124,7 @@ export const gordos: { [key: string]: Gordo } = {
     // powderfall bluffs
     "sabergordo_powderfallbluffs_1": {
         name: "Saber Gordo",
-        food: "x30 Meat",
+        food: "x50 Meat",
         pos: { x: 82.01, y: -122.93 },
         image: "iconGordoSaber.png",
         drops: ["x12 Saber Slimes", "x1 Jar"],
