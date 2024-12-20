@@ -23,6 +23,10 @@ const plorts = [
     "Rad",
     "Saber",
     "Tangle",
+    "Yolky",
+    "Shadow",
+    "Twin",
+    "Sloomber"
 ];
 
 const fireSlime: Resource = {
@@ -37,6 +41,11 @@ const puddleSlime: Resource = {
 
 export const yolkySlime: Resource = {
     name: "Yolky",
+    type: "Docile",
+};
+
+export const shadowSlime: Resource = {
+    name: "Shadow",
     type: "Docile",
 };
 
@@ -59,6 +68,10 @@ const plannableSlimes: Resource[] = [
     { name: "Tangle", type: "Docile" },
     { name: "Tarr", type: "Hostile" },
     yolkySlime,
+    { name: "Sloomber", type: "Docile" },
+    { name: "Twin", type: "Hostile" },
+
+
 ];
 
 const slimes: Resource[] = [
@@ -71,6 +84,7 @@ const slimes: Resource[] = [
     puddleSlime,
     { name: "Quantum", type: "Docile" },
     { name: "Rad", type: "Harmful" },
+    shadowSlime
 ];
 
 const gordos = [
@@ -94,22 +108,33 @@ const gordos = [
     "Rad",
     "Saber",
     "Tangle",
+    "Twin",
+    "Sloomber"
 ];
 
 const resources: Resource[] = [
+    { name: "AquaGlass", type: "Other" },
+    { name: "BlackIndigonium", type: "Other" },
     { name: "BuzzWax", type: "Apiary" },
     { name: "DeepBrine", type: "Pump" },
+    { name: "DreamBubble", type: "Other" },
+    { name: "DriftCrystal", type: "Other" },
     { name: "Hexacomb", type: "Apiary" },
     { name: "Indigonium", type: "Drill" },
     { name: "JellyStone", type: "Drill" },
     { name: "LavaDust", type: "Pump" },
+    { name: "LightningMote", type: "Other" },
+    { name: "MagmaComb", type: "Other" },
     { name: "PepperJam", type: "Apiary" },
     { name: "PrimordyOil", type: "Pump" },
     { name: "RadiantOre", type: "Other" },
+    { name: "RoyalJelly", type: "Other" },
     { name: "SilkySand", type: "Pump" },
     { name: "SlimeFossil", type: "Drill" },
     { name: "SpiralSteam", type: "Pump" },
+    { name: "StormGlass", type: "Other" },
     { name: "StrangeDiamond", type: "Drill" },
+    { name: "TinPetal", type: "Other" },
     { name: "WildHoney", type: "Apiary" },
 ];
 
@@ -121,6 +146,7 @@ const meats: Resource[] = [
     { name: "Sea Hen", type: "Meat" },
     { name: "Stony Hen", type: "Meat" },
     { name: "Thundercluck", type: "Meat" },
+    { name: "Candied Hen", type: "Meat" },
 ];
 
 const fruits: Resource[] = [
@@ -129,6 +155,7 @@ const fruits: Resource[] = [
     { name: "Pogofruit", type: "Fruit" },
     { name: "Pomegranite", type: "Fruit" },
     { name: "Prickle Pear", type: "Fruit" },
+    { name: "Polaricherry", type: "Fruit" },
 ];
 
 const veggies: Resource[] = [
