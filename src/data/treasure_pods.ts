@@ -9,7 +9,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     },
     "treasure_conservatory_2": {
         contents: ["Blueprint: Fruit Flag"],
-        description: "On top of a tree on a small island.",
+        description: "On top of a large pile of rocks overlooking a small island.",
         pos: { x: 32.23, y: 18.32 }
     },
     "treasure_conservatory_3": {
