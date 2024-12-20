@@ -16,7 +16,6 @@ export function handleChecked(
     if (!checked) {
         if (items.length > 0) {
             items.push(key);
-            //console.log(items); debugging remnant?
             localStorage.setItem(local_storage_key, JSON.stringify(items));
         } else {
             localStorage.setItem(local_storage_key, JSON.stringify([key]));
