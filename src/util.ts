@@ -6,13 +6,16 @@ export function handleChecked(
     key: string,
     checked: boolean,
     setChecked: React.Dispatch<React.SetStateAction<boolean>>,
+    /// This is required due to us changing how localStorage keys are saved.
+    /// Keys used to be constructed using the icon coords but are no longer.
+    /// This should only be used to remove the deprecated key, never set.
+    deprecatedKey: string | null = null,
 ) {
     const items: string[] = JSON.parse(localStorage.getItem(local_storage_key) ?? "[]") ?? [];
 
     if (!checked) {
         if (items.length > 0) {
             items.push(key);
-            //console.log(items); debugging remnant?
             localStorage.setItem(local_storage_key, JSON.stringify(items));
         } else {
             localStorage.setItem(local_storage_key, JSON.stringify([key]));
@@ -20,7 +23,7 @@ export function handleChecked(
     } else {
         localStorage.setItem(
             local_storage_key,
-            JSON.stringify(items.filter(item => item !== key))
+            JSON.stringify(items.filter(item => item !== key && item !== deprecatedKey))
         );
     }
 
