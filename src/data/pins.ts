@@ -49,6 +49,8 @@ export const shadowSlime: Resource = {
     type: "Docile",
 };
 
+// Add new slimes at the bottom and not in alphabetical order!
+// If you add new resources in the middle of the list, you will break existing plans that are loaded from local storage.
 const plannableSlimes: Resource[] = [
     { name: "Angler", type: "Docile" },
     { name: "Batty", type: "Docile" },
@@ -138,6 +140,8 @@ const resources: Resource[] = [
     { name: "WildHoney", type: "Apiary" },
 ];
 
+// Add new foods at the bottom and not in alphabetical order!
+// If you add new resources in the middle of the list, you will break existing plans that are loaded from local storage.
 const meats: Resource[] = [
     { name: "Briar Hen", type: "Meat" },
     { name: "Hen Hen", type: "Meat" },
