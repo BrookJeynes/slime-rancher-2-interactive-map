@@ -83,4 +83,20 @@ export const islands: { [key: string]: Island } = {
             "iconSlimeYolky.png",
         ],
     },
+    "Grey Labyrinth": {
+        resources: [
+            "iconCraftAquaGlass.png",
+            "iconCraftBlackIndigonium.png",
+            "iconCraftDreamBubble.png",
+            "iconCraftMagmaComb.png",
+            "iconCraftRoyalJelly.png",
+            "iconCraftTinPetal.png",
+            "iconCraftStrangeDiamond.png",
+        ],
+        slimes: [
+            "iconSlimeShadow.png",
+            "iconSlimeTwin.png",
+            "iconSlimeSloomber.png",
+        ],
+    },
 }
