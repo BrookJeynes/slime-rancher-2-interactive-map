@@ -268,7 +268,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     },
 
     // Starlight Strand
-    "treasure_starlightstrand_2": {
+    "treasure_starlightstrand_1": {
         contents: ["Blueprint: Trellis Arch"],
         description: "Under a ruin arch accessible from a lower ledge above the water",
         pos: { x: 8.53, y: -59.23 },
