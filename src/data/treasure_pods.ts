@@ -76,7 +76,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     },
     "treasure_rainbowfields_12": {
         contents: ["Blueprint: Emerald Cypress"],
-        description: "In a small cave underneath a rock arch.",
+        description: "In a small cave underneath a rock arch near a teleporter.",
         pos: { x: 32.66, y: -49.22 },
     },
     "treasure_rainbowfields_13": {
