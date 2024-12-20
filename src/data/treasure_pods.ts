@@ -356,7 +356,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     "treasure_starlightstrand_18": {
         contents: ["Blueprint: Mushroom Planter"],
         description: "Underground against a pillar in a cave near the Angler Gordo.",
-        pos: { x: -49.92, y: -14.94 },
+        pos: { x: -47.56, y: -16.83 },
     },
     "treasure_starlightstrand_19": {
         contents: ["Tank Liner"],
