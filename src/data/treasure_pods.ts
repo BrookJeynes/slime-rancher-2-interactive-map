@@ -77,7 +77,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     "treasure_15": {
         contents: ["Blueprint: Emerald Cypress"],
         description: "In a small cave underneath a rock arch.",
-        pos: { x: 23.8, y: -47.59 },
+        pos: { x: 22.5, y: -36.78 },
     },
     "treasure_16": {
         contents: ["Blueprint: Overjoyed Statue"],
