@@ -24,7 +24,7 @@ export function ResearchDroneIcon({
 }) {
     const { found, setFound } = useContext(FoundContext);
     
-    const depracatedKey = `${research_drone.name.toLowerCase().replace(" ", "")}${research_drone.pos.x}${research_drone.pos.y}`;
+    const deprecatedKey = `${research_drone.name.toLowerCase().replace(" ", "")}${research_drone.pos.x}${research_drone.pos.y}`;
 
     const [checked, setChecked] = useState(
         found.research_drones ? found.research_drones.some((k: string) => k === keyName) : false
@@ -39,7 +39,7 @@ export function ResearchDroneIcon({
         } else {
             setFound({
                 ...found,
-                research_drones: [...found.research_drones.filter((item: string) => item !== keyName && item !== depracatedKey)]
+                research_drones: [...found.research_drones.filter((item: string) => item !== keyName && item !== deprecatedKey)]
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,7 +60,7 @@ export function ResearchDroneIcon({
                             <input
                                 type="checkbox"
                                 checked={checked}
-                                onChange={() => handleChecked(research_drone_ls_key, keyName, checked, setChecked, depracatedKey)}
+                                onChange={() => handleChecked(research_drone_ls_key, keyName, checked, setChecked, deprecatedKey)}
                                 className="w-4 h-4"
                             />
                             <h1 className="ml-2 text-xl font-medium">{research_drone.name}</h1>

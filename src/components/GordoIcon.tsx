@@ -12,7 +12,7 @@ import { FoundContext } from "../FoundContext";
 export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string }) {
     const { found, setFound } = useContext(FoundContext);
     
-    const depracatedKey = `${gordo.name.toLowerCase().replace(" ", "")}${gordo.pos.x}${gordo.pos.y}`;
+    const deprecatedKey = `${gordo.name.toLowerCase().replace(" ", "")}${gordo.pos.x}${gordo.pos.y}`;
     
     const [checked, setChecked] = useState(
         found.gordos ? found.gordos.some((k: string) => k === keyName) : false
@@ -27,7 +27,7 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
         } else {
             setFound({
                 ...found,
-                gordos: [...found.gordos.filter((item: string) => item !== keyName && item !== depracatedKey)]
+                gordos: [...found.gordos.filter((item: string) => item !== keyName && item !== deprecatedKey)]
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,7 +48,7 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
                             <input
                                 type="checkbox"
                                 checked={checked}
-                                onChange={() => handleChecked(gordo_ls_key, keyName, checked, setChecked, depracatedKey)}
+                                onChange={() => handleChecked(gordo_ls_key, keyName, checked, setChecked, deprecatedKey)}
                                 className="w-4 h-4"
                             />
                             <h1 className="ml-2 text-xl font-medium">{gordo.name}</h1>
