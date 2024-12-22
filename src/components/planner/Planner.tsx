@@ -105,7 +105,7 @@ export default function Planner({
                                 <select
                                     onChange={(e) => onChange(parseInt(e.target.value, 10), Side.left, plotType?.optionsA ?? [])}
                                     className="bg-blue-900 outline outline-1 p-1"
-                                    value={plotPlan.selectedOptionA ? plotPlan.selectedOptionA : "Empty"}
+                                    value={plotPlan.selectedOptionA !== undefined ? plotPlan.selectedOptionA : "Empty"}
                                 >
                                     <option>Empty</option>
                                     {plotType.optionsA.map((resource, index) => (
@@ -144,7 +144,7 @@ export default function Planner({
                                 <select
                                     onChange={(e) => onChange(parseInt(e.target.value, 10), Side.right, plotType?.optionsB ?? [])}
                                     className="bg-blue-900 outline outline-1 p-1"
-                                    value={plotPlan.selectedOptionB ? plotPlan.selectedOptionB : "Empty"}
+                                    value={plotPlan.selectedOptionB !== undefined ? plotPlan.selectedOptionB : "Empty"}
                                 >
                                     <option>Empty</option>
                                     {plotType.optionsB.map((resource, index) => (
