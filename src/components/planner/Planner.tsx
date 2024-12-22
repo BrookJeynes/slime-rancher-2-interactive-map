@@ -55,7 +55,7 @@ export default function Planner({
                         ? icons.left !== null && icons.left.icon.options.iconUrl.includes("plots")
                             ? null
                             : icons.left
-                        : {
+                        : icons.left !== undefined ? icons.left : {
                             name: plotType?.name ?? "",
                             icon: L.icon({
                                 ...icon_template,
