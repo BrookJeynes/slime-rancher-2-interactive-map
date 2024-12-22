@@ -96,7 +96,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     },
     "treasure_rainbowfields_16": {
         contents: ["Blueprint: Coastal Rock"],
-        description: "Inside a cave behind the phosphor gordo.",
+        description: "Inside a cave behind the Phosphor Gordo.",
         pos: { x: 34.67, y: -24.96 },
     },
 

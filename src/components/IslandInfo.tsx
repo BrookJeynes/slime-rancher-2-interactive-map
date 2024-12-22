@@ -10,6 +10,7 @@ export default function IslandInfo() {
         "Starlight Strand",
         "Ember Valley",
         "Powderfall Bluffs",
+        "Grey Labyrinth",
     ];
 
     return (
