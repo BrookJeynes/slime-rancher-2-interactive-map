@@ -1,12 +1,10 @@
-import { useContext } from "react";
-
+import { FoundContext } from "../FoundContext";
 import { gordos } from "../data/gordos";
 import { locked_doors } from "../data/locked_doors";
 import { map_nodes } from "../data/map_nodes";
-import { treasure_pods } from "../data/treasure_pods";
 import { research_drones } from "../data/research_drones";
-
-import { FoundContext } from "../FoundContext";
+import { treasure_pods } from "../data/treasure_pods";
+import { useContext } from "react";
 
 export default function CollectablesTracker() {
     const { found } = useContext(FoundContext);

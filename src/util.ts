@@ -37,13 +37,13 @@ export function handlePlotPlanned(
 ) {
     const items: LocalStorageSitePlan[] = JSON.parse(localStorage.getItem("planned_plots") ?? "[]") ?? [];
 
-    const sitePlans = items.filter(item => item.site === site)
+    const sitePlans = items.filter(item => item.site === site);
     if (sitePlans.length === 1) {
-        sitePlans[0].plotPlans[plot] = plotPlan
+        sitePlans[0].plotPlans[plot] = plotPlan;
     } else {
         const plotPlans = [];
         plotPlans[plot] = plotPlan;
-        items.push({ site: site, plotPlans: plotPlans })
+        items.push({ site: site, plotPlans: plotPlans });
     }
 
     localStorage.setItem(

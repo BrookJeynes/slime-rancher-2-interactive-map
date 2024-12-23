@@ -1,13 +1,11 @@
+import { Marker, Popup } from "react-leaflet";
+import { gordo_ls_key, icon_opacity, icon_template } from "../globals";
 import { useContext, useEffect, useState } from "react";
-
-import { Marker, Popup } from "react-leaflet"
-import L from "leaflet";
-
+import { FoundContext } from "../FoundContext";
 import { Gordo } from "../types";
-import { icon_template, icon_opacity, gordo_ls_key } from "../globals";
+import L from "leaflet";
 import { gordos } from "../data/gordos";
 import { handleChecked } from "../util";
-import { FoundContext } from "../FoundContext";
 
 export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string }) {
     const deprecatedKey = `${gordo.name.toLowerCase().replace(" ", "")}${gordo.pos.x}${gordo.pos.y}`;
@@ -28,7 +26,6 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
                 gordos: [...found.gordos.filter((item: string) => item !== keyName && item !== deprecatedKey)]
             });
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({
@@ -69,7 +66,8 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
                         <h2 className="text-md font-bold">Drops:</h2>
                         <ul>
                             {gordo.drops.map(drop => {
-                                return <li className="list-disc ml-5">{drop}</li>
+                                const key = `${keyName}${drop}`;
+                                return <li key={key} className="list-disc ml-5">{drop}</li>;
                             })}
                         </ul>
                     </div>
@@ -78,7 +76,8 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
                         <h2 className="text-md font-bold">Unlocks:</h2>
                         <ul>
                             {gordo.unlocks.map(unlock => {
-                                return <li className="list-disc ml-5">{unlock}</li>
+                                const key = `${keyName}${unlock}`;
+                                return <li key={key} className="list-disc ml-5">{unlock}</li>;
                             })}
                         </ul>
                     </div>

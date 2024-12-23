@@ -1,6 +1,6 @@
-import L from "leaflet";
-
 import { LocalStoragePlotPlan, Pin, PlannerIcons, PlotOptions } from "../../types";
+import L from "leaflet";
+import React from "react";
 import { icon_template } from "../../globals";
 
 enum Side {
@@ -169,10 +169,9 @@ export default function Planner({
                                 type="checkbox"
                                 checked={plotPlan.selectedUpgrades.includes(index)}
                                 onChange={(e) => {
-                                    let upgrades;
-                                    e.target.checked
-                                        ? (upgrades = [...plotPlan.selectedUpgrades, index])
-                                        : (upgrades = plotPlan.selectedUpgrades.filter((value) => value !== index));
+                                    const upgrades = e.target.checked
+                                        ? [...plotPlan.selectedUpgrades, index]
+                                        : plotPlan.selectedUpgrades.filter((value) => value !== index);
                                     setPlotPlan({ ...plotPlan, selectedUpgrades: upgrades });
                                 }}
                                 name={additionalOption}

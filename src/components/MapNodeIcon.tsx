@@ -1,13 +1,11 @@
+import { Marker, Popup } from "react-leaflet";
+import { icon_opacity, icon_template, map_node_ls_key } from "../globals";
 import { useContext, useEffect, useState } from "react";
-
-import { Marker, Popup } from "react-leaflet"
-import L from "leaflet";
-
-import { MapNode } from "../types";
-import { icon_template, icon_opacity, map_node_ls_key } from "../globals";
-import { map_nodes } from "../data/map_nodes";
-import { handleChecked } from "../util";
 import { FoundContext } from "../FoundContext";
+import L from "leaflet";
+import { MapNode } from "../types";
+import { handleChecked } from "../util";
+import { map_nodes } from "../data/map_nodes";
 
 export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
     const key = `${map_node.name.toLowerCase().replace(" ", "")}${map_node.pos.x}${map_node.pos.y}`;
@@ -28,7 +26,6 @@ export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
                 map_nodes: [...found.map_nodes.filter((item: string) => item !== key)]
             });
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({
@@ -66,5 +63,6 @@ export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
 }
 
 export const MapNodeIcons = Object.values(map_nodes).map((map_node: MapNode) => {
-    return <MapNodeIcon map_node={map_node} />;
-})
+    const key = `${map_node.pos.x}${map_node.pos.y}`;
+    return <MapNodeIcon key={key} map_node={map_node} />;
+});

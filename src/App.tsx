@@ -1,19 +1,17 @@
-import { useState } from "react";
-
-import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
-import L from "leaflet";
-
+import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { LocalStoragePin, Pin } from "./types";
 import { GordoIcons } from "./components/GordoIcon";
+import L from "leaflet";
 import { LockedDoorIcons } from "./components/LockedDoorIcon";
 import { MapNodeIcons } from "./components/MapNodeIcon";
-import { TreasurePodIcons } from "./components/TreasurePodIcon";
-import { ResearchDroneIcons } from "./components/ResearchDroneIcon";
-import { TeleportLineIcons } from "./components/TeleportLineIcon";
-import Sidebar from "./components/Sidebar";
-import { icon_template } from "./globals";
-import { LocalStoragePin, Pin } from "./types";
 import { MapUserPins } from "./components/UserPins";
 import { PlotPlanners } from "./components/planner/PlotPlanner";
+import { ResearchDroneIcons } from "./components/ResearchDroneIcon";
+import Sidebar from "./components/Sidebar";
+import { TeleportLineIcons } from "./components/TeleportLineIcon";
+import { TreasurePodIcons } from "./components/TreasurePodIcon";
+import { icon_template } from "./globals";
+import { useState } from "react";
 
 function App() {
     const [show_log, setShowLog] = useState(false);
@@ -38,7 +36,7 @@ function App() {
             // TODO: If the pin isn't reset, a new pin will be placed when 
             // pressing "Remove".
             setSelectedPin(undefined);
-            setUserPins(new_pins)
+            setUserPins(new_pins);
             localStorage.setItem("user_pins", JSON.stringify(new_pins));
         };
 
@@ -121,7 +119,7 @@ function App() {
                 <TileLayer url="map/{z}/{x}/{y}.png" noWrap={true} />
             </MapContainer>
         </div >
-    )
+    );
 }
 
-export default App
+export default App;

@@ -1,6 +1,5 @@
-import { useState } from "react";
-
 import { islands } from "../data/islands";
+import { useState } from "react";
 
 export default function IslandInfo() {
     const [selected_island, setSelectedIsland] = useState("Rainbow Fields");
@@ -31,11 +30,13 @@ export default function IslandInfo() {
                 <div className="flex flex-wrap gap-2">
                     {
                         islands[selected_island].slimes.map(slime => {
+                            const key = `${slime} pin icon`;
                             return <img
+                                key={key}
                                 src={`icons/slimes/${slime}`}
-                                alt={`${slime} pin icon`}
+                                alt={key}
                                 style={{ width: 40 }}
-                            />
+                            />;
                         })
                     }
                 </div>
@@ -46,11 +47,13 @@ export default function IslandInfo() {
                 <div className="flex flex-wrap gap-2">
                     {
                         islands[selected_island].resources.map(resource => {
+                            const key = `${resource} pin icon`;
                             return <img
+                                key={key}
                                 src={`icons/resources/${resource}`}
-                                alt={`${resource} pin icon`}
+                                alt={key}
                                 style={{ width: 40 }}
-                            />
+                            />;
                         })
                     }
                 </div>

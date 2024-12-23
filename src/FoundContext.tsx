@@ -1,5 +1,11 @@
-import { createContext, useState } from "react";
-import { gordo_ls_key, locked_door_ls_key, map_node_ls_key, research_drone_ls_key, treasure_pod_ls_key } from "./globals";
+import React, { createContext, useState } from "react";
+import {
+    gordo_ls_key,
+    locked_door_ls_key,
+    map_node_ls_key,
+    research_drone_ls_key,
+    treasure_pod_ls_key
+} from "./globals";
 
 export interface Found {
     gordos: string[];

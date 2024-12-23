@@ -540,4 +540,4 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         description: "On a mountain within a bundle of trees.",
         pos: { x: 82.52, y: -144.51 },
     },
-}
+};

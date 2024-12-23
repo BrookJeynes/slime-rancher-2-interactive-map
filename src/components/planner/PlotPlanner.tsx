@@ -1,22 +1,20 @@
-import { useState } from "react";
-
-import { Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-
-import { vecToLatLng } from "../../util";
 import {
+    LocalStoragePlotPlan,
+    LocalStorageSitePlan,
     PlannerIcon,
     PlannerIcons,
     PlannerPosition,
     PlotOptions,
-    LocalStoragePlotPlan,
-    LocalStorageSitePlan,
 } from "../../types";
+import { Marker, Popup } from "react-leaflet";
+import { getStoredPlotPlans, handlePlotPlanned } from "../../util";
+import L from "leaflet";
+import Planner from "./Planner";
 import { icon_template } from "../../globals";
 import { planner_positions } from "../../data/plot_planner_positions";
-import Planner from "./Planner";
 import { plotTypes } from "../../data/pins";
-import { handlePlotPlanned, getStoredPlotPlans } from "../../util";
+import { useState } from "react";
+import { vecToLatLng } from "../../util";
 
 export function PlotPlanner({
     positions,
@@ -214,8 +212,10 @@ export const PlotPlanners = Object.keys(planner_positions).flatMap((site) => {
     )[0];
 
     return Object.keys(planner_positions[site]).map((plot) => {
+        const key = `${site}${plot}`;
         return (
             <PlotPlanner
+                key={key}
                 positions={planner_positions[site][plot]}
                 site={site}
                 plot={Number(plot)}
