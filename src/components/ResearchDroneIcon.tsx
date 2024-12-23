@@ -22,12 +22,10 @@ export function ResearchDroneIcon({
     setCurrentLog: React.Dispatch<React.SetStateAction<JSX.Element>>
     keyName: string,
 }) {
-    const { found, setFound } = useContext(FoundContext);
-    
     const deprecatedKey = `${research_drone.name.toLowerCase().replace(" ", "")}${research_drone.pos.x}${research_drone.pos.y}`;
-
+    const { found, setFound } = useContext(FoundContext);
     const [checked, setChecked] = useState(
-        found.research_drones ? found.research_drones.some((k: string) => k === keyName) : false
+        found.research_drones ? found.research_drones.some((k: string) => k === keyName || k === deprecatedKey) : false
     );
 
     useEffect(() => {
@@ -157,12 +155,12 @@ export function ResearchDroneIcons(
 ) {
     return Object.keys(research_drones).map((keyName) => {
         const research_drone = research_drones[keyName];
-        return <ResearchDroneIcon 
-        key={keyName}
-        research_drone={research_drone}
-        setShowLog={setShowLog}
-        setCurrentLog={setCurrentLog}
-        keyName={keyName}
+        return <ResearchDroneIcon
+            key={keyName}
+            research_drone={research_drone}
+            setShowLog={setShowLog}
+            setCurrentLog={setCurrentLog}
+            keyName={keyName}
         />;
     })
 }

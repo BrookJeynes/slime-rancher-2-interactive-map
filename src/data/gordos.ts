@@ -1,7 +1,6 @@
 import { Gordo } from "../types";
 
 export const gordos: { [key: string]: Gordo } = {
-    // rainbow fields
     "pinkgordo_rainbowfields_1": {
         name: "Pink Gordo",
         food: "x30 Fruit, Veggie, or Meat",
@@ -29,7 +28,7 @@ export const gordos: { [key: string]: Gordo } = {
         unlocks: ["The path to the Tabby Plort Door"],
         description: "Inside a cave covering one of the cave doors.",
     },
-    // starlight strand
+
     "huntergordo_starlightstrand_1": {
         name: "Hunter Gordo",
         food: "x30 Meat",
@@ -75,7 +74,7 @@ export const gordos: { [key: string]: Gordo } = {
         unlocks: ["A cave that leads to 2x Phosphor Plort Door, and a Treasure Pod"],
         description: "On top of a ledge across a rock arch blocking a tunnel.",
     },
-    // ember valley
+
     "tabbygordo_embervalley_1": {
         name: "Tabby Gordo",
         food: "x50 Meat",
@@ -121,7 +120,7 @@ export const gordos: { [key: string]: Gordo } = {
         unlocks: ["A geyser to the upper part of the cliffs and a Map Node"],
         description: "On top of a rocky platform near a waterfall.",
     },
-    // powderfall bluffs
+
     "sabergordo_powderfallbluffs_1": {
         name: "Saber Gordo",
         food: "x50 Meat",

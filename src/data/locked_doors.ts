@@ -1,7 +1,6 @@
 import { LockedDoor } from "../types";
 
 export const locked_doors: { [key: string]: LockedDoor } = {
-    // Rainbow Fields
     "locked_rainbowfields_1": {
         name: "Tabby Door Receptacle",
         plort: "x1 Tabby Plort",
@@ -11,7 +10,6 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         unlocks: "A path to a Treasure Pod.",
     },
 
-    // Starlight Strand
     "locked_starlightstrand_1": {
         name: "Hunter Door Receptacle",
         plort: "x1 Hunter Plort",
@@ -109,7 +107,6 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         unlocks: "A small cave containing a Treasure Pod.",
     },
 
-    // Ember Valley
     "locked__embervalley_1": {
         name: "Batty Door Receptacle",
         plort: "x1 Batty Plort",

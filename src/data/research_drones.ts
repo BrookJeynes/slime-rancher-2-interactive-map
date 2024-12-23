@@ -1,11 +1,7 @@
 import { ResearchDrone } from "../types";
 
 export const research_drones: { [key: string]: ResearchDrone } = {
-// TODO(20-12-24): namespace each drone to it's location to avoid number 
-// clashing and to ease adding drones, e.g. "research_embervalley_18"
-// TODO(20-12-24): sort drone entries by region. (ember valley, starlight strand, etc.)
-      // conservatory
-      "research_conservatory_1": {
+    "research_conservatory_1": {
         name: "Research Drone 1",
         log: [
             `I had the drones rebuild the conservatory
@@ -140,7 +136,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         pos: { x: 20.67, y: -0.98 },
         description: "On top of a mushroom growing on the side of the central pillar of a cave.",
     },
-    // rainbow fields
+
     "research_rainbowfields_1": {
         name: "Research Drone 2",
         log: [
@@ -193,7 +189,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         pos: { x: 28.69, y: -42.95 },
         description: "Next to a cliff wall near a Refinery Link and a tunnel entrance.",
     },
-    // ember valley
+
     "research_embervalley_1": {
         name: "Research Drone 4",
         log: [
@@ -361,7 +357,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         pos: { x: 70.64, y: -119.22 },
         description: "At the edge of the plateau island to the side of the Ember Valley Teleporter/Tabby Gordo.",
     },
-    // starlight strand
+
     "research_starlightstrand_1": {
         name: "Research Drone 14",
         log: [
@@ -522,7 +518,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         pos: { x: -54.06, y: -36.84 },
         description: "In the middle of the cave next to a rock and some equipment underneath the Flutter Gordo.",
     },
-    // powderfall bluffs
+
     "research_powderfallbluffs_1": {
         name: "Research Drone 20",
         log: [

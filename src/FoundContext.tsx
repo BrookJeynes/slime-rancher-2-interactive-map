@@ -9,7 +9,10 @@ export interface Found {
     research_drones: string[];
 }
 
-export const FoundContext: React.Context<{ found: Found, setFound: React.Dispatch<React.SetStateAction<Found>> }> = createContext({
+export const FoundContext: React.Context<{
+    found: Found,
+    setFound: React.Dispatch<React.SetStateAction<Found>>
+}> = createContext({
     found: {
         gordos: [],
         locked_doors: [],

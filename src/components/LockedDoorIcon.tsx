@@ -10,12 +10,10 @@ import { handleChecked } from "../util";
 import { FoundContext } from "../FoundContext";
 
 export function LockedDoorIcon({ locked_door, keyName }: { locked_door: LockedDoor, keyName: string }) {
-    const { found, setFound } = useContext(FoundContext);
-    
     const deprecatedKey = `${locked_door.name.toLowerCase().replace(" ", "")}${locked_door.pos.x}${locked_door.pos.y}`;
-
+    const { found, setFound } = useContext(FoundContext);
     const [checked, setChecked] = useState(
-        found.locked_doors ? found.locked_doors.some((k: string) => k === keyName) : false
+        found.locked_doors ? found.locked_doors.some((k: string) => k === keyName || k === deprecatedKey) : false
     );
 
     useEffect(() => {

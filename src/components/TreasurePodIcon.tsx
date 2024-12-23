@@ -10,10 +10,8 @@ import { handleChecked } from "../util";
 import { FoundContext } from "../FoundContext";
 
 export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: TreasurePod, keyName: string }) {
-    const { found, setFound } = useContext(FoundContext);
-
     const deprecatedKey = `treasurepod${treasure_pod.pos.x}${treasure_pod.pos.y}`;
-
+    const { found, setFound } = useContext(FoundContext);
     const [checked, setChecked] = useState(
         found.treasure_pods ? found.treasure_pods.some((k: string) => k === keyName || k === deprecatedKey) : false
     );

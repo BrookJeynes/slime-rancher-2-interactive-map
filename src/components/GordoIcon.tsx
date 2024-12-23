@@ -10,12 +10,10 @@ import { handleChecked } from "../util";
 import { FoundContext } from "../FoundContext";
 
 export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string }) {
-    const { found, setFound } = useContext(FoundContext);
-    
     const deprecatedKey = `${gordo.name.toLowerCase().replace(" ", "")}${gordo.pos.x}${gordo.pos.y}`;
-    
+    const { found, setFound } = useContext(FoundContext);
     const [checked, setChecked] = useState(
-        found.gordos ? found.gordos.some((k: string) => k === keyName) : false
+        found.gordos ? found.gordos.some((k: string) => k === keyName || k === deprecatedKey) : false
     );
 
     useEffect(() => {

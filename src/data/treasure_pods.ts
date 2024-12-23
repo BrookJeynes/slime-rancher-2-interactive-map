@@ -1,7 +1,6 @@
 import { TreasurePod } from "../types";
 
 export const treasure_pods: { [key: string]: TreasurePod } = {
-    // The Conservatory
     "treasure_conservatory_1": {
         contents: ["Blueprint: Meat Flag"],
         description: "On a small ledge up a cliff.",
@@ -18,7 +17,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: 13.3, y: 5.23 },
     },
 
-    // Rainbow Fields
     "treasure_rainbowfields_1": {
         contents: ["Tank Liner"],
         description: "Underground past the Tabby Plort Door.",
@@ -100,7 +98,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: 34.67, y: -24.96 },
     },
 
-    // Ember Valley
     "treasure_embervalley_1": {
         contents: ["Storage Cell"],
         description: "Shoot a Batty plort at the statue to open the door.",
@@ -267,7 +264,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: 52.46, y: -156.97 },
     },
 
-    // Starlight Strand
     "treasure_starlightstrand_1": {
         contents: ["Blueprint: Trellis Arch"],
         description: "Under a ruin arch accessible from a lower ledge above the water",
@@ -424,7 +420,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: -47.3, y: -42.49 },
     },
 
-    // Powderfall Bluffs
     "treasure_powderfallbluffs_1": {
         contents: ["Blueprint: Glacial Crystal"],
         description: "Above a ledge on a piece of ice sticking out of the water.",
