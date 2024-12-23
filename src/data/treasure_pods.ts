@@ -1,7 +1,6 @@
 import { TreasurePod } from "../types";
 
 export const treasure_pods: { [key: string]: TreasurePod } = {
-    // The Conservatory
     "treasure_conservatory_1": {
         contents: ["Blueprint: Meat Flag"],
         description: "On a small ledge up a cliff.",
@@ -18,7 +17,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: 13.3, y: 5.23 },
     },
 
-    // Rainbow Fields
     "treasure_rainbowfields_1": {
         contents: ["Tank Liner"],
         description: "Underground past the Tabby Plort Door.",
@@ -76,7 +74,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     },
     "treasure_rainbowfields_12": {
         contents: ["Blueprint: Emerald Cypress"],
-        description: "In a small cave underneath a rock arch.",
+        description: "In a small cave underneath a rock arch near a teleporter.",
         pos: { x: 32.66, y: -49.22 },
     },
     "treasure_rainbowfields_13": {
@@ -100,7 +98,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: 34.67, y: -24.96 },
     },
 
-    // Ember Valley
     "treasure_embervalley_1": {
         contents: ["Storage Cell"],
         description: "Shoot a Batty plort at the statue to open the door.",
@@ -267,7 +264,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: 52.46, y: -156.97 },
     },
 
-    // Starlight Strand
     "treasure_starlightstrand_1": {
         contents: ["Blueprint: Trellis Arch"],
         description: "Under a ruin arch accessible from a lower ledge above the water",
@@ -356,7 +352,7 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
     "treasure_starlightstrand_18": {
         contents: ["Blueprint: Mushroom Planter"],
         description: "Underground against a pillar in a cave near the Angler Gordo.",
-        pos: { x: -49.92, y: -14.94 },
+        pos: { x: -47.56, y: -16.83 },
     },
     "treasure_starlightstrand_19": {
         contents: ["Tank Liner"],
@@ -424,7 +420,6 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         pos: { x: -47.3, y: -42.49 },
     },
 
-    // Powderfall Bluffs
     "treasure_powderfallbluffs_1": {
         contents: ["Blueprint: Glacial Crystal"],
         description: "Above a ledge on a piece of ice sticking out of the water.",
@@ -539,5 +534,10 @@ export const treasure_pods: { [key: string]: TreasurePod } = {
         contents: ["Blueprint: Aurora Flowers"],
         description: "On a ledge underneath the main part of the island over the water.",
         pos: { x: 83.25, y: -161.54 },
+    },
+    "treasure_powderfallbluffs_24": {
+        contents: ["x3 Sun Sap"],
+        description: "On a mountain within a bundle of trees.",
+        pos: { x: 82.52, y: -144.51 },
     },
 }

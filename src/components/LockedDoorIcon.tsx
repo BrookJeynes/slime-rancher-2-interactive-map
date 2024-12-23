@@ -9,24 +9,23 @@ import { locked_doors } from "../data/locked_doors";
 import { handleChecked } from "../util";
 import { FoundContext } from "../FoundContext";
 
-export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
-    const key = `${locked_door.name.toLowerCase().replace(" ", "")}${locked_door.pos.x}${locked_door.pos.y}`;
+export function LockedDoorIcon({ locked_door, keyName }: { locked_door: LockedDoor, keyName: string }) {
+    const deprecatedKey = `${locked_door.name.toLowerCase().replace(" ", "")}${locked_door.pos.x}${locked_door.pos.y}`;
     const { found, setFound } = useContext(FoundContext);
-
     const [checked, setChecked] = useState(
-        found.locked_doors ? found.locked_doors.some((k: string) => k === key) : false
+        found.locked_doors ? found.locked_doors.some((k: string) => k === keyName || k === deprecatedKey) : false
     );
 
     useEffect(() => {
         if (checked) {
             setFound({
                 ...found,
-                locked_doors: [...found.locked_doors, key],
+                locked_doors: [...found.locked_doors, keyName],
             });
         } else {
             setFound({
                 ...found,
-                locked_doors: [...found.locked_doors.filter((item: string) => item !== key)]
+                locked_doors: [...found.locked_doors.filter((item: string) => item !== keyName && item !== deprecatedKey)]
             });
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,7 +38,7 @@ export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
     });
 
     return (
-        <Marker key={key} position={[locked_door.pos.x, locked_door.pos.y]} icon={icon}>
+        <Marker key={keyName} position={[locked_door.pos.x, locked_door.pos.y]} icon={icon}>
             <Popup>
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center gap-5">
@@ -47,7 +46,7 @@ export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
                             <input
                                 type="checkbox"
                                 checked={checked}
-                                onChange={() => handleChecked(locked_door_ls_key, key, checked, setChecked)}
+                                onChange={() => handleChecked(locked_door_ls_key, keyName, checked, setChecked, deprecatedKey)}
                                 className="w-4 h-4"
                             />
                             <h1 className="ml-2 text-xl font-medium">{locked_door.name}</h1>
@@ -76,6 +75,7 @@ export function LockedDoorIcon({ locked_door }: { locked_door: LockedDoor }) {
     );
 }
 
-export const LockedDoorIcons = Object.values(locked_doors).map((locked_door: LockedDoor) => {
-    return <LockedDoorIcon locked_door={locked_door} />;
-})
+export const LockedDoorIcons = Object.keys(locked_doors).map((keyName) => {
+    const locked_door = locked_doors[keyName];
+    return <LockedDoorIcon key={keyName} locked_door={locked_door} keyName={keyName} />;
+});
