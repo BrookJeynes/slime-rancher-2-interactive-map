@@ -155,4 +155,4 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
     },
-}
+};

@@ -1,9 +1,7 @@
-import { useState } from "react";
-
-import { pins } from "../data/pins";
 import { LocalStoragePin, Pin, PinTitle } from "../types";
+import React, { useState } from "react";
 import { FaQuestionCircle } from "react-icons/fa";
-
+import { pins } from "../data/pins";
 import { useMapEvents } from "react-leaflet";
 
 export function SidebarPins({
@@ -127,5 +125,5 @@ export function MapUserPins({
         },
     });
 
-    return null
+    return null;
 }

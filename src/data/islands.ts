@@ -99,4 +99,4 @@ export const islands: { [key: string]: Island } = {
             "iconSlimeSloomber.png",
         ],
     },
-}
+};

@@ -1,13 +1,11 @@
+import { Marker, Popup } from "react-leaflet";
+import { icon_opacity, icon_template, locked_door_ls_key } from "../globals";
 import { useContext, useEffect, useState } from "react";
-
-import { Marker, Popup } from "react-leaflet"
-import L from "leaflet";
-
-import { LockedDoor } from "../types";
-import { icon_template, icon_opacity, locked_door_ls_key } from "../globals";
-import { locked_doors } from "../data/locked_doors";
-import { handleChecked } from "../util";
 import { FoundContext } from "../FoundContext";
+import L from "leaflet";
+import { LockedDoor } from "../types";
+import { handleChecked } from "../util";
+import { locked_doors } from "../data/locked_doors";
 
 export function LockedDoorIcon({ locked_door, keyName }: { locked_door: LockedDoor, keyName: string }) {
     const deprecatedKey = `${locked_door.name.toLowerCase().replace(" ", "")}${locked_door.pos.x}${locked_door.pos.y}`;
@@ -28,7 +26,6 @@ export function LockedDoorIcon({ locked_door, keyName }: { locked_door: LockedDo
                 locked_doors: [...found.locked_doors.filter((item: string) => item !== keyName && item !== deprecatedKey)]
             });
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({

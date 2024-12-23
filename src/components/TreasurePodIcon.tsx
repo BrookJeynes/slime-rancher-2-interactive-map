@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from "react";
-
 import { Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-
-import { TreasurePod } from "../types";
-import { icon_template, icon_opacity, treasure_pod_ls_key } from "../globals";
-import { treasure_pods } from "../data/treasure_pods";
-import { handleChecked } from "../util";
+import { icon_opacity, icon_template, treasure_pod_ls_key } from "../globals";
+import { useContext, useEffect, useState } from "react";
 import { FoundContext } from "../FoundContext";
+import L from "leaflet";
+import { TreasurePod } from "../types";
+import { handleChecked } from "../util";
+import { treasure_pods } from "../data/treasure_pods";
 
 export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: TreasurePod, keyName: string }) {
     const deprecatedKey = `treasurepod${treasure_pod.pos.x}${treasure_pod.pos.y}`;
@@ -28,7 +26,6 @@ export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: Treas
                 treasure_pods: [...found.treasure_pods.filter((item: string) => item !== keyName && item !== deprecatedKey)],
             });
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({

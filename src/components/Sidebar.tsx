@@ -1,13 +1,11 @@
-import { useState } from "react";
-
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
-
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import React, { useState } from "react";
+import { discord_link, github_link } from "../globals";
 import CollectablesTracker from "./CollectablesTracker";
-import { SidebarPins } from "./UserPins";
 import IslandInfo from "./IslandInfo";
 import { Pin } from "../types";
-import { discord_link, github_link } from "../globals";
+import { SidebarPins } from "./UserPins";
 
 export default function Sidebar({
     selected_pin,

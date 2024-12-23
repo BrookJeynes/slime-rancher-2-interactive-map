@@ -51,4 +51,4 @@ export const map_nodes: { [key: string]: MapNode } = {
         pos: { x: 80.73, y: -117.35 },
         description: "On an ice cube next to a patch of deep snow.",
     },
-}
+};

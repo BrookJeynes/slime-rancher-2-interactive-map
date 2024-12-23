@@ -1,15 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-
-import { Marker, Popup } from "react-leaflet"
-import L from "leaflet";
-
-import { ResearchDrone } from "../types";
-import { icon_template, icon_opacity, research_drone_ls_key } from "../globals";
-import { research_drones } from "../data/research_drones";
-import { handleChecked } from "../util";
-
+import { Marker, Popup } from "react-leaflet";
+import React, { useContext, useEffect, useState } from "react";
+import { icon_opacity, icon_template, research_drone_ls_key } from "../globals";
 import { AiOutlineClose } from "react-icons/ai";
 import { FoundContext } from "../FoundContext";
+import L from "leaflet";
+import { ResearchDrone } from "../types";
+import { handleChecked } from "../util";
+import { research_drones } from "../data/research_drones";
 
 export function ResearchDroneIcon({
     research_drone,
@@ -40,7 +37,6 @@ export function ResearchDroneIcon({
                 research_drones: [...found.research_drones.filter((item: string) => item !== keyName && item !== deprecatedKey)]
             });
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [checked]);
 
     const icon = L.icon({
@@ -99,8 +95,8 @@ export function ResearchDroneIcon({
                     <button
                         className="border w-[5rem] mt-2 self-end"
                         onClick={() => {
-                            setShowLog(true)
-                            setCurrentLog(<Log research_drone={research_drone} setShowLog={setShowLog} />)
+                            setShowLog(true);
+                            setCurrentLog(<Log research_drone={research_drone} setShowLog={setShowLog} />);
                         }}
                     >
                         Access Log
@@ -119,7 +115,6 @@ export function Log({
     setShowLog: React.Dispatch<React.SetStateAction<boolean>>,
 }) {
     const [showArchived, setShowArchived] = useState(false);
-
     const textArray = !showArchived ? research_drone.log : research_drone.archive;
 
     return (
@@ -134,7 +129,7 @@ export function Log({
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    {textArray.map((text: string) => <p className="text-lg monospace-font">{text}</p>)}
+                    {textArray.map((text: string) => <p key={text} className="text-lg monospace-font">{text}</p>)}
                 </div>
             </div>
             <div className="flex justify-end">
@@ -162,6 +157,6 @@ export function ResearchDroneIcons(
             setCurrentLog={setCurrentLog}
             keyName={keyName}
         />;
-    })
+    });
 }
 

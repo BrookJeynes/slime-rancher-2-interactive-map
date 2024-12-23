@@ -1,10 +1,8 @@
-import { Polyline } from "react-leaflet"
-import L from "leaflet";
-
-import { default as bezierSpline } from "@turf/bezier-spline";
 import * as helpers from "@turf/helpers";
-
+import L from "leaflet";
+import { Polyline } from "react-leaflet";
 import { TeleportLine } from "../types";
+import { default as bezierSpline } from "@turf/bezier-spline";
 import { teleport_lines } from "../data/teleport_lines";
 
 export function TeleportLineIcon({ teleport_line }: { teleport_line: TeleportLine }) {
@@ -31,12 +29,12 @@ export function TeleportLineIcon({ teleport_line }: { teleport_line: TeleportLin
                 return {
                     lat: pos[0],
                     lng: pos[1],
-                }
+                };
             })}
         ></Polyline>
-    )
+    );
 }
 
 export const TeleportLineIcons = Object.values(teleport_lines).map((teleport_line: TeleportLine) => {
-    return <TeleportLineIcon teleport_line={teleport_line} />;
-})
+    return <TeleportLineIcon key={teleport_line.name} teleport_line={teleport_line} />;
+});
