@@ -24,19 +24,21 @@ The map can be found here: [https://sr2interactivemap.com](https://sr2interactiv
 Have feedback or suggestions? I'd love to hear it! Join the [Discord](https://discord.gg/eUdjSwNUcq) and come hangout.
 
 ## Running locally
-1. Install [Node.js](https://nodejs.org/en/download).
-2. [Download](https://github.com/BrookJeynes/slime-rancher-2-interactive-map/archive/refs/heads/main.zip), or clone, this repository.
-3. Navigate into the project directory using your terminal.
+1. Clone the repository.
+    ```bash
+    git clone https://github.com/brookjeynes/slime-rancher-2-interactive-map.git
+    ```
+2. Navigate into the project directory using your terminal.
     ```bash
     cd slime-rancher-2-interactive-map
     ```
-4. Install the required packages.
+3. Install the required packages.
     ```bash
-    npm install
+    pnpm install
     ```
-5. Run the web app.
+4. Run the web app.
     ```
-    npm run dev
+    pnpm run dev
     ```
 
 ## Contribution
