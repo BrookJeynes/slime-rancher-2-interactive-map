@@ -1,18 +1,20 @@
 import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
+import { ClearUserPinsButton, ExportUserPinsButton, ImportUserPinsButton, SidebarPins } from "./UserPins";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { LocalStoragePin, Pin } from "../types";
 import React, { useState } from "react";
 import { discord_link, github_link } from "../globals";
 import CollectablesTracker from "./CollectablesTracker";
 import IslandInfo from "./IslandInfo";
-import { Pin } from "../types";
-import { SidebarPins } from "./UserPins";
 
 export default function Sidebar({
     selected_pin,
     setSelectedPin,
+    setUserPins,
 }: {
     selected_pin: Pin | undefined,
     setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>
+    setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
 }) {
     const [show_sidebar, setShowSidebar] = useState(false);
 
@@ -50,6 +52,12 @@ export default function Sidebar({
                     <hr />
 
                     <IslandInfo />
+
+                    <hr />
+
+                    <ExportUserPinsButton />
+                    <ImportUserPinsButton setUserPins={setUserPins} />
+                    <ClearUserPinsButton setUserPins={setUserPins} />
 
                     <hr />
 
