@@ -212,10 +212,9 @@ export const PlotPlanners = Object.keys(planner_positions).flatMap((site) => {
     )[0];
 
     return Object.keys(planner_positions[site]).map((plot) => {
-        const key = `${site}${plot}`;
         return (
             <PlotPlanner
-                key={key}
+                key={`${site}${plot}`}
                 positions={planner_positions[site][plot]}
                 site={site}
                 plot={Number(plot)}
