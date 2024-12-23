@@ -63,6 +63,5 @@ export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
 }
 
 export const MapNodeIcons = Object.values(map_nodes).map((map_node: MapNode) => {
-    const key = `${map_node.pos.x}${map_node.pos.y}`;
-    return <MapNodeIcon key={key} map_node={map_node} />;
+    return <MapNodeIcon key={`${map_node.pos.x}${map_node.pos.y}`} map_node={map_node} />;
 });
