@@ -66,8 +66,7 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
                         <h2 className="text-md font-bold">Drops:</h2>
                         <ul>
                             {gordo.drops.map(drop => {
-                                const key = `${keyName}${drop}`;
-                                return <li key={key} className="list-disc ml-5">{drop}</li>;
+                                return <li key={`${keyName}${drop}`} className="list-disc ml-5">{drop}</li>;
                             })}
                         </ul>
                     </div>
