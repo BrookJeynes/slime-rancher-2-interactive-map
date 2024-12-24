@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { FoundContext } from "../FoundContext";
 import L from "leaflet";
 import { MapNode } from "../types";
+import { MapType } from "../CurrentMapContext";
 import { handleChecked } from "../util";
 import { map_nodes } from "../data/map_nodes";
 
@@ -62,6 +63,10 @@ export function MapNodeIcon({ map_node }: { map_node: MapNode }) {
     );
 }
 
-export const MapNodeIcons = Object.values(map_nodes).map((map_node: MapNode) => {
-    return <MapNodeIcon key={`${map_node.pos.x}${map_node.pos.y}`} map_node={map_node} />;
-});
+export function MapNodeIcons(current_map: MapType) {
+    return Object.values(map_nodes).filter((map_node: MapNode) => {
+        return map_node.dimension === current_map;
+    }).map((map_node: MapNode) => {
+        return <MapNodeIcon key={`${map_node.pos.x}${map_node.pos.y}`} map_node={map_node} />;
+    });
+}

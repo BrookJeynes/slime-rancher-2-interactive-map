@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { FoundContext } from "../FoundContext";
 import { Gordo } from "../types";
 import L from "leaflet";
+import { MapType } from "../CurrentMapContext";
 import { gordos } from "../data/gordos";
 import { handleChecked } from "../util";
 
@@ -85,8 +86,11 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
     );
 }
 
-export const GordoIcons = Object.keys(gordos).map((keyName) => {
-    const gordo = gordos[keyName];
-    return <GordoIcon key={keyName} gordo={gordo} keyName={keyName} />;
-});
-
+export function GordoIcons(current_map: MapType) {
+    return Object.keys(gordos).filter((keyName) => {
+        return gordos[keyName].dimension === current_map;
+    }).map((keyName) => {
+        const gordo = gordos[keyName];
+        return <GordoIcon key={keyName} gordo={gordo} keyName={keyName} />;
+    });
+}

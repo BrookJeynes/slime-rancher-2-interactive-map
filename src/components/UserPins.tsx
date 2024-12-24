@@ -1,5 +1,6 @@
 import { LocalStoragePin, Pin, PinTitle } from "../types";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CurrentMapContext } from "../CurrentMapContext";
 import { FaQuestionCircle } from "react-icons/fa";
 import { pins } from "../data/pins";
 import { useMapEvents } from "react-leaflet";
@@ -105,6 +106,7 @@ export function MapUserPins({
     user_pins: LocalStoragePin[],
     setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>,
 }) {
+    const { current_map } = useContext(CurrentMapContext);
     const debug = process.env.NODE_ENV !== "production";
 
     useMapEvents({
@@ -119,7 +121,8 @@ export function MapUserPins({
                     x: e.latlng.lat,
                     y: e.latlng.lng,
                 },
-            }];
+                dimension: current_map,
+            } as LocalStoragePin];
             setUserPins(new_pins);
             localStorage.setItem("user_pins", JSON.stringify(new_pins));
         },

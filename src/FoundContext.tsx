@@ -4,7 +4,9 @@ import {
     locked_door_ls_key,
     map_node_ls_key,
     research_drone_ls_key,
-    treasure_pod_ls_key
+    shadow_door_ls_key,
+    stabilizing_gate_ls_key,
+    treasure_pod_ls_key,
 } from "./globals";
 
 export interface Found {
@@ -13,6 +15,8 @@ export interface Found {
     map_nodes: string[];
     treasure_pods: string[];
     research_drones: string[];
+    stabilizing_gates: string[];
+    shadow_doors: string[];
 }
 
 export const FoundContext: React.Context<{
@@ -25,6 +29,8 @@ export const FoundContext: React.Context<{
         map_nodes: [],
         treasure_pods: [],
         research_drones: [],
+        stabilizing_gates: [],
+        shadow_doors: [],
     } as Found,
     setFound: {} as React.Dispatch<React.SetStateAction<Found>>,
 });
@@ -36,6 +42,8 @@ export function FoundProvider({ children }: { children: React.ReactNode }) {
         map_nodes: JSON.parse(localStorage.getItem(map_node_ls_key) ?? "[]") ?? [],
         treasure_pods: JSON.parse(localStorage.getItem(treasure_pod_ls_key) ?? "[]") ?? [],
         research_drones: JSON.parse(localStorage.getItem(research_drone_ls_key) ?? "[]") ?? [],
+        stabilizing_gates: JSON.parse(localStorage.getItem(stabilizing_gate_ls_key) ?? "[]") ?? [],
+        shadow_doors: JSON.parse(localStorage.getItem(shadow_door_ls_key) ?? "[]") ?? [],
     });
 
     return (

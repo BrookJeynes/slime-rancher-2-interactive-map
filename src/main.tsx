@@ -1,5 +1,6 @@
 import "./index.css";
 import App from "./App.tsx";
+import { CurrentMapProvider } from "./CurrentMapContext.tsx";
 import { FoundProvider } from "./FoundContext.tsx";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -7,7 +8,9 @@ import ReactDOM from "react-dom/client";
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <FoundProvider>
-            <App />
+            <CurrentMapProvider>
+                <App />
+            </CurrentMapProvider>
         </FoundProvider>
     </React.StrictMode>,
 );
