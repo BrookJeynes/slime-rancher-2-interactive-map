@@ -194,6 +194,7 @@ export function ClearUserPinsButton({
         <button
             className="bg-red-600 p-1 w-full outline outline-1"
             onClick={() => {
+                if (!window.confirm("Are you sure you want to clear your current pins? There is no way to undo this. Ensure you export your pins if you want to keep them.")) return;
                 setUserPins([]);
                 localStorage.setItem("user_pins", JSON.stringify([]));
             }}>
