@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TileMap version="1.0.0" tilemapservice="http://tms.osgeo.org/1.0.0">
+      <Title>map_labyrinth.png</Title>
+      <Abstract></Abstract>
+      <SRS></SRS>
+      <BoundingBox minx="0.00000000000000" miny="-4096.00000000000000" maxx="4096.00000000000000" maxy="0.00000000000000"/>
+      <Origin x="0.00000000000000" y="-4096.00000000000000"/>
+      <TileFormat width="256" height="256" mime-type="image/png" extension="png"/>
+      <TileSets profile="raster">
+        <TileSet href="3" units-per-pixel="2.00000000000000" order="3"/>
+        <TileSet href="4" units-per-pixel="1.00000000000000" order="4"/>
+        <TileSet href="5" units-per-pixel="0.50000000000000" order="5"/>
+        <TileSet href="6" units-per-pixel="0.25000000000000" order="6"/>
+      </TileSets>
+    </TileMap>
+    

@@ -1,5 +1,6 @@
 import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { LocalStoragePin, Pin } from "./types";
+import { useEffect, useState } from "react";
 import { GordoIcons } from "./components/GordoIcon";
 import L from "leaflet";
 import { LockedDoorIcons } from "./components/LockedDoorIcon";
@@ -11,7 +12,13 @@ import Sidebar from "./components/Sidebar";
 import { TeleportLineIcons } from "./components/TeleportLineIcon";
 import { TreasurePodIcons } from "./components/TreasurePodIcon";
 import { icon_template } from "./globals";
-import { useState } from "react";
+
+enum Map {
+    overworld = "map_overworld",
+    labyrinth = "map_labyrinth",
+}
+
+const current_map: Map = Map.labyrinth;
 
 function App() {
     const [show_log, setShowLog] = useState(false);
@@ -53,6 +60,23 @@ function App() {
         );
     });
 
+    /// TODO(24-12-24): I dislike having to inject the background image but I'm
+    // unsure how to work around this.
+    useEffect(() => {
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = `
+.leaflet-container {
+    ${current_map === Map.overworld ? "background-image: url('/map_bg.png') !important;" : ""}
+    ${current_map === Map.labyrinth ? "background-color: #f8d0e3 !important;" : ""}
+}
+            `;
+        document.head.appendChild(styleSheet);
+
+        return () => {
+            document.head.removeChild(styleSheet);
+        };
+    }, []);
 
     return (
         <div>
@@ -120,7 +144,7 @@ function App() {
                     </LayersControl.Overlay>
                 </LayersControl>
 
-                <TileLayer url="map/{z}/{x}/{y}.png" noWrap={true} />
+                <TileLayer url={`${current_map}/{z}/{x}/{y}.png`} noWrap={true} />
             </MapContainer>
         </div >
     );

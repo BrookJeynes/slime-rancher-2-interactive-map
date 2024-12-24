@@ -8,9 +8,6 @@
   font-family: "Fira Sans", sans-serif;
 }
 
-.leaflet-container {
-  background-image: url('/map_bg.png');
-}
 
 .log {
   @apply drop-shadow-lg border-8 bg-stone-900
