@@ -55,12 +55,6 @@ export default function Sidebar({
 
                     <hr />
 
-                    <ExportUserPinsButton />
-                    <ImportUserPinsButton setUserPins={setUserPins} />
-                    <ClearUserPinsButton setUserPins={setUserPins} />
-
-                    <hr />
-
                     <div>
                         <div className="flex flex-col md:flex-row gap-2 md:gap-0 justify-between mb-1 md:items-center">
                             <h2 className="text-lg font-bold">Plot Planner</h2>
@@ -68,6 +62,14 @@ export default function Sidebar({
                         <div className="flex flex-wrap md:items-center">
                             <h2>You can click on any plot on the map to start planning!</h2>
                         </div>
+                    </div>
+
+                    <hr />
+
+                    <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-6 mb-4">
+                        <ExportUserPinsButton />
+                        <ImportUserPinsButton setUserPins={setUserPins} />
+                        <ClearUserPinsButton setUserPins={setUserPins} />
                     </div>
                 </div>
             </div>
