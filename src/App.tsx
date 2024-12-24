@@ -27,7 +27,9 @@ function App() {
 
     // TODO: Move to its own file.
     const user_pin_list = user_pins.filter((pin: LocalStoragePin) => {
-        return pin.dimension === current_map;
+        return pin.dimension === current_map ||
+            // This is required to maintain backwards compatibility
+            (pin.dimension === undefined && current_map === MapType.overworld);
     }).map((pin: LocalStoragePin) => {
         const key = `${pin.pos.x}${pin.pos.y}`;
         const icon = L.icon({
