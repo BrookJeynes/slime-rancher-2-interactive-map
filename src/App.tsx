@@ -63,7 +63,10 @@ function App() {
                 {current_log}
             </div>
 
-            <Sidebar selected_pin={selected_pin} setSelectedPin={setSelectedPin} />
+            <Sidebar 
+                selected_pin={selected_pin} setSelectedPin={setSelectedPin} 
+                user_pins={user_pins} setUserPins={setUserPins} 
+            />
 
             <MapContainer
                 // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.

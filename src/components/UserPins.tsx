@@ -127,3 +127,77 @@ export function MapUserPins({
 
     return null;
 }
+
+export function ExportUserPinsButton() {
+    const pins_json = localStorage.getItem("user_pins") ?? "";
+    const pins_json_file = new Blob([pins_json], { type: "application/json" });
+
+    return (
+        <button className="bg-blue-900 w-full outline outline-1 p-1">
+            <a
+                download="user_pins.json"
+                target="_blank"
+                rel="noreferrer"
+                href={URL.createObjectURL(pins_json_file)}
+            >
+                Export Pins
+            </a>
+        </button>
+    );
+}
+
+export function ImportUserPinsButton({
+    setUserPins
+}: {
+    setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
+}) {
+    return (
+        <label
+            htmlFor="upload"
+            className="flex justify-center items-center w-full cursor-pointer bg-blue-900 outline outline-1 p-1 text-center"
+        >
+            <span>Import Pins</span>
+            <input
+                type="file"
+                accept=".json"
+                id="upload"
+                className="hidden"
+                onChange={(event) => {
+                    const file = (event.target.files ?? [])[0];
+                    if (!file) return;
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const pins_json = e.target?.result as string;
+                        if (window.confirm("This will overwrite your current pins. Are you sure you want to continue?")) {
+                            localStorage.setItem("user_pins", pins_json);
+                            setUserPins(JSON.parse(pins_json));
+                        }
+                    };
+                    reader.onerror = () => {
+                        console.error("error: failed to read user pins");
+                    };
+
+                    reader.readAsText(file);
+                }}
+            />
+        </label>
+    );
+}
+
+export function ClearUserPinsButton({
+    setUserPins
+}: {
+    setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
+}) {
+    return (
+        <button
+            className="bg-red-600 p-1 w-full outline outline-1"
+            onClick={() => {
+                setUserPins([]);
+                localStorage.setItem("user_pins", JSON.stringify([]));
+            }}>
+            Clear Pins
+        </button>
+    );
+}
