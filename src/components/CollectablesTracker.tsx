@@ -25,14 +25,14 @@ export default function CollectablesTracker() {
                 <h2 className="text-md font-bold">Locations</h2>
                 <span>
                     Gordo Slimes {
-                        found.gordos.filter(key => gordos[key].dimension === current_map).length
+                        found.gordos.filter(key => gordos[key]?.dimension === current_map).length
                     } / {
                         Object.values(gordos).filter(gordo => gordo.dimension === current_map).length
                     }
                 </span>
                 <span>
                     Locked Doors {
-                        found.locked_doors.filter(key => locked_doors[key].dimension === current_map).length
+                        found.locked_doors.filter(key => locked_doors[key]?.dimension === current_map).length
                     } / {
                         Object.values(locked_doors).filter(locked_door => locked_door.dimension === current_map).length
                     }
@@ -48,21 +48,21 @@ export default function CollectablesTracker() {
                 <h2 className="text-md font-bold">Collectables</h2>
                 <span>
                     Map Nodes {
-                        found.map_nodes.filter(key => map_nodes[key].dimension === current_map).length
+                        found.map_nodes.filter(key => map_nodes[key]?.dimension === current_map).length
                     } / {
                         Object.values(map_nodes).filter(map_node => map_node.dimension === current_map).length
                     }
                 </span>
                 <span>
                     Treasure Pods {
-                        found.treasure_pods.filter(key => treasure_pods[key].dimension === current_map).length
+                        found.treasure_pods.filter(key => treasure_pods[key]?.dimension === current_map).length
                     } / {
                         Object.values(treasure_pods).filter(treasure_pod => treasure_pod.dimension === current_map).length
                     }
                 </span>
                 <span>
                     Research Drones {
-                        found.research_drones.filter(key => research_drones[key].dimension === current_map).length
+                        found.research_drones.filter(key => research_drones[key]?.dimension === current_map).length
                     } / {
                         Object.values(research_drones).filter(research_drone => research_drone.dimension === current_map).length
                     }
