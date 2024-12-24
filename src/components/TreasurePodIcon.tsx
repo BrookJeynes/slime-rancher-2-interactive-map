@@ -3,6 +3,7 @@ import { icon_opacity, icon_template, treasure_pod_ls_key } from "../globals";
 import { useContext, useEffect, useState } from "react";
 import { FoundContext } from "../FoundContext";
 import L from "leaflet";
+import { MapType } from "../CurrentMapContext";
 import { TreasurePod } from "../types";
 import { handleChecked } from "../util";
 import { treasure_pods } from "../data/treasure_pods";
@@ -68,7 +69,11 @@ export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: Treas
     );
 }
 
-export const TreasurePodIcons = Object.keys(treasure_pods).map((keyName) => {
-    const treasure_pod = treasure_pods[keyName];
-    return <TreasurePodIcon key={keyName} treasure_pod={treasure_pod} keyName={keyName} />;
-});
+export function TreasurePodIcons(current_map: MapType) {
+    return Object.keys(treasure_pods).filter((keyName) => {
+        return treasure_pods[keyName].dimension === current_map;
+    }).map((keyName) => {
+        const treasure_pod = treasure_pods[keyName];
+        return <TreasurePodIcon key={keyName} treasure_pod={treasure_pod} keyName={keyName} />;
+    });
+}

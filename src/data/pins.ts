@@ -218,6 +218,16 @@ export const pins: Pins = {
             type: "Utility",
             icon: "researchDroneFaceIcon.png",
         },
+        {
+            name: "Stabilizer Gate",
+            type: "Utility",
+            icon: "iconMapStabilizerGate.png",
+        },
+        {
+            name: "Shadow Plort Door",
+            type: "Utility",
+            icon: "iconMapShadowPlortDoor.png",
+        },
     ],
     Plorts: plorts.map((plort) => {
         return {

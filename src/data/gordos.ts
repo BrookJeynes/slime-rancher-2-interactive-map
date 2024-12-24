@@ -1,4 +1,5 @@
 import { Gordo } from "../types";
+import { MapType } from "../CurrentMapContext";
 
 export const gordos: { [key: string]: Gordo } = {
     "pinkgordo_rainbowfields_1": {
@@ -9,6 +10,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Pink Slimes", "x1 Jar"],
         unlocks: ["A geyser, allowing a launch up to the cliff containing the Teleporter Activator"],
         description: "In the open at the end of a path.",
+        dimension: MapType.overworld,
     },
     "cottongordo_rainbowfields_1": {
         name: "Cotton Gordo",
@@ -18,6 +20,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Cotton Slimes", "x1 Jar"],
         unlocks: ["The path to the Teleporter Activator"],
         description: "Covering a hole at the top of a hill.",
+        dimension: MapType.overworld,
     },
     "phosphorgordo_rainbowfields_1": {
         name: "Phosphor Gordo",
@@ -27,6 +30,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Phosphor Slimes", "x1 Jar"],
         unlocks: ["The path to the Tabby Plort Door"],
         description: "Inside a cave covering one of the cave doors.",
+        dimension: MapType.overworld,
     },
 
     "huntergordo_starlightstrand_1": {
@@ -37,6 +41,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Hunter Slimes", "x1 Jar"],
         unlocks: ["A cave that contains a Treasure Pod and acts as a shortcut to another part of the island if the Hunter Plort Door and the Rock Plort Door are unlocked"],
         description: "In an alcove of a cliff covering a cave above the water.",
+        dimension: MapType.overworld,
     },
     "anglergordo_starlightstrand_1": {
         name: "Angler Gordo",
@@ -46,6 +51,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Angler Slimes", "x1 Jar"],
         unlocks: ["A Geyser"],
         description: "Underground at the end of a cave just above the water level.",
+        dimension: MapType.overworld,
     },
     "fluttergordo_starlightstrand_1": {
         name: "Flutter Gordo",
@@ -55,6 +61,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Flutter Slimes", "x1 Jar"],
         unlocks: ["A hole into a cave containing a Research Drone, a Treasure Pod, and a Grey Labrinth door"],
         description: "On top of a circular platform up the large ruin walls.",
+        dimension: MapType.overworld,
     },
     "ringtailgordo_starlightstrand_1": {
         name: "Ringtail Gordo",
@@ -64,6 +71,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Ringtail Slimes", "x1 Jar"],
         unlocks: ["Starlight Strand Teleporter"],
         description: "In the open on top of a teleporter.",
+        dimension: MapType.overworld,
     },
     "honeygordo_starlightstrand_1": {
         name: "Honey Gordo",
@@ -73,6 +81,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Honey Slimes", "x1 Jar"],
         unlocks: ["A cave that leads to 2x Phosphor Plort Door, and a Treasure Pod"],
         description: "On top of a ledge across a rock arch blocking a tunnel.",
+        dimension: MapType.overworld,
     },
 
     "tabbygordo_embervalley_1": {
@@ -83,6 +92,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Tabby Slimes", "x1 Jar"],
         unlocks: ["Ember Valley Teleporter"],
         description: "On a teleporter on top of a plateau island.",
+        dimension: MapType.overworld,
     },
     "rockgordo_embervalley_1": {
         name: "Rock Gordo",
@@ -92,6 +102,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Rock Slimes", "x1 Jar"],
         unlocks: ["A geyser that leads to an upper cliff containing a Treasure Pod"],
         description: "Underground in a cave on top of a plateaued rock.",
+        dimension: MapType.overworld,
     },
     "battygordo_embervalley_1": {
         name: "Batty Gordo",
@@ -101,6 +112,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Batty Slimes", "x1 Jar"],
         unlocks: ["A tunnel that acts as a shortcut to another part of the island"],
         description: "Underground at the end of a large cave system to the east.",
+        dimension: MapType.overworld,
     },
     "boomgordo_embervalley_1": {
         name: "Boom Gordo",
@@ -110,6 +122,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Boom Slimes", "x1 Jar"],
         unlocks: ["A ruins room containing 2x Treasure Pod, a Research Drone, and a Grey Labrinth door"],
         description: "Against the ruins wall covering a hole.",
+        dimension: MapType.overworld,
     },
     "crystalgordo_embervalley_1": {
         name: "Crystal Gordo",
@@ -119,6 +132,7 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Crytal Slimes", "x1 Jar"],
         unlocks: ["A geyser to the upper part of the cliffs and a Map Node"],
         description: "On top of a rocky platform near a waterfall.",
+        dimension: MapType.overworld,
     },
 
     "sabergordo_powderfallbluffs_1": {
@@ -129,5 +143,27 @@ export const gordos: { [key: string]: Gordo } = {
         drops: ["x12 Saber Slimes", "x1 Jar"],
         unlocks: ["Powderfall Bluffs Teleporter"],
         description: "In the open on top of a teleporter.",
+        dimension: MapType.overworld,
+    },
+
+    "twin_greylabyrinth_1": {
+        name: "Twin Gordo",
+        food: "x50 Fruit or x25 Polaricherries",
+        pos: { x: 13.4, y: -35.4 },
+        image: "iconGordoTwin.png",
+        drops: [],
+        unlocks: ["Rainbow Fields Teleporter"],
+        description: "Located inside the dome-like area leading up to the prismacore.",
+        dimension: MapType.labyrinth,
+    },
+    "sloomber_greylabyrinth_1": {
+        name: "Sloomber Gordo",
+        food: "x30 Meat or x15 Candied Hens",
+        pos: { x: 69.4, y: -114.0 },
+        image: "iconGordoSloomber.png",
+        drops: [],
+        unlocks: ["Conservatory Teleporter"],
+        description: "Located in the pink windmill area of the map.",
+        dimension: MapType.labyrinth,
     },
 };

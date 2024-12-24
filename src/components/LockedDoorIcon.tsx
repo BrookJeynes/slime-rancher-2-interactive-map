@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { FoundContext } from "../FoundContext";
 import L from "leaflet";
 import { LockedDoor } from "../types";
+import { MapType } from "../CurrentMapContext";
 import { handleChecked } from "../util";
 import { locked_doors } from "../data/locked_doors";
 
@@ -72,7 +73,11 @@ export function LockedDoorIcon({ locked_door, keyName }: { locked_door: LockedDo
     );
 }
 
-export const LockedDoorIcons = Object.keys(locked_doors).map((keyName) => {
-    const locked_door = locked_doors[keyName];
-    return <LockedDoorIcon key={keyName} locked_door={locked_door} keyName={keyName} />;
-});
+export function LockedDoorIcons(current_map: MapType) {
+    return Object.keys(locked_doors).filter((keyName) => {
+        return locked_doors[keyName].dimension === current_map;
+    }).map((keyName) => {
+        const locked_door = locked_doors[keyName];
+        return <LockedDoorIcon key={keyName} locked_door={locked_door} keyName={keyName} />;
+    });
+}

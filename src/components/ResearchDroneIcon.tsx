@@ -4,6 +4,7 @@ import { icon_opacity, icon_template, research_drone_ls_key } from "../globals";
 import { AiOutlineClose } from "react-icons/ai";
 import { FoundContext } from "../FoundContext";
 import L from "leaflet";
+import { MapType } from "../CurrentMapContext";
 import { ResearchDrone } from "../types";
 import { handleChecked } from "../util";
 import { research_drones } from "../data/research_drones";
@@ -147,8 +148,11 @@ export function Log({
 export function ResearchDroneIcons(
     setShowLog: React.Dispatch<React.SetStateAction<boolean>>,
     setCurrentLog: React.Dispatch<React.SetStateAction<JSX.Element>>,
+    current_map: MapType
 ) {
-    return Object.keys(research_drones).map((keyName) => {
+    return Object.keys(research_drones).filter((keyName) => {
+        return research_drones[keyName].dimension === current_map;
+    }).map((keyName) => {
         const research_drone = research_drones[keyName];
         return <ResearchDroneIcon
             key={keyName}
@@ -159,4 +163,3 @@ export function ResearchDroneIcons(
         />;
     });
 }
-

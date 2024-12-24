@@ -1,4 +1,5 @@
 import { LockedDoor } from "../types";
+import { MapType } from "../CurrentMapContext";
 
 export const locked_doors: { [key: string]: LockedDoor } = {
     "locked_rainbowfields_1": {
@@ -8,6 +9,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortTabby.png",
         description: "Underground inside a cave behind the Phosphor Gordo.",
         unlocks: "A path to a Treasure Pod.",
+        dimension: MapType.overworld,
     },
 
     "locked_starlightstrand_1": {
@@ -17,6 +19,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortHunter.png",
         description: "On a ledge up a cliff.",
         unlocks: "A shortcut to the Starlight Strand Teleporter.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_2": {
         name: "Phosphor Door Receptacle",
@@ -25,6 +28,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortPhosphor.png",
         description: "At the end of a cave tunnel past the Honey Gordo.",
         unlocks: "A path to the other part of the island.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_3": {
         name: "Honey Door Receptacle",
@@ -33,6 +37,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortHoney.png",
         description: "In a small cave next to the water.",
         unlocks: "A cave that leads to a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_4": {
         name: "Phosphor Door Receptacle",
@@ -41,6 +46,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortPhosphor.png",
         description: "At the end of a cave tunnel past the Honey Gordo.",
         unlocks: "A path to the other part of the island.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_5": {
         name: "Rock Door Receptacle",
@@ -49,6 +55,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortRock.png",
         description: "At the end of a stream.",
         unlocks: "A cave that leads to a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_6": {
         name: "Flutter Door Receptacle",
@@ -57,6 +64,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortFlutter.png",
         description: "On a ledge up the cliff over the water.",
         unlocks: "A cave system that leads to a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_7": {
         name: "Angler Door Receptacle",
@@ -65,6 +73,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortAngler.png",
         description: "Inside a small tunnel behind a waterfall.",
         unlocks: "A cave system that leads to a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_8": {
         name: "Pink Door Receptacle",
@@ -73,6 +82,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortPink.png",
         description: "On a ledge half-way up a cliff.",
         unlocks: "A cave that leads to a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_9": {
         name: "Hunter Door Receptacle",
@@ -81,6 +91,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortHunter.png",
         description: "At the end of the main path.",
         unlocks: "A small room containing a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_10": {
         name: "Hunter Door Receptacle",
@@ -89,6 +100,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortHunter.png",
         description: "Underground in a cave accessible from the Rock Plort Door Receptacle.",
         unlocks: "A cave that acts as a shortcut to another part of the island and contains a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_11": {
         name: "Rock Door Receptacle",
@@ -97,6 +109,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortRock.png",
         description: "On a lower ledge next to the water.",
         unlocks: "A cave the contains a Hunter Plort Door Receptacle.",
+        dimension: MapType.overworld,
     },
     "locked_starlightstrand_12": {
         name: "Flutter Door Receptacle",
@@ -105,6 +118,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortFlutter.png",
         description: "Up the ledge on the ruins wall.",
         unlocks: "A small cave containing a Treasure Pod.",
+        dimension: MapType.overworld,
     },
 
     "locked__embervalley_1": {
@@ -114,6 +128,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortBatty.png",
         description: "Down a path from the teleporter on a ledge above the water.",
         unlocks: "A small cave containing a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_embervalley_2": {
         name: "Angler Door Receptacle",
@@ -122,6 +137,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortAngler.png",
         description: "Above a ledge on the lower parts of the ruins.",
         unlocks: "A small ruins room containing a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_embervalley_3": {
         name: "Boom Door Receptacle",
@@ -130,6 +146,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortBoom.png",
         description: "Underground inside a cave accessible from the north side of a cliff.",
         unlocks: "A cave that contains a Treasure Pod.",
+        dimension: MapType.overworld,
     },
     "locked_embervalley_4": {
         name: "Boom Door Receptacle",
@@ -138,6 +155,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortBoom.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
+        dimension: MapType.overworld,
     },
     "locked_embervalley_5": {
         name: "Tabby Door Receptacle",
@@ -146,6 +164,7 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortTabby.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
+        dimension: MapType.overworld,
     },
     "locked_embervalley_6": {
         name: "Batty Door Receptacle",
@@ -154,5 +173,106 @@ export const locked_doors: { [key: string]: LockedDoor } = {
         image: "iconPlortBatty.png",
         description: "Underground inside a cave accessible from a large waterfall on the east side of the cliff.",
         unlocks: "A tunnel that leads to an Ember Valley Teleporter.",
+        dimension: MapType.overworld,
+    },
+
+    "locked_greylabyrinth_1": {
+        name: "Boom Door Receptacle",
+        plort: "x1 Boom Plort",
+        pos: { x: -1.1, y: 34.3 },
+        image: "iconPlortBoom.png",
+        description: "Located down a long, skinny hallway in the area with lava all over the floor and feral slimes.",
+        unlocks: "Unlocks the nearby Plort Door, leading to a secret room with the Rock Plort Statue.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_2": {
+        name: "Rock Door Receptacle",
+        plort: "x1 Rock Plort",
+        pos: { x: -14.6, y: 17.6 },
+        image: "iconPlortRock.png",
+        description: "Located on the right side of the Plort Door.",
+        unlocks: "Opens one of three doors that can be used to access the Lava Map Node.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_3": {
+        name: "Rock Door Receptacle",
+        plort: "x1 Rock Plort",
+        pos: { x: -18.4, y: 17.3 },
+        image: "iconPlortRock.png",
+        description: "Fall through the hole in the ground after talking to Gigi to find this statue and nearby Shadow Plort Door.",
+        unlocks: "Opens one of three Plort Doors to access the Lava Map Node.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_4": {
+        name: "Rock Door Receptacle",
+        plort: "x1 Rock Plort",
+        pos: { x: -16.5, y: 8.8 },
+        image: "iconPlortRock.png",
+        description: "Located in the same room as the nearby Shadow Plort Door.",
+        unlocks: "Opens one of three Plort Doors used to access to Lava Map Node. This statue will immediately unlock access to the node.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_5": {
+        name: "Sloomber Door Receptacle",
+        plort: "x1 Sloomber Plort",
+        pos: { x: -8.4, y: -32.6 },
+        image: "iconPlortSloomber.png",
+        description: "Located on the tall platform near the Plort Door.",
+        unlocks: "Activates one stone on the large Plort Door.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_6": {
+        name: "Shadow Door Receptacle",
+        plort: "x1 Shadow Plort",
+        pos: { x: 0.0, y: -45.6 },
+        image: "iconPlortShadow.png",
+        description: "Located inside a small cave inside of the large grey pillar.",
+        unlocks: "Activates one stone on the large Plort Door. Allows access to the Twin Gordo.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_7": {
+        name: "Twin Door Receptacle",
+        plort: "x1 Twin Plort",
+        pos: { x: -13.1, y: -55.9 },
+        image: "iconPlortTwin.png",
+        description: "Located inside a large room, spinning around on the wall.",
+        unlocks: "Activates one stone on the large Plort Door. Allows access to the Twin Gordo.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_8": {
+        name: "Batty Door Receptacle",
+        plort: "x1 Batty Plort",
+        pos: { x: -50.9, y: -61.1 },
+        image: "iconPlortBatty.png",
+        description: "Located in the ancient waterworks area with the large vertical glass tower, this statue opens a hallway leading to the next statue in this area of a Rock Slime.",
+        unlocks: "Unlocks a shortcut to two rooms.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_9": {
+        name: "Rock Door Receptacle",
+        plort: "x1 Rock Plort",
+        pos: { x: -49.0, y: -78.1 },
+        image: "iconPlortRock.png",
+        description: "Located right down the hallway of the Batty Plort Statue.",
+        unlocks: "Unlocks a shortcut back to the main room.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_10": {
+        name: "Boom Door Receptacle",
+        plort: "x1 Boom Plort",
+        pos: { x: -35.6, y: -70.7 },
+        image: "iconPlortBoom.png",
+        description: "Located in the ancient waterworks area, these two statues are right next to each other.",
+        unlocks: "Unlocks access to a room with the Power Chip and button for the Storage Cell.",
+        dimension: MapType.labyrinth,
+    },
+    "locked_greylabyrinth_11": {
+        name: "Angler Door Receptacle",
+        plort: "x1 Angler Plort",
+        pos: { x: -35.5, y: -66.7 },
+        image: "iconPlortAngler.png",
+        description: "Located in the ancient waterworks area, these two statues are right next to each other.",
+        unlocks: "Unlocks access to a room with the Power Chip and button for the Storage Cell.",
+        dimension: MapType.labyrinth,
     },
 };

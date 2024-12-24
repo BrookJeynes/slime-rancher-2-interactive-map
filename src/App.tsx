@@ -1,6 +1,7 @@
+import { CurrentMapContext, MapType } from "./CurrentMapContext";
 import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { LocalStoragePin, Pin } from "./types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GordoIcons } from "./components/GordoIcon";
 import L from "leaflet";
 import { LockedDoorIcons } from "./components/LockedDoorIcon";
@@ -8,17 +9,12 @@ import { MapNodeIcons } from "./components/MapNodeIcon";
 import { MapUserPins } from "./components/UserPins";
 import { PlotPlanners } from "./components/planner/PlotPlanner";
 import { ResearchDroneIcons } from "./components/ResearchDroneIcon";
+import { ShadowDoorIcons } from "./components/ShadowDoorIcon";
 import Sidebar from "./components/Sidebar";
+import { StabilizingGateIcons } from "./components/StabilizingGateIcon";
 import { TeleportLineIcons } from "./components/TeleportLineIcon";
 import { TreasurePodIcons } from "./components/TreasurePodIcon";
 import { icon_template } from "./globals";
-
-enum Map {
-    overworld = "map_overworld",
-    labyrinth = "map_labyrinth",
-}
-
-const current_map: Map = Map.labyrinth;
 
 function App() {
     const [show_log, setShowLog] = useState(false);
@@ -27,9 +23,12 @@ function App() {
     const [user_pins, setUserPins] = useState<LocalStoragePin[]>(
         JSON.parse(localStorage.getItem("user_pins") ?? "[]") ?? []
     );
+    const { current_map } = useContext(CurrentMapContext);
 
     // TODO: Move to its own file.
-    const user_pin_list = user_pins.map((pin: LocalStoragePin) => {
+    const user_pin_list = user_pins.filter((pin: LocalStoragePin) => {
+        return pin.dimension === current_map;
+    }).map((pin: LocalStoragePin) => {
         const key = `${pin.pos.x}${pin.pos.y}`;
         const icon = L.icon({
             ...icon_template,
@@ -67,8 +66,8 @@ function App() {
         styleSheet.type = "text/css";
         styleSheet.innerText = `
 .leaflet-container {
-    ${current_map === Map.overworld ? "background-image: url('/map_bg.png') !important;" : ""}
-    ${current_map === Map.labyrinth ? "background-color: #f8d0e3 !important;" : ""}
+    ${current_map === MapType.overworld ? "background-image: url('/map_bg.png') !important;" : ""}
+    ${current_map === MapType.labyrinth ? "background-color: #f8d0e3 !important;" : ""}
 }
             `;
         document.head.appendChild(styleSheet);
@@ -76,7 +75,7 @@ function App() {
         return () => {
             document.head.removeChild(styleSheet);
         };
-    }, []);
+    }, [current_map]);
 
     return (
         <div>
@@ -104,7 +103,7 @@ function App() {
                 // TODO: This ties in with the `center`.
                 maxBounds={[
                     [200, -200],
-                    [-70, 40]
+                    [-70, 60]
                 ]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
@@ -119,28 +118,34 @@ function App() {
 
                 <LayersControl position="topright" collapsed={false}>
                     <LayersControl.Overlay checked name="Slime Gordos">
-                        <LayerGroup>{GordoIcons}</LayerGroup>
+                        <LayerGroup>{GordoIcons(current_map)}</LayerGroup>
                     </LayersControl.Overlay>
                     <LayersControl.Overlay checked name="Map Nodes">
-                        <LayerGroup>{MapNodeIcons}</LayerGroup>
+                        <LayerGroup>{MapNodeIcons(current_map)}</LayerGroup>
                     </LayersControl.Overlay>
                     <LayersControl.Overlay checked name="Locked Doors">
-                        <LayerGroup>{LockedDoorIcons}</LayerGroup>
+                        <LayerGroup>{LockedDoorIcons(current_map)}</LayerGroup>
                     </LayersControl.Overlay>
                     <LayersControl.Overlay checked name="7-Zee Rewards">
-                        <LayerGroup>{TreasurePodIcons}</LayerGroup>
+                        <LayerGroup>{TreasurePodIcons(current_map)}</LayerGroup>
                     </LayersControl.Overlay>
                     <LayersControl.Overlay checked name="Research Drones">
-                        <LayerGroup>{ResearchDroneIcons(setShowLog, setCurrentLog)}</LayerGroup>
+                        <LayerGroup>{ResearchDroneIcons(setShowLog, setCurrentLog, current_map)}</LayerGroup>
                     </LayersControl.Overlay>
                     <LayersControl.Overlay checked name="Teleport Lines">
-                        <LayerGroup>{TeleportLineIcons}</LayerGroup>
+                        {current_map === MapType.overworld && <LayerGroup>{TeleportLineIcons}</LayerGroup>}
+                    </LayersControl.Overlay>
+                    <LayersControl.Overlay checked name="Plot Planner">
+                        {current_map === MapType.overworld && <LayerGroup>{PlotPlanners}</LayerGroup>}
+                    </LayersControl.Overlay>
+                    <LayersControl.Overlay checked name="Stabilizing Gates">
+                        {current_map === MapType.labyrinth && <LayerGroup>{StabilizingGateIcons}</LayerGroup>}
+                    </LayersControl.Overlay>
+                    <LayersControl.Overlay checked name="Shadow Doors">
+                        {current_map === MapType.labyrinth && <LayerGroup>{ShadowDoorIcons}</LayerGroup>}
                     </LayersControl.Overlay>
                     <LayersControl.Overlay checked name="User Pins">
                         <LayerGroup>{user_pin_list}</LayerGroup>
-                    </LayersControl.Overlay>
-                    <LayersControl.Overlay checked name="Plot Planner">
-                        <LayerGroup>{PlotPlanners}</LayerGroup>
                     </LayersControl.Overlay>
                 </LayersControl>
 

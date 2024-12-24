@@ -1,3 +1,5 @@
+import { MapType } from "./CurrentMapContext";
+
 export interface Vec2 {
     x: number;
     y: number;
@@ -11,6 +13,7 @@ export interface Gordo {
     drops: string[];
     description: string;
     unlocks: string[];
+    dimension: MapType;
 }
 
 export interface LockedDoor {
@@ -20,18 +23,21 @@ export interface LockedDoor {
     image: string
     description: string;
     unlocks: string;
+    dimension: MapType;
 }
 
 export interface MapNode {
     name: string;
     pos: Vec2;
     description: string;
+    dimension: MapType;
 }
 
 export interface TreasurePod {
     contents: string[];
     description: string;
     pos: Vec2;
+    dimension: MapType;
 }
 
 export interface ResearchDrone {
@@ -40,6 +46,7 @@ export interface ResearchDrone {
     archive: string[];
     pos: Vec2;
     description: string;
+    dimension: MapType;
 }
 
 export interface TeleportLine {
@@ -48,27 +55,27 @@ export interface TeleportLine {
     midpoint: Vec2;
 }
 
-export interface Resource{
-    name: string, 
-    type: string
+export interface Resource {
+    name: string;
+    type: string;
 }
 
 export interface PlotOptions extends Pin {
-    optionsA?: Pin[]
-    optionsAName?: string
-    optionsB?: Pin[]
-    optionsBName?: string
-    upgrades: string[]
+    optionsA?: Pin[];
+    optionsAName?: string;
+    optionsB?: Pin[];
+    optionsBName?: string;
+    upgrades: string[];
 }
 
 export type PinTitle = "Food" | "Utility" | "Plorts" | "Slimes" | "Gordos" | "Resources";
 export interface Pins {
-    Food: Pin[],
-    Utility: Pin[],
-    Plorts: Pin[],
-    Slimes: Pin[],
-    Gordos: Pin[],
-    Resources: Pin[],
+    Food: Pin[];
+    Utility: Pin[];
+    Plorts: Pin[];
+    Slimes: Pin[];
+    Gordos: Pin[];
+    Resources: Pin[];
 }
 
 export interface Pin {
@@ -80,18 +87,19 @@ export interface Pin {
 export interface LocalStoragePin {
     icon: string;
     pos: Vec2;
+    dimension: MapType;
 }
 
 export interface LocalStoragePlotPlan {
-    selectedPlotType?: number 
-    selectedOptionA?: number,
-    selectedOptionB?: number,
-    selectedUpgrades: number[]
+    selectedPlotType?: number;
+    selectedOptionA?: number;
+    selectedOptionB?: number;
+    selectedUpgrades: number[];
 }
 
 export interface LocalStorageSitePlan {
-    site: string,
-    plotPlans: LocalStoragePlotPlan[]
+    site: string;
+    plotPlans: LocalStoragePlotPlan[];
 }
 
 export interface Island {
@@ -100,7 +108,7 @@ export interface Island {
 }
 
 export interface PlannerPosition {
-    position: Vec2,
+    position: Vec2;
 }
 
 export interface PlannerIcon {
@@ -109,6 +117,18 @@ export interface PlannerIcon {
 }
 
 export interface PlannerIcons {
-    left: PlannerIcon | null,
-    right: PlannerIcon | null,
+    left: PlannerIcon | null;
+    right: PlannerIcon | null;
+}
+
+export interface StabilizingGate {
+    position: Vec2;
+    description: string;
+}
+
+export interface ShadowDoor {
+    position: Vec2;
+    description: string;
+    amount_required: number;
+    unlocks: string[];
 }

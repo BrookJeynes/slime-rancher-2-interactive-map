@@ -1,3 +1,4 @@
+import { MapType } from "../CurrentMapContext";
 import { ResearchDrone } from "../types";
 
 export const research_drones: { [key: string]: ResearchDrone } = {
@@ -29,6 +30,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 41.95, y: -8.1 },
         description: "On top of the cliff over the tunnel entrance.",
+        dimension: MapType.overworld,
     },
     "research_conservatory_2": {
         name: "Research Drone 12",
@@ -49,6 +51,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         archive: ["Ugh, I forgot my fork. Looks like it's hand noodles again..."],
         pos: { x: 45.39, y: -7.0 },
         description: "On a ledge up a cliff near the tunnel entrance.",
+        dimension: MapType.overworld,
     },
     "research_conservatory_3": {
         name: "Research Drone 13",
@@ -80,6 +83,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 50.49, y: 10.63 },
         description: "On top of a stone arch near a plot.",
+        dimension: MapType.overworld,
     },
     "research_conservatory_4": {
         name: "Research Drone 11",
@@ -111,6 +115,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 31.01, y: 22.58 },
         description: "On the edge of an island next to a rock.",
+        dimension: MapType.overworld,
     },
     "research_conservatory_5": {
         name: "Research Drone 10",
@@ -135,6 +140,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 20.67, y: -0.98 },
         description: "On top of a mushroom growing on the side of the central pillar of a cave.",
+        dimension: MapType.overworld,
     },
 
     "research_rainbowfields_1": {
@@ -160,6 +166,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 36.17, y: -35.85 },
         description: "On a small ledge next to a tree.",
+        dimension: MapType.overworld,
     },
     "research_rainbowfields_2": {
         name: "Research Drone 3",
@@ -188,6 +195,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 28.69, y: -42.95 },
         description: "Next to a cliff wall near a Refinery Link and a tunnel entrance.",
+        dimension: MapType.overworld,
     },
 
     "research_embervalley_1": {
@@ -222,6 +230,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 36.89, y: -92.3 },
         description: "On a rock next to a flower bed on the lower part of the ruins.",
+        dimension: MapType.overworld,
     },
     "research_embervalley_2": {
         name: "Research Drone 5",
@@ -235,6 +244,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         archive: ["YAAAAAHOOOOOOOOOOO!"],
         pos: { x: 51.91, y: -106.85 },
         description: "In the open at the edge of a ledge.",
+        dimension: MapType.overworld,
     },
     "research_embervalley_3": {
         name: "Research Drone 7",
@@ -264,6 +274,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 41.78, y: -124.03 },
         description: "Underground in a cave on a ledge protruding off a central rock pillar.",
+        dimension: MapType.overworld,
     },
     "research_embervalley_4": {
         name: "Research Drone 8",
@@ -295,6 +306,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 45.72, y: -141.06 },
         description: "On a ledge up a cliff underneath a large rock overhang.",
+        dimension: MapType.overworld,
     },
     "research_embervalley_5": {
         name: "Research Drone 9",
@@ -326,6 +338,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 51.54, y: -157.65 },
         description: "Inside the room past a Boom Gordo on a ruin stone.",
+        dimension: MapType.overworld,
     },
     "research_embervalley_6": {
         name: "Research Drone 6",
@@ -356,6 +369,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 70.64, y: -119.22 },
         description: "At the edge of the plateau island to the side of the Ember Valley Teleporter/Tabby Gordo.",
+        dimension: MapType.overworld,
     },
 
     "research_starlightstrand_1": {
@@ -381,6 +395,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: -22.91, y: -52.77 },
         description: "On a small ledge at the end of a path next to the top of a waterfall.",
+        dimension: MapType.overworld,
     },
     "research_starlightstrand_2": {
         name: "Research Drone 16",
@@ -410,6 +425,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: -24.2, y: -32.87 },
         description: "On a ledge past a rock arch near a waterfall.",
+        dimension: MapType.overworld,
     },
     "research_starlightstrand_3": {
         name: "Research Drone 17",
@@ -440,6 +456,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: -30.71, y: -39.77 },
         description: "On a small ledge under a tree.",
+        dimension: MapType.overworld,
     },
     "research_starlightstrand_4": {
         name: "Research Drone 15",
@@ -463,6 +480,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: -44.2, y: -48.2 },
         description: "On a mushroom in the open",
+        dimension: MapType.overworld,
     },
     "research_starlightstrand_5": {
         name: "Research Drone 18",
@@ -489,6 +507,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: -38.78, y: -17.75 },
         description: "On a small ledge on top of a cliff next to a rock.",
+        dimension: MapType.overworld,
     },
     "research_starlightstrand_6": {
         name: "Research Drone 19",
@@ -517,6 +536,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: -54.06, y: -36.84 },
         description: "In the middle of the cave next to a rock and some equipment underneath the Flutter Gordo.",
+        dimension: MapType.overworld,
     },
 
     "research_powderfallbluffs_1": {
@@ -535,6 +555,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 78.15, y: -127.66 },
         description: "Underground on a small ledge next to a large cave opening.",
+        dimension: MapType.overworld,
     },
     "research_powderfallbluffs_2": {
         name: "Research Drone 21",
@@ -555,6 +576,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 79.6, y: -140.53 },
         description: "At the end of a side path near the edge of a cliff.",
+        dimension: MapType.overworld,
     },
     "research_powderfallbluffs_3": {
         name: "Research Drone 22",
@@ -573,6 +595,7 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 80.77, y: -119.14 },
         description: "Underground in a small alcove from the glowing flower cave.",
+        dimension: MapType.overworld,
     },
     "research_powderfallbluffs_4": {
         name: "Research Drone 23",
@@ -595,5 +618,6 @@ export const research_drones: { [key: string]: ResearchDrone } = {
         ],
         pos: { x: 80.87, y: -115.27 },
         description: "On top of a snow pile at the very edge of a ledge over the water.",
+        dimension: MapType.overworld,
     },
 };
