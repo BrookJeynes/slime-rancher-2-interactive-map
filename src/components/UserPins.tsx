@@ -1,6 +1,6 @@
 import { LocalStoragePin, Pin, PinTitle } from "../types";
 import React, { useContext, useState } from "react";
-import { CurrentMapContext } from "../CurrentMapContext";
+import { CurrentMapContext, MapType } from "../CurrentMapContext";
 import { FaQuestionCircle } from "react-icons/fa";
 import { pins } from "../data/pins";
 import { useMapEvents } from "react-leaflet";
@@ -173,12 +173,36 @@ export function ImportUserPinsButton({
                     reader.onload = (e) => {
                         const pins_json = e.target?.result as string;
                         if (window.confirm("This will overwrite your current pins. Are you sure you want to continue?")) {
-                            localStorage.setItem("user_pins", pins_json);
-                            setUserPins(JSON.parse(pins_json));
+                            try {
+                                const parsed_pins = JSON.parse(pins_json);
+
+                                if (!Array.isArray(parsed_pins)) {
+                                    throw new Error("Invalid user pins format. Not an array.");
+                                }
+
+                                console.log(parsed_pins)
+
+                                if (!parsed_pins.every(pin =>
+                                    typeof pin === "object" &&
+                                    pin !== null &&
+                                    typeof pin.icon === "string" &&
+                                    pin.pos && typeof pin.pos === "object" &&
+                                    typeof pin.pos.x === "number" &&
+                                    typeof pin.pos.y === "number"
+                                )) {
+                                    throw new Error("Invalid user pins format. Malformed data.");
+                                }
+
+                                localStorage.setItem("user_pins", pins_json);
+                                setUserPins(parsed_pins);
+                            } catch (err) {
+                                console.error(`error: failed to parse user pins JSON file - ${err}`);
+                                window.alert("Failed to parse user pins. Please ensure you uploaded a properly formed JSON file.");
+                            }
                         }
                     };
                     reader.onerror = () => {
-                        console.error("error: failed to read user pins");
+                        console.error("error: failed to read user pins.");
                     };
 
                     reader.readAsText(file);

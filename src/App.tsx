@@ -20,9 +20,16 @@ function App() {
     const [show_log, setShowLog] = useState(false);
     const [current_log, setCurrentLog] = useState(<></>);
     const [selected_pin, setSelectedPin] = useState<Pin | undefined>(undefined);
-    const [user_pins, setUserPins] = useState<LocalStoragePin[]>(
-        JSON.parse(localStorage.getItem("user_pins") ?? "[]") ?? []
-    );
+
+    let parsed_user_pins = [];
+    try {
+        parsed_user_pins = JSON.parse(localStorage.getItem("user_pins") ?? "[]") ?? [];
+    } catch {
+        window.alert("Failed to read user pins.");
+        parsed_user_pins = [];
+    }
+
+    const [user_pins, setUserPins] = useState<LocalStoragePin[]>(parsed_user_pins);
     const { current_map } = useContext(CurrentMapContext);
 
     // TODO: Move to its own file.
