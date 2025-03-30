@@ -1,6 +1,6 @@
 import { LocalStoragePin, Pin, PinTitle } from "../types";
 import React, { useContext, useState } from "react";
-import { CurrentMapContext, MapType } from "../CurrentMapContext";
+import { CurrentMapContext } from "../CurrentMapContext";
 import { FaQuestionCircle } from "react-icons/fa";
 import { pins } from "../data/pins";
 import { useMapEvents } from "react-leaflet";
@@ -179,8 +179,6 @@ export function ImportUserPinsButton({
                                 if (!Array.isArray(parsed_pins)) {
                                     throw new Error("Invalid user pins format. Not an array.");
                                 }
-
-                                console.log(parsed_pins)
 
                                 if (!parsed_pins.every(pin =>
                                     typeof pin === "object" &&
