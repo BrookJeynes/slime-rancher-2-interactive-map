@@ -1,5 +1,5 @@
 import { Marker, Popup } from "react-leaflet";
-import { icon_opacity, icon_template, map_node_ls_key } from "../globals";
+import { icon_opacity, icon_template, stabilizing_gate_ls_key } from "../globals";
 import { useContext, useEffect, useState } from "react";
 import { FoundContext } from "../FoundContext";
 import L from "leaflet";
@@ -48,7 +48,7 @@ export function StabilizingGateIcon({
                             <input
                                 type="checkbox"
                                 checked={checked}
-                                onChange={() => handleChecked(map_node_ls_key, key_name, checked, setChecked)}
+                                onChange={() => handleChecked(stabilizing_gate_ls_key, key_name, checked, setChecked)}
                                 className="w-4 h-4"
                             />
                             <h1 className="ml-2 text-xl font-medium">Stabilizing Gate</h1>
