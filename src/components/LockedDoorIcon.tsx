@@ -16,6 +16,10 @@ export function LockedDoorIcon({ locked_door, keyName }: { locked_door: LockedDo
     );
 
     useEffect(() => {
+        setChecked(found.locked_doors ? found.locked_doors.some((k: string) => k === keyName || k === deprecatedKey) : false);
+    }, [found]);
+
+    useEffect(() => {
         if (checked) {
             setFound({
                 ...found,

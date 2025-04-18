@@ -1,5 +1,6 @@
 import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
 import { ClearUserPinsButton, ExportUserPinsButton, ImportUserPinsButton, SidebarPins } from "./UserPins";
+import { ExportUserDataButton, ImportUserDataButton } from "./UserData";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { LocalStoragePin, Pin } from "../types";
 import React, { useState } from "react";
@@ -10,10 +11,12 @@ import IslandInfo from "./IslandInfo";
 export default function Sidebar({
     selected_pin,
     setSelectedPin,
+    user_pins,
     setUserPins,
 }: {
     selected_pin: Pin | undefined,
     setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>
+    user_pins: LocalStoragePin[],
     setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
 }) {
     const [show_sidebar, setShowSidebar] = useState(false);
@@ -67,9 +70,16 @@ export default function Sidebar({
                     <hr />
 
                     <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-6 mb-4">
-                        <ExportUserPinsButton />
+                        <ExportUserPinsButton user_pins={user_pins} />
                         <ImportUserPinsButton setUserPins={setUserPins} />
                         <ClearUserPinsButton setUserPins={setUserPins} />
+                    </div>
+
+                    <hr />
+
+                    <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-6 mb-4">
+                        <ExportUserDataButton />
+                        <ImportUserDataButton />
                     </div>
                 </div>
             </div>

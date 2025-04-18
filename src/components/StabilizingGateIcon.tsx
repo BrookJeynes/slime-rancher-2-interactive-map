@@ -20,6 +20,10 @@ export function StabilizingGateIcon({
     );
 
     useEffect(() => {
+        setChecked(found.stabilizing_gates ? found.stabilizing_gates.some((k: string) => k === key_name) : false);
+    }, [found]);
+
+    useEffect(() => {
         if (checked) {
             setFound({
                 ...found,

@@ -16,6 +16,10 @@ export function TreasurePodIcon({ treasure_pod, keyName }: { treasure_pod: Treas
     );
 
     useEffect(() => {
+        setChecked(found.treasure_pods ? found.treasure_pods.some((k: string) => k === keyName || k === deprecatedKey) : false);
+    }, [found]);
+
+    useEffect(() => {
         if (checked) {
             setFound({
                 ...found,

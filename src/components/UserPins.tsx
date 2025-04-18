@@ -1,5 +1,5 @@
 import { LocalStoragePin, Pin, PinTitle } from "../types";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CurrentMapContext } from "../CurrentMapContext";
 import { FaQuestionCircle } from "react-icons/fa";
 import { pins } from "../data/pins";
@@ -131,9 +131,18 @@ export function MapUserPins({
     return null;
 }
 
-export function ExportUserPinsButton() {
+export function ExportUserPinsButton({
+    user_pins
+}: {
+    user_pins: LocalStoragePin[]
+}) {
     const pins_json = localStorage.getItem("user_pins") ?? "";
-    const pins_json_file = new Blob([pins_json], { type: "application/json" });
+    let pins_json_file = new Blob([pins_json], { type: "application/json" });
+
+    useEffect(() => {
+        const pins_json = localStorage.getItem("user_pins") ?? "";
+        pins_json_file = new Blob([pins_json], { type: "application/json" });
+    }, [user_pins]);
 
     return (
         <button className="bg-blue-900 w-full outline outline-1 p-1">
@@ -156,14 +165,14 @@ export function ImportUserPinsButton({
 }) {
     return (
         <label
-            htmlFor="upload"
+            htmlFor="user_pin_upload"
             className="flex justify-center items-center w-full cursor-pointer bg-blue-900 outline outline-1 p-1 text-center"
         >
             <span>Import Pins</span>
             <input
                 type="file"
                 accept=".json"
-                id="upload"
+                id="user_pin_upload"
                 className="hidden"
                 onChange={(event) => {
                     const file = (event.target.files ?? [])[0];

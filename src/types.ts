@@ -78,6 +78,17 @@ export interface Pins {
     Resources: Pin[];
 }
 
+// Fields must match those found in `globals` / localstorage, e.g. gordo_ls_key
+export interface UserData {
+    found_gordos: string[];
+    found_locked_doors: string[];
+    found_map_nodes: string[];
+    found_research_drones: string[];
+    found_treasure_pods: string[];
+    found_stabilizing_gates: string[];
+    found_shadow_doors: string[];
+}
+
 export interface Pin {
     name: string;
     type: string;

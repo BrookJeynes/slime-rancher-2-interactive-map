@@ -16,6 +16,10 @@ export function GordoIcon({ gordo, keyName }: { gordo: Gordo, keyName: string })
     );
 
     useEffect(() => {
+        setChecked(found.gordos ? found.gordos.some((k: string) => k === keyName || k === deprecatedKey) : false);
+    }, [found]);
+
+    useEffect(() => {
         if (checked) {
             setFound({
                 ...found,

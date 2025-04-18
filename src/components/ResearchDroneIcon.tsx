@@ -27,6 +27,10 @@ export function ResearchDroneIcon({
     );
 
     useEffect(() => {
+        setChecked(found.research_drones ? found.research_drones.some((k: string) => k === keyName || k === deprecatedKey) : false);
+    }, [found]);
+
+    useEffect(() => {
         if (checked) {
             setFound({
                 ...found,

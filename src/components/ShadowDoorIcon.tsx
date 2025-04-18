@@ -20,6 +20,10 @@ export function ShadowDoorIcon({
     );
 
     useEffect(() => {
+        setChecked(found.shadow_doors ? found.shadow_doors.some((k: string) => k === key_name) : false);
+    }, [found]);
+
+    useEffect(() => {
         if (checked) {
             setFound({
                 ...found,

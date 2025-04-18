@@ -16,6 +16,10 @@ export function MapNodeIcon({ map_node, keyName }: { map_node: MapNode, keyName:
     );
 
     useEffect(() => {
+        setChecked(found.map_nodes ? found.map_nodes.some((k: string) => k === keyName || k === deprecatedKey) : false);
+    }, [found]);
+
+    useEffect(() => {
         if (checked) {
             setFound({
                 ...found,
