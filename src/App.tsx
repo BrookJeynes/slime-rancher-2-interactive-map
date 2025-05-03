@@ -106,7 +106,6 @@ function App() {
                 // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
                 center={[30, -80]}
                 zoom={3.5}
-                zoomControl={false}
                 scrollWheelZoom={true}
                 maxZoom={6}
                 minZoom={3}
