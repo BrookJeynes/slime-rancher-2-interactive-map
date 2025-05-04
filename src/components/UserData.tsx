@@ -55,7 +55,7 @@ export function ExportUserDataButton() {
     const found_json_file = new Blob([JSON.stringify(found_data)], { type: "application/json" });
 
     return (
-        <button className="bg-blue-900 w-full outline outline-1 p-1">
+        <button className="bg-btn w-full outline outline-1 p-1">
             <a
                 download="found_data.json"
                 target="_blank"
@@ -73,7 +73,7 @@ export function ImportUserDataButton() {
     return (
         <label
             htmlFor="found_data_upload"
-            className="flex justify-center items-center w-full cursor-pointer bg-blue-900 outline outline-1 p-1 text-center"
+            className="flex justify-center items-center w-full cursor-pointer bg-btn outline outline-1 p-1 text-center"
         >
             <span>Import Found Data</span>
             <input

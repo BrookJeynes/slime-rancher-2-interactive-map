@@ -32,7 +32,7 @@ export function SidebarPins({
                 <select
                     value={selected_type}
                     onChange={event => setSelectedType(event.target.value as PinTitle)}
-                    className="bg-blue-900 outline outline-1 p-1"
+                    className="cursor-pointer bg-btn outline outline-1 p-1"
                 >
                     {types.map((type: string) => <option key={type} value={type}>{type}</option>)}
                 </select>
@@ -145,7 +145,7 @@ export function ExportUserPinsButton({
     }, [user_pins]);
 
     return (
-        <button className="bg-blue-900 w-full outline outline-1 p-1">
+        <button className="bg-btn w-full outline outline-1 p-1">
             <a
                 download="user_pins.json"
                 target="_blank"
@@ -166,7 +166,7 @@ export function ImportUserPinsButton({
     return (
         <label
             htmlFor="user_pin_upload"
-            className="flex justify-center items-center w-full cursor-pointer bg-blue-900 outline outline-1 p-1 text-center"
+            className="flex justify-center items-center w-full cursor-pointer bg-btn outline outline-1 p-1 text-center"
         >
             <span>Import Pins</span>
             <input
@@ -226,7 +226,7 @@ export function ClearUserPinsButton({
 }) {
     return (
         <button
-            className="bg-red-600 p-1 w-full outline outline-1"
+            className="bg-btn btn-red p-1 w-full outline outline-1"
             onClick={() => {
                 if (!window.confirm("Are you sure you want to clear your current pins? There is no way to undo this. Ensure you export your pins if you want to keep them.")) return;
                 setUserPins([]);

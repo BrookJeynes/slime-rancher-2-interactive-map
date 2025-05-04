@@ -75,7 +75,7 @@ function App() {
         styleSheet.type = "text/css";
         styleSheet.innerText = `
 .leaflet-container {
-    ${current_map === MapType.overworld ? "background-image: url('/map_bg.png') !important;" : ""}
+    ${current_map === MapType.overworld ? "background-image: url('/map_bg.png') !important; background-color: #005f84 !important;" : ""}
     ${current_map === MapType.labyrinth ? "background-color: #f8d0e3 !important;" : ""}
 }
             `;
