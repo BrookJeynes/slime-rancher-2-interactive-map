@@ -90,7 +90,7 @@ export default function CollectablesTracker() {
             </div>
 
             <button
-                className="bg-btn custom3 outline outline-1 p-1 mt-3 w-full"
+                className="bg-btn outline outline-1 p-1 mt-3 w-full"
                 onClick={() => {
                     if (current_map === MapType.overworld) {
                         setCurrentMap(MapType.labyrinth);

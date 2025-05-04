@@ -61,7 +61,7 @@
 }
 
 .bg-btn.btn-red {
-  @apply bg-customred;
+  @apply bg-red;
 }
 
 hr {

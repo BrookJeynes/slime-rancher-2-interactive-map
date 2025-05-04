@@ -9,7 +9,7 @@ export default {
             colors: {
                 beigelight: "#EFE7D4",
                 beigedark: "#D2B394",
-                customred: "#FF5959",
+                red: "#FF5959",
                 mapcolor: "#005F84",
             },
         },
