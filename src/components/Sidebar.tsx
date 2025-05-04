@@ -10,9 +10,7 @@ import IslandInfo from "./IslandInfo";
 
 function getOriginalTheme() {
     const userPreference = localStorage.getItem("darkMode");
-    console.log("ls: ", userPreference);
     if (userPreference === null) {
-        console.log("mq: ", window.matchMedia("(prefers-color-scheme: dark)").matches);
         return window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
     return userPreference === "true";
@@ -59,7 +57,7 @@ export default function Sidebar({
     return (
         <div className="absolute">
             <div
-                className={`bg-sidebar transition-all duration-500 fixed top-0 left-0 h-full border-r-solid border-r-[1px] ${showSidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-scroll`}
+                className={`bg-sidebar transition-all duration-500 fixed top-0 left-0 h-full border-r-solid border-r-[1px] ${showSidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-x-auto`}
             >
                 <div className="flex flex-col gap-5 px-4">
                     <div className="flex flex-col gap-2">
