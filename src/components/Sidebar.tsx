@@ -1,12 +1,20 @@
 import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
 import { ClearUserPinsButton, ExportUserPinsButton, ImportUserPinsButton, SidebarPins } from "./UserPins";
 import { ExportUserDataButton, ImportUserDataButton } from "./UserData";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaMoon, FaSun } from "react-icons/fa";
 import { LocalStoragePin, Pin } from "../types";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { discord_link, github_link } from "../globals";
 import CollectablesTracker from "./CollectablesTracker";
 import IslandInfo from "./IslandInfo";
+
+function getOriginalTheme() {
+    const userPreference = localStorage.getItem("darkMode");
+    if (userPreference === null) {
+        return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return userPreference === "true";
+}
 
 export default function Sidebar({
     selected_pin,
@@ -19,26 +27,67 @@ export default function Sidebar({
     user_pins: LocalStoragePin[],
     setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
 }) {
-    const [show_sidebar, setShowSidebar] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
+    const [darkMode, setDarkMode] = useState(getOriginalTheme());
+
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, []);
+
+    const toggleDarkMode = () => {
+        setDarkMode((prevDarkMode) => {
+            const newDarkMode = !prevDarkMode;
+
+            if (newDarkMode) {
+                document.documentElement.classList.add("dark");
+                localStorage.setItem("darkMode", "true");
+            } else {
+                document.documentElement.classList.remove("dark");
+                localStorage.setItem("darkMode", "false");
+            }
+
+            return newDarkMode;
+        });
+    };
 
     return (
         <div className="absolute">
             <div
-                className={`transition-all duration-500 fixed top-0 left-0 h-full bg-gradient-to-br from-blue-950 to-indigo-950 text-white border-r-solid border-r-[1px] ${show_sidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-scroll`}
+                className={`bg-sidebar transition-all duration-500 fixed top-0 left-0 h-full border-r-solid border-r-[1px] ${showSidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-x-auto`}
             >
                 <div className="flex flex-col gap-5 px-4">
                     <div className="flex flex-col gap-2">
                         <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher 2 Interactive Map</h1>
                         <div className="flex justify-center gap-4">
+                            {darkMode ?
+                                <FaMoon
+                                    size={25}
+                                    onClick={() => toggleDarkMode()}
+                                    className="cursor-pointer"
+                                    name="Switch to light mode"
+                                />
+                                :
+                                <FaSun
+                                    size={25}
+                                    onClick={() => toggleDarkMode()}
+                                    className="cursor-pointer"
+                                    name="Switch to dark mode"
+                                />
+                            }
+
                             <AiFillDiscord
                                 size={25}
                                 onClick={() => window.open(discord_link)}
-                                className="hover:cursor-pointer"
+                                className="cursor-pointer"
                             />
                             <AiFillGithub
                                 size={25}
                                 onClick={() => window.open(github_link)}
-                                className="hover:cursor-pointer"
+                                className="cursor-pointer"
                             />
 
                         </div>
@@ -85,18 +134,13 @@ export default function Sidebar({
             </div>
 
             <button
-                onClick={() => setShowSidebar(!show_sidebar)}
-                className={`transition-all duration-500 fixed top-1/2 -translate-y-1/2 bg-gradient-to-l from-blue-950 to-indigo-950 text-white p-2 border-solid border-[1px] border-l-0 rounded-r-md ${show_sidebar ? "left-2/3 md:left-1/4" : "left-0"} z-50`}
+                onClick={() => setShowSidebar(!showSidebar)}
+                className={`bg-sidebar transition-all duration-500 fixed top-1/2 -translate-y-1/2 p-2 border-solid border-[1px] border-l-0 rounded-r-md ${showSidebar ? "left-2/3 md:left-1/4" : "left-0"} z-50`}
             >
-                {show_sidebar ? (
-                    <FaChevronLeft
-                        size={25}
-                    />
-                ) : (
-                    <FaChevronRight
-                        size={25}
-                    />
-                )}
+                <FaChevronRight
+                    size={25}
+                    className={`transition-all ease-in-out duration-500 ${showSidebar ? "rotate-180" : ""}`}
+                />
             </button>
         </div>
     );

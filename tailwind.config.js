@@ -5,7 +5,14 @@ export default {
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                beigelight: "#EFE7D4",
+                beigedark: "#D2B394",
+                red: "#FF5959",
+                mapcolor: "#005F84",
+            },
+        },
         minHeight: {
             "1/2": "50%",
         },
