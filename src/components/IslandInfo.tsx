@@ -1,5 +1,5 @@
 import { CurrentMapContext, MapType } from "../CurrentMapContext";
-import { islands_sr1, islands_sr2 } from "../data/islands";
+import { islands_sr1, islands_sr2, sr1_common_resources } from "../data/islands";
 import { useContext, useEffect, useState } from "react";
 
 const imgStyle = {
@@ -80,7 +80,7 @@ export default function IslandInfo() {
                 <h3 className="text-md font-bold mb-2">Resources</h3>
                 <div className="flex flex-wrap gap-2">
                     {
-                        current_island[selected_island]?.resources?.map(resource => {
+                        current_island[selected_island]?.resources?.concat(current_map === MapType.sr1 ? sr1_common_resources : []).map(resource => {
                             const key = `${resource} pin icon`;
                             return <img
                                 key={key}
@@ -98,7 +98,6 @@ export default function IslandInfo() {
                     {
                         current_island[selected_island]?.food?.map(food => {
                             const key = `${food} pin icon`;
-                            console.log(`/${current_map === MapType.sr1 ? "icons_sr1" : "icons"}/foods/${food}`);
                             return <img
                                 key={key}
                                 src={`/${current_map === MapType.sr1 ? "icons_sr1" : "icons"}/foods/${food}`}

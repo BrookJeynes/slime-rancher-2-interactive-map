@@ -1,5 +1,17 @@
 import { Island } from "../types";
 
+export const sr1_common_resources = [
+    "JellyStone.png",
+    "SlimeFossil.png",
+    "StrangeDiamond.png",
+    "BuzzWax.png",
+    "Hexacomb.png",
+    "RoyalJelly.png",
+    "PrimordyOil.png",
+    "SpiralSteam.png",
+    "LavaDust.png"
+];
+
 export const islands_sr2: { [key: string]: Island } = {
     "Ember Valley": {
         resources: [
@@ -27,8 +39,8 @@ export const islands_sr2: { [key: string]: Island } = {
         ],
         food: [
             "pogofruit.png",
-            "Cuberry.png",
-            "picklepear.png",
+            "cuberry.png",
+            "pricklepear.png",
             "pomegranite.png",
             "carrot.png",
             "oddonion.png",
@@ -37,7 +49,7 @@ export const islands_sr2: { [key: string]: Island } = {
             "henHen.png",
             "briarHen.png",
             "seaHen.png",
-            "HenStony.png",
+            "stonyHen.png",
             "roostro.png"
         ],
     },
@@ -56,12 +68,12 @@ export const islands_sr2: { [key: string]: Island } = {
         ],
         food: [
             "pogofruit.png",
-            "Cuberry.png",
-            "picklepear.png",
+            "cuberry.png",
+            "pricklepear.png",
             "carrot.png",
             "waterlettuce.png",
             "henHen.png",
-            "HenStony.png",
+            "stonyHen.png",
             "roostro.png"
         ],
     },
@@ -88,7 +100,7 @@ export const islands_sr2: { [key: string]: Island } = {
         ],
         food: [
             "pogofruit.png",
-            "Cuberry.png",
+            "cuberry.png",
             "mintmango.png",
             "pomegranite.png",
             "carrot.png",
@@ -97,7 +109,7 @@ export const islands_sr2: { [key: string]: Island } = {
             "henHen.png",
             "paintedHen.png",
             "seaHen.png",
-            "HenStony.png",
+            "stonyHen.png",
             "roostro.png"
         ],
     },
@@ -123,7 +135,7 @@ export const islands_sr2: { [key: string]: Island } = {
         ],
         food: [
             "pogofruit.png",
-            "Cuberry.png",
+            "cuberry.png",
             "carrot.png",
             "oddonion.png",
             "heartbeat.png",
@@ -167,10 +179,10 @@ export const islands_sr2: { [key: string]: Island } = {
         ],
         food: [
             "pogofruit.png",
-            "Cuberry.png",
+            "cuberry.png",
             "mintmango.png",
             "pomegranite.png",
-            "picklepear.png",
+            "pricklepear.png",
             "polaricherry.png",
             "carrot.png",
             "waterlettuce.png",
@@ -179,7 +191,7 @@ export const islands_sr2: { [key: string]: Island } = {
             "henHen.png",
             "briarHen.png",
             "seaHen.png",
-            "HenStony.png",
+            "stonyHen.png",
             "roostro.png"
         ],
     },
@@ -220,7 +232,6 @@ export const islands_sr1: { [key: string]: Island } = {
             "Puddle.png"
         ],
         food: [
-            "Carrot.png",
             "Pogo.png",
             "Cuberry.png",
             "Mango.png",
