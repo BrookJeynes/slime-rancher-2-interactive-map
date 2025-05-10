@@ -1,8 +1,14 @@
-import { islands } from "../data/islands";
-import { useState } from "react";
+import { CurrentMapContext, MapType } from "../CurrentMapContext";
+import { islands_sr1, islands_sr2 } from "../data/islands";
+import { useContext, useEffect, useState } from "react";
+
+const imgStyle = {
+    width: 40,
+    height: 40
+};
 
 export default function IslandInfo() {
-    const [selected_island, setSelectedIsland] = useState("Rainbow Fields");
+    const { current_map } = useContext(CurrentMapContext);
 
     const island_names_sr2 = [
         "Rainbow Fields",
@@ -11,6 +17,32 @@ export default function IslandInfo() {
         "Powderfall Bluffs",
         "Grey Labyrinth",
     ];
+
+    const island_names_sr1 = [
+        "The Dry Reef",
+        "The Moss Blanket",
+        "The Indigo Quarry",
+        "The Ancient Ruins",
+        "The Glass Desert"
+    ];
+
+    // États pour les îles et les données actuelles
+    const [current_islands, setCurrentIslands] = useState(current_map === MapType.sr1 ? island_names_sr1 : island_names_sr2);
+    const [current_island, setCurrentIsland] = useState(current_map === MapType.sr1 ? islands_sr1 : islands_sr2);
+    const [selected_island, setSelectedIsland] = useState(current_islands[0]);
+
+    // Mettre à jour les îles et les données lorsque `current_map` change
+    useEffect(() => {
+        if (current_map === MapType.sr1) {
+            setCurrentIslands(island_names_sr1);
+            setCurrentIsland(islands_sr1);
+            setSelectedIsland(island_names_sr1[0]); // Réinitialiser l'île sélectionnée
+        } else {
+            setCurrentIslands(island_names_sr2);
+            setCurrentIsland(islands_sr2);
+            setSelectedIsland(island_names_sr2[0]); // Réinitialiser l'île sélectionnée
+        }
+    }, [current_map]);
 
     return (
         <div>
@@ -21,7 +53,9 @@ export default function IslandInfo() {
                     onChange={event => setSelectedIsland(event.target.value)}
                     className="cursor-pointer bg-btn outline outline-1 p-1"
                 >
-                    {island_names_sr2.map((type: string) => <option key={type} value={type}>{type}</option>)}
+                    {current_islands.map((type: string) => (
+                        <option key={type} value={type}>{type}</option>
+                    ))}
                 </select>
             </div>
 
@@ -29,15 +63,15 @@ export default function IslandInfo() {
                 <h3 className="text-md font-bold mb-2">Slimes</h3>
                 <div className="flex flex-wrap gap-2">
                     {
-                        islands[selected_island].slimes.map(slime => {
+                        current_island[selected_island]?.slimes?.map(slime => {
                             const key = `${slime} pin icon`;
                             return <img
                                 key={key}
-                                src={`icons/slimes/${slime}`}
+                                src={`/${current_map === MapType.sr1 ? "icons_sr1" : "icons"}/slimes/${slime}`}
                                 alt={key}
-                                style={{ width: 40 }}
+                                style={imgStyle}
                             />;
-                        })
+                        }) || <p>No slimes available for this island.</p>
                     }
                 </div>
             </div>
@@ -46,15 +80,32 @@ export default function IslandInfo() {
                 <h3 className="text-md font-bold mb-2">Resources</h3>
                 <div className="flex flex-wrap gap-2">
                     {
-                        islands[selected_island].resources.map(resource => {
+                        current_island[selected_island]?.resources?.map(resource => {
                             const key = `${resource} pin icon`;
                             return <img
                                 key={key}
-                                src={`icons/resources/${resource}`}
+                                src={`/${current_map === MapType.sr1 ? "icons_sr1" : "icons"}/resources/${resource}`}
                                 alt={key}
-                                style={{ width: 40 }}
+                                style={imgStyle}
                             />;
-                        })
+                        }) || <p>No resources available for this island.</p>
+                    }
+                </div>
+            </div>
+            <div className="flex flex-col mb-5">
+                <h3 className="text-md font-bold mb-2">Resources</h3>
+                <div className="flex flex-wrap gap-2">
+                    {
+                        current_island[selected_island]?.food?.map(food => {
+                            const key = `${food} pin icon`;
+                            console.log(`/${current_map === MapType.sr1 ? "icons_sr1" : "icons"}/foods/${food}`);
+                            return <img
+                                key={key}
+                                src={`/${current_map === MapType.sr1 ? "icons_sr1" : "icons"}/foods/${food}`}
+                                alt={key}
+                                style={imgStyle}
+                            />;
+                        }) || <p>No food available for this island.</p>
                     }
                 </div>
             </div>

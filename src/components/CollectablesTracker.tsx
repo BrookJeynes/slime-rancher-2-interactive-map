@@ -90,8 +90,11 @@ export default function CollectablesTracker() {
             </div>
 
             <button
-                className="bg-btn outline outline-1 p-1 mt-3 w-full"
+                disabled={current_map === MapType.sr1}
+                className={"bg-btn outline outline-1 p-1 mt-3 w-full" + (current_map === MapType.sr1 ? " disabled" : "")}
                 onClick={() => {
+                    if (current_map === MapType.sr1)
+                        return;
                     if (current_map === MapType.overworld) {
                         setCurrentMap(MapType.labyrinth);
                     } else {
@@ -111,7 +114,7 @@ export default function CollectablesTracker() {
                 }}>
                 Switch Game
             </button>
-            
+
         </div>
     );
 }

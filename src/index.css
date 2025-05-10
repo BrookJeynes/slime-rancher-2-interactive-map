@@ -60,6 +60,10 @@
   @apply bg-beigedark;
 }
 
+.bg-btn.disabled {
+  @apply bg-gray-500;
+}
+
 .dark .bg-btn {
   @apply bg-blue-900;
 }

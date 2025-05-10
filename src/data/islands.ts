@@ -1,6 +1,6 @@
 import { Island } from "../types";
 
-export const islands: { [key: string]: Island } = {
+export const islands_sr2: { [key: string]: Island } = {
     "Ember Valley": {
         resources: [
             "iconCraftSilkySand.png",
@@ -25,6 +25,21 @@ export const islands: { [key: string]: Island } = {
             "iconSlimePuddle.png",
             "iconSlimeYolky.png",
         ],
+        food: [
+            "pogofruit.png",
+            "Cuberry.png",
+            "picklepear.png",
+            "pomegranite.png",
+            "carrot.png",
+            "oddonion.png",
+            "heartbeat.png",
+            "waterlettuce.png",
+            "henHen.png",
+            "briarHen.png",
+            "seaHen.png",
+            "HenStony.png",
+            "roostro.png"
+        ],
     },
     "Rainbow Fields": {
         resources: [
@@ -38,6 +53,16 @@ export const islands: { [key: string]: Island } = {
             "iconSlimeCotton.png",
             "iconSlimeTabby.png",
             "iconSlimeYolky.png",
+        ],
+        food: [
+            "pogofruit.png",
+            "Cuberry.png",
+            "picklepear.png",
+            "carrot.png",
+            "waterlettuce.png",
+            "henHen.png",
+            "HenStony.png",
+            "roostro.png"
         ],
     },
     "Starlight Strand": {
@@ -61,6 +86,20 @@ export const islands: { [key: string]: Island } = {
             "iconSlimePuddle.png",
             "iconSlimeYolky.png",
         ],
+        food: [
+            "pogofruit.png",
+            "Cuberry.png",
+            "mintmango.png",
+            "pomegranite.png",
+            "carrot.png",
+            "heartbeat.png",
+            "nectar.png",
+            "henHen.png",
+            "paintedHen.png",
+            "seaHen.png",
+            "HenStony.png",
+            "roostro.png"
+        ],
     },
     "Powderfall Bluffs": {
         resources: [
@@ -81,6 +120,16 @@ export const islands: { [key: string]: Island } = {
             "iconSlimeRock.png",
             "iconSlimePuddle.png",
             "iconSlimeYolky.png",
+        ],
+        food: [
+            "pogofruit.png",
+            "Cuberry.png",
+            "carrot.png",
+            "oddonion.png",
+            "heartbeat.png",
+            "henHen.png",
+            "thunderHen.png",
+            "roostro.png"
         ],
     },
     "Grey Labyrinth": {
@@ -116,5 +165,150 @@ export const islands: { [key: string]: Island } = {
             "iconSlimeRingtail.png",
             "iconSlimeYolky.png",
         ],
+        food: [
+            "pogofruit.png",
+            "Cuberry.png",
+            "mintmango.png",
+            "pomegranite.png",
+            "picklepear.png",
+            "polaricherry.png",
+            "carrot.png",
+            "waterlettuce.png",
+            "oddonion.png",
+            "heartbeat.png",
+            "henHen.png",
+            "briarHen.png",
+            "seaHen.png",
+            "HenStony.png",
+            "roostro.png"
+        ],
+    },
+};
+
+export const islands_sr1: { [key: string]: Island } = {
+    "The Dry Reef": {
+        resources: [
+            "DeepBrine.png",
+        ],
+        slimes: [
+            "Pink.png",
+            "Tabby.png",
+            "Rock.png",
+            "Phosphor.png"
+        ],
+        food: [
+            "Carrot.png",
+            "Pogo.png",
+            "Cuberry.png",
+            "Beet.png",
+            "Hen.png",
+            "HenStony.png",
+            "Rooster.png"
+        ]
+    },
+    "The Moss Blanket": {
+        resources: [
+            "WildHoney.png"
+        ],
+        slimes: [
+            "Pink.png",
+            "Tabby.png",
+            "Phosphor.png",
+            "Honey.png",
+            "Hunter.png",
+            "Boom.png",
+            "Puddle.png"
+        ],
+        food: [
+            "Carrot.png",
+            "Pogo.png",
+            "Cuberry.png",
+            "Mango.png",
+            "Carrot.png",
+            "HenStony.png",
+            "HenBriar.png",
+            "Hen.png",
+            "Rooster.png"
+        ]
+    },
+    "The Indigo Quarry": {
+        resources: [
+            "Indigonium.png"
+        ],
+        slimes: [
+            "Pink.png",
+            "Rock.png",
+            "Crystal.png",
+            "Boom.png",
+            "Phosphor.png",
+            "Rad.png",
+            "Puddle.png"
+        ],
+        food: [
+            "Carrot.png",
+            "Pogo.png",
+            "Cuberry.png",
+            "Onion.png",
+            "Ocaoca.png",
+            "Hen.png",
+            "HenStony.png",
+            "Rooster.png"
+        ]
+    },
+    "The Ancient Ruins": {
+        resources: [
+            "Echoes.png"
+        ],
+        slimes: [
+            "Pink.png",
+            "Phosphor.png",
+            "Tabby.png",
+            "Quantum.png",
+            "Rock.png",
+            "Puddle.png"
+        ],
+        food: [
+            "Carrot.png",
+            "Beet.png",
+            "Pogo.png",
+            "Cuberry.png",
+            "Lemon.png",
+            "Hen.png",
+            "HenStony.png",
+            "Rooster.png"
+        ]
+    },
+    "The Glass Desert": {
+        resources: [
+            "GlassShard.png",
+            "SilkySand.png",
+            "PepperJam.png"
+        ],
+        slimes: [
+            "Pink.png",
+            "Rock.png",
+            "Tabby.png",
+            "Phosphor.png",
+            "Puddle.png",
+            "Hunter.png",
+            "Boom.png",
+            "Quantum.png",
+            "Fire.png",
+            "Dervish.png",
+            "Tangle.png",
+            "Mosaic.png"
+        ],
+        food: [
+            "Carrot.png",
+            "Beet.png",
+            "Parsnip.png",
+            "Ginger.png",
+            "Pogo.png",
+            "Pear.png",
+            "Hen.png",
+            "HenStony.png",
+            "HenPainted.png",
+            "Rooster.png"
+        ]
     },
 };
