@@ -21,6 +21,13 @@ function App() {
     const [current_log, setCurrentLog] = useState(<></>);
     const [selected_pin, setSelectedPin] = useState<Pin | undefined>(undefined);
 
+    useEffect(() => {
+        if (selected_pin)
+            document.body.classList.add("cursor-cell");
+        else
+            document.body.classList.remove("cursor-cell");
+    }, []);
+
     let parsed_user_pins = [];
     try {
         parsed_user_pins = JSON.parse(localStorage.getItem("user_pins") ?? "[]") ?? [];
@@ -75,7 +82,7 @@ function App() {
         styleSheet.type = "text/css";
         styleSheet.innerText = `
 .leaflet-container {
-    ${current_map === MapType.overworld ? "background-image: url('/map_bg.png') !important; background-color: #005f84 !important;" : ""}
+    ${current_map === MapType.overworld || current_map === MapType.sr1 ? "background-image: url('/map_bg.png') !important; background-color: #005f84 !important;" : ""}
     ${current_map === MapType.labyrinth ? "background-color: #f8d0e3 !important;" : ""}
 }
             `;

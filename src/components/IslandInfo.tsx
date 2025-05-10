@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function IslandInfo() {
     const [selected_island, setSelectedIsland] = useState("Rainbow Fields");
 
-    const island_names = [
+    const island_names_sr2 = [
         "Rainbow Fields",
         "Starlight Strand",
         "Ember Valley",
@@ -21,7 +21,7 @@ export default function IslandInfo() {
                     onChange={event => setSelectedIsland(event.target.value)}
                     className="cursor-pointer bg-btn outline outline-1 p-1"
                 >
-                    {island_names.map((type: string) => <option key={type} value={type}>{type}</option>)}
+                    {island_names_sr2.map((type: string) => <option key={type} value={type}>{type}</option>)}
                 </select>
             </div>
 

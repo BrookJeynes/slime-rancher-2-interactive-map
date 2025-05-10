@@ -48,6 +48,10 @@
   @apply bg-beigelight text-black;
 }
 
+.bg-sidebar.sr1{
+  @apply bg-sr1color text-black;
+}
+
 .dark .bg-sidebar {
   @apply bg-gradient-to-br from-blue-950 to-indigo-950 text-white;
 }

@@ -100,6 +100,18 @@ export default function CollectablesTracker() {
                 }}>
                 Change Map
             </button>
+            <button
+                className="bg-btn outline outline-1 p-1 mt-3 w-full"
+                onClick={() => {
+                    if (current_map === MapType.overworld || current_map === MapType.labyrinth) {
+                        setCurrentMap(MapType.sr1);
+                    } else {
+                        setCurrentMap(MapType.overworld);
+                    }
+                }}>
+                Switch Game
+            </button>
+            
         </div>
     );
 }
