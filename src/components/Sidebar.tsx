@@ -63,7 +63,7 @@ export default function Sidebar({
             >
                 <div className="flex flex-col gap-5 px-4">
                     <div className="flex flex-col gap-2">
-                        <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher 2 Interactive Map</h1>
+                        <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher {current_map !== "map_sr1" && "2 "}Interactive Map</h1>
                         <div className="flex justify-center gap-4">
                             {darkMode ?
                                 <FaMoon

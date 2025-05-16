@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export enum MapType {
     overworld = "map_overworld",
     labyrinth = "map_labyrinth",
-    sr1 = "map_sr1",
+    sr1 = "map_sr1"
 }
 
 export const CurrentMapContext: React.Context<{

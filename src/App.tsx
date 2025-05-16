@@ -1,5 +1,5 @@
 import { CurrentMapContext, MapType } from "./CurrentMapContext";
-import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { LocalStoragePin, Pin } from "./types";
 import { useContext, useEffect, useState } from "react";
 import { GordoIcons } from "./components/GordoIcon";
@@ -15,6 +15,93 @@ import { StabilizingGateIcons } from "./components/StabilizingGateIcon";
 import { TeleportLineIcons } from "./components/TeleportLineIcon";
 import { TreasurePodIcons } from "./components/TreasurePodIcon";
 import { icon_template } from "./globals";
+
+const map_center: { [key in MapType]: L.LatLngTuple } = {
+    [MapType.overworld]: [30, -80],
+    [MapType.labyrinth]: [30, -80],
+    [MapType.sr1]: [60, -85]
+};
+
+const map_bounds: { [key in MapType]: L.LatLngBoundsExpression } = {
+    [MapType.overworld]: [
+        [-70, -230],
+        [85, 50]
+    ],
+    [MapType.labyrinth]: [
+        [200, -200],
+        [-70, 60]
+    ],
+    [MapType.sr1]: [
+        [20, -250],
+        [85, 70]
+    ]
+};
+
+function CursorCoordinates() {
+    const { current_map } = useContext(CurrentMapContext);
+    const [coordinates, setCoordinates] = useState<[number, number] | null>(null);
+    const [zoomLevel, setZoomLevel] = useState<number>(0);
+    const [centerCoordinates, setCenterCoordinates] = useState<[number, number] | null>(null);
+
+    const map = useMap();
+
+    useMapEvents({
+        mousemove(e) {
+            setCoordinates([e.latlng.lat, e.latlng.lng]);
+        },
+        zoomend(e) {
+            setZoomLevel(e.target.getZoom());
+        },
+        moveend() {
+            const center = map.getCenter();
+            setCenterCoordinates([center.lat, center.lng]);
+        }
+    });
+
+    useEffect(() => {
+        const center = map.getCenter();
+        setCenterCoordinates([center.lat, center.lng]);
+    }, [map]);
+
+    return (
+        <div
+            style={{
+                position: "absolute",
+                bottom: "20px",
+                right: "20px",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "white",
+                padding: "5px",
+                borderRadius: "5px",
+                zIndex: 1000
+            }}
+        >
+            {coordinates ? (
+                <>
+                    <div>{`Lat: ${coordinates[0].toFixed(4)}, Lng: ${coordinates[1].toFixed(4)}`}</div>
+                    <div>{`Zoom Level: ${zoomLevel}`}</div>
+                    {centerCoordinates && (
+                        <div>{`Center: Lat ${centerCoordinates[0].toFixed(4)}, Lng ${centerCoordinates[1].toFixed(4)}`}</div>
+                    )}
+                    <div>{`Map center: ${map_center[current_map]}, Map boundaries: ${map_bounds[current_map]}`}</div>
+                </>
+            ) : (
+                "Move the mouse to see coordinates"
+            )}
+        </div>
+    );
+}
+
+// it's here to help controlling the granularity of scroll wheel zooming (chatGPT suggestion tbh :D)
+function ConfigureMapOptions() {
+    const map = useMap();
+
+    useEffect(() => {
+        map.options.wheelPxPerZoomLevel = 120;
+    }, [map]);
+
+    return null;
+}
 
 function App() {
     const [show_log, setShowLog] = useState(false);
@@ -53,7 +140,7 @@ function App() {
 
         const handleClick = () => {
             const new_pins = user_pins.filter(
-                (currentMarker) => !(currentMarker.pos === pin.pos)
+                (currentMarker) => currentMarker.pos !== pin.pos
             );
             // TODO: If the pin isn't reset, a new pin will be placed when 
             // pressing "Remove".
@@ -111,18 +198,17 @@ function App() {
 
             <MapContainer
                 // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
-                center={[30, -80]}
-                zoom={3.5}
+                center={map_center[current_map]}
+                zoom={4.5}
                 scrollWheelZoom={true}
-                maxZoom={6}
-                minZoom={3}
                 // TODO: This ties in with the `center`.
-                maxBounds={[
-                    [200, -200],
-                    [-70, 60]
-                ]}
+                maxBounds={map_bounds[current_map]}
+                zoomSnap={0.5} // Réduit l'incrément minimal de zoom
+                zoomDelta={0.5}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
+                <CursorCoordinates />
+                <ConfigureMapOptions />
 
                 {selected_pin &&
                     <MapUserPins
@@ -164,8 +250,12 @@ function App() {
                         <LayerGroup>{user_pin_list}</LayerGroup>
                     </LayersControl.Overlay>
                 </LayersControl>
-
-                <TileLayer url={`${current_map}/{z}/{x}/{y}.png`} noWrap={true} />
+                <TileLayer
+                    url={`${current_map}/{z}/{x}/{y}.png`}
+                    noWrap={true}
+                    maxZoom={6}
+                    minZoom={3}
+                />
             </MapContainer>
         </div >
     );
