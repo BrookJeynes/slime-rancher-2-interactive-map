@@ -1,9 +1,9 @@
 import { CurrentMapContext, MapType } from "./CurrentMapContext";
+import L, { LatLngBoundsExpression, LatLngExpression } from "leaflet";
 import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { LocalStoragePin, Pin } from "./types";
 import { useContext, useEffect, useState } from "react";
 import { GordoIcons } from "./components/GordoIcon";
-import L from "leaflet";
 import { LockedDoorIcons } from "./components/LockedDoorIcon";
 import { MapNodeIcons } from "./components/MapNodeIcon";
 import { MapUserPins } from "./components/UserPins";
@@ -16,12 +16,14 @@ import { TeleportLineIcons } from "./components/TeleportLineIcon";
 import { TreasurePodIcons } from "./components/TreasurePodIcon";
 import { icon_template } from "./globals";
 
+// TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
 const map_center: { [key in MapType]: L.LatLngTuple } = {
-    [MapType.overworld]: [30, -80],
+    [MapType.overworld]: [30, 30],
     [MapType.labyrinth]: [30, -80],
-    [MapType.sr1]: [60, -85]
+    [MapType.sr1]: [70, -80]
 };
 
+// TODO: This ties in with the `center` property.
 const map_bounds: { [key in MapType]: L.LatLngBoundsExpression } = {
     [MapType.overworld]: [
         [-70, -230],
@@ -32,8 +34,8 @@ const map_bounds: { [key in MapType]: L.LatLngBoundsExpression } = {
         [-70, 60]
     ],
     [MapType.sr1]: [
-        [20, -250],
-        [85, 70]
+        [100, -150],
+        [20, 60]
     ]
 };
 
@@ -77,17 +79,15 @@ function CursorCoordinates() {
             }}
         >
             {coordinates ? (
-                <>
-                    <div>{`Lat: ${coordinates[0].toFixed(4)}, Lng: ${coordinates[1].toFixed(4)}`}</div>
-                    <div>{`Zoom Level: ${zoomLevel}`}</div>
-                    {centerCoordinates && (
-                        <div>{`Center: Lat ${centerCoordinates[0].toFixed(4)}, Lng ${centerCoordinates[1].toFixed(4)}`}</div>
-                    )}
-                    <div>{`Map center: ${map_center[current_map]}, Map boundaries: ${map_bounds[current_map]}`}</div>
-                </>
+                <div>{`Lat: ${coordinates[0].toFixed(4)}, Lng: ${coordinates[1].toFixed(4)}`}</div>
             ) : (
-                "Move the mouse to see coordinates"
+                <div>Lat: ?, Lng: ?</div>
             )}
+            <div>{`Zoom Level: ${zoomLevel}`}</div>
+            {centerCoordinates && (
+                <div>{`Center: Lat ${centerCoordinates[0].toFixed(4)}, Lng ${centerCoordinates[1].toFixed(4)}`}</div>
+            )}
+            <div>{`Map center: ${map_center[current_map]}, Map boundaries: ${map_bounds[current_map]}`}</div>
         </div>
     );
 }
@@ -103,10 +103,42 @@ function ConfigureMapOptions() {
     return null;
 }
 
+/** Listens for changes to the `maxBounds` and `center` properties on the
+  * `MapContainer` and updates them dynamically as direct modification is not
+  * allowed.
+  */
+function MapUpdater({
+    center,
+    maxBounds
+}: {
+    center: LatLngExpression;
+    maxBounds: LatLngBoundsExpression
+}) {
+    const map = useMap();
+
+    useEffect(() => {
+        map.setView(center);
+    }, [center, map]);
+
+    useEffect(() => {
+        map.setMaxBounds(maxBounds);
+    }, [maxBounds, map]);
+
+    useEffect(() => {
+        map.setZoom(4.5);
+    }, [map]);
+
+    return null;
+}
+
 function App() {
     const [show_log, setShowLog] = useState(false);
     const [current_log, setCurrentLog] = useState(<></>);
     const [selected_pin, setSelectedPin] = useState<Pin | undefined>(undefined);
+    const [advanced_infos, setAdvancedInfos] = useState(false);
+    const toggleInfos = () => {
+        setAdvancedInfos((prev) => !prev);
+    };
 
     useEffect(() => {
         if (selected_pin)
@@ -194,21 +226,21 @@ function App() {
                 setSelectedPin={setSelectedPin}
                 user_pins={user_pins}
                 setUserPins={setUserPins}
+                toggleInfos={toggleInfos}
             />
 
             <MapContainer
-                // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
                 center={map_center[current_map]}
                 zoom={4.5}
                 scrollWheelZoom={true}
-                // TODO: This ties in with the `center`.
                 maxBounds={map_bounds[current_map]}
-                zoomSnap={0.5} // Réduit l'incrément minimal de zoom
+                zoomSnap={0.5}
                 zoomDelta={0.5}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
-                <CursorCoordinates />
+                {advanced_infos && <CursorCoordinates />}
                 <ConfigureMapOptions />
+                <MapUpdater center={map_center[current_map]} maxBounds={map_bounds[current_map]} />
 
                 {selected_pin &&
                     <MapUserPins

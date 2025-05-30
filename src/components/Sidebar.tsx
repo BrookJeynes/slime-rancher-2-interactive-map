@@ -2,7 +2,7 @@ import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
 import { ClearUserPinsButton, ExportUserPinsButton, ImportUserPinsButton, SidebarPins } from "./UserPins";
 import { CurrentMapContext, MapType } from "../CurrentMapContext";
 import { ExportUserDataButton, ImportUserDataButton } from "./UserData";
-import { FaChevronRight, FaMoon, FaSun } from "react-icons/fa";
+import { FaChevronRight, FaCode, FaMoon, FaSun } from "react-icons/fa";
 import { LocalStoragePin, Pin } from "../types";
 import React, { useContext, useEffect, useState } from "react";
 import { discord_link, github_link } from "../globals";
@@ -22,11 +22,13 @@ export default function Sidebar({
     setSelectedPin,
     user_pins,
     setUserPins,
+    toggleInfos
 }: {
     selected_pin: Pin | undefined,
     setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>
     user_pins: LocalStoragePin[],
     setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
+    toggleInfos: () => void
 }) {
     const [showSidebar, setShowSidebar] = useState(false);
     const [darkMode, setDarkMode] = useState(getOriginalTheme());
@@ -61,7 +63,13 @@ export default function Sidebar({
             <div
                 className={`bg-sidebar ${current_map === MapType.sr1 && "sr1"} transition-all duration-500 fixed top-0 left-0 h-full border-r-solid border-r-[1px] ${showSidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-x-auto`}
             >
-                <div className="flex flex-col gap-5 px-4">
+                <div className="relative flex flex-col gap-5 px-4">
+                    <FaCode
+                        size={25}
+                        onClick={() => toggleInfos()}
+                        className="absolute top-[1rem] cursor-pointer opacity-25"
+                        title="Toggle developer infos"
+                    />
                     <div className="flex flex-col gap-2">
                         <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher {current_map !== "map_sr1" && "2 "}Interactive Map</h1>
                         <div className="flex justify-center gap-4">
@@ -70,14 +78,14 @@ export default function Sidebar({
                                     size={25}
                                     onClick={() => toggleDarkMode()}
                                     className="cursor-pointer"
-                                    name="Switch to light mode"
+                                    title="Switch to light mode"
                                 />
                                 :
                                 <FaSun
                                     size={25}
                                     onClick={() => toggleDarkMode()}
                                     className="cursor-pointer"
-                                    name="Switch to dark mode"
+                                    title="Switch to dark mode"
                                 />
                             }
 
