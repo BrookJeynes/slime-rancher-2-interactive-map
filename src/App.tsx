@@ -19,7 +19,7 @@ import { icon_template } from "./globals";
 // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
 const map_center: { [key in MapType]: L.LatLngTuple } = {
     [MapType.overworld]: [30, 30],
-    [MapType.labyrinth]: [30, -80],
+    [MapType.labyrinth]: [-16, -60],
     [MapType.sr1]: [70, -80]
 };
 
@@ -97,7 +97,7 @@ function ConfigureMapOptions() {
     const map = useMap();
 
     useEffect(() => {
-        map.options.wheelPxPerZoomLevel = 120;
+        map.options.wheelPxPerZoomLevel = 240;
     }, [map]);
 
     return null;
@@ -136,9 +136,6 @@ function App() {
     const [current_log, setCurrentLog] = useState(<></>);
     const [selected_pin, setSelectedPin] = useState<Pin | undefined>(undefined);
     const [advanced_infos, setAdvancedInfos] = useState(false);
-    const toggleInfos = () => {
-        setAdvancedInfos((prev) => !prev);
-    };
 
     useEffect(() => {
         if (selected_pin)
@@ -226,20 +223,23 @@ function App() {
                 setSelectedPin={setSelectedPin}
                 user_pins={user_pins}
                 setUserPins={setUserPins}
-                toggleInfos={toggleInfos}
+                advanced_infos={advanced_infos}
+                setAdvancedInfos={setAdvancedInfos}
             />
 
             <MapContainer
                 center={map_center[current_map]}
-                zoom={4.5}
-                scrollWheelZoom={true}
-                maxBounds={map_bounds[current_map]}
+                zoom={3.5}
+                maxZoom={6}
+                minZoom={3}
                 zoomSnap={0.5}
                 zoomDelta={0.5}
+                scrollWheelZoom={true}
+                maxBounds={map_bounds[current_map]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
-                {advanced_infos && <CursorCoordinates />}
                 <ConfigureMapOptions />
+                {advanced_infos && <CursorCoordinates />}
                 <MapUpdater center={map_center[current_map]} maxBounds={map_bounds[current_map]} />
 
                 {selected_pin &&

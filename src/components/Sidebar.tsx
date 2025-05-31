@@ -22,13 +22,15 @@ export default function Sidebar({
     setSelectedPin,
     user_pins,
     setUserPins,
-    toggleInfos
+    advanced_infos,
+    setAdvancedInfos
 }: {
     selected_pin: Pin | undefined,
     setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>
     user_pins: LocalStoragePin[],
     setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
-    toggleInfos: () => void
+    advanced_infos: boolean,
+    setAdvancedInfos: React.Dispatch<React.SetStateAction<boolean>>
 }) {
     const [showSidebar, setShowSidebar] = useState(false);
     const [darkMode, setDarkMode] = useState(getOriginalTheme());
@@ -66,8 +68,8 @@ export default function Sidebar({
                 <div className="relative flex flex-col gap-5 px-4">
                     <FaCode
                         size={25}
-                        onClick={() => toggleInfos()}
-                        className="absolute top-[1rem] cursor-pointer opacity-25"
+                        onClick={() => setAdvancedInfos(!advanced_infos)}
+                        className={`absolute top-[1rem] cursor-pointer opacity-${advanced_infos ? 100 : 25} transition-opacity duration-300 ease-in-out`}
                         title="Toggle developer infos"
                     />
                     <div className="flex flex-col gap-2">
