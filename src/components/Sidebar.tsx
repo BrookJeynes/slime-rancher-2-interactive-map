@@ -2,7 +2,7 @@ import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
 import { ClearUserPinsButton, ExportUserPinsButton, ImportUserPinsButton, SidebarPins } from "./UserPins";
 import { CurrentMapContext, MapType } from "../CurrentMapContext";
 import { ExportUserDataButton, ImportUserDataButton } from "./UserData";
-import { FaChevronRight, FaCode, FaMoon, FaSun } from "react-icons/fa";
+import { FaChevronRight, FaMoon, FaSun } from "react-icons/fa";
 import { LocalStoragePin, Pin } from "../types";
 import React, { useContext, useEffect, useState } from "react";
 import { discord_link, github_link } from "../globals";
@@ -22,15 +22,11 @@ export default function Sidebar({
     setSelectedPin,
     user_pins,
     setUserPins,
-    advanced_infos,
-    setAdvancedInfos
 }: {
     selected_pin: Pin | undefined,
     setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>
     user_pins: LocalStoragePin[],
     setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
-    advanced_infos: boolean,
-    setAdvancedInfos: React.Dispatch<React.SetStateAction<boolean>>
 }) {
     const [showSidebar, setShowSidebar] = useState(false);
     const [darkMode, setDarkMode] = useState(getOriginalTheme());
@@ -66,14 +62,8 @@ export default function Sidebar({
                 className={`bg-sidebar ${current_map === MapType.sr1 && "sr1"} transition-all duration-500 fixed top-0 left-0 h-full border-r-solid border-r-[1px] ${showSidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-x-auto`}
             >
                 <div className="relative flex flex-col gap-5 px-4">
-                    <FaCode
-                        size={25}
-                        onClick={() => setAdvancedInfos(!advanced_infos)}
-                        className={`absolute top-[1rem] cursor-pointer opacity-${advanced_infos ? 100 : 25} transition-opacity duration-300 ease-in-out`}
-                        title="Toggle developer infos"
-                    />
                     <div className="flex flex-col gap-2">
-                        <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher {current_map !== "map_sr1" && "2 "}Interactive Map</h1>
+                        <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher {current_map !== MapType.sr1 && "2 "}Interactive Map</h1>
                         <div className="flex justify-center gap-4">
                             {darkMode ?
                                 <FaMoon

@@ -26,21 +26,19 @@ export default function IslandInfo() {
         "The Glass Desert"
     ];
 
-    // États pour les îles et les données actuelles
     const [current_islands, setCurrentIslands] = useState(current_map === MapType.sr1 ? island_names_sr1 : island_names_sr2);
     const [current_island, setCurrentIsland] = useState(current_map === MapType.sr1 ? islands_sr1 : islands_sr2);
     const [selected_island, setSelectedIsland] = useState(current_islands[0]);
 
-    // Mettre à jour les îles et les données lorsque `current_map` change
     useEffect(() => {
         if (current_map === MapType.sr1) {
             setCurrentIslands(island_names_sr1);
             setCurrentIsland(islands_sr1);
-            setSelectedIsland(island_names_sr1[0]); // Réinitialiser l'île sélectionnée
+            setSelectedIsland(island_names_sr1[0]); 
         } else {
             setCurrentIslands(island_names_sr2);
             setCurrentIsland(islands_sr2);
-            setSelectedIsland(island_names_sr2[0]); // Réinitialiser l'île sélectionnée
+            setSelectedIsland(island_names_sr2[0]);
         }
     }, [current_map]);
 

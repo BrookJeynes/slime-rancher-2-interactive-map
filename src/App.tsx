@@ -1,8 +1,9 @@
 import { CurrentMapContext, MapType } from "./CurrentMapContext";
-import L, { LatLngBoundsExpression, LatLngExpression } from "leaflet";
+import { LatLngBoundsExpression, LatLngExpression, LatLngTuple, icon } from "leaflet";
 import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { LocalStoragePin, Pin } from "./types";
 import { useContext, useEffect, useState } from "react";
+import { FaCode } from "react-icons/fa6";
 import { GordoIcons } from "./components/GordoIcon";
 import { LockedDoorIcons } from "./components/LockedDoorIcon";
 import { MapNodeIcons } from "./components/MapNodeIcon";
@@ -17,7 +18,7 @@ import { TreasurePodIcons } from "./components/TreasurePodIcon";
 import { icon_template } from "./globals";
 
 // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
-const map_center: { [key in MapType]: L.LatLngTuple } = {
+const map_center: { [key in MapType]: LatLngTuple } = {
     [MapType.overworld]: [30, 30],
     [MapType.labyrinth]: [-16, -60],
     [MapType.sr1]: [70, -80]
@@ -117,16 +118,12 @@ function MapUpdater({
     const map = useMap();
 
     useEffect(() => {
-        map.setView(center);
+        map.setView(center, 4);
     }, [center, map]);
 
     useEffect(() => {
         map.setMaxBounds(maxBounds);
     }, [maxBounds, map]);
-
-    useEffect(() => {
-        map.setZoom(4.5);
-    }, [map]);
 
     return null;
 }
@@ -162,7 +159,7 @@ function App() {
             (pin.dimension === undefined && current_map === MapType.overworld);
     }).map((pin: LocalStoragePin) => {
         const key = `${pin.pos.x}${pin.pos.y}`;
-        const icon = L.icon({
+        const pinIcon = icon({
             ...icon_template,
             iconUrl: `icons/${pin.icon}`,
         });
@@ -182,7 +179,7 @@ function App() {
             <Marker
                 key={key}
                 position={[pin.pos.x, pin.pos.y]}
-                icon={icon}
+                icon={pinIcon}
             >
                 <Popup>
                     <button className="border w-[5rem] mt-2 self-end" onClick={handleClick}>Remove</button>
@@ -195,7 +192,6 @@ function App() {
     // unsure how to work around this.
     useEffect(() => {
         const styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
         styleSheet.innerText = `
 .leaflet-container {
     ${current_map === MapType.overworld || current_map === MapType.sr1 ? "background-image: url('/map_bg.png') !important; background-color: #005f84 !important;" : ""}
@@ -210,7 +206,7 @@ function App() {
     }, [current_map]);
 
     return (
-        <div>
+        <div className="relative">
             <div
                 className="log-container bg-slate-400/50"
                 style={{ display: show_log ? "flex" : "none" }}
@@ -218,13 +214,18 @@ function App() {
                 {current_log}
             </div>
 
+            <FaCode
+                size={25}
+                onClick={() => setAdvancedInfos(!advanced_infos)}
+                className={`absolute bottom-1 left-1 z-10 cursor-pointer transition-opacity duration-300 ${advanced_infos ? "opacity-100" : "opacity-50"}`}
+                title="Toggle developer infos"
+            />
+
             <Sidebar
                 selected_pin={selected_pin}
                 setSelectedPin={setSelectedPin}
                 user_pins={user_pins}
                 setUserPins={setUserPins}
-                advanced_infos={advanced_infos}
-                setAdvancedInfos={setAdvancedInfos}
             />
 
             <MapContainer
