@@ -65,33 +65,7 @@ export function ResearchDroneIcon({
                             <h1 className="ml-2 text-xl font-medium">{research_drone.name}</h1>
                         </div>
                     </div>
-
                     <hr />
-
-                    {/*
-                        <div>
-                            <h1 className="text-md font-bold">Log: </h1>
-                            {research_drone.log.map((p, i) => {
-                                if (i == 0) {
-                                    return <span>{p}</span>;
-                                } else {
-                                    return <p>{p}</p>;
-                                }
-                            })}
-                        </div>
-
-                        <div>
-                            <h1 className="text-md font-bold">Archive: </h1>
-                            {research_drone.archive.map((p, i) => {
-                                if (i == 0) {
-                                    return <span>{p}</span>;
-                                } else {
-                                    return <p>{p}</p>;
-                                }
-                            })}
-                        </div> 
-                    */}
-
                     <div>
                         <span className="text-md font-bold">Description: </span>
                         <span>{research_drone.description}</span>

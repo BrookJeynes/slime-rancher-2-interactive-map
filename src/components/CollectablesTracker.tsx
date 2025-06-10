@@ -9,6 +9,12 @@ import { stabilizing_gates } from "../data/stabilizing_gates";
 import { treasure_pods } from "../data/treasure_pods";
 import { useContext } from "react";
 
+const mapNames = {
+    [MapType.overworld]: "Rainbow Island (Slime Rancher 2)",
+    [MapType.labyrinth]: "Grey Labyrinth (Slime Rancher 2)",
+    [MapType.sr1]: "Far, Far Range (Slime Rancher 1)",
+};
+
 export default function CollectablesTracker() {
     const { current_map, setCurrentMap } = useContext(CurrentMapContext);
     const { found } = useContext(FoundContext);
@@ -18,7 +24,7 @@ export default function CollectablesTracker() {
             <div className="flex flex-col md:flex-row justify-between pb-4">
                 <div>
                     <span className="text-lg font-bold">Current Location: </span>
-                    <span>{current_map === MapType.overworld ? "Overworld" : "Grey Labyrinth"}</span>
+                    <span>{mapNames[current_map]}</span>
                 </div>
             </div>
             <div className="flex flex-col pb-4">
@@ -90,8 +96,11 @@ export default function CollectablesTracker() {
             </div>
 
             <button
-                className="bg-btn outline outline-1 p-1 mt-3 w-full"
+                disabled={current_map === MapType.sr1}
+                className={"bg-btn outline outline-1 p-1 mt-3 w-full" + (current_map === MapType.sr1 ? " disabled" : "")}
                 onClick={() => {
+                    if (current_map === MapType.sr1)
+                        return;
                     if (current_map === MapType.overworld) {
                         setCurrentMap(MapType.labyrinth);
                     } else {
@@ -100,6 +109,18 @@ export default function CollectablesTracker() {
                 }}>
                 Change Map
             </button>
+            <button
+                className="bg-btn outline outline-1 p-1 mt-3 w-full"
+                onClick={() => {
+                    if (current_map === MapType.overworld || current_map === MapType.labyrinth) {
+                        setCurrentMap(MapType.sr1);
+                    } else {
+                        setCurrentMap(MapType.overworld);
+                    }
+                }}>
+                Switch Game
+            </button>
+
         </div>
     );
 }

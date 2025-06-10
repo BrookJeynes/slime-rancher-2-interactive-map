@@ -116,6 +116,7 @@ export interface LocalStorageSitePlan {
 export interface Island {
     resources: string[];
     slimes: string[];
+    food: string[];
 }
 
 export interface PlannerPosition {
