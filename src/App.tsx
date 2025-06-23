@@ -1,9 +1,10 @@
 import { CurrentMapContext, MapType } from "./CurrentMapContext";
-import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { LatLngBoundsExpression, LatLngExpression, LatLngTuple, icon } from "leaflet";
+import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { LocalStoragePin, Pin } from "./types";
 import { useContext, useEffect, useState } from "react";
+import { FaCode } from "react-icons/fa6";
 import { GordoIcons } from "./components/GordoIcon";
-import L from "leaflet";
 import { LockedDoorIcons } from "./components/LockedDoorIcon";
 import { MapNodeIcons } from "./components/MapNodeIcon";
 import { MapUserPins } from "./components/UserPins";
@@ -16,10 +17,129 @@ import { TeleportLineIcons } from "./components/TeleportLineIcon";
 import { TreasurePodIcons } from "./components/TreasurePodIcon";
 import { icon_template } from "./globals";
 
+// TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
+const map_center: { [key in MapType]: LatLngTuple } = {
+    [MapType.overworld]: [30, 30],
+    [MapType.labyrinth]: [-16, -60],
+    [MapType.sr1]: [70, -80]
+};
+
+// TODO: This ties in with the `center` property.
+const map_bounds: { [key in MapType]: L.LatLngBoundsExpression } = {
+    [MapType.overworld]: [
+        [-70, -230],
+        [85, 50]
+    ],
+    [MapType.labyrinth]: [
+        [200, -200],
+        [-70, 60]
+    ],
+    [MapType.sr1]: [
+        [100, -150],
+        [20, 60]
+    ]
+};
+
+function CursorCoordinates() {
+    const { current_map } = useContext(CurrentMapContext);
+    const [coordinates, setCoordinates] = useState<[number, number] | null>(null);
+    const [zoomLevel, setZoomLevel] = useState<number>(0);
+    const [centerCoordinates, setCenterCoordinates] = useState<[number, number] | null>(null);
+
+    const map = useMap();
+
+    useMapEvents({
+        mousemove(e) {
+            setCoordinates([e.latlng.lat, e.latlng.lng]);
+        },
+        zoomend(e) {
+            setZoomLevel(e.target.getZoom());
+        },
+        moveend() {
+            const center = map.getCenter();
+            setCenterCoordinates([center.lat, center.lng]);
+        }
+    });
+
+    useEffect(() => {
+        const center = map.getCenter();
+        setCenterCoordinates([center.lat, center.lng]);
+    }, [map]);
+
+    return (
+        <div
+            style={{
+                position: "absolute",
+                bottom: "20px",
+                right: "20px",
+                backgroundColor: "rgba(0, 0, 0, 0.5)",
+                color: "white",
+                padding: "5px",
+                borderRadius: "5px",
+                zIndex: 1000
+            }}
+        >
+            {coordinates ? (
+                <div>{`Lat: ${coordinates[0].toFixed(4)}, Lng: ${coordinates[1].toFixed(4)}`}</div>
+            ) : (
+                <div>Lat: ?, Lng: ?</div>
+            )}
+            <div>{`Zoom Level: ${zoomLevel}`}</div>
+            {centerCoordinates && (
+                <div>{`Center: Lat ${centerCoordinates[0].toFixed(4)}, Lng ${centerCoordinates[1].toFixed(4)}`}</div>
+            )}
+            <div>{`Map center: ${map_center[current_map]}, Map boundaries: ${map_bounds[current_map]}`}</div>
+        </div>
+    );
+}
+
+// it's here to help controlling the granularity of scroll wheel zooming (chatGPT suggestion tbh :D)
+function ConfigureMapOptions() {
+    const map = useMap();
+
+    useEffect(() => {
+        map.options.wheelPxPerZoomLevel = 240;
+    }, [map]);
+
+    return null;
+}
+
+/** Listens for changes to the `maxBounds` and `center` properties on the
+  * `MapContainer` and updates them dynamically as direct modification is not
+  * allowed.
+  */
+function MapUpdater({
+    center,
+    maxBounds
+}: {
+    center: LatLngExpression;
+    maxBounds: LatLngBoundsExpression
+}) {
+    const map = useMap();
+
+    useEffect(() => {
+        map.setView(center, 4);
+    }, [center, map]);
+
+    useEffect(() => {
+        map.setMaxBounds(maxBounds);
+    }, [maxBounds, map]);
+
+    return null;
+}
+
 function App() {
     const [show_log, setShowLog] = useState(false);
     const [current_log, setCurrentLog] = useState(<></>);
     const [selected_pin, setSelectedPin] = useState<Pin | undefined>(undefined);
+    const [advanced_infos, setAdvancedInfos] = useState(false);
+
+    useEffect(() => {
+        if (selected_pin)
+            document.body.classList.add("cursor-cell");
+        else
+            document.body.classList.remove("cursor-cell");
+    }, []);
 
     let parsed_user_pins = [];
     try {
@@ -39,14 +159,14 @@ function App() {
             (pin.dimension === undefined && current_map === MapType.overworld);
     }).map((pin: LocalStoragePin) => {
         const key = `${pin.pos.x}${pin.pos.y}`;
-        const icon = L.icon({
+        const pinIcon = icon({
             ...icon_template,
             iconUrl: `icons/${pin.icon}`,
         });
 
         const handleClick = () => {
             const new_pins = user_pins.filter(
-                (currentMarker) => !(currentMarker.pos === pin.pos)
+                (currentMarker) => currentMarker.pos !== pin.pos
             );
             // TODO: If the pin isn't reset, a new pin will be placed when 
             // pressing "Remove".
@@ -59,7 +179,7 @@ function App() {
             <Marker
                 key={key}
                 position={[pin.pos.x, pin.pos.y]}
-                icon={icon}
+                icon={pinIcon}
             >
                 <Popup>
                     <button className="border w-[5rem] mt-2 self-end" onClick={handleClick}>Remove</button>
@@ -72,10 +192,9 @@ function App() {
     // unsure how to work around this.
     useEffect(() => {
         const styleSheet = document.createElement("style");
-        styleSheet.type = "text/css";
         styleSheet.innerText = `
 .leaflet-container {
-    ${current_map === MapType.overworld ? "background-image: url('/map_bg.png') !important; background-color: #005f84 !important;" : ""}
+    ${current_map === MapType.overworld || current_map === MapType.sr1 ? "background-image: url('/map_bg.png') !important; background-color: #005f84 !important;" : ""}
     ${current_map === MapType.labyrinth ? "background-color: #f8d0e3 !important;" : ""}
 }
             `;
@@ -87,13 +206,20 @@ function App() {
     }, [current_map]);
 
     return (
-        <div>
+        <div className="relative">
             <div
                 className="log-container bg-slate-400/50"
                 style={{ display: show_log ? "flex" : "none" }}
             >
                 {current_log}
             </div>
+
+            <FaCode
+                size={25}
+                onClick={() => setAdvancedInfos(!advanced_infos)}
+                className={`absolute bottom-1 left-1 z-10 cursor-pointer transition-opacity duration-300 ${advanced_infos ? "opacity-100" : "opacity-50"}`}
+                title="Toggle developer infos"
+            />
 
             <Sidebar
                 selected_pin={selected_pin}
@@ -103,19 +229,19 @@ function App() {
             />
 
             <MapContainer
-                // TODO: Ideally, we'd have this centered 0,0 and have the tilemap centered as well.
-                center={[30, -80]}
+                center={map_center[current_map]}
                 zoom={3.5}
-                scrollWheelZoom={true}
                 maxZoom={6}
                 minZoom={3}
-                // TODO: This ties in with the `center`.
-                maxBounds={[
-                    [200, -200],
-                    [-70, 60]
-                ]}
+                zoomSnap={0.5}
+                zoomDelta={0.5}
+                scrollWheelZoom={true}
+                maxBounds={map_bounds[current_map]}
                 style={{ height: "100vh", width: "100%", zIndex: 1 }}
             >
+                <ConfigureMapOptions />
+                {advanced_infos && <CursorCoordinates />}
+                <MapUpdater center={map_center[current_map]} maxBounds={map_bounds[current_map]} />
 
                 {selected_pin &&
                     <MapUserPins
@@ -157,8 +283,12 @@ function App() {
                         <LayerGroup>{user_pin_list}</LayerGroup>
                     </LayersControl.Overlay>
                 </LayersControl>
-
-                <TileLayer url={`${current_map}/{z}/{x}/{y}.png`} noWrap={true} />
+                <TileLayer
+                    url={`${current_map}/{z}/{x}/{y}.png`}
+                    noWrap={true}
+                    maxZoom={6}
+                    minZoom={3}
+                />
             </MapContainer>
         </div >
     );

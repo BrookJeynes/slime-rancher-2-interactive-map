@@ -11,6 +11,7 @@ export default {
                 beigedark: "#D2B394",
                 red: "#FF5959",
                 mapcolor: "#005F84",
+                sr1color: "#2FB0D7"
             },
         },
         minHeight: {

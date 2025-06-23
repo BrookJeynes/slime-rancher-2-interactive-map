@@ -1,9 +1,10 @@
 import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
 import { ClearUserPinsButton, ExportUserPinsButton, ImportUserPinsButton, SidebarPins } from "./UserPins";
+import { CurrentMapContext, MapType } from "../CurrentMapContext";
 import { ExportUserDataButton, ImportUserDataButton } from "./UserData";
 import { FaChevronRight, FaMoon, FaSun } from "react-icons/fa";
 import { LocalStoragePin, Pin } from "../types";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { discord_link, github_link } from "../globals";
 import CollectablesTracker from "./CollectablesTracker";
 import IslandInfo from "./IslandInfo";
@@ -29,6 +30,7 @@ export default function Sidebar({
 }) {
     const [showSidebar, setShowSidebar] = useState(false);
     const [darkMode, setDarkMode] = useState(getOriginalTheme());
+    const { current_map } = useContext(CurrentMapContext);
 
     useEffect(() => {
         if (darkMode) {
@@ -57,25 +59,25 @@ export default function Sidebar({
     return (
         <div className="absolute">
             <div
-                className={`bg-sidebar transition-all duration-500 fixed top-0 left-0 h-full border-r-solid border-r-[1px] ${showSidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-x-auto`}
+                className={`bg-sidebar ${current_map === MapType.sr1 && "sr1"} transition-all duration-500 fixed top-0 left-0 h-full border-r-solid border-r-[1px] ${showSidebar ? "translate-x-0" : "-translate-x-full"} w-2/3 md:w-1/4 z-50 overflow-x-auto`}
             >
-                <div className="flex flex-col gap-5 px-4">
+                <div className="relative flex flex-col gap-5 px-4">
                     <div className="flex flex-col gap-2">
-                        <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher 2 Interactive Map</h1>
+                        <h1 className="text-3xl font-bold pt-4 text-center">Slime Rancher {current_map !== MapType.sr1 && "2 "}Interactive Map</h1>
                         <div className="flex justify-center gap-4">
                             {darkMode ?
                                 <FaMoon
                                     size={25}
                                     onClick={() => toggleDarkMode()}
                                     className="cursor-pointer"
-                                    name="Switch to light mode"
+                                    title="Switch to light mode"
                                 />
                                 :
                                 <FaSun
                                     size={25}
                                     onClick={() => toggleDarkMode()}
                                     className="cursor-pointer"
-                                    name="Switch to dark mode"
+                                    title="Switch to dark mode"
                                 />
                             }
 
