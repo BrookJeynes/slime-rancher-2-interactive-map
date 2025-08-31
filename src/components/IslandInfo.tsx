@@ -91,7 +91,7 @@ export default function IslandInfo() {
                 </div>
             </div>
             <div className="flex flex-col mb-5">
-                <h3 className="text-md font-bold mb-2">Resources</h3>
+                <h3 className="text-md font-bold mb-2">Food</h3>
                 <div className="flex flex-wrap gap-2">
                     {
                         current_island[selected_island]?.food?.map(food => {
