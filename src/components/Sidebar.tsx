@@ -1,13 +1,14 @@
 import { AiFillDiscord, AiFillGithub } from "react-icons/ai";
-import { ClearUserPinsButton, ExportUserPinsButton, ImportUserPinsButton, SidebarPins } from "./UserPins";
 import { CurrentMapContext, MapType } from "../CurrentMapContext";
-import { ExportUserDataButton, ImportUserDataButton } from "./UserData";
+import { DataSet, GenericDataButton } from "./manager/userData";
 import { FaChevronRight, FaMoon, FaSun } from "react-icons/fa";
-import { LocalStoragePin, Pin } from "../types";
-import React, { useContext, useEffect, useState } from "react";
 import { discord_link, github_link } from "../globals";
+import { useContext, useEffect, useState } from "react";
 import CollectablesTracker from "./CollectablesTracker";
 import IslandInfo from "./IslandInfo";
+import { Pin } from "../types";
+import { SidebarPins } from "./UserPins";
+
 
 function getOriginalTheme() {
     const userPreference = localStorage.getItem("darkMode");
@@ -20,16 +21,13 @@ function getOriginalTheme() {
 export default function Sidebar({
     selected_pin,
     setSelectedPin,
-    user_pins,
-    setUserPins,
 }: {
     selected_pin: Pin | undefined,
-    setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>
-    user_pins: LocalStoragePin[],
-    setUserPins: React.Dispatch<React.SetStateAction<LocalStoragePin[]>>
+    setSelectedPin: React.Dispatch<React.SetStateAction<Pin | undefined>>,
 }) {
     const [showSidebar, setShowSidebar] = useState(false);
     const [darkMode, setDarkMode] = useState(getOriginalTheme());
+    const [selectedDataset, setSelectedDataset] = useState<DataSet[]>([]);
     const { current_map } = useContext(CurrentMapContext);
 
     useEffect(() => {
@@ -54,6 +52,13 @@ export default function Sidebar({
 
             return newDarkMode;
         });
+    };
+
+    const toggleDataset = (dataset: DataSet, checked: boolean) => {
+        if (checked)
+            setSelectedDataset((prev) => [...prev, dataset]);
+        else
+            setSelectedDataset((prev) => prev.filter((item) => item !== dataset));
     };
 
     return (
@@ -120,18 +125,28 @@ export default function Sidebar({
 
                     <hr />
 
+                    <div>
+                        <input type="checkbox" id="dataset-plots" value={DataSet.Plots} onChange={(e) => toggleDataset(DataSet.Plots, e.target.checked)} />
+                        <label htmlFor="dataset-plots" className="ml-2">Plot Plans</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dataset-pins" value={DataSet.Pins} onChange={(e) => toggleDataset(DataSet.Pins, e.target.checked)} />
+                        <label htmlFor="dataset-pins" className="ml-2">User Pins</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dataset-found" value={DataSet.Found} onChange={(e) => toggleDataset(DataSet.Found, e.target.checked)} />
+                        <label htmlFor="dataset-found" className="ml-2">Found Collectables</label>
+                    </div>
+
                     <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-6 mb-4">
-                        <ExportUserPinsButton user_pins={user_pins} />
-                        <ImportUserPinsButton setUserPins={setUserPins} />
-                        <ClearUserPinsButton setUserPins={setUserPins} />
+                        <GenericDataButton dataset={selectedDataset} action="export" label="Export Selected" />
+                        <GenericDataButton dataset={selectedDataset} action="import" label="Import Selected" />
+                        <GenericDataButton dataset={selectedDataset} action="clear" label="Clear Selected" />
                     </div>
 
                     <hr />
 
-                    <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-6 mb-4">
-                        <ExportUserDataButton />
-                        <ImportUserDataButton />
-                    </div>
+
                 </div>
             </div>
 
